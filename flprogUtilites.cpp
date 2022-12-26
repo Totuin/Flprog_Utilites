@@ -97,6 +97,54 @@ int flprog::serialModeFromInt(int code)
 {
     switch (code)
     {
+#ifdef _STM32_DEF_
+#ifdef UART_WORDLENGTH_7B
+    case 0x04:
+        return SERIAL_7N1;
+        break;
+    case 0x0C:
+        return SERIAL_7N2;
+        break;
+    case 0x22:
+        return SERIAL_6E1;
+        break;
+    case 0x2A:
+        return SERIAL_6E2;
+        break;
+    case 0x32:
+        return SERIAL_6O1;
+        break;
+    case 0x3A:
+        return SERIAL_6O2;
+        break;
+#endif
+#endif
+
+#ifdef _STM8_DEF_
+#ifdef UART_WORDLENGTH_7B
+    case 0x04:
+        return SERIAL_7N1;
+        break;
+    case 0x0C:
+        return SERIAL_7N2;
+        break;
+    case 0x22:
+        return SERIAL_6E1;
+        break;
+    case 0x2A:
+        return SERIAL_6E2;
+        break;
+    case 0x32:
+        return SERIAL_6O1;
+        break;
+    case 0x3A:
+        return SERIAL_6O2;
+        break;
+#endif
+#endif
+
+#ifndef _STM32_DEF_
+#ifndef _STM8_DEF_
     case 0x00:
         return SERIAL_5N1;
         break;
@@ -105,9 +153,6 @@ int flprog::serialModeFromInt(int code)
         break;
     case 0x04:
         return SERIAL_7N1;
-        break;
-    case 0x06:
-        return SERIAL_8N1;
         break;
     case 0x08:
         return SERIAL_5N2;
@@ -118,20 +163,11 @@ int flprog::serialModeFromInt(int code)
     case 0x0C:
         return SERIAL_7N2;
         break;
-    case 0x0E:
-        return SERIAL_8N2;
-        break;
     case 0x20:
         return SERIAL_5E1;
         break;
     case 0x22:
         return SERIAL_6E1;
-        break;
-    case 0x24:
-        return SERIAL_7E1;
-        break;
-    case 0x26:
-        return SERIAL_8E1;
         break;
     case 0x28:
         return SERIAL_5E2;
@@ -139,29 +175,44 @@ int flprog::serialModeFromInt(int code)
     case 0x2A:
         return SERIAL_6E2;
         break;
-    case 0x2C:
-        return SERIAL_7E2;
-        break;
-    case 0x2E:
-        return SERIAL_8E2;
-        break;
     case 0x30:
         return SERIAL_5O1;
         break;
     case 0x32:
         return SERIAL_6O1;
         break;
-    case 0x34:
-        return SERIAL_7O1;
-        break;
-    case 0x36:
-        return SERIAL_8O1;
-        break;
     case 0x38:
         return SERIAL_5O2;
         break;
     case 0x3A:
         return SERIAL_6O2;
+        break;
+#endif
+#endif
+
+    case 0x06:
+        return SERIAL_8N1;
+        break;
+    case 0x0E:
+        return SERIAL_8N2;
+        break;
+    case 0x24:
+        return SERIAL_7E1;
+        break;
+    case 0x26:
+        return SERIAL_8E1;
+        break;
+    case 0x2C:
+        return SERIAL_7E2;
+        break;
+    case 0x2E:
+        return SERIAL_8E2;
+        break;
+    case 0x34:
+        return SERIAL_7O1;
+        break;
+    case 0x36:
+        return SERIAL_8O1;
         break;
     case 0x3C:
         return SERIAL_7O2;
