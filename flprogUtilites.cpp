@@ -6,7 +6,7 @@ SerialConfig flprog::serialModeFromParametrs(byte portDataBits, byte portStopBit
     return serialModeFromInt(serialCodeForParametrs(portDataBits, portStopBits, portParity));
 }
 
-SerialConfig flprog::serialModeFromInt(int code)
+SerialConfig flprog::serialModeFromInt(int16_t code)
 {
     switch (code)
     {
@@ -93,7 +93,7 @@ int flprog::serialModeFromParametrs(byte portDataBits, byte portStopBits, byte p
     return serialModeFromInt(serialCodeForParametrs(portDataBits, portStopBits, portParity));
 }
 
-int flprog::serialModeFromInt(int code)
+int flprog::serialModeFromInt(int16_t code)
 {
     switch (code)
     {
@@ -302,7 +302,7 @@ long flprog::speedFromCode(byte code)
     }
 }
 
-bool flprog::isTimer(unsigned long startTime, unsigned long period)
+bool flprog::isTimer(uint32_t startTime, uint32_t period)
 {
     unsigned long currentTime;
     currentTime = millis();
