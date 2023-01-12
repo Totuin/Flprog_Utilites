@@ -64,6 +64,35 @@ byte FLProgTcpDevice::write(byte buffer[], byte size)
 {
     return tcpClient()->write(buffer, size);
 }
+
+void FLProgTcpDevice::connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth, int newPort)
+{
+
+    if (mode)
+    {
+        if (!tcpClient()->connected())
+        {
+            setAvalibleClientFromServer();
+            return;
+        }
+        return;
+    }
+    IPAddress ip = IPAddress(ipFirst, ipSecond, ipThird, ipFourth);
+    if (tcpClient()->connected())
+    {
+        if (clientRemoteIp() == ip)
+        {
+            if (clientRemotePort() == newPort)
+            {
+                return;
+            }
+        }
+    }
+    stop();
+
+    tcpClient()->connect(ip, newPort);
+}
+
 //----------FLProgW5100TcpDevice--------
 #ifndef ESP32
 void FLProgW5100TcpDevice::begin()
@@ -75,19 +104,11 @@ void FLProgW5100TcpDevice::begin()
     }
 }
 
-void FLProgW5100TcpDevice::connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth)
+void FLProgW5100TcpDevice::setAvalibleClientFromServer()
 {
-    if (!client.connected())
-    {
-        if (mode)
-        {
-            client = server->available();
-        }
-        else
-        {
-            client.connect(IPAddress(ipFirst, ipSecond, ipThird, ipFourth), tcpPort);
-        }
-    }
+    if (server == 0)
+        return;
+    client = server->available();
 }
 
 #endif
@@ -103,18 +124,11 @@ void FLProgWiFiTcpDevice::begin()
     }
 }
 
-void FLProgWiFiTcpDevice::connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth)
+void FLProgWiFiTcpDevice::setAvalibleClientFromServer()
 {
-    if (!client.connected())
-    {
-        if (mode)
-        {
-            client = server->available();
-        }
-        else
-        {
-            client.connect(IPAddress(ipFirst, ipSecond, ipThird, ipFourth), tcpPort);
-        }
-    }
+    if (server == 0)
+        return;
+    client = server->available();
 }
+
 #endif

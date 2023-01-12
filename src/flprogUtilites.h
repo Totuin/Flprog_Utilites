@@ -3,6 +3,9 @@
 #include "uart/flprogUart.h"
 #include "tcp/flprogTcpDevice.h"
 
+
+
+
 namespace flprog
 {
     bool isTimer(uint32_t startTime, uint32_t period);
@@ -17,3 +20,5 @@ namespace flprog
 
     long speedFromCode(byte code);
 };
+
+

@@ -25,17 +25,22 @@ public:
     void setPort(int port);
     bool connected();
     void connect() { connect(0, 0, 0, 0); };
+    void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth) { connect(ipFirst, ipSecond, ipThird, ipFourth, tcpPort); };
+    void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth, int newPort);
     void print(String data);
     byte write(byte buffer[], byte size);
-    virtual void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth){};
     virtual void begin(){};
     void restart();
     void stop();
+    virtual bool hasClient() { return false; };
 
 protected:
     bool mode = TSP_CLIENT_MODE;
     int tcpPort = 502;
     virtual Client *tcpClient() { return 0; };
+    virtual void setAvalibleClientFromServer(){};
+    virtual IPAddress clientRemoteIp() { return IPAddress(0, 0, 0, 0); };
+    virtual int clientRemotePort() { return 0; };
 
 private:
 };
@@ -45,10 +50,13 @@ class FLProgW5100TcpDevice : public FLProgTcpDevice
 {
 public:
     virtual void begin();
-    virtual void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth);
+    virtual bool hasClient() { return client; };
 
 protected:
     virtual Client *tcpClient() { return &client; };
+    virtual void setAvalibleClientFromServer();
+    virtual IPAddress clientRemoteIp() { return client.remoteIP(); };
+    virtual int clientRemotePort() { return client.remotePort(); };
 
 private:
     EthernetServer *server;
@@ -61,10 +69,13 @@ class FLProgWiFiTcpDevice : public FLProgTcpDevice
 {
 public:
     virtual void begin();
-    virtual void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth);
+    virtual bool hasClient() { return client; };
 
 protected:
     virtual Client *tcpClient() { return &client; };
+    virtual void setAvalibleClientFromServer();
+    virtual IPAddress clientRemoteIp() { return client.remoteIP(); };
+    virtual int clientRemotePort() { return client.remotePort(); };
 
 private:
     WiFiServer *server;
