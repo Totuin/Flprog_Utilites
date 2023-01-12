@@ -1,7 +1,7 @@
 #pragma once
 #include <Arduino.h>
-#include "flprogUart.h"
-#include "flprogTcpDevice.h"
+#include "uart/flprogUart.h"
+#include "tcp/flprogTcpDevice.h"
 
 namespace flprog
 {
