@@ -12,8 +12,8 @@
 #include "WiFi.h"
 #endif
 
-#define TCP_SERVER_MODE true
-#define TSP_CLIENT_MODE false
+#define TCP_SERVER_MODE 1
+#define TSP_CLIENT_MODE 0
 
 class FLProgTcpDevice
 {
@@ -33,6 +33,7 @@ public:
     void restart();
     void stop();
     virtual bool hasClient() { return false; };
+    virtual bool hasServer() { return false; };
 
 protected:
     bool mode = TSP_CLIENT_MODE;
@@ -51,6 +52,7 @@ class FLProgW5100TcpDevice : public FLProgTcpDevice
 public:
     virtual void begin();
     virtual bool hasClient() { return client; };
+    virtual bool hasServer() { return server != 0; };
 
 protected:
     virtual Client *tcpClient() { return &client; };
@@ -70,6 +72,7 @@ class FLProgWiFiTcpDevice : public FLProgTcpDevice
 public:
     virtual void begin();
     virtual bool hasClient() { return client; };
+    virtual bool hasServer() { return server != 0; };
 
 protected:
     virtual Client *tcpClient() { return &client; };

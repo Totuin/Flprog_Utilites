@@ -27,7 +27,10 @@ void FLProgTcpDevice::beServer()
 void FLProgTcpDevice::restart()
 {
     stop();
+    if (mode && (hasServer()))
+    {
     begin();
+    }
 }
 
 void FLProgTcpDevice::stop()
