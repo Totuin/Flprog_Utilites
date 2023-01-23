@@ -1,10 +1,12 @@
 #pragma once
 #include <Arduino.h>
+
+#if defined(ESP8266) || defined(ESP32)
+#define CORE_ESP8266_OR_ESP32
+#endif
+
 #include "uart/flprogUart.h"
 #include "tcp/flprogTcpDevice.h"
-
-
-
 
 namespace flprog
 {
@@ -20,5 +22,3 @@ namespace flprog
 
     long speedFromCode(byte code);
 };
-
-

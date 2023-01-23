@@ -1,7 +1,7 @@
 #pragma once
 #include "Arduino.h"
 #include "./flprogUtilites.h"
-#ifndef ESP32
+#ifndef CORE_ESP8266_OR_ESP32
 #include "Ethernet.h"
 #include "SPI.h"
 #endif
@@ -11,7 +11,6 @@
 #ifdef ESP32
 #include "WiFi.h"
 #endif
-
 #define TCP_SERVER_MODE 1
 #define TSP_CLIENT_MODE 0
 
@@ -26,7 +25,8 @@ public:
     bool connected();
     void connect() { connect(0, 0, 0, 0); };
     void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth) { connect(ipFirst, ipSecond, ipThird, ipFourth, tcpPort); };
-    void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth, int newPort);
+    virtual void connect(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, int newPort);
+    virtual void connect(IPAddress newIp, int newPort);
     void print(String data);
     byte write(byte buffer[], byte size);
     virtual void begin(){};
@@ -42,11 +42,12 @@ protected:
     virtual void setAvalibleClientFromServer(){};
     virtual IPAddress clientRemoteIp() { return IPAddress(0, 0, 0, 0); };
     virtual int clientRemotePort() { return 0; };
+    IPAddress workIp;
 
 private:
 };
 
-#ifndef ESP32
+#ifndef CORE_ESP8266_OR_ESP32
 class FLProgW5100TcpDevice : public FLProgTcpDevice
 {
 public:
@@ -60,13 +61,14 @@ protected:
     virtual IPAddress clientRemoteIp() { return client.remoteIP(); };
     virtual int clientRemotePort() { return client.remotePort(); };
 
+
 private:
     EthernetServer *server;
     EthernetClient client;
 };
 #endif
 
-#if defined(ESP8266) || defined(ESP32)
+#ifdef CORE_ESP8266_OR_ESP32
 class FLProgWiFiTcpDevice : public FLProgTcpDevice
 {
 public:

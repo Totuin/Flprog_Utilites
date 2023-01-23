@@ -29,7 +29,7 @@ void FLProgTcpDevice::restart()
     stop();
     if (mode && (hasServer()))
     {
-    begin();
+        begin();
     }
 }
 
@@ -68,9 +68,18 @@ byte FLProgTcpDevice::write(byte buffer[], byte size)
     return tcpClient()->write(buffer, size);
 }
 
-void FLProgTcpDevice::connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth, int newPort)
+void FLProgTcpDevice::connect(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, int newPort)
 {
+    workIp[0] = ipFirst;
+    workIp[1] = ipSecond;
+    workIp[2] = ipThird;
+    workIp[3] = ipFourth;
 
+    connect(workIp, newPort);
+}
+
+void FLProgTcpDevice::connect(IPAddress newIp, int newPort)
+{
     if (mode)
     {
         if (!tcpClient()->connected())
@@ -80,10 +89,9 @@ void FLProgTcpDevice::connect(byte ipFirst, byte ipSecond, byte ipThird, byte ip
         }
         return;
     }
-    IPAddress ip = IPAddress(ipFirst, ipSecond, ipThird, ipFourth);
     if (tcpClient()->connected())
     {
-        if (clientRemoteIp() == ip)
+        if (clientRemoteIp() == newIp)
         {
             if (clientRemotePort() == newPort)
             {
@@ -92,12 +100,11 @@ void FLProgTcpDevice::connect(byte ipFirst, byte ipSecond, byte ipThird, byte ip
         }
     }
     stop();
-
-    tcpClient()->connect(ip, newPort);
+    tcpClient()->connect(newIp, newPort);
 }
 
 //----------FLProgW5100TcpDevice--------
-#ifndef ESP32
+#ifndef CORE_ESP8266_OR_ESP32
 void FLProgW5100TcpDevice::begin()
 {
     if (mode)
@@ -117,7 +124,7 @@ void FLProgW5100TcpDevice::setAvalibleClientFromServer()
 #endif
 
 //-------------FLProgWiFiTcpDevice-----------
-#if defined(ESP8266) || defined(ESP32)
+#ifdef CORE_ESP8266_OR_ESP32
 void FLProgWiFiTcpDevice::begin()
 {
     if (mode)
