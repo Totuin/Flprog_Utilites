@@ -304,8 +304,7 @@ long flprog::speedFromCode(byte code)
 
 bool flprog::isTimer(uint32_t startTime, uint32_t period)
 {
-    unsigned long currentTime;
-    currentTime = millis();
+    unsigned long currentTime = millis();
     if (currentTime >= startTime)
     {
         return (currentTime >= (startTime + period));
@@ -316,4 +315,15 @@ bool flprog::isTimer(uint32_t startTime, uint32_t period)
     }
 }
 
-
+bool flprog::isTimerMicros(unsigned long startTime, unsigned long period)
+{
+    unsigned long currentTime = micros();
+    if (currentTime >= startTime)
+    {
+        return (currentTime >= (startTime + period));
+    }
+    else
+    {
+        return (currentTime >= (4294967295 - startTime + period));
+    }
+}

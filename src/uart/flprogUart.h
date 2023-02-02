@@ -43,7 +43,7 @@ class FLProgUart
 public:
     FLProgUart(){};
     FLProgUart(HardwareSerial *hardwarePort);
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
     FLProgUart(USBSerial *port);
 #endif
 
@@ -99,7 +99,7 @@ private:
 protected:
     virtual Stream *uartPort();
     HardwareSerial *port;
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
     USBSerial *usbPort;
 #endif
     byte type = FLPROG_HARDWARE_UART;

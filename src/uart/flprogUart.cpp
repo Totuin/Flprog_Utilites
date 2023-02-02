@@ -1,7 +1,7 @@
 #include "flprogUart.h"
 
 // --------------FLProgSoftwareUart------------------------
-#ifndef ESP32
+#ifndef CORE_ESP32
 FLProgSoftwareUart::FLProgSoftwareUart(byte receivePin, byte transmitPin)
 {
     softwarePort = new SoftwareSerial(receivePin, transmitPin);
@@ -27,7 +27,7 @@ void FLProgSoftwareUart::begin()
 
 #endif
 //----------------------FLProgBluetoothUart---------------
-#ifdef ESP32
+#ifdef CORE_ESP32
 FLProgBluetoothUart::FLProgBluetoothUart(String name)
 {
     bluetoothPort = new BluetoothSerial();
@@ -101,7 +101,7 @@ void FLProgBluetoothUart::begin()
 
 Stream *FLProgUart::uartPort()
 {
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
     if (type == FLPROG_USB_UART)
     {
         return usbPort;
@@ -115,7 +115,7 @@ FLProgUart::FLProgUart(HardwareSerial *hardwarePort)
     port = hardwarePort;
 }
 
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
 FLProgUart::FLProgUart(USBSerial *port)
 {
     usbPort = port;
@@ -125,7 +125,7 @@ FLProgUart::FLProgUart(USBSerial *port)
 
 bool FLProgUart::hasPort()
 {
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
     if (type == FLPROG_USB_UART)
     {
         return !(usbPort == 0);
@@ -136,7 +136,7 @@ bool FLProgUart::hasPort()
 
 void FLProgUart::restartPort()
 {
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
     if (type == FLPROG_USB_UART)
     {
         usbPort->end();
@@ -150,7 +150,7 @@ void FLProgUart::restartPort()
 
 void FLProgUart::begin()
 {
-#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#ifdef STM32_USB_COM0
     if (type == FLPROG_USB_UART)
     {
         usbPort->begin(speedFromCode(), serialModeFromParametrs());
@@ -166,7 +166,7 @@ void FLProgUart::begin(int32_t speed)
     begin();
 }
 
-#ifdef ESP8266
+#ifdef CORE_ESP8266
 void FLProgUart::begin(int32_t speed, SerialConfig mode)
 {
     setCodeFromSpeed(speed);
@@ -250,7 +250,7 @@ void FLProgUart::setPortParity(byte parity)
     restartPort();
 }
 
-#ifdef ESP8266
+#ifdef CORE_ESP8266
 SerialConfig FLProgUart::serialModeFromParametrs()
 {
     return serialModeFromInt(serialCodeForParametrs());
@@ -501,7 +501,7 @@ int FLProgUart::serialModeFromInt(int16_t code)
 {
     switch (code)
     {
-#ifdef _STM32_DEF_
+#ifdef CORE_STM32
 #ifdef UART_WORDLENGTH_7B
     case 0x04:
         return SERIAL_7N1;
@@ -524,7 +524,7 @@ int FLProgUart::serialModeFromInt(int16_t code)
 #endif
 #endif
 
-#ifdef _STM8_DEF_
+#ifdef CORE_STM8
 #ifdef UART_WORDLENGTH_7B
     case 0x04:
         return SERIAL_7N1;
@@ -547,8 +547,8 @@ int FLProgUart::serialModeFromInt(int16_t code)
 #endif
 #endif
 
-#ifndef _STM32_DEF_
-#ifndef _STM8_DEF_
+#ifndef CORE_STM32
+#ifndef CORE_STM8
     case 0x00:
         return SERIAL_5N1;
         break;

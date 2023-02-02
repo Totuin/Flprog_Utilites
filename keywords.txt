@@ -6,6 +6,24 @@ FLProgUart	KEYWORD1
 FLProgBluetoothUart	KEYWORD1
 FLProgSoftwareUart	KEYWORD1
 
+FLProgI2C	KEYWORD1
+
+
+
+
+resetSpeedFrom	KEYWORD2
+begin	KEYWORD2
+findAddr	KEYWORD2
+getErrorCode	KEYWORD2
+beginTransmission	KEYWORD2
+write	KEYWORD2
+available	KEYWORD2
+read	KEYWORD2
+requestFrom	KEYWORD2
+waitingForData	KEYWORD2
+setSpeed	KEYWORD2
+resetSpeedFrom	KEYWORD2
+
 
 SPEED_300	LITERAL1
 SPEED_600	LITERAL1

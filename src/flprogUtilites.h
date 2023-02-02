@@ -5,8 +5,33 @@
 #define CORE_ESP8266_OR_ESP32
 #endif
 
+#ifdef ESP8266
+#define CORE_ESP8266
+#endif
+
+#ifdef ESP32
+#define CORE_ESP32
+#endif
+
+#ifdef _STM32_DEF_
+#define CORE_STM32
+#endif
+
+#ifdef _STM8_DEF_
+#define CORE_STM8
+#endif
+
+#if defined(_STM32_DEF_) && defined(USBCON) && defined(USBD_USE_CDC)
+#define STM32_USB_COM0
+#endif
+
+ #if defined(__AVR__)
+#define CORE_AVR
+#endif
+
 #include "uart/flprogUart.h"
 #include "tcp/flprogTcpDevice.h"
+#include "i2c/flprogI2C.h"
 
 namespace flprog
 {
@@ -21,4 +46,5 @@ namespace flprog
 #endif
 
     long speedFromCode(byte code);
+    bool isTimerMicros(unsigned long startTime, unsigned long period);
 };
