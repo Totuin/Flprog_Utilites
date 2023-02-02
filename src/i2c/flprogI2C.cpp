@@ -203,7 +203,7 @@ void FLProgI2C::beginTransmission(uint8_t addr)
 #endif
 }
 
-void FLProgI2C::write(const uint8_t *data, size_t quantity)
+void FLProgI2C::write(const uint8_t *data, uint8_t quantity)
 {
     if (!checkBus())
     {
@@ -419,4 +419,151 @@ void FLProgI2C::resetSpeedFrom(uint32_t newSpeed)
         Wire2.setClock(speed);
     }
 #endif
+}
+
+//--------------FLProgTCA9548A----------
+
+FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress = 0x70)
+{
+    i2cDevice = device;
+    address = deviceAddress;
+}
+
+void FLProgTCA9548A::beginTransmission(uint8_t addr, uint8_t chanel)
+{
+    switchToChanel(chanel);
+    i2cDevice->beginTransmission(addr);
+}
+
+void FLProgTCA9548A::write(const uint8_t *data, uint8_t quantity)
+{
+    i2cDevice->write(data, quantity);
+}
+
+void FLProgTCA9548A::write(uint8_t data)
+{
+    i2cDevice->write(data);
+}
+
+uint8_t FLProgTCA9548A::endTransmission()
+{
+   
+    return i2cDevice->endTransmission();
+}
+
+int FLProgTCA9548A::available(uint8_t chanel)
+{
+    switchToChanel(chanel);
+    return i2cDevice->available();
+}
+
+int FLProgTCA9548A::read(uint8_t chanel)
+{
+    switchToChanel(chanel);
+    return i2cDevice->read();
+}
+
+uint8_t FLProgTCA9548A::requestFrom(uint8_t address, uint8_t quantity, uint8_t chanel)
+{
+    switchToChanel(chanel);
+    return i2cDevice->requestFrom(address, quantity);
+}
+
+void FLProgTCA9548A::setSpeed(uint32_t newSpeed, uint8_t chanel)
+{
+    switchToChanel(chanel);
+    return i2cDevice->setSpeed(newSpeed);
+}
+
+void FLProgTCA9548A::resetSpeedFrom(uint32_t newSpeed, uint8_t chanel)
+{
+    switchToChanel(chanel);
+    return i2cDevice->resetSpeedFrom(newSpeed);
+}
+
+bool FLProgTCA9548A::checkBus()
+{
+    return i2cDevice->checkBus();
+}
+
+void FLProgTCA9548A::switchToChanel(uint8_t chanel)
+{
+    if (chanel == currentChanel)
+    {
+        return;
+    }
+
+    if (chanel > 7)
+    {
+        errorCode = 80;
+        return;
+    }
+
+    i2cDevice->beginTransmission(address);
+    i2cDevice->write(1 << chanel);
+    errorCode = i2cDevice->endTransmission();
+    chanel = currentChanel;
+}
+
+//--------------FLProgVirtualI2C----------
+
+FLProgVirtualI2C::FLProgVirtualI2C(FLProgTCA9548A *parentDevice, uint8_t chanelOnParent)
+{
+    parent = parentDevice;
+    chanel = chanelOnParent;
+}
+
+bool FLProgVirtualI2C::begin()
+{
+    return true;
+}
+
+void FLProgVirtualI2C::beginTransmission(uint8_t addr)
+{
+    parent->beginTransmission(addr, chanel);
+}
+
+void FLProgVirtualI2C::write(const uint8_t *data, uint8_t quantity)
+{
+    parent->write(data, quantity);
+}
+
+void FLProgVirtualI2C::write(uint8_t data)
+{
+    parent->write(data);
+}
+
+uint8_t FLProgVirtualI2C::endTransmission()
+{
+    return parent->endTransmission();
+}
+
+int FLProgVirtualI2C::available()
+{
+    return parent->available(chanel);
+}
+
+int FLProgVirtualI2C::read()
+{
+    return parent->read(chanel);
+}
+
+uint8_t FLProgVirtualI2C::requestFrom(uint8_t address, uint8_t quantity)
+{
+    return parent->requestFrom(address, quantity, chanel);
+}
+
+void FLProgVirtualI2C::setSpeed(uint32_t newSpeed)
+{
+    parent->setSpeed(newSpeed, chanel);
+}
+
+void FLProgVirtualI2C::resetSpeedFrom(uint32_t newSpeed)
+{
+    parent->resetSpeedFrom(newSpeed, chanel);
+}
+
+bool FLProgVirtualI2C::checkBus()
+{
+    return parent->checkBus();
 }
