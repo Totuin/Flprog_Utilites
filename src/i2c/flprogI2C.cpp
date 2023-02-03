@@ -347,12 +347,12 @@ void FLProgTCA9548A::beginTransmission(uint8_t addr, uint8_t chanel)
     i2cDevice->beginTransmission(addr);
 }
 
-void FLProgTCA9548A::write(const uint8_t *data, uint8_t quantity)
+void FLProgTCA9548A::write(const uint8_t *data, uint8_t quantity, uint8_t chanel)
 {
     i2cDevice->write(data, quantity);
 }
 
-void FLProgTCA9548A::write(uint8_t data)
+void FLProgTCA9548A::write(uint8_t data, uint8_t chanel)
 {
     i2cDevice->write(data);
 }
@@ -414,7 +414,7 @@ void FLProgTCA9548A::switchToChanel(uint8_t chanel)
     i2cDevice->beginTransmission(address);
     i2cDevice->write(1 << chanel);
     errorCode = i2cDevice->endTransmission();
-    chanel = currentChanel;
+    currentChanel = chanel;
 }
 
 //--------------FLProgVirtualI2C----------
@@ -437,12 +437,12 @@ void FLProgVirtualI2C::beginTransmission(uint8_t addr)
 
 void FLProgVirtualI2C::write(const uint8_t *data, uint8_t quantity)
 {
-    parent->write(data, quantity);
+    parent->write(data, quantity, chanel);
 }
 
 void FLProgVirtualI2C::write(uint8_t data)
 {
-    parent->write(data);
+    parent->write(data, chanel);
 }
 
 uint8_t FLProgVirtualI2C::endTransmission()

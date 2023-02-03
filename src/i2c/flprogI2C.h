@@ -56,8 +56,8 @@ public:
     FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress);
     FLProgTCA9548A(FLProgI2C *device);
     void beginTransmission(uint8_t addr, uint8_t chanel);
-    void write(const uint8_t *data, uint8_t quantity);
-    void write(uint8_t data);
+    void write(const uint8_t *data, uint8_t quantity, uint8_t chanel);
+    void write(uint8_t data, uint8_t chanel);
     uint8_t endTransmission();
     int available(uint8_t chanel);
     int read(uint8_t chanel);
