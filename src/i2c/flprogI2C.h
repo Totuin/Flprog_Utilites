@@ -13,9 +13,7 @@
 #define FLPROG_CAN_USE_I2C_1
 #endif
 
-#ifdef CORE_STM32
-#define FLPROG_CAN_USE_I2C_2
-#endif
+
 
 class FLProgI2C
 {
@@ -47,18 +45,16 @@ protected:
     int scl = -1;
     uint32_t speed = FLPROG_I2CSPEED;
     bool beginWire0();
-#if defined(CORE_ESP32) || defined(CORE_STM32)
+#ifdef FLPROG_CAN_USE_I2C_1
     bool beginWire1();
-#endif
-#ifdef CORE_STM32
-    bool beginWire2();
 #endif
 };
 
 class FLProgTCA9548A
 {
 public:
-    FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress = 0x70);
+    FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress);
+    FLProgTCA9548A(FLProgI2C *device);
     void beginTransmission(uint8_t addr, uint8_t chanel);
     void write(const uint8_t *data, uint8_t quantity);
     void write(uint8_t data);

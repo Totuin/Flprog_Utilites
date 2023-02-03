@@ -1,5 +1,9 @@
 #include "flprogI2C.h"
 
+#ifdef CORE_STM32
+TwoWire Wire1(PB11, PB10);
+#endif
+
 FLProgI2C::FLProgI2C(byte busNumber)
 {
     bus = busNumber;
@@ -15,13 +19,6 @@ bool FLProgI2C::checkBus()
     if (bus == 1)
     {
 
-        return true;
-    }
-#endif
-
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
         return true;
     }
 #endif
@@ -60,23 +57,16 @@ bool FLProgI2C::begin()
         return beginWire1();
     }
 #endif
-
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        return beginWire2();
-    }
-#endif
     return false;
 }
 
 bool FLProgI2C::beginWire0()
 {
-#if defined(CORE_STM32) || defined(CORE_AVR)
+#ifdef CORE_AVR
     Wire.begin(); //--Инициализация как Master;
 #endif
 
-#ifdef CORE_ESP8266
+#if defined(CORE_ESP8266) || defined(CORE_STM32)
     if ((sda < 0) || (scl < 0))
     {
         Wire.begin();
@@ -85,9 +75,11 @@ bool FLProgI2C::beginWire0()
     {
         Wire.begin(sda, scl); //--Установка номеров пинов SDA,SCL и инициализация как Master;
     }
-    i2cBus().setClockStretchLimit(260); //--Ограничение лимита по времени;
-#endif
 
+#endif
+#ifdef CORE_ESP8266
+    Wire.setClockStretchLimit(260); //--Ограничение лимита по времени;
+#endif
 #ifdef CORE_ESP32
     Wire.begin(sda, scl, speed);
 #endif
@@ -101,11 +93,7 @@ bool FLProgI2C::beginWire0()
 #ifdef FLPROG_CAN_USE_I2C_1
 bool FLProgI2C::beginWire1()
 {
-#if defined(CORE_STM32) || defined(CORE_AVR)
-    Wire1.begin(); //--Инициализация как Master;
-#endif
-
-#ifdef CORE_ESP8266
+#ifdef CORE_STM32
     if ((sda < 0) || (scl < 0))
     {
         Wire1.begin();
@@ -114,44 +102,12 @@ bool FLProgI2C::beginWire1()
     {
         Wire1.begin(sda, scl); //--Установка номеров пинов SDA,SCL и инициализация как Master;
     }
-    i2cBus().setClockStretchLimit(260); //--Ограничение лимита по времени;
-#endif
 
-#ifdef CORE_ESP32
-    Wire1.begin(sda, scl, speed);
-#endif
-#ifndef CORE_ESP32
     Wire1.setClock(speed); //--Установка частоты шины;
 #endif
-    status = 1; //--Установка статуса Master и успешный выход;
-    return true;
-}
-#endif
-
-#ifdef FLPROG_CAN_USE_I2C_2
-bool FLProgI2C::beginWire2()
-{
-#if defined(CORE_STM32) || defined(CORE_AVR)
-    Wire2.begin(); //--Инициализация как Master;
-#endif
-
-#ifdef CORE_ESP8266
-    if ((sda < 0) || (scl < 0))
-    {
-        Wire2.begin();
-    }
-    else
-    {
-        Wire2.begin(sda, scl); //--Установка номеров пинов SDA,SCL и инициализация как Master;
-    }
-    i2cBus().setClockStretchLimit(260); //--Ограничение лимита по времени;
-#endif
-
 #ifdef CORE_ESP32
-    Wire2.begin(sda, scl, speed);
-#endif
-#ifndef CORE_ESP32
-    Wire2.setClock(speed); //--Установка частоты шины;
+    Wire1.begin(sda, scl, speed);
+    Wire1.setClock(speed); //--Установка частоты шины;
 #endif
     status = 1; //--Установка статуса Master и успешный выход;
     return true;
@@ -195,12 +151,6 @@ void FLProgI2C::beginTransmission(uint8_t addr)
         Wire1.beginTransmission(addr);
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        Wire2.beginTransmission(addr);
-    }
-#endif
 }
 
 void FLProgI2C::write(const uint8_t *data, uint8_t quantity)
@@ -218,13 +168,6 @@ void FLProgI2C::write(const uint8_t *data, uint8_t quantity)
     if (bus == 1)
     {
         Wire1.write(data, quantity);
-    }
-#endif
-
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        Wire2.write(data, quantity);
     }
 #endif
 }
@@ -246,12 +189,8 @@ uint8_t FLProgI2C::endTransmission()
         return Wire1.endTransmission();
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        return Wire2.endTransmission();
-    }
-#endif
+
+    return 0;
 }
 
 int FLProgI2C::available()
@@ -266,12 +205,7 @@ int FLProgI2C::available()
         return Wire1.available();
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        return Wire2.available();
-    }
-#endif
+    return 0;
 }
 
 int FLProgI2C::read()
@@ -286,12 +220,7 @@ int FLProgI2C::read()
         return Wire1.read();
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        return Wire2.read();
-    }
-#endif
+    return 0;
 }
 
 uint8_t FLProgI2C::requestFrom(uint8_t address, uint8_t quantity)
@@ -312,12 +241,7 @@ uint8_t FLProgI2C::requestFrom(uint8_t address, uint8_t quantity)
         return Wire1.requestFrom(address, quantity);
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        return Wire2.requestFrom(address, quantity);
-    }
-#endif
+    return 0;
 }
 
 void FLProgI2C::write(uint8_t data)
@@ -335,12 +259,6 @@ void FLProgI2C::write(uint8_t data)
     if (bus == 1)
     {
         Wire1.write(data);
-    }
-#endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        Wire2.write(data);
     }
 #endif
 }
@@ -383,12 +301,6 @@ void FLProgI2C::setSpeed(uint32_t newSpeed)
         Wire1.setClock(newSpeed);
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        Wire2.setClock(newSpeed);
-    }
-#endif
 }
 
 void FLProgI2C::resetSpeedFrom(uint32_t newSpeed)
@@ -413,20 +325,20 @@ void FLProgI2C::resetSpeedFrom(uint32_t newSpeed)
         Wire1.setClock(speed);
     }
 #endif
-#ifdef FLPROG_CAN_USE_I2C_2
-    if (bus == 2)
-    {
-        Wire2.setClock(speed);
-    }
-#endif
 }
 
 //--------------FLProgTCA9548A----------
 
-FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress = 0x70)
+FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress)
 {
     i2cDevice = device;
     address = deviceAddress;
+}
+
+FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device)
+{
+    i2cDevice = device;
+    address = 0x70;
 }
 
 void FLProgTCA9548A::beginTransmission(uint8_t addr, uint8_t chanel)
@@ -447,7 +359,7 @@ void FLProgTCA9548A::write(uint8_t data)
 
 uint8_t FLProgTCA9548A::endTransmission()
 {
-   
+
     return i2cDevice->endTransmission();
 }
 
