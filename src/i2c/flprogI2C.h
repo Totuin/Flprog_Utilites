@@ -13,8 +13,6 @@
 #define FLPROG_CAN_USE_I2C_1
 #endif
 
-
-
 class FLProgI2C
 {
 public:
@@ -24,6 +22,10 @@ public:
     bool begin(int pinSDA, int pinSCL);
     bool findAddr(uint8_t addr);
     uint8_t getErrorCode() { return codeErr; };
+    uint8_t fullWrite(uint8_t addr, uint8_t data);
+    uint8_t fullWrite(uint8_t addr, const uint8_t *data, uint8_t quantity);
+    uint8_t fullRequestFrom(uint8_t address, uint8_t quantity);
+
     virtual void beginTransmission(uint8_t addr);
     virtual void write(const uint8_t *data, uint8_t quantity);
     virtual void write(uint8_t data);

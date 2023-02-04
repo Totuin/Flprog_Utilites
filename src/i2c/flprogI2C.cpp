@@ -134,6 +134,33 @@ bool FLProgI2C::findAddr(uint8_t addr)
     return (codeErr == 0);
 }
 
+uint8_t FLProgI2C::fullWrite(uint8_t addr, uint8_t data)
+{
+    beginTransmission(addr);
+    write(data);
+    codeErr = endTransmission();
+    return codeErr;
+}
+
+uint8_t FLProgI2C::fullWrite(uint8_t addr, const uint8_t *data, uint8_t quantity)
+{
+    beginTransmission(addr);
+    write(data, quantity);
+    codeErr = endTransmission();
+    return codeErr;
+}
+
+uint8_t FLProgI2C::fullRequestFrom(uint8_t address, uint8_t quantity)
+{
+    uint8_t result = requestFrom(address, quantity);
+    if (quantity != result)
+    {
+        codeErr = 80;
+        return codeErr;
+    }
+    return waitingForData(quantity);
+}
+
 void FLProgI2C::beginTransmission(uint8_t addr)
 {
     if (!checkBus())
