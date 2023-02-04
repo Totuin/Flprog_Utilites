@@ -25,6 +25,7 @@ public:
     uint8_t fullWrite(uint8_t addr, uint8_t data);
     uint8_t fullWrite(uint8_t addr, const uint8_t *data, uint8_t quantity);
     uint8_t fullRequestFrom(uint8_t address, uint8_t quantity);
+    uint8_t fullRead(uint8_t addr, uint8_t *data, uint8_t quantity);
 
     virtual void beginTransmission(uint8_t addr);
     virtual void write(const uint8_t *data, uint8_t quantity);
