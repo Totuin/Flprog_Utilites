@@ -175,6 +175,34 @@ uint8_t FLProgI2C::fullRead(uint8_t addr, uint8_t *data, uint8_t quantity)
     return codeErr;
 }
 
+uint8_t FLProgI2C::fullRead(uint8_t addr, uint16_t *data, uint8_t quantity)
+{
+    codeErr = fullRequestFrom(addr, quantity);
+    if (codeErr)
+    {
+        return codeErr;
+    }
+    for (uint8_t i = 0; i < quantity; i++)
+    {
+        data[i] = read();
+    }
+    return codeErr;
+}
+
+uint8_t FLProgI2C::fullRead(uint8_t addr, uint32_t *data, uint8_t quantity)
+{
+    codeErr = fullRequestFrom(addr, quantity);
+    if (codeErr)
+    {
+        return codeErr;
+    }
+    for (uint8_t i = 0; i < quantity; i++)
+    {
+        data[i] = read();
+    }
+    return codeErr;
+}
+
 void FLProgI2C::beginTransmission(uint8_t addr)
 {
     if (!checkBus())
