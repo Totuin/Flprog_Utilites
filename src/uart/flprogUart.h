@@ -92,62 +92,6 @@ class FLProgUartBasic
 
 };
 
-/*
-class FLProgUart : public FLProgUartBasic
-{
-public:
-    FLProgUart(){};
-#ifdef FLPROG_CORE_AVR_DUE
-    FLProgUart(UARTClass *hardwarePort);
-#else
-    FLProgUart(HardwareSerial *hardwarePort);
-#endif
-#ifdef FLPROG_STM32_USB_COM0
-    FLProgUart(USBSerial *port);
-#endif
-    virtual void begin();
-    void begin(int32_t speed);
-#ifdef FLPROG_CORE_ESP8266
-    void begin(int32_t speed, SerialConfig mode);
-#else
-#ifdef FLPROG_CORE_AVR_DUE
-    void begin(int32_t speed, UARTClass::UARTModes mode);
-#else
-    void begin(int32_t speed, int mode);
-#endif
-#endif
-    virtual bool hasPort();
-    virtual void restartPort();
-
-protected:
-    virtual Stream *uartPort();
-    
-    
-#ifdef FLPROG_CORE_AVR_DUE
-    UARTClass *port;
-#else
-    HardwareSerial *port;
-#endif
-#ifdef FLPROG_STM32_USB_COM0
-    USBSerial *usbPort;
-#endif
-    byte type = FLPROG_HARDWARE_UART;
-    
-#ifdef ESP8266
-    SerialConfig serialModeFromParametrs();
-    void setSerialMode(SerialConfig mode);
-#else
-#ifdef FLPROG_CORE_AVR_DUE
-    UARTClass::UARTModes serialModeFromParametrs();
-    void setSerialMode(UARTClass::UARTModes mode);
-#else
-    int serialModeFromParametrs();
-    void setSerialMode(int16_t mode);
-#endif
-#endif
-};
-*/
-
 #ifdef FLPROG_CORE_ESP8266
 #include "hardwareUart\hardwareUartESP8266\hardwareUartESP8266.h"
 #endif
