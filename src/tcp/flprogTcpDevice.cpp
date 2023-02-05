@@ -12,7 +12,7 @@ void FLProgTcpDevice::beClient()
 {
     if (!mode)
         return;
-    mode = TSP_CLIENT_MODE;
+    mode = FLPROG_TSP_CLIENT_MODE;
     restart();
 }
 
@@ -20,7 +20,7 @@ void FLProgTcpDevice::beServer()
 {
     if (mode)
         return;
-    mode = TCP_SERVER_MODE;
+    mode = FLPROG_TCP_SERVER_MODE;
     restart();
 }
 
@@ -104,7 +104,7 @@ void FLProgTcpDevice::connect(IPAddress newIp, int newPort)
 }
 
 //----------FLProgW5100TcpDevice--------
-#ifndef CORE_ESP8266_OR_ESP32
+#ifndef FLPROG_CORE_ESP8266_OR_ESP32
 void FLProgW5100TcpDevice::begin()
 {
     if (mode)
@@ -124,7 +124,7 @@ void FLProgW5100TcpDevice::setAvalibleClientFromServer()
 #endif
 
 //-------------FLProgWiFiTcpDevice-----------
-#ifdef CORE_ESP8266_OR_ESP32
+#ifdef FLPROG_CORE_ESP8266_OR_ESP32
 void FLProgWiFiTcpDevice::begin()
 {
     if (mode)

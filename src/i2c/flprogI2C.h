@@ -3,7 +3,7 @@
 #include <Wire.h>
 #include "./flprogUtilites.h"
 
-#ifdef CORE_ESP8266
+#ifdef FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL;
 #else
 #define FLPROG_I2CSPEED 400000UL;

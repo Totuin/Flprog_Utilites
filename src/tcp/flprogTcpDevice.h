@@ -1,7 +1,7 @@
 #pragma once
 #include "Arduino.h"
 #include "./flprogUtilites.h"
-#ifndef CORE_ESP8266_OR_ESP32
+#ifndef FLPROG_CORE_ESP8266_OR_ESP32
 #include "Ethernet.h"
 #include "SPI.h"
 #endif
@@ -11,8 +11,8 @@
 #ifdef ESP32
 #include "WiFi.h"
 #endif
-#define TCP_SERVER_MODE 1
-#define TSP_CLIENT_MODE 0
+#define FLPROG_TCP_SERVER_MODE 1
+#define FLPROG_TSP_CLIENT_MODE 0
 
 class FLProgTcpDevice
 {
@@ -36,7 +36,7 @@ public:
     virtual bool hasServer() { return false; };
 
 protected:
-    bool mode = TSP_CLIENT_MODE;
+    bool mode = FLPROG_TSP_CLIENT_MODE;
     int tcpPort = 502;
     virtual Client *tcpClient() { return 0; };
     virtual void setAvalibleClientFromServer(){};
@@ -47,7 +47,7 @@ protected:
 private:
 };
 
-#ifndef CORE_ESP8266_OR_ESP32
+#ifndef FLPROG_CORE_ESP8266_OR_ESP32
 class FLProgW5100TcpDevice : public FLProgTcpDevice
 {
 public:
@@ -68,7 +68,7 @@ private:
 };
 #endif
 
-#ifdef CORE_ESP8266_OR_ESP32
+#ifdef FLPROG_CORE_ESP8266_OR_ESP32
 class FLProgWiFiTcpDevice : public FLProgTcpDevice
 {
 public:

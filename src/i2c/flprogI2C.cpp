@@ -1,6 +1,6 @@
 #include "flprogI2C.h"
 
-#ifdef CORE_STM32
+#ifdef FLPROG_CORE_STM32
 TwoWire Wire1(PB11, PB10);
 #endif
 
@@ -15,7 +15,7 @@ bool FLProgI2C::checkBus()
     {
         return true;
     }
-#ifdef FLPROG_CAN_USE_I2C_1
+#ifdef FLPROG_FLPROG_CAN_USE_I2C_1
     if (bus == 1)
     {
 
@@ -62,7 +62,7 @@ bool FLProgI2C::begin()
 
 bool FLProgI2C::beginWire0()
 {
-#ifdef CORE_AVR
+#ifdef FLPROG_CORE_AVR
     Wire.begin(); //--Инициализация как Master;
 #endif
 
@@ -77,20 +77,20 @@ bool FLProgI2C::beginWire0()
     }
 
 #endif
-#ifdef CORE_ESP8266
+#ifdef FLPROG_CORE_ESP8266
     Wire.setClockStretchLimit(260); //--Ограничение лимита по времени;
 #endif
-#ifdef CORE_ESP32
+#ifdef FLPROG_CORE_ESP32
     Wire.begin(sda, scl, speed);
 #endif
-#ifndef CORE_ESP32
+#ifndef FLPROG_CORE_ESP32
     Wire.setClock(speed); //--Установка частоты шины;
 #endif
     status = 1; //--Установка статуса Master и успешный выход;
     return true;
 }
 
-#ifdef FLPROG_CAN_USE_I2C_1
+#ifdef FLPROG_FLPROG_CAN_USE_I2C_1
 bool FLProgI2C::beginWire1()
 {
 #ifdef CORE_STM32
@@ -105,7 +105,7 @@ bool FLProgI2C::beginWire1()
 
     Wire1.setClock(speed); //--Установка частоты шины;
 #endif
-#ifdef CORE_ESP32
+#ifdef FLPROG_CORE_ESP32
     Wire1.begin(sda, scl, speed);
     Wire1.setClock(speed); //--Установка частоты шины;
 #endif
@@ -214,7 +214,7 @@ void FLProgI2C::beginTransmission(uint8_t addr)
     {
         Wire.beginTransmission(addr);
     }
-#ifdef FLPROG_CAN_USE_I2C_1
+#ifdef FLPROG_FLPROG_CAN_USE_I2C_1
     if (bus == 1)
     {
         Wire1.beginTransmission(addr);

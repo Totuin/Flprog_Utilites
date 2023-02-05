@@ -1,154 +1,177 @@
 #pragma once
 #include "Arduino.h"
-#include "./flprogUtilites.h"
+#include "flprogUtilites.h"
 
-#ifdef ESP32
-#include "BluetoothSerial.h"
-#else
-#include "SoftwareSerial.h"
+#ifndef FLPROG_CORE_ESP32
+#ifndef FLPROG_CORE_AVR_DUE
+#ifndef FLPROG_CORE_STM
+#define FLPROG_CAN_USE_SOFTWARE_SERIAL
+#endif
+#endif
+#endif
+
+#ifdef FLPROG_CORE_ESP32
+#define FLPROG_CAN_USE_BLUETOOTH_SERIAL
 #endif
 
 #define FLPROG_HARDWARE_UART 0
-#define FLPROG_SOFTWARE_UART 1
-#define FLPROG_USB_UART 2
-#define FLPROG_BLUETOOTH_UART 3
+#define FLPROG_USB_UART 1
 
-#define SPEED_300 0
-#define SPEED_600 1
-#define SPEED_1200 2
-#define SPEED_2400 3
-#define SPEED_4800 4
-#define SPEED_9600 5
-#define SPEED_14400 6
-#define SPEED_19200 7
-#define SPEED_28800 8
-#define SPEED_38400 9
-#define SPEED_57600 10
-#define SPEED_115200 11
+#define FLPROG_SPEED_300 0
+#define FLPROG_SPEED_600 1
+#define FLPROG_SPEED_1200 2
+#define FLPROG_SPEED_2400 3
+#define FLPROG_SPEED_4800 4
+#define FLPROG_SPEED_9600 5
+#define FLPROG_SPEED_14400 6
+#define FLPROG_SPEED_19200 7
+#define FLPROG_SPEED_28800 8
+#define FLPROG_SPEED_38400 9
+#define FLPROG_SPEED_57600 10
+#define FLPROG_SPEED_115200 11
 
-#define PORT_STOP_BITS_1 1
-#define PORT_STOP_BITS_2 2
+#define FLPROG_PORT_STOP_BITS_1 1
+#define FLPROG_PORT_STOP_BITS_2 2
 
-#define PORT_DATA_BITS_5 5
-#define PORT_DATA_BITS_6 6
-#define PORT_DATA_BITS_7 7
-#define PORT_DATA_BITS_8 8
+#define FLPROG_PORT_DATA_BITS_5 5
+#define FLPROG_PORT_DATA_BITS_6 6
+#define FLPROG_PORT_DATA_BITS_7 7
+#define FLPROG_PORT_DATA_BITS_8 8
 
-#define PORT_PARITY_NONE 0
-#define PORT_PARITY_EVEN 1
-#define PORT_PARITY_ODD 2
+#define FLPROG_PORT_PARITY_NONE 0
+#define FLPROG_PORT_PARITY_EVEN 1
+#define FLPROG_PORT_PARITY_ODD 2
 
-class FLProgUart
+class FLProgUartBasic
 {
-public:
-    FLProgUart(){};
-    FLProgUart(HardwareSerial *hardwarePort);
-#ifdef STM32_USB_COM0
-    FLProgUart(USBSerial *port);
-#endif
-
-    virtual void begin();
+    public:
+    virtual void begin(){};
     void begin(int32_t speed);
-#ifdef ESP8266
-    void begin(int32_t speed, SerialConfig mode);
-#else
-    void begin(int32_t speed, int mode);
-#endif
-    byte available()
-    {
-        return uartPort()->available();
-    };
-    byte read() { return uartPort()->read(); };
-    byte write(byte *buffer, byte size) { return uartPort()->write(buffer, size); };
-    virtual bool hasPort();
-    virtual void restartPort();
+     byte getPortSpeed() { return portSpeed; };
+    byte getPortDataBits() { return portDataBits; };
+    byte getPortStopBits() { return portStopBits; };
+    byte getPortParity() { return portParity; };
+    virtual bool hasPort() {return false;};
+    virtual void restartPort(){};
     void setPortSpeed(byte speed);
     void setPortDataBits(byte dataBits);
     void setPortStopBits(byte stopBits);
     void setPortParity(byte parity);
-    byte getPortSpeed() { return portSpeed; };
-    byte getPortDataBits() { return portDataBits; };
-    byte getPortStopBits() { return portStopBits; };
-    byte getPortParity() { return portParity; };
+    byte available(){return uartPort()->available(); };
+    byte read() { return uartPort()->read(); };
+    byte write(byte *buffer, byte size) { return uartPort()->write(buffer, size); };
+    
+    void print(String str) { uartPort()->print(str);};
+    void print(const char str[]){ uartPort()->print(str);};
+    void print(char str){uartPort()->print(str);};
+    void print(byte val, int mode = DEC){  uartPort()->print(val, mode);};
+    void print(int val, int mode = DEC){  uartPort()->print(val, mode);};
+    void print(long val, int mode = DEC){  uartPort()->print(val, mode);};
+    void print(unsigned long val, int mode = DEC){  uartPort()->print(val, mode);};
+    void print(float val, int mode = 2){  uartPort()->print(val, mode);};
+     void println(String str){uartPort()->println(str);};
+    void println(char str){uartPort()->println(str);};
+    void println(const char str[]){uartPort()->println(str);};
+    void println(byte val, int mode = DEC){uartPort()->println(val, mode);};
+    void println(int val, int mode = DEC){uartPort()->println(val, mode);};
+    void println(long val, int mode = DEC){uartPort()->println(val, mode);};
+    void println(unsigned long val, int mode = DEC){uartPort()->println(val, mode);};
+    void println(float val, int mode = 2){uartPort()->println(val, mode);};
+    void println(){uartPort()->println();};
+    
 
-    void print(String str);
-    void print(const char str[]);
-    void print(char str);
-    void print(byte val, int mode = DEC);
-    void print(int val, int mode = DEC);
-    void print(long val, int mode = DEC);
-    void print(unsigned long val, int mode = DEC);
-    void print(float val, int mode = 2);
+   protected:
+   virtual Stream *uartPort(){return 0;};
+   uint32_t speedFromCode();
+   int serialCodeForParametrs();
+   void setCodeFromSpeed(int32_t speed);
+    byte portSpeed = FLPROG_SPEED_9600;
+    byte portDataBits = FLPROG_PORT_DATA_BITS_8;
+    byte portStopBits = FLPROG_PORT_STOP_BITS_1;
+    byte portParity = FLPROG_PORT_PARITY_NONE;
 
-    void println(String str);
-    void println(char str);
-    void println(const char str[]);
-    void println(byte val, int mode = DEC);
-    void println(int val, int mode = DEC);
-    void println(long val, int mode = DEC);
-    void println(unsigned long val, int mode = DEC);
-    void println(float val, int mode = 2);
-    void println();
+};
 
-private:
-    byte portSpeed = SPEED_9600;
-    byte portDataBits = PORT_DATA_BITS_8;
-    byte portStopBits = PORT_STOP_BITS_1;
-    byte portParity = PORT_PARITY_NONE;
+/*
+class FLProgUart : public FLProgUartBasic
+{
+public:
+    FLProgUart(){};
+#ifdef FLPROG_CORE_AVR_DUE
+    FLProgUart(UARTClass *hardwarePort);
+#else
+    FLProgUart(HardwareSerial *hardwarePort);
+#endif
+#ifdef FLPROG_STM32_USB_COM0
+    FLProgUart(USBSerial *port);
+#endif
+    virtual void begin();
+    void begin(int32_t speed);
+#ifdef FLPROG_CORE_ESP8266
+    void begin(int32_t speed, SerialConfig mode);
+#else
+#ifdef FLPROG_CORE_AVR_DUE
+    void begin(int32_t speed, UARTClass::UARTModes mode);
+#else
+    void begin(int32_t speed, int mode);
+#endif
+#endif
+    virtual bool hasPort();
+    virtual void restartPort();
 
 protected:
     virtual Stream *uartPort();
+    
+    
+#ifdef FLPROG_CORE_AVR_DUE
+    UARTClass *port;
+#else
     HardwareSerial *port;
-#ifdef STM32_USB_COM0
+#endif
+#ifdef FLPROG_STM32_USB_COM0
     USBSerial *usbPort;
 #endif
     byte type = FLPROG_HARDWARE_UART;
-    int serialCodeForParametrs();
+    
 #ifdef ESP8266
-    SerialConfig serialModeFromInt(int16_t code);
     SerialConfig serialModeFromParametrs();
     void setSerialMode(SerialConfig mode);
 #else
-    int serialModeFromInt(int16_t code);
+#ifdef FLPROG_CORE_AVR_DUE
+    UARTClass::UARTModes serialModeFromParametrs();
+    void setSerialMode(UARTClass::UARTModes mode);
+#else
     int serialModeFromParametrs();
     void setSerialMode(int16_t mode);
 #endif
-    long speedFromCode();
-    void setCodeFromSpeed(int32_t speed);
+#endif
 };
+*/
 
-#ifdef ESP32
-class FLProgBluetoothUart : public FLProgUart
-{
-public:
-    FLProgBluetoothUart(String name);
-    void setDeviceName(String name);
-    void setPartnerName(String name);
-    void beBluetoothMaster();
-    void beBluetoothSlave();
-    virtual bool hasPort();
-    virtual void restartPort();
-    virtual void begin();
+#ifdef FLPROG_CORE_ESP8266
+#include "hardwareUart\hardwareUartESP8266\hardwareUartESP8266.h"
+#endif
 
-protected:
-    BluetoothSerial *bluetoothPort;
-    String deviceName;
-    String partnerName;
-    bool isMaster = false;
-    virtual Stream *uartPort() { return bluetoothPort; };
-};
+#ifdef FLPROG_CORE_AVR_DUE
+#include "hardwareUart\hardwareUartDUE\hardwareUartDUE.h"
+#endif
 
-#else
-class FLProgSoftwareUart : public FLProgUart
-{
-public:
-    FLProgSoftwareUart(byte receivePin, byte transmitPin);
-    virtual void restartPort();
-    virtual bool hasPort();
-    virtual void begin();
+#ifdef FLPROG_CORE_AVR
+#include  "hardwareUart\hardwareUartAVR\hardwareUartAVR.h"
+#endif
 
-protected:
-    SoftwareSerial *softwarePort;
-    virtual Stream *uartPort() { return softwarePort; };
-};
+#ifdef  FLPROG_CORE_ESP32
+#include  "hardwareUart\hardwareUartESP32\hardwareUartESP32.h"
+#endif
+
+#ifdef FLPROG_CORE_STM
+#include  "hardwareUart\hardwareUartSTM\hardwareUartSTM.h"
+#endif
+
+#ifdef FLPROG_CAN_USE_BLUETOOTH_SERIAL
+#include "bluetoothSerial\flprogUartBluetoothSerial.h"
+#endif
+
+#ifdef FLPROG_CAN_USE_SOFTWARE_SERIAL
+#include "softwareUart\flprogSoftwareUart.h"
 #endif

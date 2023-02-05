@@ -1,231 +1,5 @@
 #include "flprogUtilites.h"
 
-#ifdef ESP8266
-SerialConfig flprog::serialModeFromParametrs(byte portDataBits, byte portStopBits, byte portParity)
-{
-    return serialModeFromInt(serialCodeForParametrs(portDataBits, portStopBits, portParity));
-}
-
-SerialConfig flprog::serialModeFromInt(int16_t code)
-{
-    switch (code)
-    {
-    case 0x00:
-        return SERIAL_5N1;
-        break;
-    case 0x02:
-        return SERIAL_6N1;
-        break;
-    case 0x04:
-        return SERIAL_7N1;
-        break;
-    case 0x06:
-        return SERIAL_8N1;
-        break;
-    case 0x08:
-        return SERIAL_5N2;
-        break;
-    case 0x0A:
-        return SERIAL_6N2;
-        break;
-    case 0x0C:
-        return SERIAL_7N2;
-        break;
-    case 0x0E:
-        return SERIAL_8N2;
-        break;
-    case 0x20:
-        return SERIAL_5E1;
-        break;
-    case 0x22:
-        return SERIAL_6E1;
-        break;
-    case 0x24:
-        return SERIAL_7E1;
-        break;
-    case 0x26:
-        return SERIAL_8E1;
-        break;
-    case 0x28:
-        return SERIAL_5E2;
-        break;
-    case 0x2A:
-        return SERIAL_6E2;
-        break;
-    case 0x2C:
-        return SERIAL_7E2;
-        break;
-    case 0x2E:
-        return SERIAL_8E2;
-        break;
-    case 0x30:
-        return SERIAL_5O1;
-        break;
-    case 0x32:
-        return SERIAL_6O1;
-        break;
-    case 0x34:
-        return SERIAL_7O1;
-        break;
-    case 0x36:
-        return SERIAL_8O1;
-        break;
-    case 0x38:
-        return SERIAL_5O2;
-        break;
-    case 0x3A:
-        return SERIAL_6O2;
-        break;
-    case 0x3C:
-        return SERIAL_7O2;
-        break;
-    case 0x3E:
-        return SERIAL_8O2;
-        break;
-    }
-    return SERIAL_8N1;
-}
-
-#else
-
-int flprog::serialModeFromParametrs(byte portDataBits, byte portStopBits, byte portParity)
-{
-    return serialModeFromInt(serialCodeForParametrs(portDataBits, portStopBits, portParity));
-}
-
-int flprog::serialModeFromInt(int16_t code)
-{
-    switch (code)
-    {
-#ifdef _STM32_DEF_
-#ifdef UART_WORDLENGTH_7B
-    case 0x04:
-        return SERIAL_7N1;
-        break;
-    case 0x0C:
-        return SERIAL_7N2;
-        break;
-    case 0x22:
-        return SERIAL_6E1;
-        break;
-    case 0x2A:
-        return SERIAL_6E2;
-        break;
-    case 0x32:
-        return SERIAL_6O1;
-        break;
-    case 0x3A:
-        return SERIAL_6O2;
-        break;
-#endif
-#endif
-
-#ifdef _STM8_DEF_
-#ifdef UART_WORDLENGTH_7B
-    case 0x04:
-        return SERIAL_7N1;
-        break;
-    case 0x0C:
-        return SERIAL_7N2;
-        break;
-    case 0x22:
-        return SERIAL_6E1;
-        break;
-    case 0x2A:
-        return SERIAL_6E2;
-        break;
-    case 0x32:
-        return SERIAL_6O1;
-        break;
-    case 0x3A:
-        return SERIAL_6O2;
-        break;
-#endif
-#endif
-
-#ifndef _STM32_DEF_
-#ifndef _STM8_DEF_
-    case 0x00:
-        return SERIAL_5N1;
-        break;
-    case 0x02:
-        return SERIAL_6N1;
-        break;
-    case 0x04:
-        return SERIAL_7N1;
-        break;
-    case 0x08:
-        return SERIAL_5N2;
-        break;
-    case 0x0A:
-        return SERIAL_6N2;
-        break;
-    case 0x0C:
-        return SERIAL_7N2;
-        break;
-    case 0x20:
-        return SERIAL_5E1;
-        break;
-    case 0x22:
-        return SERIAL_6E1;
-        break;
-    case 0x28:
-        return SERIAL_5E2;
-        break;
-    case 0x2A:
-        return SERIAL_6E2;
-        break;
-    case 0x30:
-        return SERIAL_5O1;
-        break;
-    case 0x32:
-        return SERIAL_6O1;
-        break;
-    case 0x38:
-        return SERIAL_5O2;
-        break;
-    case 0x3A:
-        return SERIAL_6O2;
-        break;
-#endif
-#endif
-
-    case 0x06:
-        return SERIAL_8N1;
-        break;
-    case 0x0E:
-        return SERIAL_8N2;
-        break;
-    case 0x24:
-        return SERIAL_7E1;
-        break;
-    case 0x26:
-        return SERIAL_8E1;
-        break;
-    case 0x2C:
-        return SERIAL_7E2;
-        break;
-    case 0x2E:
-        return SERIAL_8E2;
-        break;
-    case 0x34:
-        return SERIAL_7O1;
-        break;
-    case 0x36:
-        return SERIAL_8O1;
-        break;
-    case 0x3C:
-        return SERIAL_7O2;
-        break;
-    case 0x3E:
-        return SERIAL_8O2;
-        break;
-    }
-    return SERIAL_8N1;
-}
-
-#endif
-
 int flprog::serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity)
 {
     int code = 0;
@@ -256,50 +30,94 @@ int flprog::serialCodeForParametrs(byte portDataBits, byte portStopBits, byte po
     return code;
 }
 
-long flprog::speedFromCode(byte code)
+uint32_t flprog::speedFromCode(byte code)
 {
     switch (code)
     {
-    case SPEED_300:
+    case FLPROG_SPEED_300:
         return 300;
         break;
-    case SPEED_600:
+    case FLPROG_SPEED_600:
         return 600;
         break;
-    case SPEED_1200:
+    case FLPROG_SPEED_1200:
         return 1200;
         break;
-    case SPEED_2400:
+    case FLPROG_SPEED_2400:
         return 2400;
         break;
-    case SPEED_4800:
+    case FLPROG_SPEED_4800:
         return 4800;
         break;
-    case SPEED_9600:
+    case FLPROG_SPEED_9600:
         return 9600;
         break;
-    case SPEED_14400:
+    case FLPROG_SPEED_14400:
         return 14400;
         break;
-    case SPEED_19200:
+    case FLPROG_SPEED_19200:
         return 19200;
         break;
-    case SPEED_28800:
+    case FLPROG_SPEED_28800:
         return 28800;
         break;
-    case SPEED_38400:
+    case FLPROG_SPEED_38400:
         return 38400;
         break;
-    case SPEED_57600:
+    case FLPROG_SPEED_57600:
         return 57600;
         break;
-    case SPEED_115200:
+    case FLPROG_SPEED_115200:
         return 115200;
         break;
     default:
         return 9600;
         break;
     }
+}
+
+uint8_t flprog::codeFromSpeed(int32_t speed)
+{
+    switch (speed)
+    {
+    case 300:
+        return FLPROG_SPEED_300;
+        break;
+    case 600:
+        return FLPROG_SPEED_600;
+        break;
+    case 1200:
+        return FLPROG_SPEED_1200;
+        break;
+    case 2400:
+        return FLPROG_SPEED_2400;
+        break;
+    case 4800:
+        return FLPROG_SPEED_4800;
+        break;
+    case 9600:
+        return FLPROG_SPEED_9600;
+        break;
+    case 14400:
+        return FLPROG_SPEED_14400;
+        break;
+    case 19200:
+        return FLPROG_SPEED_19200;
+        break;
+    case 28800:
+        return FLPROG_SPEED_28800;
+        break;
+    case 38400:
+        return FLPROG_SPEED_38400;
+        break;
+    case 57600:
+        return FLPROG_SPEED_57600;
+        break;
+    case 115200:
+        return FLPROG_SPEED_115200;
+        break;
+    }
+    return FLPROG_SPEED_9600;
 }
 
 bool flprog::isTimer(uint32_t startTime, uint32_t period)
