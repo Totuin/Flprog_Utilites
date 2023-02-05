@@ -6,7 +6,6 @@
 
 #include "BluetoothSerial.h"
 
-
 class FLProgBluetoothUart : public FLProgUartBasic
 {
 public:

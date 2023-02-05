@@ -8,13 +8,13 @@ class FLProgUart : public FLProgUartBasic
 public:
     FLProgUart(){};
     FLProgUart(UARTClass *hardwarePort);
-     virtual void begin();
+    virtual void begin();
     void begin(int32_t speed, UARTClass::UARTModes mode);
-    virtual bool hasPort(){return !(port == 0);};
+    virtual bool hasPort() { return !(port == 0); };
     virtual void restartPort();
 
 protected:
-    virtual Stream *uartPort(){return port;};
+    virtual Stream *uartPort() { return port; };
     UARTClass *port;
     UARTClass::UARTModes serialModeFromParametrs();
     void setSerialMode(UARTClass::UARTModes mode);

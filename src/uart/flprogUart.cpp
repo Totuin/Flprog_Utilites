@@ -1,6 +1,5 @@
 #include "flprogUart.h"
 
-
 void FLProgUartBasic::setPortSpeed(byte speed)
 {
     if (portSpeed == speed)
@@ -110,7 +109,6 @@ void FLProgUartBasic::setCodeFromSpeed(int32_t speed)
 {
     portSpeed = flprog::codeFromSpeed(speed);
 }
-
 
 void FLProgUartBasic::begin(int32_t speed)
 {

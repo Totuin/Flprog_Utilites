@@ -183,5 +183,4 @@ void FLProgUart::setSerialMode(int16_t mode)
     portParity = FLPROG_PORT_PARITY_NONE;
 }
 
-
 #endif

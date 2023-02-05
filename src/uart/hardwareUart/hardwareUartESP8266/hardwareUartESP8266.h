@@ -10,17 +10,16 @@ public:
     FLProgUart(){};
     FLProgUart(HardwareSerial *hardwarePort);
     virtual void begin();
-    
+
     void begin(int32_t speed, SerialConfig mode);
-    virtual bool hasPort() {return !(port == 0);};
+    virtual bool hasPort() { return !(port == 0); };
     virtual void restartPort();
 
 protected:
-    virtual Stream *uartPort() {return port;};
-     HardwareSerial *port;
+    virtual Stream *uartPort() { return port; };
+    HardwareSerial *port;
     SerialConfig serialModeFromParametrs();
     void setSerialMode(SerialConfig mode);
 };
-
 
 #endif

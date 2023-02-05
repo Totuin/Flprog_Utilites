@@ -58,5 +58,4 @@ void FLProgUart::setSerialMode(UARTClass::UARTModes mode)
     portParity = FLPROG_PORT_PARITY_NONE;
 }
 
-
 #endif

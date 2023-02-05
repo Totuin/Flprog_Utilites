@@ -11,11 +11,11 @@ public:
     FLProgUart(HardwareSerial *hardwarePort);
     virtual void begin();
     void begin(int32_t speed, int mode);
-    virtual bool hasPort(){return !(port == 0);};
+    virtual bool hasPort() { return !(port == 0); };
     virtual void restartPort();
 
 protected:
-    virtual Stream *uartPort(){return port;};
+    virtual Stream *uartPort() { return port; };
     HardwareSerial *port;
     int serialModeFromParametrs();
     void setSerialMode(int16_t mode);

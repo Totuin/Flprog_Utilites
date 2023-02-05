@@ -42,12 +42,10 @@
 #endif
 #endif
 
-#if defined(FLPROG_CORE_AVR) || defined(FLPROG_CORE_STM8) ||  defined(FLPROG_CORE_STM32) || defined(FLPROG_CORE_ESP32)
-#define  FLPROG_UNIVTRSAL_FUNCTION
+#if defined(FLPROG_CORE_AVR) || defined(FLPROG_CORE_STM8) || defined(FLPROG_CORE_STM32) || defined(FLPROG_CORE_ESP32)
+#define FLPROG_UNIVTRSAL_FUNCTION
 #include "variant\arduino\avr\flprogUtilitesAVR.h"
 #endif
-
-
 
 #include "uart/flprogUart.h"
 #include "tcp/flprogTcpDevice.h"

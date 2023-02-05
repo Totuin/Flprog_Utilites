@@ -28,5 +28,4 @@ protected:
     void setSerialMode(int16_t mode);
 };
 
-
 #endif

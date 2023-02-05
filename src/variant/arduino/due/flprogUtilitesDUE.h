@@ -6,8 +6,8 @@
 
 namespace flprog
 {
- UARTClass::UARTModes serialModeFromInt(int16_t code);
-   UARTClass::UARTModes serialModeFromParametrs(byte portDataBits, byte portStopBits, byte portParity);
+  UARTClass::UARTModes serialModeFromInt(int16_t code);
+  UARTClass::UARTModes serialModeFromParametrs(byte portDataBits, byte portStopBits, byte portParity);
 };
 
 #endif

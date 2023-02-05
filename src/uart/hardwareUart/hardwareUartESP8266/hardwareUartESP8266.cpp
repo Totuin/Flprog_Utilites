@@ -13,7 +13,7 @@ void FLProgUart::restartPort()
 
 void FLProgUart::begin()
 {
-   port->begin(speedFromCode(), serialModeFromParametrs());
+    port->begin(speedFromCode(), serialModeFromParametrs());
 }
 
 void FLProgUart::begin(int32_t speed, SerialConfig mode)
@@ -161,7 +161,7 @@ void FLProgUart::setSerialMode(SerialConfig mode)
     case SERIAL_6O2:
         portDataBits = FLPROG_PORT_DATA_BITS_6;
         portStopBits = FLPROG_PORT_STOP_BITS_2;
-        portParity =FLPROG_PORT_PARITY_ODD;
+        portParity = FLPROG_PORT_PARITY_ODD;
         return;
         break;
     case SERIAL_7O2:
@@ -181,6 +181,5 @@ void FLProgUart::setSerialMode(SerialConfig mode)
     portStopBits = FLPROG_PORT_STOP_BITS_1;
     portParity = FLPROG_PORT_PARITY_NONE;
 }
-
 
 #endif

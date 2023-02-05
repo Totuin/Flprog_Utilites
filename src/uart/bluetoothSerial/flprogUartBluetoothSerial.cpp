@@ -68,5 +68,4 @@ void FLProgBluetoothUart::begin()
     return;
 }
 
-
 #endif

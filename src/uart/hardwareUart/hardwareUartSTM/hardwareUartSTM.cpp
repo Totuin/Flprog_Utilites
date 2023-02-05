@@ -1,6 +1,5 @@
 #include "hardwareUartSTM.h"
 
-
 #ifdef FLPROG_CORE_STM
 Stream *FLProgUart::uartPort()
 {
