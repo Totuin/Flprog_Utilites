@@ -1,7 +1,7 @@
 #pragma once
 #include "Arduino.h"
 #include <Wire.h>
-#include "./flprogUtilites.h"
+#include "flprogUtilites.h"
 
 #ifdef FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL;
@@ -54,6 +54,8 @@ protected:
     bool beginWire1();
 #endif
 };
+
+#include "flprogI2C_sensorsBasic.h"
 
 class FLProgTCA9548A
 {
