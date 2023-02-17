@@ -16,8 +16,7 @@
 class FLProgI2C
 {
 public:
-    FLProgI2C() { FLProgI2C(0); };
-    FLProgI2C(byte busNumber);
+    FLProgI2C(byte busNumber=0);
     virtual bool begin();
     bool begin(int pinSDA, int pinSCL);
     bool findAddr(uint8_t addr);
