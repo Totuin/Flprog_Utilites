@@ -396,6 +396,31 @@ void FLProgI2C::resetSpeedFrom(uint32_t newSpeed)
 #endif
 }
 
+uint8_t FLProgI2C::fullReadReg(uint8_t addr, uint8_t reg)
+{
+    uint8_t data[1];
+    codeErr = fullWrite(addr, reg);
+    if (codeErr)
+    {
+        return 0;
+    }
+    codeErr = fullRead(addr, data, 1);
+    if (codeErr)
+    {
+        return 0;
+    }
+    return data[0];
+}
+
+uint8_t FLProgI2C::fullWriteReg(uint8_t addr, uint8_t reg, uint8_t value)
+{
+    uint8_t data[2];
+    data[0] = reg;
+    data[1] = value;
+    codeErr = fullWrite(addr, data, 2);
+    return codeErr;
+}
+
 //--------------FLProgTCA9548A----------
 
 FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress)

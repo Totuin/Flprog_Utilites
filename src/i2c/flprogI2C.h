@@ -16,7 +16,7 @@
 class FLProgI2C
 {
 public:
-    FLProgI2C(byte busNumber=0);
+    FLProgI2C(byte busNumber = 0);
     virtual bool begin();
     bool begin(int pinSDA, int pinSCL);
     bool findAddr(uint8_t addr);
@@ -27,6 +27,8 @@ public:
     uint8_t fullRead(uint8_t addr, uint8_t *data, uint8_t quantity);
     uint8_t fullRead(uint8_t addr, uint16_t *data, uint8_t quantity);
     uint8_t fullRead(uint8_t addr, uint32_t *data, uint8_t quantity);
+    uint8_t fullReadReg(uint8_t addr, uint8_t reg);
+    uint8_t fullWriteReg(uint8_t addr, uint8_t reg, uint8_t value);
 
     virtual void beginTransmission(uint8_t addr);
     virtual void write(const uint8_t *data, uint8_t quantity);
