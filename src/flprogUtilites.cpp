@@ -120,28 +120,31 @@ uint8_t flprog::codeFromSpeed(int32_t speed)
     return FLPROG_SPEED_9600;
 }
 
+uint32_t flprog::difference32(uint32_t start, uint32_t end)
+{
+    if (end >= start)
+    {
+        return end - start;
+    }
+    return (0xfFFFFFFF - start) + end;
+}
+
 bool flprog::isTimer(uint32_t startTime, uint32_t period)
 {
-    unsigned long currentTime = millis();
-    if (currentTime >= startTime)
-    {
-        return (currentTime >= (startTime + period));
-    }
-    else
-    {
-        return (currentTime >= (4294967295 - startTime + period));
-    }
+    return (difference32(startTime, (millis()))) >= period;
 }
 
 bool flprog::isTimerMicros(unsigned long startTime, unsigned long period)
 {
-    unsigned long currentTime = micros();
-    if (currentTime >= startTime)
+    return (difference32(startTime, (micros()))) >= period;
+}
+
+uint32_t flprog::timeBack(uint32_t value)
+{
+    uint32_t current = millis();
+    if (value < current)
     {
-        return (currentTime >= (startTime + period));
+        return current - value;
     }
-    else
-    {
-        return (currentTime >= (4294967295 - startTime + period));
-    }
+    return (0xfFFFFFFF - value) + current;
 }

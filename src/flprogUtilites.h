@@ -70,5 +70,7 @@ namespace flprog
     int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
     uint32_t speedFromCode(byte code);
     uint8_t codeFromSpeed(int32_t speed);
+    uint32_t difference32(uint32_t start, uint32_t end);
+    uint32_t timeBack(uint32_t value);
 
 };
