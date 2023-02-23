@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_e62c26f6289b28ef8683592ed3f3d8d1" kind="dir">
+    <compoundname>src/variant/arduino/due</compoundname>
+    <innerfile refid="flprog_utilites_d_u_e_8cpp">flprogUtilitesDUE.cpp</innerfile>
+    <innerfile refid="flprog_utilites_d_u_e_8h">flprogUtilitesDUE.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/variant/arduino/due/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_4dc4bab0c83361445d1434e79b04c26d" kind="dir">
+    <compoundname>src/i2c</compoundname>
+    <innerfile refid="flprog_i2_c_8cpp">flprogI2C.cpp</innerfile>
+    <innerfile refid="flprog_i2_c_8h">flprogI2C.h</innerfile>
+    <innerfile refid="flprog_i2_c__sensors_basic_8cpp">flprogI2C_sensorsBasic.cpp</innerfile>
+    <innerfile refid="flprog_i2_c__sensors_basic_8h">flprogI2C_sensorsBasic.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/i2c/"/>
+  </compounddef>
+</doxygen>

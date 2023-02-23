@@ -1,0 +1,128 @@
+.TH "src/flprogUtilites.h" 3 "Чт 23 Фев 2023" "Version 1" "FLProg Utilites" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/flprogUtilites.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <Arduino\&.h>\fP
+.br
+\fC#include 'i2c/flprogI2C\&.h'\fP
+.br
+\fC#include 'uart/flprogUart\&.h'\fP
+.br
+\fC#include 'tcp/flprogTcpDevice\&.h'\fP
+.br
+
+.SS "Пространства имен"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBflprog\fP"
+.br
+.in -1c
+.SS "Макросы"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_NOT_ERROR\fP   0"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_NOT_READY_ERROR\fP   1"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_DEVICE_NOT_FOUND_ERROR\fP   2"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_DEVICE_NOT_CORRECT_BUS_NUMBER_ERROR\fP   65"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_DEVICE_NOT_CORRECT_DEVICE_ADDRESS_ERROR\fP   61"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_DEVICE_NOT_DEFINED_ERROR\fP   5"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_DEVICE_NOT_CORRECT_DATA_ERROR\fP   6"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_CRC_ERROR\fP   72"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_WAITING_READ_STEP\fP   0"
+.br
+.ti -1c
+.RI "#define \fBFLPROG_SENSOR_WAITING_DELAY\fP   1"
+.br
+.in -1c
+.SS "Функции"
+
+.in +1c
+.ti -1c
+.RI "bool \fBflprog::isTimer\fP (uint32_t startTime, uint32_t period)"
+.br
+.ti -1c
+.RI "bool \fBflprog::isTimerMicros\fP (unsigned long startTime, unsigned long period)"
+.br
+.ti -1c
+.RI "int \fBflprog::serialCodeForParametrs\fP (byte portDataBits, byte portStopBits, byte portParity)"
+.br
+.ti -1c
+.RI "uint32_t \fBflprog::speedFromCode\fP (byte code)"
+.br
+.ti -1c
+.RI "uint8_t \fBflprog::codeFromSpeed\fP (int32_t speed)"
+.br
+.ti -1c
+.RI "uint32_t \fBflprog::difference32\fP (uint32_t start, uint32_t end)"
+.br
+.ti -1c
+.RI "uint32_t \fBflprog::timeBack\fP (uint32_t value)"
+.br
+.in -1c
+.SH "Макросы"
+.PP 
+.SS "#define FLPROG_SENSOR_CRC_ERROR   72"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB11\fP
+.SS "#define FLPROG_SENSOR_DEVICE_NOT_CORRECT_BUS_NUMBER_ERROR   65"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB7\fP
+.SS "#define FLPROG_SENSOR_DEVICE_NOT_CORRECT_DATA_ERROR   6"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB10\fP
+.SS "#define FLPROG_SENSOR_DEVICE_NOT_CORRECT_DEVICE_ADDRESS_ERROR   61"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB8\fP
+.SS "#define FLPROG_SENSOR_DEVICE_NOT_DEFINED_ERROR   5"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB9\fP
+.SS "#define FLPROG_SENSOR_DEVICE_NOT_FOUND_ERROR   2"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB6\fP
+.SS "#define FLPROG_SENSOR_NOT_ERROR   0"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB4\fP
+.SS "#define FLPROG_SENSOR_NOT_READY_ERROR   1"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB5\fP
+.SS "#define FLPROG_SENSOR_WAITING_DELAY   1"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB14\fP
+.SS "#define FLPROG_SENSOR_WAITING_READ_STEP   0"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.h\fP строка \fB13\fP
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для FLProg Utilites из исходного текста\&.

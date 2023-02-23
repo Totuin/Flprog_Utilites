@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FLProg Utilites: Исходный файл src/flprogUtilites.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FLProg Utilites<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('flprog_utilites_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">flprogUtilites.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="flprog_utilites_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a9febed9388c8a9046d18d2f8d846ebd4">    4</a></span><span class="preprocessor">#define FLPROG_SENSOR_NOT_ERROR 0</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a9380f57f189d55affc822295e38e9061">    5</a></span><span class="preprocessor">#define FLPROG_SENSOR_NOT_READY_ERROR 1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a3beb2f13de37fc5147b0bfc607c6a9b0">    6</a></span><span class="preprocessor">#define FLPROG_SENSOR_DEVICE_NOT_FOUND_ERROR 2</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a39f7191de8a58d9ed175d0f0b1d8b016">    7</a></span><span class="preprocessor">#define FLPROG_SENSOR_DEVICE_NOT_CORRECT_BUS_NUMBER_ERROR 65</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a84da77632af600817c82da6ce4b761c5">    8</a></span><span class="preprocessor">#define FLPROG_SENSOR_DEVICE_NOT_CORRECT_DEVICE_ADDRESS_ERROR 61</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a940328be364e02a29decebd5dc0053f0">    9</a></span><span class="preprocessor">#define FLPROG_SENSOR_DEVICE_NOT_DEFINED_ERROR 5</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#ab5d5a91218c3f1f85b31fe21c9f01be0">   10</a></span><span class="preprocessor">#define FLPROG_SENSOR_DEVICE_NOT_CORRECT_DATA_ERROR 6</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a5d7246bdcf75e083d07048332deda172">   11</a></span><span class="preprocessor">#define FLPROG_SENSOR_CRC_ERROR 72</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#a3f3cf4c2020b3aef1e75d1d584425e76">   13</a></span><span class="preprocessor">#define FLPROG_SENSOR_WAITING_READ_STEP 0</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="flprog_utilites_8h.html#ace19cbe1e3ba044e8fd2f2db87fdcce4">   14</a></span><span class="preprocessor">#define FLPROG_SENSOR_WAITING_DELAY 1</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if defined(ESP8266) || defined(ESP32)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define FLPROG_CORE_ESP8266_OR_ESP32</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#ifdef ESP8266</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define FLPROG_CORE_ESP8266</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_utilites_e_s_p8266_8h.html">variant\esp8266\flprogUtilitesESP8266.h</a>&quot;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef ESP32</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define FLPROG_CORE_ESP32</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_utilites_e_s_p32_8h.html">variant\esp32\flprogUtilitesESP32.h</a>&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#ifdef _STM32_DEF_</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define FLPROG_CORE_STM32</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifdef _STM8_DEF_</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define FLPROG_CORE_STM8</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#if defined(FLPROG_CORE_STM32) || defined(FLPROG_CORE_STM8)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define FLPROG_CORE_STM</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#if defined(_STM32_DEF_) &amp;&amp; defined(USBCON) &amp;&amp; defined(USBD_USE_CDC)</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define FLPROG_STM32_USB_COM0</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#ifdef _UART_CLASS_</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define FLPROG_CORE_AVR_DUE</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_utilites_d_u_e_8h.html">variant\arduino\due\flprogUtilitesDUE.h</a>&quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#ifdef __AVR__</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#ifndef FLPROG_CORE_AVR_DUE</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define FLPROG_CORE_AVR</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#if defined(FLPROG_CORE_AVR) || defined(FLPROG_CORE_STM8) || defined(FLPROG_CORE_STM32) || defined(FLPROG_CORE_ESP32)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#define FLPROG_UNIVTRSAL_FUNCTION</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_utilites_a_v_r_8h.html">variant\arduino\avr\flprogUtilitesAVR.h</a>&quot;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_i2_c_8h.html">i2c/flprogI2C.h</a>&quot;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_uart_8h.html">uart/flprogUart.h</a>&quot;</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_tcp_device_8h.html">tcp/flprogTcpDevice.h</a>&quot;</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="namespaceflprog.html">   66</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceflprog.html">flprog</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceflprog.html#acc5a367798f79f5340fa5de409ac22d4">isTimer</a>(uint32_t startTime, uint32_t period);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceflprog.html#a9f288356ee2d40b2b2ada99354e56ba9">isTimerMicros</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> startTime, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> period);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="namespaceflprog.html#aca0ea27d0df934b3fa846fcfcf6b5d69">serialCodeForParametrs</a>(<span class="keywordtype">byte</span> portDataBits, <span class="keywordtype">byte</span> portStopBits, <span class="keywordtype">byte</span> portParity);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    uint32_t <a class="code hl_function" href="namespaceflprog.html#a82fda12bd0f0533f62fd6cf82a3e92fd">speedFromCode</a>(<span class="keywordtype">byte</span> code);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    uint8_t <a class="code hl_function" href="namespaceflprog.html#a7661cd972a044b3c2fbc6cb707a19c4b">codeFromSpeed</a>(int32_t speed);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    uint32_t <a class="code hl_function" href="namespaceflprog.html#a14c0502a16183c50f02f25cb25a80728">difference32</a>(uint32_t start, uint32_t end);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    uint32_t <a class="code hl_function" href="namespaceflprog.html#ae35684dee57af61e1a86fb2e3ab294d4">timeBack</a>(uint32_t value);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="ttc" id="aflprog_i2_c_8h_html"><div class="ttname"><a href="flprog_i2_c_8h.html">flprogI2C.h</a></div></div>
+<div class="ttc" id="aflprog_tcp_device_8h_html"><div class="ttname"><a href="flprog_tcp_device_8h.html">flprogTcpDevice.h</a></div></div>
+<div class="ttc" id="aflprog_uart_8h_html"><div class="ttname"><a href="flprog_uart_8h.html">flprogUart.h</a></div></div>
+<div class="ttc" id="aflprog_utilites_a_v_r_8h_html"><div class="ttname"><a href="flprog_utilites_a_v_r_8h.html">flprogUtilitesAVR.h</a></div></div>
+<div class="ttc" id="aflprog_utilites_d_u_e_8h_html"><div class="ttname"><a href="flprog_utilites_d_u_e_8h.html">flprogUtilitesDUE.h</a></div></div>
+<div class="ttc" id="aflprog_utilites_e_s_p32_8h_html"><div class="ttname"><a href="flprog_utilites_e_s_p32_8h.html">flprogUtilitesESP32.h</a></div></div>
+<div class="ttc" id="aflprog_utilites_e_s_p8266_8h_html"><div class="ttname"><a href="flprog_utilites_e_s_p8266_8h.html">flprogUtilitesESP8266.h</a></div></div>
+<div class="ttc" id="anamespaceflprog_html"><div class="ttname"><a href="namespaceflprog.html">flprog</a></div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8h_source.html#l00066">flprogUtilites.h:67</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_a14c0502a16183c50f02f25cb25a80728"><div class="ttname"><a href="namespaceflprog.html#a14c0502a16183c50f02f25cb25a80728">flprog::difference32</a></div><div class="ttdeci">uint32_t difference32(uint32_t start, uint32_t end)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00123">flprogUtilites.cpp:123</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_a7661cd972a044b3c2fbc6cb707a19c4b"><div class="ttname"><a href="namespaceflprog.html#a7661cd972a044b3c2fbc6cb707a19c4b">flprog::codeFromSpeed</a></div><div class="ttdeci">uint8_t codeFromSpeed(int32_t speed)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00079">flprogUtilites.cpp:79</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_a82fda12bd0f0533f62fd6cf82a3e92fd"><div class="ttname"><a href="namespaceflprog.html#a82fda12bd0f0533f62fd6cf82a3e92fd">flprog::speedFromCode</a></div><div class="ttdeci">uint32_t speedFromCode(byte code)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00033">flprogUtilites.cpp:33</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_a9f288356ee2d40b2b2ada99354e56ba9"><div class="ttname"><a href="namespaceflprog.html#a9f288356ee2d40b2b2ada99354e56ba9">flprog::isTimerMicros</a></div><div class="ttdeci">bool isTimerMicros(unsigned long startTime, unsigned long period)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00137">flprogUtilites.cpp:137</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_aca0ea27d0df934b3fa846fcfcf6b5d69"><div class="ttname"><a href="namespaceflprog.html#aca0ea27d0df934b3fa846fcfcf6b5d69">flprog::serialCodeForParametrs</a></div><div class="ttdeci">int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00003">flprogUtilites.cpp:3</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_acc5a367798f79f5340fa5de409ac22d4"><div class="ttname"><a href="namespaceflprog.html#acc5a367798f79f5340fa5de409ac22d4">flprog::isTimer</a></div><div class="ttdeci">bool isTimer(uint32_t startTime, uint32_t period)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00132">flprogUtilites.cpp:132</a></div></div>
+<div class="ttc" id="anamespaceflprog_html_ae35684dee57af61e1a86fb2e3ab294d4"><div class="ttname"><a href="namespaceflprog.html#ae35684dee57af61e1a86fb2e3ab294d4">flprog::timeBack</a></div><div class="ttdeci">uint32_t timeBack(uint32_t value)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_utilites_8cpp_source.html#l00142">flprogUtilites.cpp:142</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="flprog_utilites_8h.html">flprogUtilites.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

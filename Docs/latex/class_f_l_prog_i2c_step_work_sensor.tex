@@ -1,0 +1,224 @@
+\hypertarget{class_f_l_prog_i2c_step_work_sensor}{}\doxysection{Класс FLProg\+I2c\+Step\+Work\+Sensor}
+\label{class_f_l_prog_i2c_step_work_sensor}\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+
+
+{\ttfamily \#include $<$flprog\+I2\+C\+\_\+sensors\+Basic.\+h$>$}
+
+Граф наследования\+:FLProg\+I2c\+Step\+Work\+Sensor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_l_prog_i2c_step_work_sensor}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}{read}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7c5547cb9e63baf21658b6d33220ba3a}{set\+Read\+Period}} (uint32\+\_\+t period)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены унаследованные от \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor}{FLProg\+I2c\+Basic\+Sensor}}}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_ad7a833334abd45534af4136dc8c07e33}{get\+Error}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae30f110f5a8ee5450478a559083ab31e}{read\+Sensor}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a85f6498d48f835599c17fa0df4408b21}{check\+Delay}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac2080f524107c1645440b8d7b0a2526e}{check\+Read\+Period}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa3d0c08a85519ce3bd136575255c48bf}{goto\+Step\+With\+Delay}} (uint8\+\_\+t new\+Step, uint32\+\_\+t delay)
+\item 
+void \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3417638ce26313aeae54f638b80cfb25}{check\+Needed\+Read}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}{start\+Delay}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}{size\+Delay}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}{step\+After\+Delay}}
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}{is\+Needed\+Read}} = true
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}{read\+Period}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}{start\+Read\+Period}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{step}} = \mbox{\hyperlink{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}{FLPROG\+\_\+\+SENSOR\+\_\+\+WAITING\+\_\+\+READ\+\_\+\+STEP}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor}{FLProg\+I2c\+Basic\+Sensor}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_l_prog_i2_c}{FLProg\+I2C}} $\ast$ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a4e5e4d8372636d22dc1f534320a0b1be}{i2c\+Device}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a47010e253c540a295492e92b5aac97a0}{addres}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a064c48484f3f243aff130716ab414274}{speed}} = \mbox{\hyperlink{flprog_i2_c_8h_a5d14ac1e40046405a287e54485b3f6cb}{FLPROG\+\_\+\+I2\+CSPEED}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a40b8e020b62683d9b428f223c1760bef}{code\+Error}} = \mbox{\hyperlink{flprog_utilites_8h_a9febed9388c8a9046d18d2f8d846ebd4}{FLPROG\+\_\+\+SENSOR\+\_\+\+NOT\+\_\+\+ERROR}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00017}{17}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a85f6498d48f835599c17fa0df4408b21}\label{class_f_l_prog_i2c_step_work_sensor_a85f6498d48f835599c17fa0df4408b21}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!checkDelay@{checkDelay}}
+\index{checkDelay@{checkDelay}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{checkDelay()}{checkDelay()}}
+{\footnotesize\ttfamily void FLProg\+I2c\+Step\+Work\+Sensor\+::check\+Delay (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source_l00003}{3}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a3417638ce26313aeae54f638b80cfb25}\label{class_f_l_prog_i2c_step_work_sensor_a3417638ce26313aeae54f638b80cfb25}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!checkNeededRead@{checkNeededRead}}
+\index{checkNeededRead@{checkNeededRead}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{checkNeededRead()}{checkNeededRead()}}
+{\footnotesize\ttfamily void FLProg\+I2c\+Step\+Work\+Sensor\+::check\+Needed\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source_l00045}{45}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_ac2080f524107c1645440b8d7b0a2526e}\label{class_f_l_prog_i2c_step_work_sensor_ac2080f524107c1645440b8d7b0a2526e}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!checkReadPeriod@{checkReadPeriod}}
+\index{checkReadPeriod@{checkReadPeriod}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{checkReadPeriod()}{checkReadPeriod()}}
+{\footnotesize\ttfamily void FLProg\+I2c\+Step\+Work\+Sensor\+::check\+Read\+Period (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source_l00025}{25}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_aa3d0c08a85519ce3bd136575255c48bf}\label{class_f_l_prog_i2c_step_work_sensor_aa3d0c08a85519ce3bd136575255c48bf}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!gotoStepWithDelay@{gotoStepWithDelay}}
+\index{gotoStepWithDelay@{gotoStepWithDelay}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{gotoStepWithDelay()}{gotoStepWithDelay()}}
+{\footnotesize\ttfamily void FLProg\+I2c\+Step\+Work\+Sensor\+::goto\+Step\+With\+Delay (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+Step,  }\item[{uint32\+\_\+t}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source_l00037}{37}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}\label{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!read@{read}}
+\index{read@{read}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void FLProg\+I2c\+Step\+Work\+Sensor\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source_l00015}{15}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_ae30f110f5a8ee5450478a559083ab31e}\label{class_f_l_prog_i2c_step_work_sensor_ae30f110f5a8ee5450478a559083ab31e}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!readSensor@{readSensor}}
+\index{readSensor@{readSensor}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{readSensor()}{readSensor()}}
+{\footnotesize\ttfamily virtual void FLProg\+I2c\+Step\+Work\+Sensor\+::read\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00024}{24}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a7c5547cb9e63baf21658b6d33220ba3a}\label{class_f_l_prog_i2c_step_work_sensor_a7c5547cb9e63baf21658b6d33220ba3a}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!setReadPeriod@{setReadPeriod}}
+\index{setReadPeriod@{setReadPeriod}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{setReadPeriod()}{setReadPeriod()}}
+{\footnotesize\ttfamily void FLProg\+I2c\+Step\+Work\+Sensor\+::set\+Read\+Period (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{period }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp_source_l00020}{20}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}\label{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!isNeededRead@{isNeededRead}}
+\index{isNeededRead@{isNeededRead}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{isNeededRead}{isNeededRead}}
+{\footnotesize\ttfamily bool FLProg\+I2c\+Step\+Work\+Sensor\+::is\+Needed\+Read = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00032}{32}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}\label{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!readPeriod@{readPeriod}}
+\index{readPeriod@{readPeriod}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{readPeriod}{readPeriod}}
+{\footnotesize\ttfamily uint32\+\_\+t FLProg\+I2c\+Step\+Work\+Sensor\+::read\+Period = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00033}{33}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}\label{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!sizeDelay@{sizeDelay}}
+\index{sizeDelay@{sizeDelay}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{sizeDelay}{sizeDelay}}
+{\footnotesize\ttfamily uint32\+\_\+t FLProg\+I2c\+Step\+Work\+Sensor\+::size\+Delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00030}{30}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}\label{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!startDelay@{startDelay}}
+\index{startDelay@{startDelay}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{startDelay}{startDelay}}
+{\footnotesize\ttfamily uint32\+\_\+t FLProg\+I2c\+Step\+Work\+Sensor\+::start\+Delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00029}{29}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}\label{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!startReadPeriod@{startReadPeriod}}
+\index{startReadPeriod@{startReadPeriod}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{startReadPeriod}{startReadPeriod}}
+{\footnotesize\ttfamily uint32\+\_\+t FLProg\+I2c\+Step\+Work\+Sensor\+::start\+Read\+Period = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00034}{34}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}\label{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!step@{step}}
+\index{step@{step}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{step}{step}}
+{\footnotesize\ttfamily uint8\+\_\+t FLProg\+I2c\+Step\+Work\+Sensor\+::step = \mbox{\hyperlink{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}{FLPROG\+\_\+\+SENSOR\+\_\+\+WAITING\+\_\+\+READ\+\_\+\+STEP}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00035}{35}}
+
+\mbox{\Hypertarget{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}\label{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}} 
+\index{FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}!stepAfterDelay@{stepAfterDelay}}
+\index{stepAfterDelay@{stepAfterDelay}!FLProgI2cStepWorkSensor@{FLProgI2cStepWorkSensor}}
+\doxysubsubsection{\texorpdfstring{stepAfterDelay}{stepAfterDelay}}
+{\footnotesize\ttfamily uint8\+\_\+t FLProg\+I2c\+Step\+Work\+Sensor\+::step\+After\+Delay\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}} строка \mbox{\hyperlink{flprog_i2_c__sensors_basic_8h_source_l00031}{31}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/i2c/\mbox{\hyperlink{flprog_i2_c__sensors_basic_8h}{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}}\item 
+src/i2c/\mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp}{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}}\end{DoxyCompactItemize}

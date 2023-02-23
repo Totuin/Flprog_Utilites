@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_flprog_i2_c_8h_source" xml:lang="ru">
+<title>flprogI2C.h</title>
+<indexterm><primary>src/i2c/flprogI2C.h</primary></indexterm>
+См. документацию.<programlisting linenumbering="unnumbered"><anchor xml:id="_flprog_i2_c_8h_source_1l00001"/>00001 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00002"/>00002 <emphasis role="preprocessor">#include&#32;&quot;Arduino.h&quot;</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00003"/>00003 <emphasis role="preprocessor">#include&#32;&lt;Wire.h&gt;</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00004"/>00004 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_flprog_utilites_8h">flprogUtilites.h</link>&quot;</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00005"/>00005 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00006"/>00006 <emphasis role="preprocessor">#ifdef&#32;FLPROG_CORE_ESP8266</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00007"/>00007 <emphasis role="preprocessor">#define&#32;FLPROG_I2CSPEED&#32;100000UL;</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00008"/>00008 <emphasis role="preprocessor">#else</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00009"/><link linkend="_flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb">00009</link> <emphasis role="preprocessor">#define&#32;FLPROG_I2CSPEED&#32;400000UL;</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00010"/>00010 <emphasis role="preprocessor">#endif</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00011"/>00011 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00012"/>00012 <emphasis role="preprocessor">#if&#32;defined(CORE_ESP32)&#32;||&#32;defined(CORE_STM32)</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00013"/>00013 <emphasis role="preprocessor">#define&#32;FLPROG_CAN_USE_I2C_1</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00014"/>00014 <emphasis role="preprocessor">#endif</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00015"/>00015 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00016"/><link linkend="_class_f_l_prog_i2_c">00016</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00017"/>00017 {
+<anchor xml:id="_flprog_i2_c_8h_source_1l00018"/>00018 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_flprog_i2_c_8h_source_1l00019"/>00019 &#32;&#32;&#32;&#32;<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>(<emphasis role="keywordtype">byte</emphasis>&#32;busNumber&#32;=&#32;0);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00020"/>00020 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8">begin</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00021"/>00021 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8">begin</link>(<emphasis role="keywordtype">int</emphasis>&#32;pinSDA,&#32;<emphasis role="keywordtype">int</emphasis>&#32;pinSCL);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00022"/>00022 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1ab8d5bc5b0df5ae4a328465f262aac13b">findAddr</link>(uint8_t&#32;addr);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00023"/><link linkend="_class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d">00023</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d">getErrorCode</link>()&#32;{&#32;<emphasis role="keywordflow">return</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe">codeErr</link>;&#32;};
+<anchor xml:id="_flprog_i2_c_8h_source_1l00024"/>00024 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c">fullWrite</link>(uint8_t&#32;addr,&#32;uint8_t&#32;data);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00025"/>00025 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c">fullWrite</link>(uint8_t&#32;addr,&#32;<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;*data,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00026"/>00026 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1abd81f98e7f06c1e539e7cb053f4fe425">fullRequestFrom</link>(uint8_t&#32;address,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00027"/>00027 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</link>(uint8_t&#32;addr,&#32;uint8_t&#32;*data,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00028"/>00028 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</link>(uint8_t&#32;addr,&#32;uint16_t&#32;*data,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00029"/>00029 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</link>(uint8_t&#32;addr,&#32;uint32_t&#32;*data,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00030"/>00030 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a892e08882728362457ead1b8d391d3b1">fullReadReg</link>(uint8_t&#32;addr,&#32;uint8_t&#32;reg);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00031"/>00031 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a6109b4ca3f00c5d064a26007b0f45c55">fullWriteReg</link>(uint8_t&#32;addr,&#32;uint8_t&#32;reg,&#32;uint8_t&#32;value);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00032"/>00032 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00033"/>00033 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a74f8323be61a90bedcbc37d4bdbd525c">beginTransmission</link>(uint8_t&#32;addr);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00034"/>00034 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295">write</link>(<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;*data,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00035"/>00035 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295">write</link>(uint8_t&#32;data);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00036"/>00036 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1ab40e40756e66c34b99e3e513302d6afd">endTransmission</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00037"/>00037 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1aba022e66607f05597b9ddaec870be996">available</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00038"/>00038 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a268ba68fcfd993189ab01ce61dfb50e7">read</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00039"/>00039 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a5d816185c13673ebdb78c167f351f783">requestFrom</link>(uint8_t&#32;address,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00040"/>00040 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1aee6e857b6f238b3dc994823e7f32a04d">waitingForData</link>(uint8_t&#32;count);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00041"/>00041 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a88f3780a228f2ce6bb12e7e12fb1720f">setSpeed</link>(uint32_t&#32;newSpeed);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00042"/>00042 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a503c79844364a2a62d063cb1bdb47c33">resetSpeedFrom</link>(uint32_t&#32;newSpeed);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00043"/>00043 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a126715f17f31ecdf2ea449ca6999bb1f">checkBus</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00044"/>00044 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00045"/>00045 <emphasis role="keyword">protected</emphasis>:
+<anchor xml:id="_flprog_i2_c_8h_source_1l00046"/><link linkend="_class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840">00046</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840">bus</link>;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00047"/><link linkend="_class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e">00047</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e">busy</link>&#32;=&#32;<emphasis role="keyword">false</emphasis>;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00048"/><link linkend="_class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951">00048</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951">status</link>&#32;=&#32;0;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00049"/><link linkend="_class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe">00049</link> &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe">codeErr</link>&#32;=&#32;0;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00050"/><link linkend="_class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077">00050</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077">sda</link>&#32;=&#32;-1;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00051"/><link linkend="_class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce">00051</link> &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce">scl</link>&#32;=&#32;-1;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00052"/><link linkend="_class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5">00052</link> &#32;&#32;&#32;&#32;uint32_t&#32;<link linkend="_class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5">speed</link>&#32;=&#32;<link linkend="_flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb">FLPROG_I2CSPEED</link>;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00053"/>00053 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c_1af54dc06c96fa360014e4f87cfd2e07a4">beginWire0</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00054"/>00054 <emphasis role="preprocessor">#ifdef&#32;FLPROG_CAN_USE_I2C_1</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00055"/>00055 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;beginWire1();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00056"/>00056 <emphasis role="preprocessor">#endif</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00057"/>00057 };
+<anchor xml:id="_flprog_i2_c_8h_source_1l00058"/>00058 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00059"/>00059 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_flprog_i2_c__sensors_basic_8h">flprogI2C_sensorsBasic.h</link>&quot;</emphasis>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00060"/>00060 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00061"/><link linkend="_class_f_l_prog_t_c_a9548_a">00061</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00062"/>00062 {
+<anchor xml:id="_flprog_i2_c_8h_source_1l00063"/>00063 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_flprog_i2_c_8h_source_1l00064"/>00064 &#32;&#32;&#32;&#32;<link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link>(<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>&#32;*device,&#32;uint8_t&#32;deviceAddress);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00065"/>00065 &#32;&#32;&#32;&#32;<link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link>(<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>&#32;*device);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00066"/>00066 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1aed692e8c5a9afa68ded1473c01242061">beginTransmission</link>(uint8_t&#32;addr,&#32;uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00067"/>00067 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1a5365a243dfe70ba78a3afb1e05334eaa">write</link>(<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;*data,&#32;uint8_t&#32;quantity,&#32;uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00068"/>00068 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1a5365a243dfe70ba78a3afb1e05334eaa">write</link>(uint8_t&#32;data,&#32;uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00069"/>00069 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1a4a527cd34332b4ec2810b4c10c080ccc">endTransmission</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00070"/>00070 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1a6f5d6034334ef43006ff10928cce572f">available</link>(uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00071"/>00071 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1acf146e5bdfe3b2c794bfccb374ee41ac">read</link>(uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00072"/>00072 &#32;&#32;&#32;&#32;uint8_t&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1aee5d3e1387cee3410655be01042107f5">requestFrom</link>(uint8_t&#32;address,&#32;uint8_t&#32;quantity,&#32;uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00073"/>00073 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1a3dca5052bce732d52235c4231a3776fa">setSpeed</link>(uint32_t&#32;newSpeed,&#32;uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00074"/>00074 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1afa05ee993ca840058edb29c0e5e97672">resetSpeedFrom</link>(uint32_t&#32;newSpeed,&#32;uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00075"/>00075 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_t_c_a9548_a_1a5e2624fc72576aacf71b804680f0b791">checkBus</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00076"/>00076 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00077"/>00077 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_flprog_i2_c_8h_source_1l00078"/>00078 &#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;switchToChanel(uint8_t&#32;chanel);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00079"/>00079 &#32;&#32;&#32;&#32;<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>&#32;*i2cDevice;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00080"/>00080 &#32;&#32;&#32;&#32;uint8_t&#32;address;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00081"/>00081 &#32;&#32;&#32;&#32;uint8_t&#32;currentChanel&#32;=&#32;10;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00082"/>00082 &#32;&#32;&#32;&#32;uint8_t&#32;errorCode&#32;=&#32;0;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00083"/>00083 };
+<anchor xml:id="_flprog_i2_c_8h_source_1l00084"/>00084 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00085"/><link linkend="_class_f_l_prog_virtual_i2_c">00085</link> <emphasis role="keyword">class&#32;</emphasis><link linkend="_class_f_l_prog_virtual_i2_c">FLProgVirtualI2C</link>&#32;:&#32;<emphasis role="keyword">public</emphasis>&#32;<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>
+<anchor xml:id="_flprog_i2_c_8h_source_1l00086"/>00086 {
+<anchor xml:id="_flprog_i2_c_8h_source_1l00087"/>00087 <emphasis role="keyword">public</emphasis>:
+<anchor xml:id="_flprog_i2_c_8h_source_1l00088"/>00088 &#32;&#32;&#32;&#32;<link linkend="_class_f_l_prog_virtual_i2_c">FLProgVirtualI2C</link>(<link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link>&#32;*parentDevice,&#32;uint8_t&#32;chanelOnParent);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00089"/>00089 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1afe867564e2df6c4a4edea71d4ad0cc83">begin</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00090"/>00090 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a709dce8dc7a0acebe0ea05c60f38c8c3">beginTransmission</link>(uint8_t&#32;addr);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00091"/>00091 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea">write</link>(<emphasis role="keyword">const</emphasis>&#32;uint8_t&#32;*data,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00092"/>00092 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea">write</link>(uint8_t&#32;data);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00093"/>00093 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;uint8_t&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1aa704301ef938bddf5c8b898bde2e186f">endTransmission</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00094"/>00094 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a13624df645155c7176c9d789fdf31a70">available</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00095"/>00095 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1adbf25e8d737c80071b4bea1d560dde42">read</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00096"/>00096 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;uint8_t&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a4f37c90d6ae2d3d15386c886ced36a5d">requestFrom</link>(uint8_t&#32;address,&#32;uint8_t&#32;quantity);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00097"/>00097 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a4709597c5e1da12cde67ad82ea50ac8e">setSpeed</link>(uint32_t&#32;newSpeed);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00098"/>00098 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1a3fa439599c69346113f22e098af6a454">resetSpeedFrom</link>(uint32_t&#32;newSpeed);
+<anchor xml:id="_flprog_i2_c_8h_source_1l00099"/>00099 &#32;&#32;&#32;&#32;<emphasis role="keyword">virtual</emphasis>&#32;<emphasis role="keywordtype">bool</emphasis>&#32;<link linkend="_class_f_l_prog_virtual_i2_c_1ae7438d0b9d03a0d80525ac930a8dca45">checkBus</link>();
+<anchor xml:id="_flprog_i2_c_8h_source_1l00100"/>00100 
+<anchor xml:id="_flprog_i2_c_8h_source_1l00101"/>00101 <emphasis role="keyword">private</emphasis>:
+<anchor xml:id="_flprog_i2_c_8h_source_1l00102"/>00102 &#32;&#32;&#32;&#32;<link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link>&#32;*parent;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00103"/>00103 &#32;&#32;&#32;&#32;uint8_t&#32;chanel;
+<anchor xml:id="_flprog_i2_c_8h_source_1l00104"/>00104 };
+</programlisting></section>

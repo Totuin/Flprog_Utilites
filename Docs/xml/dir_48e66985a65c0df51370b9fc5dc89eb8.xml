@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_48e66985a65c0df51370b9fc5dc89eb8" kind="dir">
+    <compoundname>src/uart/hardwareUart/hardwareUartESP32</compoundname>
+    <innerfile refid="hardware_uart_e_s_p32_8cpp">hardwareUartESP32.cpp</innerfile>
+    <innerfile refid="hardware_uart_e_s_p32_8h">hardwareUartESP32.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/uart/hardwareUart/hardwareUartESP32/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_f_l_prog_t_c_a9548_a" xml:lang="ru">
+<title>Класс FLProgTCA9548A</title>
+<indexterm><primary>FLProgTCA9548A</primary></indexterm>
+<para>
+<computeroutput>#include &lt;flprogI2C.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_f_l_prog_t_c_a9548_a_1aa63bd6a13c36154efa3e1a8d0ff9a822">FLProgTCA9548A</link> (<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link> *device, uint8_t deviceAddress)</para>
+</listitem>
+            <listitem><para><link linkend="_class_f_l_prog_t_c_a9548_a_1aec827410ce3f745b9b7996d343aa59c8">FLProgTCA9548A</link> (<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link> *device)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_t_c_a9548_a_1aed692e8c5a9afa68ded1473c01242061">beginTransmission</link> (uint8_t addr, uint8_t chanel)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_t_c_a9548_a_1a5365a243dfe70ba78a3afb1e05334eaa">write</link> (const uint8_t *data, uint8_t quantity, uint8_t chanel)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_t_c_a9548_a_1a4d4fbc1fae9fd738262805d0cb2ee8ab">write</link> (uint8_t data, uint8_t chanel)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_t_c_a9548_a_1a4a527cd34332b4ec2810b4c10c080ccc">endTransmission</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_f_l_prog_t_c_a9548_a_1a6f5d6034334ef43006ff10928cce572f">available</link> (uint8_t chanel)</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_f_l_prog_t_c_a9548_a_1acf146e5bdfe3b2c794bfccb374ee41ac">read</link> (uint8_t chanel)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_t_c_a9548_a_1aee5d3e1387cee3410655be01042107f5">requestFrom</link> (uint8_t address, uint8_t quantity, uint8_t chanel)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_t_c_a9548_a_1a3dca5052bce732d52235c4231a3776fa">setSpeed</link> (uint32_t newSpeed, uint8_t chanel)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_t_c_a9548_a_1afa05ee993ca840058edb29c0e5e97672">resetSpeedFrom</link> (uint32_t newSpeed, uint8_t chanel)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_f_l_prog_t_c_a9548_a_1a5e2624fc72576aacf71b804680f0b791">checkBus</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8h_source">flprogI2C.h</link> строка <link linkend="_flprog_i2_c_8h_source_1l00061">61</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1aa63bd6a13c36154efa3e1a8d0ff9a822"/><section>
+    <title>FLProgTCA9548A()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<para><computeroutput>FLProgTCA9548A::FLProgTCA9548A (<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link> * device, uint8_t deviceAddress)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00426">426</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1aec827410ce3f745b9b7996d343aa59c8"/><section>
+    <title>FLProgTCA9548A()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<para><computeroutput>FLProgTCA9548A::FLProgTCA9548A (<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link> * device)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00432">432</link></para>
+</section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1a6f5d6034334ef43006ff10928cce572f"/><section>
+    <title>available()</title>
+<indexterm><primary>available</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>available</secondary></indexterm>
+<para><computeroutput>int FLProgTCA9548A::available (uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00460">460</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1aed692e8c5a9afa68ded1473c01242061"/><section>
+    <title>beginTransmission()</title>
+<indexterm><primary>beginTransmission</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>beginTransmission</secondary></indexterm>
+<para><computeroutput>void FLProgTCA9548A::beginTransmission (uint8_t addr, uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00438">438</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1a5e2624fc72576aacf71b804680f0b791"/><section>
+    <title>checkBus()</title>
+<indexterm><primary>checkBus</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>checkBus</secondary></indexterm>
+<para><computeroutput>bool FLProgTCA9548A::checkBus ( )</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00490">490</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1a4a527cd34332b4ec2810b4c10c080ccc"/><section>
+    <title>endTransmission()</title>
+<indexterm><primary>endTransmission</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>endTransmission</secondary></indexterm>
+<para><computeroutput>uint8_t FLProgTCA9548A::endTransmission ( )</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00454">454</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1acf146e5bdfe3b2c794bfccb374ee41ac"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>int FLProgTCA9548A::read (uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00466">466</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1aee5d3e1387cee3410655be01042107f5"/><section>
+    <title>requestFrom()</title>
+<indexterm><primary>requestFrom</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>requestFrom</secondary></indexterm>
+<para><computeroutput>uint8_t FLProgTCA9548A::requestFrom (uint8_t address, uint8_t quantity, uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00472">472</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1afa05ee993ca840058edb29c0e5e97672"/><section>
+    <title>resetSpeedFrom()</title>
+<indexterm><primary>resetSpeedFrom</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>resetSpeedFrom</secondary></indexterm>
+<para><computeroutput>void FLProgTCA9548A::resetSpeedFrom (uint32_t newSpeed, uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00484">484</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1a3dca5052bce732d52235c4231a3776fa"/><section>
+    <title>setSpeed()</title>
+<indexterm><primary>setSpeed</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>setSpeed</secondary></indexterm>
+<para><computeroutput>void FLProgTCA9548A::setSpeed (uint32_t newSpeed, uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00478">478</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1a5365a243dfe70ba78a3afb1e05334eaa"/><section>
+    <title>write()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>write</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void FLProgTCA9548A::write (const uint8_t * data, uint8_t quantity, uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00444">444</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_t_c_a9548_a_1a4d4fbc1fae9fd738262805d0cb2ee8ab"/><section>
+    <title>write()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>write</primary><secondary>FLProgTCA9548A</secondary></indexterm>
+<indexterm><primary>FLProgTCA9548A</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void FLProgTCA9548A::write (uint8_t data, uint8_t chanel)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00449">449</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+src/i2c/<link linkend="_flprog_i2_c_8h">flprogI2C.h</link>src/i2c/<link linkend="_flprog_i2_c_8cpp">flprogI2C.cpp</link></section>
+</section>

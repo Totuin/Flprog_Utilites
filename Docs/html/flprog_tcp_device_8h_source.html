@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FLProg Utilites: Исходный файл src/tcp/flprogTcpDevice.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FLProg Utilites<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('flprog_tcp_device_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">flprogTcpDevice.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="flprog_tcp_device_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_utilites_8h.html">./flprogUtilites.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef FLPROG_CORE_ESP8266_OR_ESP32</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;Ethernet.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;SPI.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef ESP8266</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;ESP8266WiFi.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifdef ESP32</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;WiFi.h&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="flprog_tcp_device_8h.html#aabcce68db3bc9710dc01623fabc76cea">   14</a></span><span class="preprocessor">#define FLPROG_TCP_SERVER_MODE 1</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="flprog_tcp_device_8h.html#a04f51819679f0e7eb603a652f2e8fb45">   15</a></span><span class="preprocessor">#define FLPROG_TSP_CLIENT_MODE 0</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="class_f_l_prog_tcp_device.html">FLProgTcpDevice</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a6284fa6d5ebbb5d80dbac1d33c8169ad">beClient</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a19b4deabd8751ad90ffc8f78074786d7">beServer</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">byte</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a640fbd479b1cce71b96cbd2d57e29c93">available</a>();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">byte</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#af8b5c4ec514ae4187b72f9150cd11dcd">read</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a79a6dcab0f5f8b3d176e0a84e7f1eb89">setPort</a>(<span class="keywordtype">int</span> port);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#af85f742fc5af14497d586707a35e8852">connected</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a154982dbaa1113ed868f976a21e463b4">   26</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a154982dbaa1113ed868f976a21e463b4">connect</a>() { <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a154982dbaa1113ed868f976a21e463b4">connect</a>(0, 0, 0, 0); };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a61d78922101dbbd0c4952998637be220">   27</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a61d78922101dbbd0c4952998637be220">connect</a>(<span class="keywordtype">byte</span> ipFirst, <span class="keywordtype">byte</span> ipSecond, <span class="keywordtype">byte</span> ipThird, <span class="keywordtype">byte</span> ipFourth) { <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a61d78922101dbbd0c4952998637be220">connect</a>(ipFirst, ipSecond, ipThird, ipFourth, <a class="code hl_variable" href="class_f_l_prog_tcp_device.html#aa645e6062fed7ab7380606c83ac14fcf">tcpPort</a>); };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a154982dbaa1113ed868f976a21e463b4">connect</a>(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, <span class="keywordtype">int</span> newPort);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a154982dbaa1113ed868f976a21e463b4">connect</a>(IPAddress newIp, <span class="keywordtype">int</span> newPort);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a1847080cabb96d96ba936478c9d344bf">print</a>(String data);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">byte</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a89be399dd246d274c43866c28342e25d">write</a>(<span class="keywordtype">byte</span> buffer[], <span class="keywordtype">byte</span> size);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#aa4d64e12f9dfdb00126a74cd9d9e8e7a">   32</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#aa4d64e12f9dfdb00126a74cd9d9e8e7a">begin</a>(){};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#ab251ab3378529ff4c80bf2d44a0afca2">restart</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#af26e6967e9cef10b93c5d6e5b60cd2e3">stop</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a9f82bc3efe62e9346d2e0e3a24fdd693">   35</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a9f82bc3efe62e9346d2e0e3a24fdd693">hasClient</a>() { <span class="keywordflow">return</span> <span class="keyword">false</span>; };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a8beddb2d793cb22786c1ccde51807ffa">   36</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a8beddb2d793cb22786c1ccde51807ffa">hasServer</a>() { <span class="keywordflow">return</span> <span class="keyword">false</span>; };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a0c233255b7b7d05fc3450ad0cb5c2514">   39</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_f_l_prog_tcp_device.html#a0c233255b7b7d05fc3450ad0cb5c2514">mode</a> = <a class="code hl_define" href="flprog_tcp_device_8h.html#a04f51819679f0e7eb603a652f2e8fb45">FLPROG_TSP_CLIENT_MODE</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#aa645e6062fed7ab7380606c83ac14fcf">   40</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_f_l_prog_tcp_device.html#aa645e6062fed7ab7380606c83ac14fcf">tcpPort</a> = 502;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a4433d323e544ae9a190040b3dd69fe79">   41</a></span>    <span class="keyword">virtual</span> Client *<a class="code hl_function" href="class_f_l_prog_tcp_device.html#a4433d323e544ae9a190040b3dd69fe79">tcpClient</a>() { <span class="keywordflow">return</span> 0; };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a0c3fcd4630440016a9fd506e38f99673">   42</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a0c3fcd4630440016a9fd506e38f99673">setAvalibleClientFromServer</a>(){};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#aac287f2c4f4ebd7d402c686d2759349e">   43</a></span>    <span class="keyword">virtual</span> IPAddress <a class="code hl_function" href="class_f_l_prog_tcp_device.html#aac287f2c4f4ebd7d402c686d2759349e">clientRemoteIp</a>() { <span class="keywordflow">return</span> IPAddress(0, 0, 0, 0); };</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a02c88623d43e6d6496f9ac716ba12fb5">   44</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a02c88623d43e6d6496f9ac716ba12fb5">clientRemotePort</a>() { <span class="keywordflow">return</span> 0; };</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_f_l_prog_tcp_device.html#a86057670ad2c44794686d9d492448c5c">   45</a></span>    IPAddress <a class="code hl_variable" href="class_f_l_prog_tcp_device.html#a86057670ad2c44794686d9d492448c5c">workIp</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifndef FLPROG_CORE_ESP8266_OR_ESP32</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_f_l_prog_w5100_tcp_device.html">   51</a></span><span class="keyword">class </span><a class="code hl_class" href="class_f_l_prog_w5100_tcp_device.html">FLProgW5100TcpDevice</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_f_l_prog_tcp_device.html">FLProgTcpDevice</a></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#af00df1f2de48023e9e66a03d753e08d6">begin</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_f_l_prog_w5100_tcp_device.html#a5c420af9d3787d1a6be1ddb1ce9c6689">   55</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#a5c420af9d3787d1a6be1ddb1ce9c6689">hasClient</a>() { <span class="keywordflow">return</span> client; };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_f_l_prog_w5100_tcp_device.html#abf01392b4e0aa774956c89413256d9cf">   56</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#abf01392b4e0aa774956c89413256d9cf">hasServer</a>() { <span class="keywordflow">return</span> server != 0; };</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_f_l_prog_w5100_tcp_device.html#a54f5b27a381f63ce3938df3d84785ade">   59</a></span>    <span class="keyword">virtual</span> Client *<a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#a54f5b27a381f63ce3938df3d84785ade">tcpClient</a>() { <span class="keywordflow">return</span> &amp;client; };</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#ad097d1f33176353990744dc642346e8a">setAvalibleClientFromServer</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_f_l_prog_w5100_tcp_device.html#a3da91dd567b9c4584263d26e7c36f99e">   61</a></span>    <span class="keyword">virtual</span> IPAddress <a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#a3da91dd567b9c4584263d26e7c36f99e">clientRemoteIp</a>() { <span class="keywordflow">return</span> client.remoteIP(); };</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_f_l_prog_w5100_tcp_device.html#a0441a81eb1c4713e0dda53550f196e76">   62</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_w5100_tcp_device.html#a0441a81eb1c4713e0dda53550f196e76">clientRemotePort</a>() { <span class="keywordflow">return</span> client.remotePort(); };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    EthernetServer *server;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    EthernetClient client;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#ifdef FLPROG_CORE_ESP8266_OR_ESP32</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">class </span>FLProgWiFiTcpDevice : <span class="keyword">public</span> <a class="code hl_class" href="class_f_l_prog_tcp_device.html">FLProgTcpDevice</a></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#aa4d64e12f9dfdb00126a74cd9d9e8e7a">begin</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a9f82bc3efe62e9346d2e0e3a24fdd693">hasClient</a>() { <span class="keywordflow">return</span> client; };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a8beddb2d793cb22786c1ccde51807ffa">hasServer</a>() { <span class="keywordflow">return</span> server != 0; };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">virtual</span> Client *<a class="code hl_function" href="class_f_l_prog_tcp_device.html#a4433d323e544ae9a190040b3dd69fe79">tcpClient</a>() { <span class="keywordflow">return</span> &amp;client; };</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a0c3fcd4630440016a9fd506e38f99673">setAvalibleClientFromServer</a>();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">virtual</span> IPAddress <a class="code hl_function" href="class_f_l_prog_tcp_device.html#aac287f2c4f4ebd7d402c686d2759349e">clientRemoteIp</a>() { <span class="keywordflow">return</span> client.remoteIP(); };</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_tcp_device.html#a02c88623d43e6d6496f9ac716ba12fb5">clientRemotePort</a>() { <span class="keywordflow">return</span> client.remotePort(); };</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    WiFiServer *server;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    WiFiClient client;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html"><div class="ttname"><a href="class_f_l_prog_tcp_device.html">FLProgTcpDevice</a></div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00017">flprogTcpDevice.h:18</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a02c88623d43e6d6496f9ac716ba12fb5"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a02c88623d43e6d6496f9ac716ba12fb5">FLProgTcpDevice::clientRemotePort</a></div><div class="ttdeci">virtual int clientRemotePort()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00044">flprogTcpDevice.h:44</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a0c233255b7b7d05fc3450ad0cb5c2514"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a0c233255b7b7d05fc3450ad0cb5c2514">FLProgTcpDevice::mode</a></div><div class="ttdeci">bool mode</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00039">flprogTcpDevice.h:39</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a0c3fcd4630440016a9fd506e38f99673"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a0c3fcd4630440016a9fd506e38f99673">FLProgTcpDevice::setAvalibleClientFromServer</a></div><div class="ttdeci">virtual void setAvalibleClientFromServer()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00042">flprogTcpDevice.h:42</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a154982dbaa1113ed868f976a21e463b4"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a154982dbaa1113ed868f976a21e463b4">FLProgTcpDevice::connect</a></div><div class="ttdeci">void connect()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00026">flprogTcpDevice.h:26</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a1847080cabb96d96ba936478c9d344bf"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a1847080cabb96d96ba936478c9d344bf">FLProgTcpDevice::print</a></div><div class="ttdeci">void print(String data)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00061">flprogTcpDevice.cpp:61</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a19b4deabd8751ad90ffc8f78074786d7"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a19b4deabd8751ad90ffc8f78074786d7">FLProgTcpDevice::beServer</a></div><div class="ttdeci">void beServer()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00019">flprogTcpDevice.cpp:19</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a4433d323e544ae9a190040b3dd69fe79"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a4433d323e544ae9a190040b3dd69fe79">FLProgTcpDevice::tcpClient</a></div><div class="ttdeci">virtual Client * tcpClient()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00041">flprogTcpDevice.h:41</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a61d78922101dbbd0c4952998637be220"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a61d78922101dbbd0c4952998637be220">FLProgTcpDevice::connect</a></div><div class="ttdeci">void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00027">flprogTcpDevice.h:27</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a6284fa6d5ebbb5d80dbac1d33c8169ad"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a6284fa6d5ebbb5d80dbac1d33c8169ad">FLProgTcpDevice::beClient</a></div><div class="ttdeci">void beClient()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00011">flprogTcpDevice.cpp:11</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a640fbd479b1cce71b96cbd2d57e29c93"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a640fbd479b1cce71b96cbd2d57e29c93">FLProgTcpDevice::available</a></div><div class="ttdeci">byte available()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00041">flprogTcpDevice.cpp:41</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a79a6dcab0f5f8b3d176e0a84e7f1eb89"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a79a6dcab0f5f8b3d176e0a84e7f1eb89">FLProgTcpDevice::setPort</a></div><div class="ttdeci">void setPort(int port)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00003">flprogTcpDevice.cpp:3</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a86057670ad2c44794686d9d492448c5c"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a86057670ad2c44794686d9d492448c5c">FLProgTcpDevice::workIp</a></div><div class="ttdeci">IPAddress workIp</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00045">flprogTcpDevice.h:45</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a89be399dd246d274c43866c28342e25d"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a89be399dd246d274c43866c28342e25d">FLProgTcpDevice::write</a></div><div class="ttdeci">byte write(byte buffer[], byte size)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00066">flprogTcpDevice.cpp:66</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a8beddb2d793cb22786c1ccde51807ffa"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a8beddb2d793cb22786c1ccde51807ffa">FLProgTcpDevice::hasServer</a></div><div class="ttdeci">virtual bool hasServer()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00036">flprogTcpDevice.h:36</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_a9f82bc3efe62e9346d2e0e3a24fdd693"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#a9f82bc3efe62e9346d2e0e3a24fdd693">FLProgTcpDevice::hasClient</a></div><div class="ttdeci">virtual bool hasClient()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00035">flprogTcpDevice.h:35</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_aa4d64e12f9dfdb00126a74cd9d9e8e7a"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#aa4d64e12f9dfdb00126a74cd9d9e8e7a">FLProgTcpDevice::begin</a></div><div class="ttdeci">virtual void begin()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00032">flprogTcpDevice.h:32</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_aa645e6062fed7ab7380606c83ac14fcf"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#aa645e6062fed7ab7380606c83ac14fcf">FLProgTcpDevice::tcpPort</a></div><div class="ttdeci">int tcpPort</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00040">flprogTcpDevice.h:40</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_aac287f2c4f4ebd7d402c686d2759349e"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#aac287f2c4f4ebd7d402c686d2759349e">FLProgTcpDevice::clientRemoteIp</a></div><div class="ttdeci">virtual IPAddress clientRemoteIp()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00043">flprogTcpDevice.h:43</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_ab251ab3378529ff4c80bf2d44a0afca2"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#ab251ab3378529ff4c80bf2d44a0afca2">FLProgTcpDevice::restart</a></div><div class="ttdeci">void restart()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00027">flprogTcpDevice.cpp:27</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_af26e6967e9cef10b93c5d6e5b60cd2e3"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#af26e6967e9cef10b93c5d6e5b60cd2e3">FLProgTcpDevice::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00036">flprogTcpDevice.cpp:36</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_af85f742fc5af14497d586707a35e8852"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#af85f742fc5af14497d586707a35e8852">FLProgTcpDevice::connected</a></div><div class="ttdeci">bool connected()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00056">flprogTcpDevice.cpp:56</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_tcp_device_html_af8b5c4ec514ae4187b72f9150cd11dcd"><div class="ttname"><a href="class_f_l_prog_tcp_device.html#af8b5c4ec514ae4187b72f9150cd11dcd">FLProgTcpDevice::read</a></div><div class="ttdeci">byte read()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00050">flprogTcpDevice.cpp:50</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html">FLProgW5100TcpDevice</a></div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00051">flprogTcpDevice.h:52</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_a0441a81eb1c4713e0dda53550f196e76"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#a0441a81eb1c4713e0dda53550f196e76">FLProgW5100TcpDevice::clientRemotePort</a></div><div class="ttdeci">virtual int clientRemotePort()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00062">flprogTcpDevice.h:62</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_a3da91dd567b9c4584263d26e7c36f99e"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#a3da91dd567b9c4584263d26e7c36f99e">FLProgW5100TcpDevice::clientRemoteIp</a></div><div class="ttdeci">virtual IPAddress clientRemoteIp()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00061">flprogTcpDevice.h:61</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_a54f5b27a381f63ce3938df3d84785ade"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#a54f5b27a381f63ce3938df3d84785ade">FLProgW5100TcpDevice::tcpClient</a></div><div class="ttdeci">virtual Client * tcpClient()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00059">flprogTcpDevice.h:59</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_a5c420af9d3787d1a6be1ddb1ce9c6689"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#a5c420af9d3787d1a6be1ddb1ce9c6689">FLProgW5100TcpDevice::hasClient</a></div><div class="ttdeci">virtual bool hasClient()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00055">flprogTcpDevice.h:55</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_abf01392b4e0aa774956c89413256d9cf"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#abf01392b4e0aa774956c89413256d9cf">FLProgW5100TcpDevice::hasServer</a></div><div class="ttdeci">virtual bool hasServer()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00056">flprogTcpDevice.h:56</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_ad097d1f33176353990744dc642346e8a"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#ad097d1f33176353990744dc642346e8a">FLProgW5100TcpDevice::setAvalibleClientFromServer</a></div><div class="ttdeci">virtual void setAvalibleClientFromServer()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00117">flprogTcpDevice.cpp:117</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_w5100_tcp_device_html_af00df1f2de48023e9e66a03d753e08d6"><div class="ttname"><a href="class_f_l_prog_w5100_tcp_device.html#af00df1f2de48023e9e66a03d753e08d6">FLProgW5100TcpDevice::begin</a></div><div class="ttdeci">virtual void begin()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8cpp_source.html#l00108">flprogTcpDevice.cpp:108</a></div></div>
+<div class="ttc" id="aflprog_tcp_device_8h_html_a04f51819679f0e7eb603a652f2e8fb45"><div class="ttname"><a href="flprog_tcp_device_8h.html#a04f51819679f0e7eb603a652f2e8fb45">FLPROG_TSP_CLIENT_MODE</a></div><div class="ttdeci">#define FLPROG_TSP_CLIENT_MODE</div><div class="ttdef"><b>Definition:</b> <a href="flprog_tcp_device_8h_source.html#l00015">flprogTcpDevice.h:15</a></div></div>
+<div class="ttc" id="aflprog_utilites_8h_html"><div class="ttname"><a href="flprog_utilites_8h.html">flprogUtilites.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a65467b043fce6081aa9e597b27062f1.html">tcp</a></li><li class="navelem"><a class="el" href="flprog_tcp_device_8h.html">flprogTcpDevice.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

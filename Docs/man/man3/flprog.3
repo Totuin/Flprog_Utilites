@@ -1,0 +1,66 @@
+.TH "flprog" 3 "Чт 23 Фев 2023" "Version 1" "FLProg Utilites" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+flprog
+.SH SYNOPSIS
+.br
+.PP
+.SS "Функции"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisTimer\fP (uint32_t startTime, uint32_t period)"
+.br
+.ti -1c
+.RI "bool \fBisTimerMicros\fP (unsigned long startTime, unsigned long period)"
+.br
+.ti -1c
+.RI "int \fBserialCodeForParametrs\fP (byte portDataBits, byte portStopBits, byte portParity)"
+.br
+.ti -1c
+.RI "uint32_t \fBspeedFromCode\fP (byte code)"
+.br
+.ti -1c
+.RI "uint8_t \fBcodeFromSpeed\fP (int32_t speed)"
+.br
+.ti -1c
+.RI "uint32_t \fBdifference32\fP (uint32_t start, uint32_t end)"
+.br
+.ti -1c
+.RI "uint32_t \fBtimeBack\fP (uint32_t value)"
+.br
+.in -1c
+.SH "Функции"
+.PP 
+.SS "uint8_t flprog::codeFromSpeed (int32_t speed)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB79\fP
+.SS "uint32_t flprog::difference32 (uint32_t start, uint32_t end)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB123\fP
+.SS "bool flprog::isTimer (uint32_t startTime, uint32_t period)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB132\fP
+.SS "bool flprog::isTimerMicros (unsigned long startTime, unsigned long period)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB137\fP
+.SS "int flprog::serialCodeForParametrs (byte portDataBits, byte portStopBits, byte portParity)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB3\fP
+.SS "uint32_t flprog::speedFromCode (byte code)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB33\fP
+.SS "uint32_t flprog::timeBack (uint32_t value)"
+
+.PP
+См\&. определение в файле \fBflprogUtilites\&.cpp\fP строка \fB142\fP
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для FLProg Utilites из исходного текста\&.

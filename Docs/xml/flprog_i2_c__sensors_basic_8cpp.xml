@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="flprog_i2_c__sensors_basic_8cpp" kind="file" language="C++">
+    <compoundname>flprogI2C_sensorsBasic.cpp</compoundname>
+    <includes refid="flprog_i2_c__sensors_basic_8h" local="yes">flprogI2C_sensorsBasic.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="10">
+        <label>Ethernet.h</label>
+      </node>
+      <node id="4">
+        <label>flprogUtilites.h</label>
+        <link refid="flprog_utilites_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>i2c/flprogI2C.h</label>
+        <link refid="flprog_i2_c_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/i2c/flprogI2C_sensorsBasic.cpp</label>
+        <link refid="flprog_i2_c__sensors_basic_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>flprogI2C_sensorsBasic.h</label>
+        <link refid="flprog_i2_c__sensors_basic_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>tcp/flprogTcpDevice.h</label>
+        <link refid="flprog_tcp_device_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>uart/flprogUart.h</label>
+        <link refid="flprog_uart_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>softwareUart\flprogSoftwareUart.h</label>
+        <link refid="flprog_software_uart_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>SPI.h</label>
+      </node>
+      <node id="6">
+        <label>Wire.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_i2_c__sensors_basic_8h" kindref="compound">flprogI2C_sensorsBasic.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="class_f_l_prog_i2c_step_work_sensor_1a85f6498d48f835599c17fa0df4408b21" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a85f6498d48f835599c17fa0df4408b21" kindref="member">FLProgI2cStepWorkSensor::checkDelay</ref>()</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_i2c_step_work_sensor_1ac077cf3b16ecf859effc6609bf03a531" kindref="member">step</ref><sp/>==<sp/><ref refid="flprog_utilites_8h_1ace19cbe1e3ba044e8fd2f2db87fdcce4" kindref="member">FLPROG_SENSOR_WAITING_DELAY</ref>)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceflprog_1acc5a367798f79f5340fa5de409ac22d4" kindref="member">flprog::isTimer</ref>(<ref refid="class_f_l_prog_i2c_step_work_sensor_1a67de0a22679aceca8be256a7f332dd1c" kindref="member">startDelay</ref>,<sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a3ca8e4d3cdc89c82e291241a67ff4a68" kindref="member">sizeDelay</ref>))</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1ac077cf3b16ecf859effc6609bf03a531" kindref="member">step</ref><sp/>=<sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a7fc990383e0a84ddf97bfddf61507ff2" kindref="member">stepAfterDelay</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_f_l_prog_i2c_step_work_sensor_1a72a5f525e728b0801ddb2e911afacc3b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a72a5f525e728b0801ddb2e911afacc3b" kindref="member">FLProgI2cStepWorkSensor::read</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1ae4827a4151f973dfbca09e0f15663767" kindref="member">isNeededRead</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_f_l_prog_i2c_step_work_sensor_1a7c5547cb9e63baf21658b6d33220ba3a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a7c5547cb9e63baf21658b6d33220ba3a" kindref="member">FLProgI2cStepWorkSensor::setReadPeriod</ref>(uint32_t<sp/>period)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1aa14c06c54f73c50a39d6b5264e3e66e9" kindref="member">readPeriod</ref><sp/>=<sp/>period;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_f_l_prog_i2c_step_work_sensor_1ac2080f524107c1645440b8d7b0a2526e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1ac2080f524107c1645440b8d7b0a2526e" kindref="member">FLProgI2cStepWorkSensor::checkReadPeriod</ref>()</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_i2c_step_work_sensor_1aa14c06c54f73c50a39d6b5264e3e66e9" kindref="member">readPeriod</ref><sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="namespaceflprog_1acc5a367798f79f5340fa5de409ac22d4" kindref="member">flprog::isTimer</ref>(<ref refid="class_f_l_prog_i2c_step_work_sensor_1aecaacada2d47aa5709f44ca5660de74d" kindref="member">startReadPeriod</ref>,<sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1aa14c06c54f73c50a39d6b5264e3e66e9" kindref="member">readPeriod</ref>))</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1aecaacada2d47aa5709f44ca5660de74d" kindref="member">startReadPeriod</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a72a5f525e728b0801ddb2e911afacc3b" kindref="member">read</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_f_l_prog_i2c_step_work_sensor_1aa3d0c08a85519ce3bd136575255c48bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1aa3d0c08a85519ce3bd136575255c48bf" kindref="member">FLProgI2cStepWorkSensor::gotoStepWithDelay</ref>(uint8_t<sp/>newStep,<sp/>uint32_t<sp/>delay)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a67de0a22679aceca8be256a7f332dd1c" kindref="member">startDelay</ref><sp/>=<sp/>millis();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a3ca8e4d3cdc89c82e291241a67ff4a68" kindref="member">sizeDelay</ref><sp/>=<sp/>delay;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a7fc990383e0a84ddf97bfddf61507ff2" kindref="member">stepAfterDelay</ref><sp/>=<sp/>newStep;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1ac077cf3b16ecf859effc6609bf03a531" kindref="member">step</ref><sp/>=<sp/><ref refid="flprog_utilites_8h_1ace19cbe1e3ba044e8fd2f2db87fdcce4" kindref="member">FLPROG_SENSOR_WAITING_DELAY</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_f_l_prog_i2c_step_work_sensor_1a3417638ce26313aeae54f638b80cfb25" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1a3417638ce26313aeae54f638b80cfb25" kindref="member">FLProgI2cStepWorkSensor::checkNeededRead</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_i2c_step_work_sensor_1ac077cf3b16ecf859effc6609bf03a531" kindref="member">step</ref><sp/>==<sp/><ref refid="flprog_utilites_8h_1a3f3cf4c2020b3aef1e75d1d584425e76" kindref="member">FLPROG_SENSOR_WAITING_READ_STEP</ref>)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_i2c_step_work_sensor_1ae4827a4151f973dfbca09e0f15663767" kindref="member">isNeededRead</ref>)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1ae30f110f5a8ee5450478a559083ab31e" kindref="member">readSensor</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2c_step_work_sensor_1ae4827a4151f973dfbca09e0f15663767" kindref="member">isNeededRead</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/i2c/flprogI2C_sensorsBasic.cpp"/>
+  </compounddef>
+</doxygen>

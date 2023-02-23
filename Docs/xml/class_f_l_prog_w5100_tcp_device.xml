@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="class_f_l_prog_w5100_tcp_device" kind="class" language="C++" prot="public">
+    <compoundname>FLProgW5100TcpDevice</compoundname>
+    <basecompoundref refid="class_f_l_prog_tcp_device" prot="public" virt="non-virtual">FLProgTcpDevice</basecompoundref>
+    <includes refid="flprog_tcp_device_8h" local="no">flprogTcpDevice.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_f_l_prog_w5100_tcp_device_1ab139ae9027230f9f2557fbed2b6f17f3" prot="private" static="no" mutable="no">
+        <type>EthernetServer *</type>
+        <definition>EthernetServer* FLProgW5100TcpDevice::server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <qualifiedname>FLProgW5100TcpDevice::server</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="66" column="20" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_w5100_tcp_device_1a4343503c57b5ae10d9214d660abbf285" prot="private" static="no" mutable="no">
+        <type>EthernetClient</type>
+        <definition>EthernetClient FLProgW5100TcpDevice::client</definition>
+        <argsstring></argsstring>
+        <name>client</name>
+        <qualifiedname>FLProgW5100TcpDevice::client</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="67" column="20" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1af00df1f2de48023e9e66a03d753e08d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgW5100TcpDevice::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>FLProgW5100TcpDevice::begin</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1aa4d64e12f9dfdb00126a74cd9d9e8e7a">begin</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="54" column="18" bodyfile="src/tcp/flprogTcpDevice.cpp" bodystart="108" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1a5c420af9d3787d1a6be1ddb1ce9c6689" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool FLProgW5100TcpDevice::hasClient</definition>
+        <argsstring>()</argsstring>
+        <name>hasClient</name>
+        <qualifiedname>FLProgW5100TcpDevice::hasClient</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1a9f82bc3efe62e9346d2e0e3a24fdd693">hasClient</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="55" column="18" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1abf01392b4e0aa774956c89413256d9cf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool FLProgW5100TcpDevice::hasServer</definition>
+        <argsstring>()</argsstring>
+        <name>hasServer</name>
+        <qualifiedname>FLProgW5100TcpDevice::hasServer</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1a8beddb2d793cb22786c1ccde51807ffa">hasServer</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="56" column="18" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1a54f5b27a381f63ce3938df3d84785ade" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Client *</type>
+        <definition>virtual Client * FLProgW5100TcpDevice::tcpClient</definition>
+        <argsstring>()</argsstring>
+        <name>tcpClient</name>
+        <qualifiedname>FLProgW5100TcpDevice::tcpClient</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79">tcpClient</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="59" column="20" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1ad097d1f33176353990744dc642346e8a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgW5100TcpDevice::setAvalibleClientFromServer</definition>
+        <argsstring>()</argsstring>
+        <name>setAvalibleClientFromServer</name>
+        <qualifiedname>FLProgW5100TcpDevice::setAvalibleClientFromServer</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1a0c3fcd4630440016a9fd506e38f99673">setAvalibleClientFromServer</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="60" column="18" bodyfile="src/tcp/flprogTcpDevice.cpp" bodystart="117" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1a3da91dd567b9c4584263d26e7c36f99e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>IPAddress</type>
+        <definition>virtual IPAddress FLProgW5100TcpDevice::clientRemoteIp</definition>
+        <argsstring>()</argsstring>
+        <name>clientRemoteIp</name>
+        <qualifiedname>FLProgW5100TcpDevice::clientRemoteIp</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1aac287f2c4f4ebd7d402c686d2759349e">clientRemoteIp</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="61" column="23" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_w5100_tcp_device_1a0441a81eb1c4713e0dda53550f196e76" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FLProgW5100TcpDevice::clientRemotePort</definition>
+        <argsstring>()</argsstring>
+        <name>clientRemotePort</name>
+        <qualifiedname>FLProgW5100TcpDevice::clientRemotePort</qualifiedname>
+        <reimplements refid="class_f_l_prog_tcp_device_1a02c88623d43e6d6496f9ac716ba12fb5">clientRemotePort</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/tcp/flprogTcpDevice.h" line="62" column="17" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>FLProgTcpDevice</label>
+        <link refid="class_f_l_prog_tcp_device"/>
+      </node>
+      <node id="1">
+        <label>FLProgW5100TcpDevice</label>
+        <link refid="class_f_l_prog_w5100_tcp_device"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>FLProgTcpDevice</label>
+        <link refid="class_f_l_prog_tcp_device"/>
+      </node>
+      <node id="1">
+        <label>FLProgW5100TcpDevice</label>
+        <link refid="class_f_l_prog_w5100_tcp_device"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/tcp/flprogTcpDevice.h" line="51" column="1" bodyfile="src/tcp/flprogTcpDevice.h" bodystart="52" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_f_l_prog_tcp_device_1a640fbd479b1cce71b96cbd2d57e29c93" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>available</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a6284fa6d5ebbb5d80dbac1d33c8169ad" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>beClient</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1af00df1f2de48023e9e66a03d753e08d6" prot="public" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>begin</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a19b4deabd8751ad90ffc8f78074786d7" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>beServer</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1a4343503c57b5ae10d9214d660abbf285" prot="private" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>client</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1a3da91dd567b9c4584263d26e7c36f99e" prot="protected" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>clientRemoteIp</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1a0441a81eb1c4713e0dda53550f196e76" prot="protected" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>clientRemotePort</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a154982dbaa1113ed868f976a21e463b4" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>connect</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a61d78922101dbbd0c4952998637be220" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>connect</name></member>
+      <member refid="class_f_l_prog_tcp_device_1aa03e43ea6cc1646f02b0577de0e500dc" prot="public" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>connect</name></member>
+      <member refid="class_f_l_prog_tcp_device_1ae373c7a0ad06e3952ba73c0258057107" prot="public" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>connect</name></member>
+      <member refid="class_f_l_prog_tcp_device_1af85f742fc5af14497d586707a35e8852" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>connected</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1a5c420af9d3787d1a6be1ddb1ce9c6689" prot="public" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>hasClient</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1abf01392b4e0aa774956c89413256d9cf" prot="public" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>hasServer</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" prot="protected" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>mode</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a1847080cabb96d96ba936478c9d344bf" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>print</name></member>
+      <member refid="class_f_l_prog_tcp_device_1af8b5c4ec514ae4187b72f9150cd11dcd" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>read</name></member>
+      <member refid="class_f_l_prog_tcp_device_1ab251ab3378529ff4c80bf2d44a0afca2" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>restart</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1ab139ae9027230f9f2557fbed2b6f17f3" prot="private" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>server</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1ad097d1f33176353990744dc642346e8a" prot="protected" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>setAvalibleClientFromServer</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a79a6dcab0f5f8b3d176e0a84e7f1eb89" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>setPort</name></member>
+      <member refid="class_f_l_prog_tcp_device_1af26e6967e9cef10b93c5d6e5b60cd2e3" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>stop</name></member>
+      <member refid="class_f_l_prog_w5100_tcp_device_1a54f5b27a381f63ce3938df3d84785ade" prot="protected" virt="virtual"><scope>FLProgW5100TcpDevice</scope><name>tcpClient</name></member>
+      <member refid="class_f_l_prog_tcp_device_1aa645e6062fed7ab7380606c83ac14fcf" prot="protected" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>tcpPort</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a86057670ad2c44794686d9d492448c5c" prot="protected" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>workIp</name></member>
+      <member refid="class_f_l_prog_tcp_device_1a89be399dd246d274c43866c28342e25d" prot="public" virt="non-virtual"><scope>FLProgW5100TcpDevice</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

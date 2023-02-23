@@ -1,0 +1,29 @@
+\hypertarget{hardware_uart_d_u_e_8h_source}{}\doxysection{hardware\+Uart\+DUE.\+h}
+\label{hardware_uart_d_u_e_8h_source}\index{src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.h@{src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.h}}
+\mbox{\hyperlink{hardware_uart_d_u_e_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}Arduino.h"{}}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flprog_utilites_8h}{flprogUtilites.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifdef\ FLPROG\_CORE\_AVR\_DUE}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00006}00006\ \textcolor{keyword}{class\ }FLProgUart\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_l_prog_uart_basic}{FLProgUartBasic}}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00008}00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00009}00009\ \ \ \ \ FLProgUart()\{\};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00010}00010\ \ \ \ \ FLProgUart(UARTClass\ *hardwarePort);}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a064ae107b3e87fcbda914dd1ae691d57}{begin}}();}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a064ae107b3e87fcbda914dd1ae691d57}{begin}}(int32\_t\ speed,\ UARTClass::UARTModes\ mode);}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a76ec6264530f2bd0cf20fd3ccced3370}{hasPort}}()\ \{\ \textcolor{keywordflow}{return}\ !(port\ ==\ 0);\ \};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a9d2aed1e23569871e0fc5c2099db85dc}{restartPort}}();}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00016}00016\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{virtual}\ Stream\ *\mbox{\hyperlink{class_f_l_prog_uart_basic_a746fd4b3995e52b77d8845be2235bd15}{uartPort}}()\ \{\ \textcolor{keywordflow}{return}\ port;\ \};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00018}00018\ \ \ \ \ UARTClass\ *port;}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00019}00019\ \ \ \ \ UARTClass::UARTModes\ serialModeFromParametrs();}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ setSerialMode(UARTClass::UARTModes\ mode);}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00021}00021\ \};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_d_u_e_8h_source_l00023}00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

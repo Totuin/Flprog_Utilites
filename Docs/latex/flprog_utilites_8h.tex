@@ -1,0 +1,154 @@
+\hypertarget{flprog_utilites_8h}{}\doxysection{Файл src/flprog\+Utilites.h}
+\label{flprog_utilites_8h}\index{src/flprogUtilites.h@{src/flprogUtilites.h}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}i2c/flprog\+I2\+C.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uart/flprog\+Uart.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tcp/flprog\+Tcp\+Device.\+h\char`\"{}}\newline
+\doxysubsection*{Пространства имен}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceflprog}{flprog}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Макросы}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a9febed9388c8a9046d18d2f8d846ebd4}{FLPROG\+\_\+\+SENSOR\+\_\+\+NOT\+\_\+\+ERROR}}~0
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a9380f57f189d55affc822295e38e9061}{FLPROG\+\_\+\+SENSOR\+\_\+\+NOT\+\_\+\+READY\+\_\+\+ERROR}}~1
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a3beb2f13de37fc5147b0bfc607c6a9b0}{FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+FOUND\+\_\+\+ERROR}}~2
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a39f7191de8a58d9ed175d0f0b1d8b016}{FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CORRECT\+\_\+\+BUS\+\_\+\+NUMBER\+\_\+\+ERROR}}~65
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a84da77632af600817c82da6ce4b761c5}{FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CORRECT\+\_\+\+DEVICE\+\_\+\+ADDRESS\+\_\+\+ERROR}}~61
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a940328be364e02a29decebd5dc0053f0}{FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+DEFINED\+\_\+\+ERROR}}~5
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_ab5d5a91218c3f1f85b31fe21c9f01be0}{FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CORRECT\+\_\+\+DATA\+\_\+\+ERROR}}~6
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a5d7246bdcf75e083d07048332deda172}{FLPROG\+\_\+\+SENSOR\+\_\+\+CRC\+\_\+\+ERROR}}~72
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}{FLPROG\+\_\+\+SENSOR\+\_\+\+WAITING\+\_\+\+READ\+\_\+\+STEP}}~0
+\item 
+\#define \mbox{\hyperlink{flprog_utilites_8h_ace19cbe1e3ba044e8fd2f2db87fdcce4}{FLPROG\+\_\+\+SENSOR\+\_\+\+WAITING\+\_\+\+DELAY}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespaceflprog_acc5a367798f79f5340fa5de409ac22d4}{flprog\+::is\+Timer}} (uint32\+\_\+t start\+Time, uint32\+\_\+t period)
+\item 
+bool \mbox{\hyperlink{namespaceflprog_a9f288356ee2d40b2b2ada99354e56ba9}{flprog\+::is\+Timer\+Micros}} (unsigned long start\+Time, unsigned long period)
+\item 
+int \mbox{\hyperlink{namespaceflprog_aca0ea27d0df934b3fa846fcfcf6b5d69}{flprog\+::serial\+Code\+For\+Parametrs}} (byte port\+Data\+Bits, byte port\+Stop\+Bits, byte port\+Parity)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespaceflprog_a82fda12bd0f0533f62fd6cf82a3e92fd}{flprog\+::speed\+From\+Code}} (byte code)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{namespaceflprog_a7661cd972a044b3c2fbc6cb707a19c4b}{flprog\+::code\+From\+Speed}} (int32\+\_\+t speed)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespaceflprog_a14c0502a16183c50f02f25cb25a80728}{flprog\+::difference32}} (uint32\+\_\+t start, uint32\+\_\+t end)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{namespaceflprog_ae35684dee57af61e1a86fb2e3ab294d4}{flprog\+::time\+Back}} (uint32\+\_\+t value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Макросы}
+\mbox{\Hypertarget{flprog_utilites_8h_a5d7246bdcf75e083d07048332deda172}\label{flprog_utilites_8h_a5d7246bdcf75e083d07048332deda172}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_CRC\_ERROR@{FLPROG\_SENSOR\_CRC\_ERROR}}
+\index{FLPROG\_SENSOR\_CRC\_ERROR@{FLPROG\_SENSOR\_CRC\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_CRC\_ERROR}{FLPROG\_SENSOR\_CRC\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+CRC\+\_\+\+ERROR~72}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00011}{11}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a39f7191de8a58d9ed175d0f0b1d8b016}\label{flprog_utilites_8h_a39f7191de8a58d9ed175d0f0b1d8b016}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_BUS\_NUMBER\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_BUS\_NUMBER\_ERROR}}
+\index{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_BUS\_NUMBER\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_BUS\_NUMBER\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_BUS\_NUMBER\_ERROR}{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_BUS\_NUMBER\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CORRECT\+\_\+\+BUS\+\_\+\+NUMBER\+\_\+\+ERROR~65}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00007}{7}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_ab5d5a91218c3f1f85b31fe21c9f01be0}\label{flprog_utilites_8h_ab5d5a91218c3f1f85b31fe21c9f01be0}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DATA\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DATA\_ERROR}}
+\index{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DATA\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DATA\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DATA\_ERROR}{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DATA\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CORRECT\+\_\+\+DATA\+\_\+\+ERROR~6}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00010}{10}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a84da77632af600817c82da6ce4b761c5}\label{flprog_utilites_8h_a84da77632af600817c82da6ce4b761c5}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DEVICE\_ADDRESS\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DEVICE\_ADDRESS\_ERROR}}
+\index{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DEVICE\_ADDRESS\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DEVICE\_ADDRESS\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DEVICE\_ADDRESS\_ERROR}{FLPROG\_SENSOR\_DEVICE\_NOT\_CORRECT\_DEVICE\_ADDRESS\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+CORRECT\+\_\+\+DEVICE\+\_\+\+ADDRESS\+\_\+\+ERROR~61}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00008}{8}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a940328be364e02a29decebd5dc0053f0}\label{flprog_utilites_8h_a940328be364e02a29decebd5dc0053f0}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_DEVICE\_NOT\_DEFINED\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_DEFINED\_ERROR}}
+\index{FLPROG\_SENSOR\_DEVICE\_NOT\_DEFINED\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_DEFINED\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_DEVICE\_NOT\_DEFINED\_ERROR}{FLPROG\_SENSOR\_DEVICE\_NOT\_DEFINED\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+DEFINED\+\_\+\+ERROR~5}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00009}{9}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a3beb2f13de37fc5147b0bfc607c6a9b0}\label{flprog_utilites_8h_a3beb2f13de37fc5147b0bfc607c6a9b0}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_DEVICE\_NOT\_FOUND\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_FOUND\_ERROR}}
+\index{FLPROG\_SENSOR\_DEVICE\_NOT\_FOUND\_ERROR@{FLPROG\_SENSOR\_DEVICE\_NOT\_FOUND\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_DEVICE\_NOT\_FOUND\_ERROR}{FLPROG\_SENSOR\_DEVICE\_NOT\_FOUND\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+DEVICE\+\_\+\+NOT\+\_\+\+FOUND\+\_\+\+ERROR~2}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00006}{6}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a9febed9388c8a9046d18d2f8d846ebd4}\label{flprog_utilites_8h_a9febed9388c8a9046d18d2f8d846ebd4}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_NOT\_ERROR@{FLPROG\_SENSOR\_NOT\_ERROR}}
+\index{FLPROG\_SENSOR\_NOT\_ERROR@{FLPROG\_SENSOR\_NOT\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_NOT\_ERROR}{FLPROG\_SENSOR\_NOT\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+NOT\+\_\+\+ERROR~0}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00004}{4}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a9380f57f189d55affc822295e38e9061}\label{flprog_utilites_8h_a9380f57f189d55affc822295e38e9061}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_NOT\_READY\_ERROR@{FLPROG\_SENSOR\_NOT\_READY\_ERROR}}
+\index{FLPROG\_SENSOR\_NOT\_READY\_ERROR@{FLPROG\_SENSOR\_NOT\_READY\_ERROR}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_NOT\_READY\_ERROR}{FLPROG\_SENSOR\_NOT\_READY\_ERROR}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+NOT\+\_\+\+READY\+\_\+\+ERROR~1}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00005}{5}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_ace19cbe1e3ba044e8fd2f2db87fdcce4}\label{flprog_utilites_8h_ace19cbe1e3ba044e8fd2f2db87fdcce4}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_WAITING\_DELAY@{FLPROG\_SENSOR\_WAITING\_DELAY}}
+\index{FLPROG\_SENSOR\_WAITING\_DELAY@{FLPROG\_SENSOR\_WAITING\_DELAY}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_WAITING\_DELAY}{FLPROG\_SENSOR\_WAITING\_DELAY}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+WAITING\+\_\+\+DELAY~1}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00014}{14}}
+
+\mbox{\Hypertarget{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}\label{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}} 
+\index{flprogUtilites.h@{flprogUtilites.h}!FLPROG\_SENSOR\_WAITING\_READ\_STEP@{FLPROG\_SENSOR\_WAITING\_READ\_STEP}}
+\index{FLPROG\_SENSOR\_WAITING\_READ\_STEP@{FLPROG\_SENSOR\_WAITING\_READ\_STEP}!flprogUtilites.h@{flprogUtilites.h}}
+\doxysubsubsection{\texorpdfstring{FLPROG\_SENSOR\_WAITING\_READ\_STEP}{FLPROG\_SENSOR\_WAITING\_READ\_STEP}}
+{\footnotesize\ttfamily \#define FLPROG\+\_\+\+SENSOR\+\_\+\+WAITING\+\_\+\+READ\+\_\+\+STEP~0}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_utilites_8h_source}{flprog\+Utilites.\+h}} строка \mbox{\hyperlink{flprog_utilites_8h_source_l00013}{13}}
+

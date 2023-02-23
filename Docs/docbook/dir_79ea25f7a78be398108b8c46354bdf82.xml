@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_79ea25f7a78be398108b8c46354bdf82" xml:lang="ru">
+<title>Содержание директории src/variant/arduino</title>
+<indexterm><primary>Содержание директории src/variant/arduino</primary></indexterm>
+<simplesect>
+    <title>Директории    </title>
+        <itemizedlist>
+            <listitem><para>директория <link linkend="_dir_34aff4ed9ae89442d3888df3eb36934c">avr</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_e62c26f6289b28ef8683592ed3f3d8d1">due</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

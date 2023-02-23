@@ -1,0 +1,123 @@
+\hypertarget{flprog_uart_8cpp_source}{}\doxysection{flprog\+Uart.\+cpp}
+\label{flprog_uart_8cpp_source}\index{src/uart/flprogUart.cpp@{src/uart/flprogUart.cpp}}
+\mbox{\hyperlink{flprog_uart_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flprog_uart_8h}{flprogUart.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00003}\mbox{\hyperlink{class_f_l_prog_uart_basic_ae19963e8ca7e14733296f01c78648ed3}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_ae19963e8ca7e14733296f01c78648ed3}{FLProgUartBasic::setPortSpeed}}(\textcolor{keywordtype}{byte}\ speed)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_ac96e85e10437faff18e6a6c6e70f2254}{portSpeed}}\ ==\ speed)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00006}00006\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00008}00008\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_ac96e85e10437faff18e6a6c6e70f2254}{portSpeed}}\ =\ speed;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_l_prog_uart_basic_a76ec6264530f2bd0cf20fd3ccced3370}{hasPort}}())}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00013}00013\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a9d2aed1e23569871e0fc5c2099db85dc}{restartPort}}();}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00017}\mbox{\hyperlink{class_f_l_prog_uart_basic_ab77fe56e34df9f7da88c90cb2ccedb96}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_ab77fe56e34df9f7da88c90cb2ccedb96}{FLProgUartBasic::setPortDataBits}}(\textcolor{keywordtype}{byte}\ dataBits)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ ((dataBits\ <\ 5)\ ||\ (dataBits\ >\ 8))}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a540010cda343171fbdf6ecaebc05052e}{portDataBits}}\ ==\ dataBits)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a540010cda343171fbdf6ecaebc05052e}{portDataBits}}\ =\ dataBits;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_l_prog_uart_basic_a76ec6264530f2bd0cf20fd3ccced3370}{hasPort}}())}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a9d2aed1e23569871e0fc5c2099db85dc}{restartPort}}();}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00035}\mbox{\hyperlink{class_f_l_prog_uart_basic_a70c29e0dfa22aeddd9a266743fd72fe7}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a70c29e0dfa22aeddd9a266743fd72fe7}{FLProgUartBasic::setPortStopBits}}(\textcolor{keywordtype}{byte}\ stopBits)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ ((stopBits\ <\ 1)\ ||\ (stopBits\ >\ 2))}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a2fe374ae305d62f83c9c3666128839ba}{portStopBits}}\ ==\ stopBits)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a2fe374ae305d62f83c9c3666128839ba}{portStopBits}}\ =\ stopBits;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_l_prog_uart_basic_a76ec6264530f2bd0cf20fd3ccced3370}{hasPort}}())}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a9d2aed1e23569871e0fc5c2099db85dc}{restartPort}}();}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00054}\mbox{\hyperlink{class_f_l_prog_uart_basic_a5790668bb8a773686a99c7fcb0bacb47}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a5790668bb8a773686a99c7fcb0bacb47}{FLProgUartBasic::setPortParity}}(\textcolor{keywordtype}{byte}\ parity)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{if}\ ((parity\ <\ 0)\ ||\ (parity\ >\ 2))}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a1323d724631592443ca2f50280021e3e}{portParity}}\ ==\ parity)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a1323d724631592443ca2f50280021e3e}{portParity}}\ =\ parity;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_f_l_prog_uart_basic_a76ec6264530f2bd0cf20fd3ccced3370}{hasPort}}())}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a9d2aed1e23569871e0fc5c2099db85dc}{restartPort}}();}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00073}\mbox{\hyperlink{class_f_l_prog_uart_basic_a7f4dcee936a0335377ff21df3ed3b59f}{00073}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a7f4dcee936a0335377ff21df3ed3b59f}{FLProgUartBasic::serialCodeForParametrs}}()}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00074}00074\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{int}\ code\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a2fe374ae305d62f83c9c3666128839ba}{portStopBits}}\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ code\ =\ code\ +\ 8;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00079}00079\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a540010cda343171fbdf6ecaebc05052e}{portDataBits}}\ ==\ 6)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ code\ =\ code\ +\ 2;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a540010cda343171fbdf6ecaebc05052e}{portDataBits}}\ ==\ 7)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00085}00085\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ code\ =\ code\ +\ 4;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a540010cda343171fbdf6ecaebc05052e}{portDataBits}}\ ==\ 8)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ code\ =\ code\ +\ 6;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00091}00091\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a1323d724631592443ca2f50280021e3e}{portParity}}\ ==\ 1)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00093}00093\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ code\ =\ code\ +\ 32;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_uart_basic_a1323d724631592443ca2f50280021e3e}{portParity}}\ ==\ 2)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ code\ =\ code\ +\ 48;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ code;}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00103}\mbox{\hyperlink{class_f_l_prog_uart_basic_aa72d7875446176e7e549a241873fdb14}{00103}}\ uint32\_t\ \mbox{\hyperlink{class_f_l_prog_uart_basic_aa72d7875446176e7e549a241873fdb14}{FLProgUartBasic::speedFromCode}}()}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00104}00104\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceflprog_a82fda12bd0f0533f62fd6cf82a3e92fd}{flprog::speedFromCode}}(\mbox{\hyperlink{class_f_l_prog_uart_basic_ac96e85e10437faff18e6a6c6e70f2254}{portSpeed}});}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00108}\mbox{\hyperlink{class_f_l_prog_uart_basic_aed506376652d64a4674d61a7ed99c08c}{00108}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_aed506376652d64a4674d61a7ed99c08c}{FLProgUartBasic::setCodeFromSpeed}}(int32\_t\ speed)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00110}00110\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_ac96e85e10437faff18e6a6c6e70f2254}{portSpeed}}\ =\ \mbox{\hyperlink{namespaceflprog_a7661cd972a044b3c2fbc6cb707a19c4b}{flprog::codeFromSpeed}}(speed);}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00113}\mbox{\hyperlink{class_f_l_prog_uart_basic_af91715460cd727c8e537215acfc94953}{00113}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_uart_basic_a064ae107b3e87fcbda914dd1ae691d57}{FLProgUartBasic::begin}}(int32\_t\ speed)}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00114}00114\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_aed506376652d64a4674d61a7ed99c08c}{setCodeFromSpeed}}(speed);}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_uart_basic_a064ae107b3e87fcbda914dd1ae691d57}{begin}}();}
+\DoxyCodeLine{\Hypertarget{flprog_uart_8cpp_source_l00117}00117\ \}}
+
+\end{DoxyCode}

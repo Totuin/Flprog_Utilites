@@ -1,0 +1,283 @@
+.TH "FLProgI2C" 3 "Чт 23 Фев 2023" "Version 1" "FLProg Utilites" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FLProgI2C
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <flprogI2C\&.h>\fP
+.PP
+Производные классы:\fBFLProgVirtualI2C\fP\&.
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBFLProgI2C\fP (byte busNumber=0)"
+.br
+.ti -1c
+.RI "virtual bool \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "bool \fBbegin\fP (int pinSDA, int pinSCL)"
+.br
+.ti -1c
+.RI "bool \fBfindAddr\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "uint8_t \fBgetErrorCode\fP ()"
+.br
+.ti -1c
+.RI "uint8_t \fBfullWrite\fP (uint8_t addr, uint8_t data)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullWrite\fP (uint8_t addr, const uint8_t *data, uint8_t quantity)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullRequestFrom\fP (uint8_t address, uint8_t quantity)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullRead\fP (uint8_t addr, uint8_t *data, uint8_t quantity)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullRead\fP (uint8_t addr, uint16_t *data, uint8_t quantity)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullRead\fP (uint8_t addr, uint32_t *data, uint8_t quantity)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullReadReg\fP (uint8_t addr, uint8_t reg)"
+.br
+.ti -1c
+.RI "uint8_t \fBfullWriteReg\fP (uint8_t addr, uint8_t reg, uint8_t value)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTransmission\fP (uint8_t addr)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (const uint8_t *data, uint8_t quantity)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (uint8_t data)"
+.br
+.ti -1c
+.RI "virtual uint8_t \fBendTransmission\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBavailable\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBread\fP ()"
+.br
+.ti -1c
+.RI "virtual uint8_t \fBrequestFrom\fP (uint8_t address, uint8_t quantity)"
+.br
+.ti -1c
+.RI "virtual uint8_t \fBwaitingForData\fP (uint8_t count)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSpeed\fP (uint32_t newSpeed)"
+.br
+.ti -1c
+.RI "virtual void \fBresetSpeedFrom\fP (uint32_t newSpeed)"
+.br
+.ti -1c
+.RI "virtual bool \fBcheckBus\fP ()"
+.br
+.in -1c
+.SS "Защищенные члены"
+
+.in +1c
+.ti -1c
+.RI "bool \fBbeginWire0\fP ()"
+.br
+.in -1c
+.SS "Защищенные данные"
+
+.in +1c
+.ti -1c
+.RI "uint8_t \fBbus\fP"
+.br
+.ti -1c
+.RI "bool \fBbusy\fP = false"
+.br
+.ti -1c
+.RI "uint8_t \fBstatus\fP = 0"
+.br
+.ti -1c
+.RI "uint8_t \fBcodeErr\fP = 0"
+.br
+.ti -1c
+.RI "int \fBsda\fP = \-1"
+.br
+.ti -1c
+.RI "int \fBscl\fP = \-1"
+.br
+.ti -1c
+.RI "uint32_t \fBspeed\fP = \fBFLPROG_I2CSPEED\fP"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB16\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "FLProgI2C::FLProgI2C (byte busNumber = \fC0\fP)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB7\fP
+.SH "Методы"
+.PP 
+.SS "int FLProgI2C::available ()\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB265\fP
+.SS "bool FLProgI2C::begin ()\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB37\fP
+.SS "bool FLProgI2C::begin (int pinSDA, int pinSCL)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB28\fP
+.SS "void FLProgI2C::beginTransmission (uint8_t addr)\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB206\fP
+.SS "bool FLProgI2C::beginWire0 ()\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB63\fP
+.SS "bool FLProgI2C::checkBus ()\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB12\fP
+.SS "uint8_t FLProgI2C::endTransmission ()\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB244\fP
+.SS "bool FLProgI2C::findAddr (uint8_t addr)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB119\fP
+.SS "uint8_t FLProgI2C::fullRead (uint8_t addr, uint16_t * data, uint8_t quantity)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB178\fP
+.SS "uint8_t FLProgI2C::fullRead (uint8_t addr, uint32_t * data, uint8_t quantity)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB192\fP
+.SS "uint8_t FLProgI2C::fullRead (uint8_t addr, uint8_t * data, uint8_t quantity)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB164\fP
+.SS "uint8_t FLProgI2C::fullReadReg (uint8_t addr, uint8_t reg)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB399\fP
+.SS "uint8_t FLProgI2C::fullRequestFrom (uint8_t address, uint8_t quantity)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB153\fP
+.SS "uint8_t FLProgI2C::fullWrite (uint8_t addr, const uint8_t * data, uint8_t quantity)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB145\fP
+.SS "uint8_t FLProgI2C::fullWrite (uint8_t addr, uint8_t data)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB137\fP
+.SS "uint8_t FLProgI2C::fullWriteReg (uint8_t addr, uint8_t reg, uint8_t value)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB415\fP
+.SS "uint8_t FLProgI2C::getErrorCode ()\fC [inline]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB23\fP
+.SS "int FLProgI2C::read ()\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB280\fP
+.SS "uint8_t FLProgI2C::requestFrom (uint8_t address, uint8_t quantity)\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB295\fP
+.SS "void FLProgI2C::resetSpeedFrom (uint32_t newSpeed)\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB375\fP
+.SS "void FLProgI2C::setSpeed (uint32_t newSpeed)\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB352\fP
+.SS "uint8_t FLProgI2C::waitingForData (uint8_t count)\fC [virtual]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB335\fP
+.SS "void FLProgI2C::write (const uint8_t * data, uint8_t quantity)\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB225\fP
+.SS "void FLProgI2C::write (uint8_t data)\fC [virtual]\fP"
+
+.PP
+Переопределяется в \fBFLProgVirtualI2C\fP\&.
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB316\fP
+.SH "Данные класса"
+.PP 
+.SS "uint8_t FLProgI2C::bus\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB46\fP
+.SS "bool FLProgI2C::busy = false\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB47\fP
+.SS "uint8_t FLProgI2C::codeErr = 0\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB49\fP
+.SS "int FLProgI2C::scl = \-1\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB51\fP
+.SS "int FLProgI2C::sda = \-1\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB50\fP
+.SS "uint32_t FLProgI2C::speed = \fBFLPROG_I2CSPEED\fP\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB52\fP
+.SS "uint8_t FLProgI2C::status = 0\fC [protected]\fP"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB48\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для FLProg Utilites из исходного текста\&.

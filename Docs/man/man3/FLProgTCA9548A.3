@@ -1,0 +1,109 @@
+.TH "FLProgTCA9548A" 3 "Чт 23 Фев 2023" "Version 1" "FLProg Utilites" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FLProgTCA9548A
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <flprogI2C\&.h>\fP
+.SS "Открытые члены"
+
+.in +1c
+.ti -1c
+.RI "\fBFLProgTCA9548A\fP (\fBFLProgI2C\fP *device, uint8_t deviceAddress)"
+.br
+.ti -1c
+.RI "\fBFLProgTCA9548A\fP (\fBFLProgI2C\fP *device)"
+.br
+.ti -1c
+.RI "void \fBbeginTransmission\fP (uint8_t addr, uint8_t chanel)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const uint8_t *data, uint8_t quantity, uint8_t chanel)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (uint8_t data, uint8_t chanel)"
+.br
+.ti -1c
+.RI "uint8_t \fBendTransmission\fP ()"
+.br
+.ti -1c
+.RI "int \fBavailable\fP (uint8_t chanel)"
+.br
+.ti -1c
+.RI "int \fBread\fP (uint8_t chanel)"
+.br
+.ti -1c
+.RI "uint8_t \fBrequestFrom\fP (uint8_t address, uint8_t quantity, uint8_t chanel)"
+.br
+.ti -1c
+.RI "void \fBsetSpeed\fP (uint32_t newSpeed, uint8_t chanel)"
+.br
+.ti -1c
+.RI "void \fBresetSpeedFrom\fP (uint32_t newSpeed, uint8_t chanel)"
+.br
+.ti -1c
+.RI "bool \fBcheckBus\fP ()"
+.br
+.in -1c
+.SH "Подробное описание"
+.PP 
+См\&. определение в файле \fBflprogI2C\&.h\fP строка \fB61\fP
+.SH "Конструктор(ы)"
+.PP 
+.SS "FLProgTCA9548A::FLProgTCA9548A (\fBFLProgI2C\fP * device, uint8_t deviceAddress)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB426\fP
+.SS "FLProgTCA9548A::FLProgTCA9548A (\fBFLProgI2C\fP * device)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB432\fP
+.SH "Методы"
+.PP 
+.SS "int FLProgTCA9548A::available (uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB460\fP
+.SS "void FLProgTCA9548A::beginTransmission (uint8_t addr, uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB438\fP
+.SS "bool FLProgTCA9548A::checkBus ()"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB490\fP
+.SS "uint8_t FLProgTCA9548A::endTransmission ()"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB454\fP
+.SS "int FLProgTCA9548A::read (uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB466\fP
+.SS "uint8_t FLProgTCA9548A::requestFrom (uint8_t address, uint8_t quantity, uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB472\fP
+.SS "void FLProgTCA9548A::resetSpeedFrom (uint32_t newSpeed, uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB484\fP
+.SS "void FLProgTCA9548A::setSpeed (uint32_t newSpeed, uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB478\fP
+.SS "void FLProgTCA9548A::write (const uint8_t * data, uint8_t quantity, uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB444\fP
+.SS "void FLProgTCA9548A::write (uint8_t data, uint8_t chanel)"
+
+.PP
+См\&. определение в файле \fBflprogI2C\&.cpp\fP строка \fB449\fP
+
+.SH "Автор"
+.PP 
+Автоматически создано Doxygen для FLProg Utilites из исходного текста\&.

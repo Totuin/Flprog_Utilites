@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_24a668ecac84f8de137cfec35ab55796" xml:lang="ru">
+<title>Содержание директории src/uart/hardwareUart/hardwareUartESP8266</title>
+<indexterm><primary>Содержание директории src/uart/hardwareUart/hardwareUartESP8266</primary></indexterm>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="_hardware_uart_e_s_p8266_8cpp">hardwareUartESP8266.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_hardware_uart_e_s_p8266_8h">hardwareUartESP8266.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

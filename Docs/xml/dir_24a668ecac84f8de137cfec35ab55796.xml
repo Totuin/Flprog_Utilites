@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_24a668ecac84f8de137cfec35ab55796" kind="dir">
+    <compoundname>src/uart/hardwareUart/hardwareUartESP8266</compoundname>
+    <innerfile refid="hardware_uart_e_s_p8266_8cpp">hardwareUartESP8266.cpp</innerfile>
+    <innerfile refid="hardware_uart_e_s_p8266_8h">hardwareUartESP8266.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/uart/hardwareUart/hardwareUartESP8266/"/>
+  </compounddef>
+</doxygen>

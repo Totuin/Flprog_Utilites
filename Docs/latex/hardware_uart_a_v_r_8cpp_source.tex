@@ -1,0 +1,191 @@
+\hypertarget{hardware_uart_a_v_r_8cpp_source}{}\doxysection{hardware\+Uart\+AVR.\+cpp}
+\label{hardware_uart_a_v_r_8cpp_source}\index{src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.cpp@{src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.cpp}}
+\mbox{\hyperlink{hardware_uart_a_v_r_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hardware_uart_a_v_r_8h}{hardwareUartAVR.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#ifdef\ FLPROG\_CORE\_AVR}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00004}00004\ FLProgUart::FLProgUart(HardwareSerial\ *hardwarePort)}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00006}00006\ \ \ \ \ port\ =\ hardwarePort;}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00007}00007\ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00009}00009\ \textcolor{keywordtype}{void}\ FLProgUart::restartPort()}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00011}00011\ \ \ \ \ port-\/>end();}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00012}00012\ \ \ \ \ begin();}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00015}00015\ \textcolor{keywordtype}{void}\ FLProgUart::begin()}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00017}00017\ \ \ \ \ port-\/>begin(\mbox{\hyperlink{namespaceflprog_a82fda12bd0f0533f62fd6cf82a3e92fd}{speedFromCode}}(),\ serialModeFromParametrs());}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00020}00020\ \textcolor{keywordtype}{void}\ FLProgUart::begin(int32\_t\ speed,\ \textcolor{keywordtype}{int}\ mode)}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00022}00022\ \ \ \ \ setCodeFromSpeed(speed);}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00023}00023\ \ \ \ \ setSerialMode(mode);}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00024}00024\ \ \ \ \ begin();}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00027}00027\ \textcolor{keywordtype}{int}\ FLProgUart::serialModeFromParametrs()}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ flprog::serialModeFromInt(\mbox{\hyperlink{namespaceflprog_aca0ea27d0df934b3fa846fcfcf6b5d69}{serialCodeForParametrs}}());}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00032}00032\ \textcolor{keywordtype}{void}\ FLProgUart::setSerialMode(int16\_t\ mode)}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{switch}\ (mode)}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x00:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a58775d2a32fc16e533eb4f92b52a503d}{FLPROG\_PORT\_DATA\_BITS\_5}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x02:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a99f553dcf71af134b6e28f71ec6d430f}{FLPROG\_PORT\_DATA\_BITS\_6}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x04:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac12612b21e2d81a54072cc4de7191f24}{FLPROG\_PORT\_DATA\_BITS\_7}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x06:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x08:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a58775d2a32fc16e533eb4f92b52a503d}{FLPROG\_PORT\_DATA\_BITS\_5}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0A:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a99f553dcf71af134b6e28f71ec6d430f}{FLPROG\_PORT\_DATA\_BITS\_6}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0C:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac12612b21e2d81a54072cc4de7191f24}{FLPROG\_PORT\_DATA\_BITS\_7}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x0E:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x20:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a58775d2a32fc16e533eb4f92b52a503d}{FLPROG\_PORT\_DATA\_BITS\_5}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x22:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a99f553dcf71af134b6e28f71ec6d430f}{FLPROG\_PORT\_DATA\_BITS\_6}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x24:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac12612b21e2d81a54072cc4de7191f24}{FLPROG\_PORT\_DATA\_BITS\_7}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x26:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x28:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a58775d2a32fc16e533eb4f92b52a503d}{FLPROG\_PORT\_DATA\_BITS\_5}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2A:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a99f553dcf71af134b6e28f71ec6d430f}{FLPROG\_PORT\_DATA\_BITS\_6}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2C:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac12612b21e2d81a54072cc4de7191f24}{FLPROG\_PORT\_DATA\_BITS\_7}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x2E:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a370675a1b040edfd78122e52184b085d}{FLPROG\_PORT\_PARITY\_EVEN}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x30:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a58775d2a32fc16e533eb4f92b52a503d}{FLPROG\_PORT\_DATA\_BITS\_5}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x32:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a99f553dcf71af134b6e28f71ec6d430f}{FLPROG\_PORT\_DATA\_BITS\_6}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x34:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac12612b21e2d81a54072cc4de7191f24}{FLPROG\_PORT\_DATA\_BITS\_7}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x36:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00156}00156\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x38:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a58775d2a32fc16e533eb4f92b52a503d}{FLPROG\_PORT\_DATA\_BITS\_5}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3A:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a99f553dcf71af134b6e28f71ec6d430f}{FLPROG\_PORT\_DATA\_BITS\_6}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3C:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac12612b21e2d81a54072cc4de7191f24}{FLPROG\_PORT\_DATA\_BITS\_7}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{case}\ 0x3E:}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_aad5b22fb1840093dd105ece4cbff1060}{FLPROG\_PORT\_STOP\_BITS\_2}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_a68a8b9bd714b67adcc49e0af119a07c6}{FLPROG\_PORT\_PARITY\_ODD}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00180}00180\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00181}00181\ \ \ \ \ portDataBits\ =\ \mbox{\hyperlink{flprog_uart_8h_ac2fb88096fc933887317f27d9944721d}{FLPROG\_PORT\_DATA\_BITS\_8}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00182}00182\ \ \ \ \ portStopBits\ =\ \mbox{\hyperlink{flprog_uart_8h_a2960dbd875a0ba70e1c6d59811383829}{FLPROG\_PORT\_STOP\_BITS\_1}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00183}00183\ \ \ \ \ portParity\ =\ \mbox{\hyperlink{flprog_uart_8h_af02172935433823ce803d3ceef53305c}{FLPROG\_PORT\_PARITY\_NONE}};}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{hardware_uart_a_v_r_8cpp_source_l00185}00185\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

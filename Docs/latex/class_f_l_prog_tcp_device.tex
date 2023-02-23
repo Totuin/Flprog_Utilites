@@ -1,0 +1,356 @@
+\hypertarget{class_f_l_prog_tcp_device}{}\doxysection{Класс FLProg\+Tcp\+Device}
+\label{class_f_l_prog_tcp_device}\index{FLProgTcpDevice@{FLProgTcpDevice}}
+
+
+{\ttfamily \#include $<$flprog\+Tcp\+Device.\+h$>$}
+
+Граф наследования\+:FLProg\+Tcp\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_l_prog_tcp_device}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_a6284fa6d5ebbb5d80dbac1d33c8169ad}{be\+Client}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_a19b4deabd8751ad90ffc8f78074786d7}{be\+Server}} ()
+\item 
+byte \mbox{\hyperlink{class_f_l_prog_tcp_device_a640fbd479b1cce71b96cbd2d57e29c93}{available}} ()
+\item 
+byte \mbox{\hyperlink{class_f_l_prog_tcp_device_af8b5c4ec514ae4187b72f9150cd11dcd}{read}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_a79a6dcab0f5f8b3d176e0a84e7f1eb89}{set\+Port}} (int port)
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_tcp_device_af85f742fc5af14497d586707a35e8852}{connected}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}{connect}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_a61d78922101dbbd0c4952998637be220}{connect}} (byte ip\+First, byte ip\+Second, byte ip\+Third, byte ip\+Fourth)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_tcp_device_aa03e43ea6cc1646f02b0577de0e500dc}{connect}} (uint16\+\_\+t ip\+First, uint16\+\_\+t ip\+Second, uint16\+\_\+t ip\+Third, uint16\+\_\+t ip\+Fourth, int new\+Port)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_tcp_device_ae373c7a0ad06e3952ba73c0258057107}{connect}} (IPAddress new\+Ip, int new\+Port)
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_a1847080cabb96d96ba936478c9d344bf}{print}} (String data)
+\item 
+byte \mbox{\hyperlink{class_f_l_prog_tcp_device_a89be399dd246d274c43866c28342e25d}{write}} (byte buffer\mbox{[}$\,$\mbox{]}, byte size)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_tcp_device_aa4d64e12f9dfdb00126a74cd9d9e8e7a}{begin}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_ab251ab3378529ff4c80bf2d44a0afca2}{restart}} ()
+\item 
+void \mbox{\hyperlink{class_f_l_prog_tcp_device_af26e6967e9cef10b93c5d6e5b60cd2e3}{stop}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_f_l_prog_tcp_device_a9f82bc3efe62e9346d2e0e3a24fdd693}{has\+Client}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_f_l_prog_tcp_device_a8beddb2d793cb22786c1ccde51807ffa}{has\+Server}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные члены}
+\begin{DoxyCompactItemize}
+\item 
+virtual Client $\ast$ \mbox{\hyperlink{class_f_l_prog_tcp_device_a4433d323e544ae9a190040b3dd69fe79}{tcp\+Client}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_tcp_device_a0c3fcd4630440016a9fd506e38f99673}{set\+Avalible\+Client\+From\+Server}} ()
+\item 
+virtual IPAddress \mbox{\hyperlink{class_f_l_prog_tcp_device_aac287f2c4f4ebd7d402c686d2759349e}{client\+Remote\+Ip}} ()
+\item 
+virtual int \mbox{\hyperlink{class_f_l_prog_tcp_device_a02c88623d43e6d6496f9ac716ba12fb5}{client\+Remote\+Port}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Защищенные данные}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_tcp_device_a0c233255b7b7d05fc3450ad0cb5c2514}{mode}} = \mbox{\hyperlink{flprog_tcp_device_8h_a04f51819679f0e7eb603a652f2e8fb45}{FLPROG\+\_\+\+TSP\+\_\+\+CLIENT\+\_\+\+MODE}}
+\item 
+int \mbox{\hyperlink{class_f_l_prog_tcp_device_aa645e6062fed7ab7380606c83ac14fcf}{tcp\+Port}} = 502
+\item 
+IPAddress \mbox{\hyperlink{class_f_l_prog_tcp_device_a86057670ad2c44794686d9d492448c5c}{work\+Ip}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00017}{17}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a640fbd479b1cce71b96cbd2d57e29c93}\label{class_f_l_prog_tcp_device_a640fbd479b1cce71b96cbd2d57e29c93}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!available@{available}}
+\index{available@{available}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily byte FLProg\+Tcp\+Device\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00041}{41}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a6284fa6d5ebbb5d80dbac1d33c8169ad}\label{class_f_l_prog_tcp_device_a6284fa6d5ebbb5d80dbac1d33c8169ad}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!beClient@{beClient}}
+\index{beClient@{beClient}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{beClient()}{beClient()}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::be\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00011}{11}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_aa4d64e12f9dfdb00126a74cd9d9e8e7a}\label{class_f_l_prog_tcp_device_aa4d64e12f9dfdb00126a74cd9d9e8e7a}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!begin@{begin}}
+\index{begin@{begin}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily virtual void FLProg\+Tcp\+Device\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_af00df1f2de48023e9e66a03d753e08d6}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00032}{32}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a19b4deabd8751ad90ffc8f78074786d7}\label{class_f_l_prog_tcp_device_a19b4deabd8751ad90ffc8f78074786d7}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!beServer@{beServer}}
+\index{beServer@{beServer}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{beServer()}{beServer()}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::be\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00019}{19}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_aac287f2c4f4ebd7d402c686d2759349e}\label{class_f_l_prog_tcp_device_aac287f2c4f4ebd7d402c686d2759349e}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!clientRemoteIp@{clientRemoteIp}}
+\index{clientRemoteIp@{clientRemoteIp}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{clientRemoteIp()}{clientRemoteIp()}}
+{\footnotesize\ttfamily virtual IPAddress FLProg\+Tcp\+Device\+::client\+Remote\+Ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a3da91dd567b9c4584263d26e7c36f99e}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00043}{43}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a02c88623d43e6d6496f9ac716ba12fb5}\label{class_f_l_prog_tcp_device_a02c88623d43e6d6496f9ac716ba12fb5}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!clientRemotePort@{clientRemotePort}}
+\index{clientRemotePort@{clientRemotePort}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{clientRemotePort()}{clientRemotePort()}}
+{\footnotesize\ttfamily virtual int FLProg\+Tcp\+Device\+::client\+Remote\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a0441a81eb1c4713e0dda53550f196e76}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00044}{44}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}\label{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!connect@{connect}}
+\index{connect@{connect}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00026}{26}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a61d78922101dbbd0c4952998637be220}\label{class_f_l_prog_tcp_device_a61d78922101dbbd0c4952998637be220}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!connect@{connect}}
+\index{connect@{connect}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::connect (\begin{DoxyParamCaption}\item[{byte}]{ip\+First,  }\item[{byte}]{ip\+Second,  }\item[{byte}]{ip\+Third,  }\item[{byte}]{ip\+Fourth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00027}{27}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_ae373c7a0ad06e3952ba73c0258057107}\label{class_f_l_prog_tcp_device_ae373c7a0ad06e3952ba73c0258057107}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!connect@{connect}}
+\index{connect@{connect}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::connect (\begin{DoxyParamCaption}\item[{IPAddress}]{new\+Ip,  }\item[{int}]{new\+Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00081}{81}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_aa03e43ea6cc1646f02b0577de0e500dc}\label{class_f_l_prog_tcp_device_aa03e43ea6cc1646f02b0577de0e500dc}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!connect@{connect}}
+\index{connect@{connect}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::connect (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ip\+First,  }\item[{uint16\+\_\+t}]{ip\+Second,  }\item[{uint16\+\_\+t}]{ip\+Third,  }\item[{uint16\+\_\+t}]{ip\+Fourth,  }\item[{int}]{new\+Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00071}{71}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_af85f742fc5af14497d586707a35e8852}\label{class_f_l_prog_tcp_device_af85f742fc5af14497d586707a35e8852}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!connected@{connected}}
+\index{connected@{connected}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{connected()}{connected()}}
+{\footnotesize\ttfamily bool FLProg\+Tcp\+Device\+::connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00056}{56}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a9f82bc3efe62e9346d2e0e3a24fdd693}\label{class_f_l_prog_tcp_device_a9f82bc3efe62e9346d2e0e3a24fdd693}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!hasClient@{hasClient}}
+\index{hasClient@{hasClient}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{hasClient()}{hasClient()}}
+{\footnotesize\ttfamily virtual bool FLProg\+Tcp\+Device\+::has\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a5c420af9d3787d1a6be1ddb1ce9c6689}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00035}{35}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a8beddb2d793cb22786c1ccde51807ffa}\label{class_f_l_prog_tcp_device_a8beddb2d793cb22786c1ccde51807ffa}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!hasServer@{hasServer}}
+\index{hasServer@{hasServer}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{hasServer()}{hasServer()}}
+{\footnotesize\ttfamily virtual bool FLProg\+Tcp\+Device\+::has\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_abf01392b4e0aa774956c89413256d9cf}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00036}{36}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a1847080cabb96d96ba936478c9d344bf}\label{class_f_l_prog_tcp_device_a1847080cabb96d96ba936478c9d344bf}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!print@{print}}
+\index{print@{print}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::print (\begin{DoxyParamCaption}\item[{String}]{data }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00061}{61}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_af8b5c4ec514ae4187b72f9150cd11dcd}\label{class_f_l_prog_tcp_device_af8b5c4ec514ae4187b72f9150cd11dcd}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!read@{read}}
+\index{read@{read}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily byte FLProg\+Tcp\+Device\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00050}{50}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_ab251ab3378529ff4c80bf2d44a0afca2}\label{class_f_l_prog_tcp_device_ab251ab3378529ff4c80bf2d44a0afca2}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!restart@{restart}}
+\index{restart@{restart}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{restart()}{restart()}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::restart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00027}{27}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a0c3fcd4630440016a9fd506e38f99673}\label{class_f_l_prog_tcp_device_a0c3fcd4630440016a9fd506e38f99673}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!setAvalibleClientFromServer@{setAvalibleClientFromServer}}
+\index{setAvalibleClientFromServer@{setAvalibleClientFromServer}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{setAvalibleClientFromServer()}{setAvalibleClientFromServer()}}
+{\footnotesize\ttfamily virtual void FLProg\+Tcp\+Device\+::set\+Avalible\+Client\+From\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_ad097d1f33176353990744dc642346e8a}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00042}{42}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a79a6dcab0f5f8b3d176e0a84e7f1eb89}\label{class_f_l_prog_tcp_device_a79a6dcab0f5f8b3d176e0a84e7f1eb89}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!setPort@{setPort}}
+\index{setPort@{setPort}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{setPort()}{setPort()}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::set\+Port (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00003}{3}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_af26e6967e9cef10b93c5d6e5b60cd2e3}\label{class_f_l_prog_tcp_device_af26e6967e9cef10b93c5d6e5b60cd2e3}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!stop@{stop}}
+\index{stop@{stop}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void FLProg\+Tcp\+Device\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00036}{36}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a4433d323e544ae9a190040b3dd69fe79}\label{class_f_l_prog_tcp_device_a4433d323e544ae9a190040b3dd69fe79}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!tcpClient@{tcpClient}}
+\index{tcpClient@{tcpClient}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{tcpClient()}{tcpClient()}}
+{\footnotesize\ttfamily virtual Client $\ast$ FLProg\+Tcp\+Device\+::tcp\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Переопределяется в \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a54f5b27a381f63ce3938df3d84785ade}{FLProg\+W5100\+Tcp\+Device}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00041}{41}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a89be399dd246d274c43866c28342e25d}\label{class_f_l_prog_tcp_device_a89be399dd246d274c43866c28342e25d}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!write@{write}}
+\index{write@{write}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily byte FLProg\+Tcp\+Device\+::write (\begin{DoxyParamCaption}\item[{byte}]{buffer\mbox{[}$\,$\mbox{]},  }\item[{byte}]{size }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8cpp_source}{flprog\+Tcp\+Device.\+cpp}} строка \mbox{\hyperlink{flprog_tcp_device_8cpp_source_l00066}{66}}
+
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a0c233255b7b7d05fc3450ad0cb5c2514}\label{class_f_l_prog_tcp_device_a0c233255b7b7d05fc3450ad0cb5c2514}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!mode@{mode}}
+\index{mode@{mode}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily bool FLProg\+Tcp\+Device\+::mode = \mbox{\hyperlink{flprog_tcp_device_8h_a04f51819679f0e7eb603a652f2e8fb45}{FLPROG\+\_\+\+TSP\+\_\+\+CLIENT\+\_\+\+MODE}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00039}{39}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_aa645e6062fed7ab7380606c83ac14fcf}\label{class_f_l_prog_tcp_device_aa645e6062fed7ab7380606c83ac14fcf}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!tcpPort@{tcpPort}}
+\index{tcpPort@{tcpPort}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{tcpPort}{tcpPort}}
+{\footnotesize\ttfamily int FLProg\+Tcp\+Device\+::tcp\+Port = 502\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00040}{40}}
+
+\mbox{\Hypertarget{class_f_l_prog_tcp_device_a86057670ad2c44794686d9d492448c5c}\label{class_f_l_prog_tcp_device_a86057670ad2c44794686d9d492448c5c}} 
+\index{FLProgTcpDevice@{FLProgTcpDevice}!workIp@{workIp}}
+\index{workIp@{workIp}!FLProgTcpDevice@{FLProgTcpDevice}}
+\doxysubsubsection{\texorpdfstring{workIp}{workIp}}
+{\footnotesize\ttfamily IPAddress FLProg\+Tcp\+Device\+::work\+Ip\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_tcp_device_8h_source}{flprog\+Tcp\+Device.\+h}} строка \mbox{\hyperlink{flprog_tcp_device_8h_source_l00045}{45}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/tcp/\mbox{\hyperlink{flprog_tcp_device_8h}{flprog\+Tcp\+Device.\+h}}\item 
+src/tcp/\mbox{\hyperlink{flprog_tcp_device_8cpp}{flprog\+Tcp\+Device.\+cpp}}\end{DoxyCompactItemize}

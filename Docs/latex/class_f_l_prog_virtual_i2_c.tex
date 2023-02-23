@@ -1,0 +1,296 @@
+\hypertarget{class_f_l_prog_virtual_i2_c}{}\doxysection{Класс FLProg\+Virtual\+I2C}
+\label{class_f_l_prog_virtual_i2_c}\index{FLProgVirtualI2C@{FLProgVirtualI2C}}
+
+
+{\ttfamily \#include $<$flprog\+I2\+C.\+h$>$}
+
+Граф наследования\+:FLProg\+Virtual\+I2C\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_f_l_prog_virtual_i2_c}
+\end{center}
+\end{figure}
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a2a63f5ef9f98a902b8b6cd9409e3edf5}{FLProg\+Virtual\+I2C}} (\mbox{\hyperlink{class_f_l_prog_t_c_a9548_a}{FLProg\+TCA9548A}} $\ast$parent\+Device, uint8\+\_\+t chanel\+On\+Parent)
+\item 
+virtual bool \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_afe867564e2df6c4a4edea71d4ad0cc83}{begin}} ()
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a709dce8dc7a0acebe0ea05c60f38c8c3}{begin\+Transmission}} (uint8\+\_\+t addr)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a44b86916cf4d59f08c86b5d002f054ea}{write}} (const uint8\+\_\+t $\ast$data, uint8\+\_\+t quantity)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a4294125e4fe71f820a53817b85391f70}{write}} (uint8\+\_\+t data)
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_aa704301ef938bddf5c8b898bde2e186f}{end\+Transmission}} ()
+\item 
+virtual int \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a13624df645155c7176c9d789fdf31a70}{available}} ()
+\item 
+virtual int \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_adbf25e8d737c80071b4bea1d560dde42}{read}} ()
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a4f37c90d6ae2d3d15386c886ced36a5d}{request\+From}} (uint8\+\_\+t address, uint8\+\_\+t quantity)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a4709597c5e1da12cde67ad82ea50ac8e}{set\+Speed}} (uint32\+\_\+t new\+Speed)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_a3fa439599c69346113f22e098af6a454}{reset\+Speed\+From}} (uint32\+\_\+t new\+Speed)
+\item 
+virtual bool \mbox{\hyperlink{class_f_l_prog_virtual_i2_c_ae7438d0b9d03a0d80525ac930a8dca45}{check\+Bus}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены унаследованные от \mbox{\hyperlink{class_f_l_prog_i2_c}{FLProg\+I2C}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_f_l_prog_i2_c_aa342e0baacdec371430797df77504d91}{FLProg\+I2C}} (byte bus\+Number=0)
+\item 
+virtual bool \mbox{\hyperlink{class_f_l_prog_i2_c_aa02c7b40c4a8ad16717a6a8816bdc9c8}{begin}} ()
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_i2_c_a2c6291835a10936ca3b0123289828c2a}{begin}} (int pin\+SDA, int pin\+SCL)
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_i2_c_ab8d5bc5b0df5ae4a328465f262aac13b}{find\+Addr}} (uint8\+\_\+t addr)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a30302d29cd76fc7a4335af7f6adffb5d}{get\+Error\+Code}} ()
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_afa212327f982acb0c007365867f5f85c}{full\+Write}} (uint8\+\_\+t addr, uint8\+\_\+t data)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a92371640e9c4228273a204205f501849}{full\+Write}} (uint8\+\_\+t addr, const uint8\+\_\+t $\ast$data, uint8\+\_\+t quantity)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_abd81f98e7f06c1e539e7cb053f4fe425}{full\+Request\+From}} (uint8\+\_\+t address, uint8\+\_\+t quantity)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a305b69dc03da92d44a3ab5cfbc42f4c3}{full\+Read}} (uint8\+\_\+t addr, uint8\+\_\+t $\ast$data, uint8\+\_\+t quantity)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a8138175390b0cc5963f99b856d590660}{full\+Read}} (uint8\+\_\+t addr, uint16\+\_\+t $\ast$data, uint8\+\_\+t quantity)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a099c9f24fc42bd98a790b1a55052e78f}{full\+Read}} (uint8\+\_\+t addr, uint32\+\_\+t $\ast$data, uint8\+\_\+t quantity)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a892e08882728362457ead1b8d391d3b1}{full\+Read\+Reg}} (uint8\+\_\+t addr, uint8\+\_\+t reg)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a6109b4ca3f00c5d064a26007b0f45c55}{full\+Write\+Reg}} (uint8\+\_\+t addr, uint8\+\_\+t reg, uint8\+\_\+t value)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_i2_c_a74f8323be61a90bedcbc37d4bdbd525c}{begin\+Transmission}} (uint8\+\_\+t addr)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_i2_c_a80b48594359954559e75faf5e4be7295}{write}} (const uint8\+\_\+t $\ast$data, uint8\+\_\+t quantity)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_i2_c_a0632215b6c43183ceee9e2b5c1ccd733}{write}} (uint8\+\_\+t data)
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_ab40e40756e66c34b99e3e513302d6afd}{end\+Transmission}} ()
+\item 
+virtual int \mbox{\hyperlink{class_f_l_prog_i2_c_aba022e66607f05597b9ddaec870be996}{available}} ()
+\item 
+virtual int \mbox{\hyperlink{class_f_l_prog_i2_c_a268ba68fcfd993189ab01ce61dfb50e7}{read}} ()
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a5d816185c13673ebdb78c167f351f783}{request\+From}} (uint8\+\_\+t address, uint8\+\_\+t quantity)
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_aee6e857b6f238b3dc994823e7f32a04d}{waiting\+For\+Data}} (uint8\+\_\+t count)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_i2_c_a88f3780a228f2ce6bb12e7e12fb1720f}{set\+Speed}} (uint32\+\_\+t new\+Speed)
+\item 
+virtual void \mbox{\hyperlink{class_f_l_prog_i2_c_a503c79844364a2a62d063cb1bdb47c33}{reset\+Speed\+From}} (uint32\+\_\+t new\+Speed)
+\item 
+virtual bool \mbox{\hyperlink{class_f_l_prog_i2_c_a126715f17f31ecdf2ea449ca6999bb1f}{check\+Bus}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Дополнительные унаследованные члены}
+\doxysubsubsection*{Защищенные члены унаследованные от \mbox{\hyperlink{class_f_l_prog_i2_c}{FLProg\+I2C}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_i2_c_af54dc06c96fa360014e4f87cfd2e07a4}{begin\+Wire0}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные данные унаследованные от \mbox{\hyperlink{class_f_l_prog_i2_c}{FLProg\+I2C}}}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a9f2ea9ffa26cacbe15713a8c273b1840}{bus}}
+\item 
+bool \mbox{\hyperlink{class_f_l_prog_i2_c_ac5af99710bd684c5f92196ebb1d7a62e}{busy}} = false
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_aaca60585af5d855d44bc1a9448dcf951}{status}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_adae7361cf9e79156465ef455cf8bfafe}{code\+Err}} = 0
+\item 
+int \mbox{\hyperlink{class_f_l_prog_i2_c_acc22da1b4dd7d3f0a8af37f6d0306077}{sda}} = -\/1
+\item 
+int \mbox{\hyperlink{class_f_l_prog_i2_c_a2c16c5e38d1ad15a41df894e4485dcce}{scl}} = -\/1
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_f_l_prog_i2_c_a315834924a91711026b3afe436cef7a5}{speed}} = \mbox{\hyperlink{flprog_i2_c_8h_a5d14ac1e40046405a287e54485b3f6cb}{FLPROG\+\_\+\+I2\+CSPEED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8h_source}{flprog\+I2\+C.\+h}} строка \mbox{\hyperlink{flprog_i2_c_8h_source_l00085}{85}}
+
+
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a2a63f5ef9f98a902b8b6cd9409e3edf5}\label{class_f_l_prog_virtual_i2_c_a2a63f5ef9f98a902b8b6cd9409e3edf5}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{FLProgVirtualI2C()}{FLProgVirtualI2C()}}
+{\footnotesize\ttfamily FLProg\+Virtual\+I2\+C\+::\+FLProg\+Virtual\+I2C (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_f_l_prog_t_c_a9548_a}{FLProg\+TCA9548A}} $\ast$}]{parent\+Device,  }\item[{uint8\+\_\+t}]{chanel\+On\+Parent }\end{DoxyParamCaption})}
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00516}{516}}
+
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a13624df645155c7176c9d789fdf31a70}\label{class_f_l_prog_virtual_i2_c_a13624df645155c7176c9d789fdf31a70}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!available@{available}}
+\index{available@{available}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily int FLProg\+Virtual\+I2\+C\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_aba022e66607f05597b9ddaec870be996}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00547}{547}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_afe867564e2df6c4a4edea71d4ad0cc83}\label{class_f_l_prog_virtual_i2_c_afe867564e2df6c4a4edea71d4ad0cc83}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!begin@{begin}}
+\index{begin@{begin}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool FLProg\+Virtual\+I2\+C\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_aa02c7b40c4a8ad16717a6a8816bdc9c8}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00522}{522}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a709dce8dc7a0acebe0ea05c60f38c8c3}\label{class_f_l_prog_virtual_i2_c_a709dce8dc7a0acebe0ea05c60f38c8c3}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!beginTransmission@{beginTransmission}}
+\index{beginTransmission@{beginTransmission}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{beginTransmission()}{beginTransmission()}}
+{\footnotesize\ttfamily void FLProg\+Virtual\+I2\+C\+::begin\+Transmission (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a74f8323be61a90bedcbc37d4bdbd525c}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00527}{527}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_ae7438d0b9d03a0d80525ac930a8dca45}\label{class_f_l_prog_virtual_i2_c_ae7438d0b9d03a0d80525ac930a8dca45}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!checkBus@{checkBus}}
+\index{checkBus@{checkBus}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{checkBus()}{checkBus()}}
+{\footnotesize\ttfamily bool FLProg\+Virtual\+I2\+C\+::check\+Bus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a126715f17f31ecdf2ea449ca6999bb1f}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00572}{572}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_aa704301ef938bddf5c8b898bde2e186f}\label{class_f_l_prog_virtual_i2_c_aa704301ef938bddf5c8b898bde2e186f}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!endTransmission@{endTransmission}}
+\index{endTransmission@{endTransmission}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{endTransmission()}{endTransmission()}}
+{\footnotesize\ttfamily uint8\+\_\+t FLProg\+Virtual\+I2\+C\+::end\+Transmission (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_ab40e40756e66c34b99e3e513302d6afd}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00542}{542}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_adbf25e8d737c80071b4bea1d560dde42}\label{class_f_l_prog_virtual_i2_c_adbf25e8d737c80071b4bea1d560dde42}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!read@{read}}
+\index{read@{read}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int FLProg\+Virtual\+I2\+C\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a268ba68fcfd993189ab01ce61dfb50e7}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00552}{552}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a4f37c90d6ae2d3d15386c886ced36a5d}\label{class_f_l_prog_virtual_i2_c_a4f37c90d6ae2d3d15386c886ced36a5d}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!requestFrom@{requestFrom}}
+\index{requestFrom@{requestFrom}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{requestFrom()}{requestFrom()}}
+{\footnotesize\ttfamily uint8\+\_\+t FLProg\+Virtual\+I2\+C\+::request\+From (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a5d816185c13673ebdb78c167f351f783}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00557}{557}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a3fa439599c69346113f22e098af6a454}\label{class_f_l_prog_virtual_i2_c_a3fa439599c69346113f22e098af6a454}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!resetSpeedFrom@{resetSpeedFrom}}
+\index{resetSpeedFrom@{resetSpeedFrom}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{resetSpeedFrom()}{resetSpeedFrom()}}
+{\footnotesize\ttfamily void FLProg\+Virtual\+I2\+C\+::reset\+Speed\+From (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a503c79844364a2a62d063cb1bdb47c33}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00567}{567}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a4709597c5e1da12cde67ad82ea50ac8e}\label{class_f_l_prog_virtual_i2_c_a4709597c5e1da12cde67ad82ea50ac8e}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void FLProg\+Virtual\+I2\+C\+::set\+Speed (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Speed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a88f3780a228f2ce6bb12e7e12fb1720f}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00562}{562}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a44b86916cf4d59f08c86b5d002f054ea}\label{class_f_l_prog_virtual_i2_c_a44b86916cf4d59f08c86b5d002f054ea}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!write@{write}}
+\index{write@{write}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void FLProg\+Virtual\+I2\+C\+::write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{quantity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a80b48594359954559e75faf5e4be7295}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00532}{532}}
+
+\mbox{\Hypertarget{class_f_l_prog_virtual_i2_c_a4294125e4fe71f820a53817b85391f70}\label{class_f_l_prog_virtual_i2_c_a4294125e4fe71f820a53817b85391f70}} 
+\index{FLProgVirtualI2C@{FLProgVirtualI2C}!write@{write}}
+\index{write@{write}!FLProgVirtualI2C@{FLProgVirtualI2C}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void FLProg\+Virtual\+I2\+C\+::write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Переопределяет метод предка \mbox{\hyperlink{class_f_l_prog_i2_c_a0632215b6c43183ceee9e2b5c1ccd733}{FLProg\+I2C}}.
+
+
+
+См. определение в файле \mbox{\hyperlink{flprog_i2_c_8cpp_source}{flprog\+I2\+C.\+cpp}} строка \mbox{\hyperlink{flprog_i2_c_8cpp_source_l00537}{537}}
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+src/i2c/\mbox{\hyperlink{flprog_i2_c_8h}{flprog\+I2\+C.\+h}}\item 
+src/i2c/\mbox{\hyperlink{flprog_i2_c_8cpp}{flprog\+I2\+C.\+cpp}}\end{DoxyCompactItemize}

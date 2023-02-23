@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="flprog_utilites_8h" kind="file" language="C++">
+    <compoundname>flprogUtilites.h</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes refid="flprog_i2_c_8h" local="yes">i2c/flprogI2C.h</includes>
+    <includes refid="flprog_uart_8h" local="yes">uart/flprogUart.h</includes>
+    <includes refid="flprog_tcp_device_8h" local="yes">tcp/flprogTcpDevice.h</includes>
+    <includedby refid="flprog_utilites_8cpp" local="yes">src/flprogUtilites.cpp</includedby>
+    <includedby refid="flprog_i2_c_8h" local="yes">src/i2c/flprogI2C.h</includedby>
+    <includedby refid="flprog_i2_c__sensors_basic_8h" local="yes">src/i2c/flprogI2C_sensorsBasic.h</includedby>
+    <includedby refid="flprog_tcp_device_8h" local="yes">src/tcp/flprogTcpDevice.h</includedby>
+    <includedby refid="flprog_uart_bluetooth_serial_8h" local="yes">src/uart/bluetoothSerial/flprogUartBluetoothSerial.h</includedby>
+    <includedby refid="flprog_uart_8h" local="yes">src/uart/flprogUart.h</includedby>
+    <includedby refid="hardware_uart_a_v_r_8h" local="yes">src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.h</includedby>
+    <includedby refid="hardware_uart_d_u_e_8h" local="yes">src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.h</includedby>
+    <includedby refid="hardware_uart_e_s_p32_8h" local="yes">src/uart/hardwareUart/hardwareUartESP32/hardwareUartESP32.h</includedby>
+    <includedby refid="hardware_uart_e_s_p8266_8h" local="yes">src/uart/hardwareUart/hardwareUartESP8266/hardwareUartESP8266.h</includedby>
+    <includedby refid="hardware_uart_s_t_m_8h" local="yes">src/uart/hardwareUart/hardwareUartSTM/hardwareUartSTM.h</includedby>
+    <includedby refid="flprog_software_uart_8h" local="yes">src/uart/softwareUart/flprogSoftwareUart.h</includedby>
+    <includedby refid="flprog_utilites_a_v_r_8h" local="yes">src/variant/arduino/avr/flprogUtilitesAVR.h</includedby>
+    <includedby refid="flprog_utilites_d_u_e_8h" local="yes">src/variant/arduino/due/flprogUtilitesDUE.h</includedby>
+    <includedby refid="flprog_utilites_e_s_p32_8h" local="yes">src/variant/esp32/flprogUtilitesESP32.h</includedby>
+    <includedby refid="flprog_utilites_e_s_p8266_8h" local="yes">src/variant/esp8266/flprogUtilitesESP8266.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="9">
+        <label>Ethernet.h</label>
+      </node>
+      <node id="1">
+        <label>src/flprogUtilites.h</label>
+        <link refid="flprog_utilites_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>i2c/flprogI2C.h</label>
+        <link refid="flprog_i2_c_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>flprogI2C_sensorsBasic.h</label>
+        <link refid="flprog_i2_c__sensors_basic_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>tcp/flprogTcpDevice.h</label>
+        <link refid="flprog_tcp_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uart/flprogUart.h</label>
+        <link refid="flprog_uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>softwareUart\flprogSoftwareUart.h</label>
+        <link refid="flprog_software_uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>SPI.h</label>
+      </node>
+      <node id="4">
+        <label>Wire.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/flprogUtilites.cpp</label>
+        <link refid="flprog_utilites_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/flprogUtilites.h</label>
+        <link refid="flprog_utilites_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/i2c/flprogI2C.cpp</label>
+        <link refid="flprog_i2_c_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/i2c/flprogI2C.h</label>
+        <link refid="flprog_i2_c_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/i2c/flprogI2C_sensorsBasic.cpp</label>
+        <link refid="flprog_i2_c__sensors_basic_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/i2c/flprogI2C_sensorsBasic.h</label>
+        <link refid="flprog_i2_c__sensors_basic_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>src/tcp/flprogTcpDevice.cpp</label>
+        <link refid="flprog_tcp_device_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/tcp/flprogTcpDevice.h</label>
+        <link refid="flprog_tcp_device_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/uart/bluetoothSerial/flprogUartBluetoothSerial.cpp</label>
+        <link refid="flprog_uart_bluetooth_serial_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/uart/bluetoothSerial/flprogUartBluetoothSerial.h</label>
+        <link refid="flprog_uart_bluetooth_serial_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/uart/flprogUart.cpp</label>
+        <link refid="flprog_uart_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/uart/flprogUart.h</label>
+        <link refid="flprog_uart_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.cpp</label>
+        <link refid="hardware_uart_a_v_r_8cpp"/>
+      </node>
+      <node id="13">
+        <label>src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.h</label>
+        <link refid="hardware_uart_a_v_r_8h"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.cpp</label>
+        <link refid="hardware_uart_d_u_e_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.h</label>
+        <link refid="hardware_uart_d_u_e_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>src/uart/hardwareUart/hardwareUartESP32/hardwareUartESP32.cpp</label>
+        <link refid="hardware_uart_e_s_p32_8cpp"/>
+      </node>
+      <node id="17">
+        <label>src/uart/hardwareUart/hardwareUartESP32/hardwareUartESP32.h</label>
+        <link refid="hardware_uart_e_s_p32_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>src/uart/hardwareUart/hardwareUartESP8266/hardwareUartESP8266.cpp</label>
+        <link refid="hardware_uart_e_s_p8266_8cpp"/>
+      </node>
+      <node id="19">
+        <label>src/uart/hardwareUart/hardwareUartESP8266/hardwareUartESP8266.h</label>
+        <link refid="hardware_uart_e_s_p8266_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>src/uart/hardwareUart/hardwareUartSTM/hardwareUartSTM.cpp</label>
+        <link refid="hardware_uart_s_t_m_8cpp"/>
+      </node>
+      <node id="21">
+        <label>src/uart/hardwareUart/hardwareUartSTM/hardwareUartSTM.h</label>
+        <link refid="hardware_uart_s_t_m_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>src/uart/softwareUart/flprogSoftwareUart.cpp</label>
+        <link refid="flprog_software_uart_8cpp"/>
+      </node>
+      <node id="23">
+        <label>src/uart/softwareUart/flprogSoftwareUart.h</label>
+        <link refid="flprog_software_uart_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>src/variant/arduino/avr/flprogUtilitesAVR.cpp</label>
+        <link refid="flprog_utilites_a_v_r_8cpp"/>
+      </node>
+      <node id="25">
+        <label>src/variant/arduino/avr/flprogUtilitesAVR.h</label>
+        <link refid="flprog_utilites_a_v_r_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>src/variant/arduino/due/flprogUtilitesDUE.cpp</label>
+        <link refid="flprog_utilites_d_u_e_8cpp"/>
+      </node>
+      <node id="27">
+        <label>src/variant/arduino/due/flprogUtilitesDUE.h</label>
+        <link refid="flprog_utilites_d_u_e_8h"/>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>src/variant/esp32/flprogUtilitesESP32.cpp</label>
+        <link refid="flprog_utilites_e_s_p32_8cpp"/>
+      </node>
+      <node id="29">
+        <label>src/variant/esp32/flprogUtilitesESP32.h</label>
+        <link refid="flprog_utilites_e_s_p32_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>src/variant/esp8266/flprogUtilitesESP8266.cpp</label>
+        <link refid="flprog_utilites_e_s_p8266_8cpp"/>
+      </node>
+      <node id="31">
+        <label>src/variant/esp8266/flprogUtilitesESP8266.h</label>
+        <link refid="flprog_utilites_e_s_p8266_8h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceflprog">flprog</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="flprog_utilites_8h_1a9febed9388c8a9046d18d2f8d846ebd4" prot="public" static="no">
+        <name>FLPROG_SENSOR_NOT_ERROR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="4" column="9" bodyfile="src/flprogUtilites.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a9380f57f189d55affc822295e38e9061" prot="public" static="no">
+        <name>FLPROG_SENSOR_NOT_READY_ERROR</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="5" column="9" bodyfile="src/flprogUtilites.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a3beb2f13de37fc5147b0bfc607c6a9b0" prot="public" static="no">
+        <name>FLPROG_SENSOR_DEVICE_NOT_FOUND_ERROR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="6" column="9" bodyfile="src/flprogUtilites.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a39f7191de8a58d9ed175d0f0b1d8b016" prot="public" static="no">
+        <name>FLPROG_SENSOR_DEVICE_NOT_CORRECT_BUS_NUMBER_ERROR</name>
+        <initializer>65</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="7" column="9" bodyfile="src/flprogUtilites.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a84da77632af600817c82da6ce4b761c5" prot="public" static="no">
+        <name>FLPROG_SENSOR_DEVICE_NOT_CORRECT_DEVICE_ADDRESS_ERROR</name>
+        <initializer>61</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="8" column="9" bodyfile="src/flprogUtilites.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a940328be364e02a29decebd5dc0053f0" prot="public" static="no">
+        <name>FLPROG_SENSOR_DEVICE_NOT_DEFINED_ERROR</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="9" column="9" bodyfile="src/flprogUtilites.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1ab5d5a91218c3f1f85b31fe21c9f01be0" prot="public" static="no">
+        <name>FLPROG_SENSOR_DEVICE_NOT_CORRECT_DATA_ERROR</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="10" column="9" bodyfile="src/flprogUtilites.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a5d7246bdcf75e083d07048332deda172" prot="public" static="no">
+        <name>FLPROG_SENSOR_CRC_ERROR</name>
+        <initializer>72</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="11" column="9" bodyfile="src/flprogUtilites.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1a3f3cf4c2020b3aef1e75d1d584425e76" prot="public" static="no">
+        <name>FLPROG_SENSOR_WAITING_READ_STEP</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="13" column="9" bodyfile="src/flprogUtilites.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="flprog_utilites_8h_1ace19cbe1e3ba044e8fd2f2db87fdcce4" prot="public" static="no">
+        <name>FLPROG_SENSOR_WAITING_DELAY</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/flprogUtilites.h" line="14" column="9" bodyfile="src/flprogUtilites.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="flprog_utilites_8h_1a9febed9388c8a9046d18d2f8d846ebd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_NOT_ERROR<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="flprog_utilites_8h_1a9380f57f189d55affc822295e38e9061" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_NOT_READY_ERROR<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="flprog_utilites_8h_1a3beb2f13de37fc5147b0bfc607c6a9b0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_DEVICE_NOT_FOUND_ERROR<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="flprog_utilites_8h_1a39f7191de8a58d9ed175d0f0b1d8b016" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_DEVICE_NOT_CORRECT_BUS_NUMBER_ERROR<sp/>65</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="flprog_utilites_8h_1a84da77632af600817c82da6ce4b761c5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_DEVICE_NOT_CORRECT_DEVICE_ADDRESS_ERROR<sp/>61</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="flprog_utilites_8h_1a940328be364e02a29decebd5dc0053f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_DEVICE_NOT_DEFINED_ERROR<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="flprog_utilites_8h_1ab5d5a91218c3f1f85b31fe21c9f01be0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_DEVICE_NOT_CORRECT_DATA_ERROR<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="flprog_utilites_8h_1a5d7246bdcf75e083d07048332deda172" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_CRC_ERROR<sp/>72</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="flprog_utilites_8h_1a3f3cf4c2020b3aef1e75d1d584425e76" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_WAITING_READ_STEP<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="flprog_utilites_8h_1ace19cbe1e3ba044e8fd2f2db87fdcce4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_SENSOR_WAITING_DELAY<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(ESP8266)<sp/>||<sp/>defined(ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_ESP8266_OR_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ESP8266</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_ESP8266</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_utilites_e_s_p8266_8h" kindref="compound">variant\esp8266\flprogUtilitesESP8266.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_utilites_e_s_p32_8h" kindref="compound">variant\esp32\flprogUtilitesESP32.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_STM32_DEF_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_STM32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_STM8_DEF_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_STM8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(FLPROG_CORE_STM32)<sp/>||<sp/>defined(FLPROG_CORE_STM8)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_STM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_STM32_DEF_)<sp/>&amp;&amp;<sp/>defined(USBCON)<sp/>&amp;&amp;<sp/>defined(USBD_USE_CDC)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_STM32_USB_COM0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_UART_CLASS_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_AVR_DUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_utilites_d_u_e_8h" kindref="compound">variant\arduino\due\flprogUtilitesDUE.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__AVR__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FLPROG_CORE_AVR_DUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CORE_AVR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(FLPROG_CORE_AVR)<sp/>||<sp/>defined(FLPROG_CORE_STM8)<sp/>||<sp/>defined(FLPROG_CORE_STM32)<sp/>||<sp/>defined(FLPROG_CORE_ESP32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_UNIVTRSAL_FUNCTION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_utilites_a_v_r_8h" kindref="compound">variant\arduino\avr\flprogUtilitesAVR.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_i2_c_8h" kindref="compound">i2c/flprogI2C.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_uart_8h" kindref="compound">uart/flprogUart.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_tcp_device_8h" kindref="compound">tcp/flprogTcpDevice.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="namespaceflprog" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceflprog" kindref="compound">flprog</ref></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceflprog_1acc5a367798f79f5340fa5de409ac22d4" kindref="member">isTimer</ref>(uint32_t<sp/>startTime,<sp/>uint32_t<sp/>period);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="namespaceflprog_1a9f288356ee2d40b2b2ada99354e56ba9" kindref="member">isTimerMicros</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>startTime,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>period);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespaceflprog_1aca0ea27d0df934b3fa846fcfcf6b5d69" kindref="member">serialCodeForParametrs</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>portDataBits,<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>portStopBits,<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>portParity);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="namespaceflprog_1a82fda12bd0f0533f62fd6cf82a3e92fd" kindref="member">speedFromCode</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>code);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="namespaceflprog_1a7661cd972a044b3c2fbc6cb707a19c4b" kindref="member">codeFromSpeed</ref>(int32_t<sp/>speed);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="namespaceflprog_1a14c0502a16183c50f02f25cb25a80728" kindref="member">difference32</ref>(uint32_t<sp/>start,<sp/>uint32_t<sp/>end);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="namespaceflprog_1ae35684dee57af61e1a86fb2e3ab294d4" kindref="member">timeBack</ref>(uint32_t<sp/>value);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="src/flprogUtilites.h"/>
+  </compounddef>
+</doxygen>

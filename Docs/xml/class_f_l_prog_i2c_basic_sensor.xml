@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="class_f_l_prog_i2c_basic_sensor" kind="class" language="C++" prot="public">
+    <compoundname>FLProgI2cBasicSensor</compoundname>
+    <derivedcompoundref refid="class_f_l_prog_i2c_step_work_sensor" prot="public" virt="non-virtual">FLProgI2cStepWorkSensor</derivedcompoundref>
+    <includes refid="flprog_i2_c__sensors_basic_8h" local="no">flprogI2C_sensorsBasic.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_f_l_prog_i2c_basic_sensor_1a4e5e4d8372636d22dc1f534320a0b1be" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref> *</type>
+        <definition>FLProgI2C* FLProgI2cBasicSensor::i2cDevice</definition>
+        <argsstring></argsstring>
+        <name>i2cDevice</name>
+        <qualifiedname>FLProgI2cBasicSensor::i2cDevice</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C_sensorsBasic.h" line="11" column="15" bodyfile="src/i2c/flprogI2C_sensorsBasic.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2c_basic_sensor_1a47010e253c540a295492e92b5aac97a0" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2cBasicSensor::addres</definition>
+        <argsstring></argsstring>
+        <name>addres</name>
+        <qualifiedname>FLProgI2cBasicSensor::addres</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C_sensorsBasic.h" line="12" column="13" bodyfile="src/i2c/flprogI2C_sensorsBasic.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2c_basic_sensor_1a064c48484f3f243aff130716ab414274" prot="protected" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FLProgI2cBasicSensor::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <qualifiedname>FLProgI2cBasicSensor::speed</qualifiedname>
+        <initializer>= <ref refid="flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb" kindref="member">FLPROG_I2CSPEED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C_sensorsBasic.h" line="13" column="14" bodyfile="src/i2c/flprogI2C_sensorsBasic.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2c_basic_sensor_1a40b8e020b62683d9b428f223c1760bef" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2cBasicSensor::codeError</definition>
+        <argsstring></argsstring>
+        <name>codeError</name>
+        <qualifiedname>FLProgI2cBasicSensor::codeError</qualifiedname>
+        <initializer>= <ref refid="flprog_utilites_8h_1a9febed9388c8a9046d18d2f8d846ebd4" kindref="member">FLPROG_SENSOR_NOT_ERROR</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C_sensorsBasic.h" line="14" column="13" bodyfile="src/i2c/flprogI2C_sensorsBasic.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_f_l_prog_i2c_basic_sensor_1ad7a833334abd45534af4136dc8c07e33" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2cBasicSensor::getError</definition>
+        <argsstring>()</argsstring>
+        <name>getError</name>
+        <qualifiedname>FLProgI2cBasicSensor::getError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C_sensorsBasic.h" line="8" column="13" bodyfile="src/i2c/flprogI2C_sensorsBasic.h" bodystart="8" bodyend="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>FLProgI2cBasicSensor</label>
+        <link refid="class_f_l_prog_i2c_basic_sensor"/>
+      </node>
+      <node id="2">
+        <label>FLProgI2cStepWorkSensor</label>
+        <link refid="class_f_l_prog_i2c_step_work_sensor"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>FLProgI2C</label>
+        <link refid="class_f_l_prog_i2_c"/>
+      </node>
+      <node id="1">
+        <label>FLProgI2cBasicSensor</label>
+        <link refid="class_f_l_prog_i2c_basic_sensor"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>i2cDevice</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/i2c/flprogI2C_sensorsBasic.h" line="5" column="1" bodyfile="src/i2c/flprogI2C_sensorsBasic.h" bodystart="6" bodyend="15"/>
+    <listofallmembers>
+      <member refid="class_f_l_prog_i2c_basic_sensor_1a47010e253c540a295492e92b5aac97a0" prot="protected" virt="non-virtual"><scope>FLProgI2cBasicSensor</scope><name>addres</name></member>
+      <member refid="class_f_l_prog_i2c_basic_sensor_1a40b8e020b62683d9b428f223c1760bef" prot="protected" virt="non-virtual"><scope>FLProgI2cBasicSensor</scope><name>codeError</name></member>
+      <member refid="class_f_l_prog_i2c_basic_sensor_1ad7a833334abd45534af4136dc8c07e33" prot="public" virt="non-virtual"><scope>FLProgI2cBasicSensor</scope><name>getError</name></member>
+      <member refid="class_f_l_prog_i2c_basic_sensor_1a4e5e4d8372636d22dc1f534320a0b1be" prot="protected" virt="non-virtual"><scope>FLProgI2cBasicSensor</scope><name>i2cDevice</name></member>
+      <member refid="class_f_l_prog_i2c_basic_sensor_1a064c48484f3f243aff130716ab414274" prot="protected" virt="non-virtual"><scope>FLProgI2cBasicSensor</scope><name>speed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

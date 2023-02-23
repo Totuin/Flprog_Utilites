@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_f2ecabf86f9f4faa7d56fdb58a0dcc99" kind="dir">
+    <compoundname>src/variant</compoundname>
+    <innerdir refid="dir_79ea25f7a78be398108b8c46354bdf82">src/variant/arduino</innerdir>
+    <innerdir refid="dir_9446f755d0286359f04182daed7a7f56">src/variant/esp32</innerdir>
+    <innerdir refid="dir_825d762952f6f234e23c039c6aa8eca9">src/variant/esp8266</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/variant/"/>
+  </compounddef>
+</doxygen>

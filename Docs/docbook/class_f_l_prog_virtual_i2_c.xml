@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_f_l_prog_virtual_i2_c" xml:lang="ru">
+<title>Класс FLProgVirtualI2C</title>
+<indexterm><primary>FLProgVirtualI2C</primary></indexterm>
+<para>
+<computeroutput>#include &lt;flprogI2C.h&gt;</computeroutput>
+</para>
+<para>Граф наследования:FLProgVirtualI2C:    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_f_l_prog_virtual_i2_c.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_f_l_prog_virtual_i2_c_1a2a63f5ef9f98a902b8b6cd9409e3edf5">FLProgVirtualI2C</link> (<link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link> *parentDevice, uint8_t chanelOnParent)</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_f_l_prog_virtual_i2_c_1afe867564e2df6c4a4edea71d4ad0cc83">begin</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_virtual_i2_c_1a709dce8dc7a0acebe0ea05c60f38c8c3">beginTransmission</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea">write</link> (const uint8_t *data, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_virtual_i2_c_1a4294125e4fe71f820a53817b85391f70">write</link> (uint8_t data)</para>
+</listitem>
+            <listitem><para>virtual uint8_t <link linkend="_class_f_l_prog_virtual_i2_c_1aa704301ef938bddf5c8b898bde2e186f">endTransmission</link> ()</para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_class_f_l_prog_virtual_i2_c_1a13624df645155c7176c9d789fdf31a70">available</link> ()</para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_class_f_l_prog_virtual_i2_c_1adbf25e8d737c80071b4bea1d560dde42">read</link> ()</para>
+</listitem>
+            <listitem><para>virtual uint8_t <link linkend="_class_f_l_prog_virtual_i2_c_1a4f37c90d6ae2d3d15386c886ced36a5d">requestFrom</link> (uint8_t address, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_virtual_i2_c_1a4709597c5e1da12cde67ad82ea50ac8e">setSpeed</link> (uint32_t newSpeed)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_virtual_i2_c_1a3fa439599c69346113f22e098af6a454">resetSpeedFrom</link> (uint32_t newSpeed)</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_f_l_prog_virtual_i2_c_1ae7438d0b9d03a0d80525ac930a8dca45">checkBus</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Открытые члены унаследованные от <link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_f_l_prog_i2_c_1aa342e0baacdec371430797df77504d91">FLProgI2C</link> (byte busNumber=0)</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8">begin</link> ()</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_f_l_prog_i2_c_1a2c6291835a10936ca3b0123289828c2a">begin</link> (int pinSDA, int pinSCL)</para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_f_l_prog_i2_c_1ab8d5bc5b0df5ae4a328465f262aac13b">findAddr</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d">getErrorCode</link> ()</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c">fullWrite</link> (uint8_t addr, uint8_t data)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a92371640e9c4228273a204205f501849">fullWrite</link> (uint8_t addr, const uint8_t *data, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1abd81f98e7f06c1e539e7cb053f4fe425">fullRequestFrom</link> (uint8_t address, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</link> (uint8_t addr, uint8_t *data, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a8138175390b0cc5963f99b856d590660">fullRead</link> (uint8_t addr, uint16_t *data, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a099c9f24fc42bd98a790b1a55052e78f">fullRead</link> (uint8_t addr, uint32_t *data, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a892e08882728362457ead1b8d391d3b1">fullReadReg</link> (uint8_t addr, uint8_t reg)</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a6109b4ca3f00c5d064a26007b0f45c55">fullWriteReg</link> (uint8_t addr, uint8_t reg, uint8_t value)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_i2_c_1a74f8323be61a90bedcbc37d4bdbd525c">beginTransmission</link> (uint8_t addr)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295">write</link> (const uint8_t *data, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_i2_c_1a0632215b6c43183ceee9e2b5c1ccd733">write</link> (uint8_t data)</para>
+</listitem>
+            <listitem><para>virtual uint8_t <link linkend="_class_f_l_prog_i2_c_1ab40e40756e66c34b99e3e513302d6afd">endTransmission</link> ()</para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_class_f_l_prog_i2_c_1aba022e66607f05597b9ddaec870be996">available</link> ()</para>
+</listitem>
+            <listitem><para>virtual int <link linkend="_class_f_l_prog_i2_c_1a268ba68fcfd993189ab01ce61dfb50e7">read</link> ()</para>
+</listitem>
+            <listitem><para>virtual uint8_t <link linkend="_class_f_l_prog_i2_c_1a5d816185c13673ebdb78c167f351f783">requestFrom</link> (uint8_t address, uint8_t quantity)</para>
+</listitem>
+            <listitem><para>virtual uint8_t <link linkend="_class_f_l_prog_i2_c_1aee6e857b6f238b3dc994823e7f32a04d">waitingForData</link> (uint8_t count)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_i2_c_1a88f3780a228f2ce6bb12e7e12fb1720f">setSpeed</link> (uint32_t newSpeed)</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_i2_c_1a503c79844364a2a62d063cb1bdb47c33">resetSpeedFrom</link> (uint32_t newSpeed)</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_f_l_prog_i2_c_1a126715f17f31ecdf2ea449ca6999bb1f">checkBus</link> ()</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Дополнительные унаследованные члены    </title>
+Защищенные члены унаследованные от <link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>        <itemizedlist>
+            <listitem><para>bool <link linkend="_class_f_l_prog_i2_c_1af54dc06c96fa360014e4f87cfd2e07a4">beginWire0</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Защищенные данные унаследованные от <link linkend="_class_f_l_prog_i2_c">FLProgI2C</link>        <itemizedlist>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840">bus</link></para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e">busy</link> = false</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951">status</link> = 0</para>
+</listitem>
+            <listitem><para>uint8_t <link linkend="_class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe">codeErr</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077">sda</link> = -1</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce">scl</link> = -1</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5">speed</link> = <link linkend="_flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb">FLPROG_I2CSPEED</link></para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Подробное описание</title>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8h_source">flprogI2C.h</link> строка <link linkend="_flprog_i2_c_8h_source_1l00085">85</link></para>
+</section>
+<section>
+<title>Конструктор(ы)</title>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a2a63f5ef9f98a902b8b6cd9409e3edf5"/><section>
+    <title>FLProgVirtualI2C()</title>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<para><computeroutput>FLProgVirtualI2C::FLProgVirtualI2C (<link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link> * parentDevice, uint8_t chanelOnParent)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00516">516</link></para>
+</section>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a13624df645155c7176c9d789fdf31a70"/><section>
+    <title>available()</title>
+<indexterm><primary>available</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>available</secondary></indexterm>
+<para><computeroutput>int FLProgVirtualI2C::available ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1aba022e66607f05597b9ddaec870be996">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00547">547</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1afe867564e2df6c4a4edea71d4ad0cc83"/><section>
+    <title>begin()</title>
+<indexterm><primary>begin</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput>bool FLProgVirtualI2C::begin ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00522">522</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a709dce8dc7a0acebe0ea05c60f38c8c3"/><section>
+    <title>beginTransmission()</title>
+<indexterm><primary>beginTransmission</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>beginTransmission</secondary></indexterm>
+<para><computeroutput>void FLProgVirtualI2C::beginTransmission (uint8_t addr)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a74f8323be61a90bedcbc37d4bdbd525c">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00527">527</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1ae7438d0b9d03a0d80525ac930a8dca45"/><section>
+    <title>checkBus()</title>
+<indexterm><primary>checkBus</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>checkBus</secondary></indexterm>
+<para><computeroutput>bool FLProgVirtualI2C::checkBus ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a126715f17f31ecdf2ea449ca6999bb1f">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00572">572</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1aa704301ef938bddf5c8b898bde2e186f"/><section>
+    <title>endTransmission()</title>
+<indexterm><primary>endTransmission</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>endTransmission</secondary></indexterm>
+<para><computeroutput>uint8_t FLProgVirtualI2C::endTransmission ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1ab40e40756e66c34b99e3e513302d6afd">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00542">542</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1adbf25e8d737c80071b4bea1d560dde42"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>int FLProgVirtualI2C::read ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a268ba68fcfd993189ab01ce61dfb50e7">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00552">552</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a4f37c90d6ae2d3d15386c886ced36a5d"/><section>
+    <title>requestFrom()</title>
+<indexterm><primary>requestFrom</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>requestFrom</secondary></indexterm>
+<para><computeroutput>uint8_t FLProgVirtualI2C::requestFrom (uint8_t address, uint8_t quantity)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a5d816185c13673ebdb78c167f351f783">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00557">557</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a3fa439599c69346113f22e098af6a454"/><section>
+    <title>resetSpeedFrom()</title>
+<indexterm><primary>resetSpeedFrom</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>resetSpeedFrom</secondary></indexterm>
+<para><computeroutput>void FLProgVirtualI2C::resetSpeedFrom (uint32_t newSpeed)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a503c79844364a2a62d063cb1bdb47c33">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00567">567</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a4709597c5e1da12cde67ad82ea50ac8e"/><section>
+    <title>setSpeed()</title>
+<indexterm><primary>setSpeed</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>setSpeed</secondary></indexterm>
+<para><computeroutput>void FLProgVirtualI2C::setSpeed (uint32_t newSpeed)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a88f3780a228f2ce6bb12e7e12fb1720f">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00562">562</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea"/><section>
+    <title>write()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>write</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void FLProgVirtualI2C::write (const uint8_t * data, uint8_t quantity)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00532">532</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_virtual_i2_c_1a4294125e4fe71f820a53817b85391f70"/><section>
+    <title>write()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>write</primary><secondary>FLProgVirtualI2C</secondary></indexterm>
+<indexterm><primary>FLProgVirtualI2C</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>void FLProgVirtualI2C::write (uint8_t data)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+Переопределяет метод предка <link linkend="_class_f_l_prog_i2_c_1a0632215b6c43183ceee9e2b5c1ccd733">FLProgI2C</link>.</para>
+<para>
+См. определение в файле <link linkend="_flprog_i2_c_8cpp_source">flprogI2C.cpp</link> строка <link linkend="_flprog_i2_c_8cpp_source_1l00537">537</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+src/i2c/<link linkend="_flprog_i2_c_8h">flprogI2C.h</link>src/i2c/<link linkend="_flprog_i2_c_8cpp">flprogI2C.cpp</link></section>
+</section>

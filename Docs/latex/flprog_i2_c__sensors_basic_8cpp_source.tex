@@ -1,0 +1,62 @@
+\hypertarget{flprog_i2_c__sensors_basic_8cpp_source}{}\doxysection{flprog\+I2\+C\+\_\+sensors\+Basic.\+cpp}
+\label{flprog_i2_c__sensors_basic_8cpp_source}\index{src/i2c/flprogI2C\_sensorsBasic.cpp@{src/i2c/flprogI2C\_sensorsBasic.cpp}}
+\mbox{\hyperlink{flprog_i2_c__sensors_basic_8cpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flprog_i2_c__sensors_basic_8h}{flprogI2C\_sensorsBasic.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00003}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a85f6498d48f835599c17fa0df4408b21}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a85f6498d48f835599c17fa0df4408b21}{FLProgI2cStepWorkSensor::checkDelay}}()}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{step}}\ ==\ \mbox{\hyperlink{flprog_utilites_8h_ace19cbe1e3ba044e8fd2f2db87fdcce4}{FLPROG\_SENSOR\_WAITING\_DELAY}})}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00007}00007\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceflprog_acc5a367798f79f5340fa5de409ac22d4}{flprog::isTimer}}(\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}{startDelay}},\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}{sizeDelay}}))}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{step}}\ =\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}{stepAfterDelay}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00015}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}{FLProgI2cStepWorkSensor::read}}()}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}{isNeededRead}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00018}00018\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00020}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7c5547cb9e63baf21658b6d33220ba3a}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7c5547cb9e63baf21658b6d33220ba3a}{FLProgI2cStepWorkSensor::setReadPeriod}}(uint32\_t\ period)}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00021}00021\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}{readPeriod}}\ =\ period;}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00025}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac2080f524107c1645440b8d7b0a2526e}{00025}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac2080f524107c1645440b8d7b0a2526e}{FLProgI2cStepWorkSensor::checkReadPeriod}}()}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}{readPeriod}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceflprog_acc5a367798f79f5340fa5de409ac22d4}{flprog::isTimer}}(\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}{startReadPeriod}},\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}{readPeriod}}))}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}{startReadPeriod}}\ =\ millis();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}{read}}();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00037}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa3d0c08a85519ce3bd136575255c48bf}{00037}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa3d0c08a85519ce3bd136575255c48bf}{FLProgI2cStepWorkSensor::gotoStepWithDelay}}(uint8\_t\ newStep,\ uint32\_t\ delay)}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}{startDelay}}\ =\ millis();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}{sizeDelay}}\ =\ delay;}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}{stepAfterDelay}}\ =\ newStep;}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{step}}\ =\ \mbox{\hyperlink{flprog_utilites_8h_ace19cbe1e3ba044e8fd2f2db87fdcce4}{FLPROG\_SENSOR\_WAITING\_DELAY}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00045}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3417638ce26313aeae54f638b80cfb25}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3417638ce26313aeae54f638b80cfb25}{FLProgI2cStepWorkSensor::checkNeededRead}}()}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{step}}\ ==\ \mbox{\hyperlink{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}{FLPROG\_SENSOR\_WAITING\_READ\_STEP}})}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}{isNeededRead}})}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae30f110f5a8ee5450478a559083ab31e}{readSensor}}();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}{isNeededRead}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8cpp_source_l00056}00056\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="flprog_i2_c_8h" kind="file" language="C++">
+    <compoundname>flprogI2C.h</compoundname>
+    <includes local="yes">Arduino.h</includes>
+    <includes local="no">Wire.h</includes>
+    <includes refid="flprog_utilites_8h" local="yes">flprogUtilites.h</includes>
+    <includes refid="flprog_i2_c__sensors_basic_8h" local="yes">flprogI2C_sensorsBasic.h</includes>
+    <includedby refid="flprog_utilites_8h" local="yes">src/flprogUtilites.h</includedby>
+    <includedby refid="flprog_i2_c_8cpp" local="yes">src/i2c/flprogI2C.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+      <node id="8">
+        <label>Ethernet.h</label>
+      </node>
+      <node id="4">
+        <label>flprogUtilites.h</label>
+        <link refid="flprog_utilites_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/i2c/flprogI2C.h</label>
+        <link refid="flprog_i2_c_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>flprogI2C_sensorsBasic.h</label>
+        <link refid="flprog_i2_c__sensors_basic_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>tcp/flprogTcpDevice.h</label>
+        <link refid="flprog_tcp_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>uart/flprogUart.h</label>
+        <link refid="flprog_uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>softwareUart\flprogSoftwareUart.h</label>
+        <link refid="flprog_software_uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>SPI.h</label>
+      </node>
+      <node id="3">
+        <label>Wire.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/flprogUtilites.cpp</label>
+        <link refid="flprog_utilites_8cpp"/>
+      </node>
+      <node id="2">
+        <label>src/flprogUtilites.h</label>
+        <link refid="flprog_utilites_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>src/i2c/flprogI2C.cpp</label>
+        <link refid="flprog_i2_c_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/i2c/flprogI2C.h</label>
+        <link refid="flprog_i2_c_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/i2c/flprogI2C_sensorsBasic.cpp</label>
+        <link refid="flprog_i2_c__sensors_basic_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/i2c/flprogI2C_sensorsBasic.h</label>
+        <link refid="flprog_i2_c__sensors_basic_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/tcp/flprogTcpDevice.cpp</label>
+        <link refid="flprog_tcp_device_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/tcp/flprogTcpDevice.h</label>
+        <link refid="flprog_tcp_device_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/uart/bluetoothSerial/flprogUartBluetoothSerial.cpp</label>
+        <link refid="flprog_uart_bluetooth_serial_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/uart/bluetoothSerial/flprogUartBluetoothSerial.h</label>
+        <link refid="flprog_uart_bluetooth_serial_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/uart/flprogUart.cpp</label>
+        <link refid="flprog_uart_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/uart/flprogUart.h</label>
+        <link refid="flprog_uart_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.cpp</label>
+        <link refid="hardware_uart_a_v_r_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/uart/hardwareUart/hardwareUartAVR/hardwareUartAVR.h</label>
+        <link refid="hardware_uart_a_v_r_8h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.cpp</label>
+        <link refid="hardware_uart_d_u_e_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.h</label>
+        <link refid="hardware_uart_d_u_e_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>src/uart/hardwareUart/hardwareUartESP32/hardwareUartESP32.cpp</label>
+        <link refid="hardware_uart_e_s_p32_8cpp"/>
+      </node>
+      <node id="16">
+        <label>src/uart/hardwareUart/hardwareUartESP32/hardwareUartESP32.h</label>
+        <link refid="hardware_uart_e_s_p32_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>src/uart/hardwareUart/hardwareUartESP8266/hardwareUartESP8266.cpp</label>
+        <link refid="hardware_uart_e_s_p8266_8cpp"/>
+      </node>
+      <node id="18">
+        <label>src/uart/hardwareUart/hardwareUartESP8266/hardwareUartESP8266.h</label>
+        <link refid="hardware_uart_e_s_p8266_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>src/uart/hardwareUart/hardwareUartSTM/hardwareUartSTM.cpp</label>
+        <link refid="hardware_uart_s_t_m_8cpp"/>
+      </node>
+      <node id="20">
+        <label>src/uart/hardwareUart/hardwareUartSTM/hardwareUartSTM.h</label>
+        <link refid="hardware_uart_s_t_m_8h"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>src/uart/softwareUart/flprogSoftwareUart.cpp</label>
+        <link refid="flprog_software_uart_8cpp"/>
+      </node>
+      <node id="22">
+        <label>src/uart/softwareUart/flprogSoftwareUart.h</label>
+        <link refid="flprog_software_uart_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>src/variant/arduino/avr/flprogUtilitesAVR.cpp</label>
+        <link refid="flprog_utilites_a_v_r_8cpp"/>
+      </node>
+      <node id="24">
+        <label>src/variant/arduino/avr/flprogUtilitesAVR.h</label>
+        <link refid="flprog_utilites_a_v_r_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>src/variant/arduino/due/flprogUtilitesDUE.cpp</label>
+        <link refid="flprog_utilites_d_u_e_8cpp"/>
+      </node>
+      <node id="26">
+        <label>src/variant/arduino/due/flprogUtilitesDUE.h</label>
+        <link refid="flprog_utilites_d_u_e_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>src/variant/esp32/flprogUtilitesESP32.cpp</label>
+        <link refid="flprog_utilites_e_s_p32_8cpp"/>
+      </node>
+      <node id="28">
+        <label>src/variant/esp32/flprogUtilitesESP32.h</label>
+        <link refid="flprog_utilites_e_s_p32_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>src/variant/esp8266/flprogUtilitesESP8266.cpp</label>
+        <link refid="flprog_utilites_e_s_p8266_8cpp"/>
+      </node>
+      <node id="30">
+        <label>src/variant/esp8266/flprogUtilitesESP8266.h</label>
+        <link refid="flprog_utilites_e_s_p8266_8h"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_f_l_prog_i2_c" prot="public">FLProgI2C</innerclass>
+    <innerclass refid="class_f_l_prog_t_c_a9548_a" prot="public">FLProgTCA9548A</innerclass>
+    <innerclass refid="class_f_l_prog_virtual_i2_c" prot="public">FLProgVirtualI2C</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb" prot="public" static="no">
+        <name>FLPROG_I2CSPEED</name>
+        <initializer>400000UL;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="9" column="10" bodyfile="src/i2c/flprogI2C.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Arduino.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_utilites_8h" kindref="compound">flprogUtilites.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FLPROG_CORE_ESP8266</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_I2CSPEED<sp/>100000UL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_I2CSPEED<sp/>400000UL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(CORE_ESP32)<sp/>||<sp/>defined(CORE_STM32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FLPROG_CAN_USE_I2C_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_f_l_prog_i2_c" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>busNumber<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8" kindref="member">begin</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pinSDA,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pinSCL);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1ab8d5bc5b0df5ae4a328465f262aac13b" kindref="member">findAddr</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="23" refid="class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d" kindref="member">getErrorCode</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe" kindref="member">codeErr</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c" kindref="member">fullWrite</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c" kindref="member">fullWrite</ref>(uint8_t<sp/>addr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1abd81f98e7f06c1e539e7cb053f4fe425" kindref="member">fullRequestFrom</ref>(uint8_t<sp/>address,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3" kindref="member">fullRead</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>*data,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3" kindref="member">fullRead</ref>(uint8_t<sp/>addr,<sp/>uint16_t<sp/>*data,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3" kindref="member">fullRead</ref>(uint8_t<sp/>addr,<sp/>uint32_t<sp/>*data,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a892e08882728362457ead1b8d391d3b1" kindref="member">fullReadReg</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>reg);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a6109b4ca3f00c5d064a26007b0f45c55" kindref="member">fullWriteReg</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>reg,<sp/>uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a74f8323be61a90bedcbc37d4bdbd525c" kindref="member">beginTransmission</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295" kindref="member">write</ref>(uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1ab40e40756e66c34b99e3e513302d6afd" kindref="member">endTransmission</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1aba022e66607f05597b9ddaec870be996" kindref="member">available</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a268ba68fcfd993189ab01ce61dfb50e7" kindref="member">read</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a5d816185c13673ebdb78c167f351f783" kindref="member">requestFrom</ref>(uint8_t<sp/>address,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1aee6e857b6f238b3dc994823e7f32a04d" kindref="member">waitingForData</ref>(uint8_t<sp/>count);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a88f3780a228f2ce6bb12e7e12fb1720f" kindref="member">setSpeed</ref>(uint32_t<sp/>newSpeed);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a503c79844364a2a62d063cb1bdb47c33" kindref="member">resetSpeedFrom</ref>(uint32_t<sp/>newSpeed);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a126715f17f31ecdf2ea449ca6999bb1f" kindref="member">checkBus</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="46" refid="class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840" kindref="member">bus</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e" kindref="member">busy</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48" refid="class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951" kindref="member">status</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="49" refid="class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe" kindref="member">codeErr</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50" refid="class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077" kindref="member">sda</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="51" refid="class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce" kindref="member">scl</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="52" refid="class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5" kindref="member">speed</ref><sp/>=<sp/><ref refid="flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb" kindref="member">FLPROG_I2CSPEED</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c_1af54dc06c96fa360014e4f87cfd2e07a4" kindref="member">beginWire0</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FLPROG_CAN_USE_I2C_1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>beginWire1();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_i2_c__sensors_basic_8h" kindref="compound">flprogI2C_sensorsBasic.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_f_l_prog_t_c_a9548_a" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_f_l_prog_t_c_a9548_a" kindref="compound">FLProgTCA9548A</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_t_c_a9548_a" kindref="compound">FLProgTCA9548A</ref>(<ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref><sp/>*device,<sp/>uint8_t<sp/>deviceAddress);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_t_c_a9548_a" kindref="compound">FLProgTCA9548A</ref>(<ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref><sp/>*device);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1aed692e8c5a9afa68ded1473c01242061" kindref="member">beginTransmission</ref>(uint8_t<sp/>addr,<sp/>uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1a5365a243dfe70ba78a3afb1e05334eaa" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,<sp/>uint8_t<sp/>quantity,<sp/>uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1a5365a243dfe70ba78a3afb1e05334eaa" kindref="member">write</ref>(uint8_t<sp/>data,<sp/>uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_t_c_a9548_a_1a4a527cd34332b4ec2810b4c10c080ccc" kindref="member">endTransmission</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1a6f5d6034334ef43006ff10928cce572f" kindref="member">available</ref>(uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1acf146e5bdfe3b2c794bfccb374ee41ac" kindref="member">read</ref>(uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_f_l_prog_t_c_a9548_a_1aee5d3e1387cee3410655be01042107f5" kindref="member">requestFrom</ref>(uint8_t<sp/>address,<sp/>uint8_t<sp/>quantity,<sp/>uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1a3dca5052bce732d52235c4231a3776fa" kindref="member">setSpeed</ref>(uint32_t<sp/>newSpeed,<sp/>uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1afa05ee993ca840058edb29c0e5e97672" kindref="member">resetSpeedFrom</ref>(uint32_t<sp/>newSpeed,<sp/>uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_t_c_a9548_a_1a5e2624fc72576aacf71b804680f0b791" kindref="member">checkBus</ref>();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>switchToChanel(uint8_t<sp/>chanel);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref><sp/>*i2cDevice;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>address;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>currentChanel<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>errorCode<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_f_l_prog_virtual_i2_c" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_f_l_prog_virtual_i2_c" kindref="compound">FLProgVirtualI2C</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_i2_c" kindref="compound">FLProgI2C</ref></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_virtual_i2_c" kindref="compound">FLProgVirtualI2C</ref>(<ref refid="class_f_l_prog_t_c_a9548_a" kindref="compound">FLProgTCA9548A</ref><sp/>*parentDevice,<sp/>uint8_t<sp/>chanelOnParent);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1afe867564e2df6c4a4edea71d4ad0cc83" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1a709dce8dc7a0acebe0ea05c60f38c8c3" kindref="member">beginTransmission</ref>(uint8_t<sp/>addr);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea" kindref="member">write</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>*data,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea" kindref="member">write</ref>(uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="class_f_l_prog_virtual_i2_c_1aa704301ef938bddf5c8b898bde2e186f" kindref="member">endTransmission</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1a13624df645155c7176c9d789fdf31a70" kindref="member">available</ref>();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1adbf25e8d737c80071b4bea1d560dde42" kindref="member">read</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="class_f_l_prog_virtual_i2_c_1a4f37c90d6ae2d3d15386c886ced36a5d" kindref="member">requestFrom</ref>(uint8_t<sp/>address,<sp/>uint8_t<sp/>quantity);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1a4709597c5e1da12cde67ad82ea50ac8e" kindref="member">setSpeed</ref>(uint32_t<sp/>newSpeed);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1a3fa439599c69346113f22e098af6a454" kindref="member">resetSpeedFrom</ref>(uint32_t<sp/>newSpeed);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_virtual_i2_c_1ae7438d0b9d03a0d80525ac930a8dca45" kindref="member">checkBus</ref>();</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_t_c_a9548_a" kindref="compound">FLProgTCA9548A</ref><sp/>*parent;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>chanel;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="src/i2c/flprogI2C.h"/>
+  </compounddef>
+</doxygen>

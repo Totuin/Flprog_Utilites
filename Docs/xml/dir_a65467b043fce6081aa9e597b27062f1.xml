@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_a65467b043fce6081aa9e597b27062f1" kind="dir">
+    <compoundname>src/tcp</compoundname>
+    <innerfile refid="flprog_tcp_device_8cpp">flprogTcpDevice.cpp</innerfile>
+    <innerfile refid="flprog_tcp_device_8h">flprogTcpDevice.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/tcp/"/>
+  </compounddef>
+</doxygen>

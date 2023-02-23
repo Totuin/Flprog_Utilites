@@ -1,0 +1,42 @@
+\hypertarget{flprog_i2_c__sensors_basic_8h_source}{}\doxysection{flprog\+I2\+C\+\_\+sensors\+Basic.\+h}
+\label{flprog_i2_c__sensors_basic_8h_source}\index{src/i2c/flprogI2C\_sensorsBasic.h@{src/i2c/flprogI2C\_sensorsBasic.h}}
+\mbox{\hyperlink{flprog_i2_c__sensors_basic_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}Arduino.h"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flprog_utilites_8h}{flprogUtilites.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00005}\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor}{00005}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor}{FLProgI2cBasicSensor}}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00007}00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00008}\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_ad7a833334abd45534af4136dc8c07e33}{00008}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_ad7a833334abd45534af4136dc8c07e33}{getError}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a40b8e020b62683d9b428f223c1760bef}{codeError}};\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00010}00010\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00011}\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a4e5e4d8372636d22dc1f534320a0b1be}{00011}}\ \ \ \ \ \mbox{\hyperlink{class_f_l_prog_i2_c}{FLProgI2C}}\ *\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a4e5e4d8372636d22dc1f534320a0b1be}{i2cDevice}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00012}\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a47010e253c540a295492e92b5aac97a0}{00012}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a47010e253c540a295492e92b5aac97a0}{addres}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00013}\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a064c48484f3f243aff130716ab414274}{00013}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a064c48484f3f243aff130716ab414274}{speed}}\ =\ \mbox{\hyperlink{flprog_i2_c_8h_a5d14ac1e40046405a287e54485b3f6cb}{FLPROG\_I2CSPEED}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00014}\mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a40b8e020b62683d9b428f223c1760bef}{00014}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor_a40b8e020b62683d9b428f223c1760bef}{codeError}}\ =\ \mbox{\hyperlink{flprog_utilites_8h_a9febed9388c8a9046d18d2f8d846ebd4}{FLPROG\_SENSOR\_NOT\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00017}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor}{FLProgI2cStepWorkSensor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_l_prog_i2c_basic_sensor}{FLProgI2cBasicSensor}}}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a72a5f525e728b0801ddb2e911afacc3b}{read}}();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7c5547cb9e63baf21658b6d33220ba3a}{setReadPeriod}}(uint32\_t\ period);}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00023}00023\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00024}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae30f110f5a8ee5450478a559083ab31e}{00024}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae30f110f5a8ee5450478a559083ab31e}{readSensor}}()\{\};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a85f6498d48f835599c17fa0df4408b21}{checkDelay}}();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac2080f524107c1645440b8d7b0a2526e}{checkReadPeriod}}();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa3d0c08a85519ce3bd136575255c48bf}{gotoStepWithDelay}}(uint8\_t\ newStep,\ uint32\_t\ delay);}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3417638ce26313aeae54f638b80cfb25}{checkNeededRead}}();}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00029}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}{00029}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a67de0a22679aceca8be256a7f332dd1c}{startDelay}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00030}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}{00030}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a3ca8e4d3cdc89c82e291241a67ff4a68}{sizeDelay}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00031}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}{00031}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_a7fc990383e0a84ddf97bfddf61507ff2}{stepAfterDelay}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00032}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}{00032}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ae4827a4151f973dfbca09e0f15663767}{isNeededRead}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00033}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}{00033}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aa14c06c54f73c50a39d6b5264e3e66e9}{readPeriod}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00034}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}{00034}}\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_aecaacada2d47aa5709f44ca5660de74d}{startReadPeriod}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00035}\mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{00035}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_f_l_prog_i2c_step_work_sensor_ac077cf3b16ecf859effc6609bf03a531}{step}}\ =\ \mbox{\hyperlink{flprog_utilites_8h_a3f3cf4c2020b3aef1e75d1d584425e76}{FLPROG\_SENSOR\_WAITING\_READ\_STEP}};}
+\DoxyCodeLine{\Hypertarget{flprog_i2_c__sensors_basic_8h_source_l00036}00036\ \};}
+
+\end{DoxyCode}

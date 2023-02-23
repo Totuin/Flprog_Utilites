@@ -1,0 +1,667 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="class_f_l_prog_i2_c" kind="class" language="C++" prot="public">
+    <compoundname>FLProgI2C</compoundname>
+    <derivedcompoundref refid="class_f_l_prog_virtual_i2_c" prot="public" virt="non-virtual">FLProgVirtualI2C</derivedcompoundref>
+    <includes refid="flprog_i2_c_8h" local="no">flprogI2C.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::bus</definition>
+        <argsstring></argsstring>
+        <name>bus</name>
+        <qualifiedname>FLProgI2C::bus</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="46" column="13" bodyfile="src/i2c/flprogI2C.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool FLProgI2C::busy</definition>
+        <argsstring></argsstring>
+        <name>busy</name>
+        <qualifiedname>FLProgI2C::busy</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="47" column="10" bodyfile="src/i2c/flprogI2C.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <qualifiedname>FLProgI2C::status</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="48" column="13" bodyfile="src/i2c/flprogI2C.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe" prot="protected" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::codeErr</definition>
+        <argsstring></argsstring>
+        <name>codeErr</name>
+        <qualifiedname>FLProgI2C::codeErr</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="49" column="13" bodyfile="src/i2c/flprogI2C.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FLProgI2C::sda</definition>
+        <argsstring></argsstring>
+        <name>sda</name>
+        <qualifiedname>FLProgI2C::sda</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="50" column="9" bodyfile="src/i2c/flprogI2C.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FLProgI2C::scl</definition>
+        <argsstring></argsstring>
+        <name>scl</name>
+        <qualifiedname>FLProgI2C::scl</qualifiedname>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="51" column="9" bodyfile="src/i2c/flprogI2C.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5" prot="protected" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t FLProgI2C::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <qualifiedname>FLProgI2C::speed</qualifiedname>
+        <initializer>= <ref refid="flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb" kindref="member">FLPROG_I2CSPEED</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="52" column="14" bodyfile="src/i2c/flprogI2C.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1aa342e0baacdec371430797df77504d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FLProgI2C::FLProgI2C</definition>
+        <argsstring>(byte busNumber=0)</argsstring>
+        <name>FLProgI2C</name>
+        <qualifiedname>FLProgI2C::FLProgI2C</qualifiedname>
+        <param>
+          <type>byte</type>
+          <declname>busNumber</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="19" column="5" bodyfile="src/i2c/flprogI2C.cpp" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool FLProgI2C::begin</definition>
+        <argsstring>()</argsstring>
+        <name>begin</name>
+        <qualifiedname>FLProgI2C::begin</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1afe867564e2df6c4a4edea71d4ad0cc83">begin</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="20" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="37" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a2c6291835a10936ca3b0123289828c2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FLProgI2C::begin</definition>
+        <argsstring>(int pinSDA, int pinSCL)</argsstring>
+        <name>begin</name>
+        <qualifiedname>FLProgI2C::begin</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>pinSDA</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pinSCL</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="21" column="10" bodyfile="src/i2c/flprogI2C.cpp" bodystart="28" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1ab8d5bc5b0df5ae4a328465f262aac13b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FLProgI2C::findAddr</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>findAddr</name>
+        <qualifiedname>FLProgI2C::findAddr</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="22" column="10" bodyfile="src/i2c/flprogI2C.cpp" bodystart="119" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::getErrorCode</definition>
+        <argsstring>()</argsstring>
+        <name>getErrorCode</name>
+        <qualifiedname>FLProgI2C::getErrorCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="23" column="13" bodyfile="src/i2c/flprogI2C.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullWrite</definition>
+        <argsstring>(uint8_t addr, uint8_t data)</argsstring>
+        <name>fullWrite</name>
+        <qualifiedname>FLProgI2C::fullWrite</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="24" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="137" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a92371640e9c4228273a204205f501849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullWrite</definition>
+        <argsstring>(uint8_t addr, const uint8_t *data, uint8_t quantity)</argsstring>
+        <name>fullWrite</name>
+        <qualifiedname>FLProgI2C::fullWrite</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="25" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="145" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1abd81f98e7f06c1e539e7cb053f4fe425" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullRequestFrom</definition>
+        <argsstring>(uint8_t address, uint8_t quantity)</argsstring>
+        <name>fullRequestFrom</name>
+        <qualifiedname>FLProgI2C::fullRequestFrom</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="26" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="153" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullRead</definition>
+        <argsstring>(uint8_t addr, uint8_t *data, uint8_t quantity)</argsstring>
+        <name>fullRead</name>
+        <qualifiedname>FLProgI2C::fullRead</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="27" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="164" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a8138175390b0cc5963f99b856d590660" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullRead</definition>
+        <argsstring>(uint8_t addr, uint16_t *data, uint8_t quantity)</argsstring>
+        <name>fullRead</name>
+        <qualifiedname>FLProgI2C::fullRead</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint16_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="28" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="178" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a099c9f24fc42bd98a790b1a55052e78f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullRead</definition>
+        <argsstring>(uint8_t addr, uint32_t *data, uint8_t quantity)</argsstring>
+        <name>fullRead</name>
+        <qualifiedname>FLProgI2C::fullRead</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="29" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="192" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a892e08882728362457ead1b8d391d3b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullReadReg</definition>
+        <argsstring>(uint8_t addr, uint8_t reg)</argsstring>
+        <name>fullReadReg</name>
+        <qualifiedname>FLProgI2C::fullReadReg</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="30" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="399" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a6109b4ca3f00c5d064a26007b0f45c55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::fullWriteReg</definition>
+        <argsstring>(uint8_t addr, uint8_t reg, uint8_t value)</argsstring>
+        <name>fullWriteReg</name>
+        <qualifiedname>FLProgI2C::fullWriteReg</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>reg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="31" column="13" bodyfile="src/i2c/flprogI2C.cpp" bodystart="415" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a74f8323be61a90bedcbc37d4bdbd525c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgI2C::beginTransmission</definition>
+        <argsstring>(uint8_t addr)</argsstring>
+        <name>beginTransmission</name>
+        <qualifiedname>FLProgI2C::beginTransmission</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a709dce8dc7a0acebe0ea05c60f38c8c3">beginTransmission</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="33" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="206" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgI2C::write</definition>
+        <argsstring>(const uint8_t *data, uint8_t quantity)</argsstring>
+        <name>write</name>
+        <qualifiedname>FLProgI2C::write</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a44b86916cf4d59f08c86b5d002f054ea">write</reimplementedby>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="34" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="225" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a0632215b6c43183ceee9e2b5c1ccd733" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgI2C::write</definition>
+        <argsstring>(uint8_t data)</argsstring>
+        <name>write</name>
+        <qualifiedname>FLProgI2C::write</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a4294125e4fe71f820a53817b85391f70">write</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="35" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="316" bodyend="333"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1ab40e40756e66c34b99e3e513302d6afd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::endTransmission</definition>
+        <argsstring>()</argsstring>
+        <name>endTransmission</name>
+        <qualifiedname>FLProgI2C::endTransmission</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1aa704301ef938bddf5c8b898bde2e186f">endTransmission</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="36" column="21" bodyfile="src/i2c/flprogI2C.cpp" bodystart="244" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1aba022e66607f05597b9ddaec870be996" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int FLProgI2C::available</definition>
+        <argsstring>()</argsstring>
+        <name>available</name>
+        <qualifiedname>FLProgI2C::available</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a13624df645155c7176c9d789fdf31a70">available</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="37" column="17" bodyfile="src/i2c/flprogI2C.cpp" bodystart="265" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a268ba68fcfd993189ab01ce61dfb50e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int FLProgI2C::read</definition>
+        <argsstring>()</argsstring>
+        <name>read</name>
+        <qualifiedname>FLProgI2C::read</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1adbf25e8d737c80071b4bea1d560dde42">read</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="38" column="17" bodyfile="src/i2c/flprogI2C.cpp" bodystart="280" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a5d816185c13673ebdb78c167f351f783" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::requestFrom</definition>
+        <argsstring>(uint8_t address, uint8_t quantity)</argsstring>
+        <name>requestFrom</name>
+        <qualifiedname>FLProgI2C::requestFrom</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a4f37c90d6ae2d3d15386c886ced36a5d">requestFrom</reimplementedby>
+        <param>
+          <type>uint8_t</type>
+          <declname>address</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>quantity</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="39" column="21" bodyfile="src/i2c/flprogI2C.cpp" bodystart="295" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1aee6e857b6f238b3dc994823e7f32a04d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t FLProgI2C::waitingForData</definition>
+        <argsstring>(uint8_t count)</argsstring>
+        <name>waitingForData</name>
+        <qualifiedname>FLProgI2C::waitingForData</qualifiedname>
+        <param>
+          <type>uint8_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="40" column="21" bodyfile="src/i2c/flprogI2C.cpp" bodystart="335" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a88f3780a228f2ce6bb12e7e12fb1720f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgI2C::setSpeed</definition>
+        <argsstring>(uint32_t newSpeed)</argsstring>
+        <name>setSpeed</name>
+        <qualifiedname>FLProgI2C::setSpeed</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a4709597c5e1da12cde67ad82ea50ac8e">setSpeed</reimplementedby>
+        <param>
+          <type>uint32_t</type>
+          <declname>newSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="41" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="352" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a503c79844364a2a62d063cb1bdb47c33" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FLProgI2C::resetSpeedFrom</definition>
+        <argsstring>(uint32_t newSpeed)</argsstring>
+        <name>resetSpeedFrom</name>
+        <qualifiedname>FLProgI2C::resetSpeedFrom</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1a3fa439599c69346113f22e098af6a454">resetSpeedFrom</reimplementedby>
+        <param>
+          <type>uint32_t</type>
+          <declname>newSpeed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="42" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="375" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1a126715f17f31ecdf2ea449ca6999bb1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool FLProgI2C::checkBus</definition>
+        <argsstring>()</argsstring>
+        <name>checkBus</name>
+        <qualifiedname>FLProgI2C::checkBus</qualifiedname>
+        <reimplementedby refid="class_f_l_prog_virtual_i2_c_1ae7438d0b9d03a0d80525ac930a8dca45">checkBus</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="43" column="18" bodyfile="src/i2c/flprogI2C.cpp" bodystart="12" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_f_l_prog_i2_c_1af54dc06c96fa360014e4f87cfd2e07a4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FLProgI2C::beginWire0</definition>
+        <argsstring>()</argsstring>
+        <name>beginWire0</name>
+        <qualifiedname>FLProgI2C::beginWire0</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/i2c/flprogI2C.h" line="53" column="10" bodyfile="src/i2c/flprogI2C.cpp" bodystart="63" bodyend="91"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>FLProgI2C</label>
+        <link refid="class_f_l_prog_i2_c"/>
+      </node>
+      <node id="2">
+        <label>FLProgVirtualI2C</label>
+        <link refid="class_f_l_prog_virtual_i2_c"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/i2c/flprogI2C.h" line="16" column="1" bodyfile="src/i2c/flprogI2C.h" bodystart="17" bodyend="57"/>
+    <listofallmembers>
+      <member refid="class_f_l_prog_i2_c_1aba022e66607f05597b9ddaec870be996" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>available</name></member>
+      <member refid="class_f_l_prog_i2_c_1aa02c7b40c4a8ad16717a6a8816bdc9c8" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>begin</name></member>
+      <member refid="class_f_l_prog_i2_c_1a2c6291835a10936ca3b0123289828c2a" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>begin</name></member>
+      <member refid="class_f_l_prog_i2_c_1a74f8323be61a90bedcbc37d4bdbd525c" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>beginTransmission</name></member>
+      <member refid="class_f_l_prog_i2_c_1af54dc06c96fa360014e4f87cfd2e07a4" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>beginWire0</name></member>
+      <member refid="class_f_l_prog_i2_c_1a9f2ea9ffa26cacbe15713a8c273b1840" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>bus</name></member>
+      <member refid="class_f_l_prog_i2_c_1ac5af99710bd684c5f92196ebb1d7a62e" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>busy</name></member>
+      <member refid="class_f_l_prog_i2_c_1a126715f17f31ecdf2ea449ca6999bb1f" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>checkBus</name></member>
+      <member refid="class_f_l_prog_i2_c_1adae7361cf9e79156465ef455cf8bfafe" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>codeErr</name></member>
+      <member refid="class_f_l_prog_i2_c_1ab40e40756e66c34b99e3e513302d6afd" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>endTransmission</name></member>
+      <member refid="class_f_l_prog_i2_c_1ab8d5bc5b0df5ae4a328465f262aac13b" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>findAddr</name></member>
+      <member refid="class_f_l_prog_i2_c_1aa342e0baacdec371430797df77504d91" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>FLProgI2C</name></member>
+      <member refid="class_f_l_prog_i2_c_1a305b69dc03da92d44a3ab5cfbc42f4c3" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullRead</name></member>
+      <member refid="class_f_l_prog_i2_c_1a8138175390b0cc5963f99b856d590660" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullRead</name></member>
+      <member refid="class_f_l_prog_i2_c_1a099c9f24fc42bd98a790b1a55052e78f" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullRead</name></member>
+      <member refid="class_f_l_prog_i2_c_1a892e08882728362457ead1b8d391d3b1" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullReadReg</name></member>
+      <member refid="class_f_l_prog_i2_c_1abd81f98e7f06c1e539e7cb053f4fe425" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullRequestFrom</name></member>
+      <member refid="class_f_l_prog_i2_c_1afa212327f982acb0c007365867f5f85c" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullWrite</name></member>
+      <member refid="class_f_l_prog_i2_c_1a92371640e9c4228273a204205f501849" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullWrite</name></member>
+      <member refid="class_f_l_prog_i2_c_1a6109b4ca3f00c5d064a26007b0f45c55" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>fullWriteReg</name></member>
+      <member refid="class_f_l_prog_i2_c_1a30302d29cd76fc7a4335af7f6adffb5d" prot="public" virt="non-virtual"><scope>FLProgI2C</scope><name>getErrorCode</name></member>
+      <member refid="class_f_l_prog_i2_c_1a268ba68fcfd993189ab01ce61dfb50e7" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>read</name></member>
+      <member refid="class_f_l_prog_i2_c_1a5d816185c13673ebdb78c167f351f783" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>requestFrom</name></member>
+      <member refid="class_f_l_prog_i2_c_1a503c79844364a2a62d063cb1bdb47c33" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>resetSpeedFrom</name></member>
+      <member refid="class_f_l_prog_i2_c_1a2c16c5e38d1ad15a41df894e4485dcce" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>scl</name></member>
+      <member refid="class_f_l_prog_i2_c_1acc22da1b4dd7d3f0a8af37f6d0306077" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>sda</name></member>
+      <member refid="class_f_l_prog_i2_c_1a88f3780a228f2ce6bb12e7e12fb1720f" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>setSpeed</name></member>
+      <member refid="class_f_l_prog_i2_c_1a315834924a91711026b3afe436cef7a5" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>speed</name></member>
+      <member refid="class_f_l_prog_i2_c_1aaca60585af5d855d44bc1a9448dcf951" prot="protected" virt="non-virtual"><scope>FLProgI2C</scope><name>status</name></member>
+      <member refid="class_f_l_prog_i2_c_1aee6e857b6f238b3dc994823e7f32a04d" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>waitingForData</name></member>
+      <member refid="class_f_l_prog_i2_c_1a80b48594359954559e75faf5e4be7295" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>write</name></member>
+      <member refid="class_f_l_prog_i2_c_1a0632215b6c43183ceee9e2b5c1ccd733" prot="public" virt="virtual"><scope>FLProgI2C</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

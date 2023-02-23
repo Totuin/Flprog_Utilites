@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FLProg Utilites: Исходный файл src/i2c/flprogI2C.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FLProg Utilites<span id="projectnumber">&#160;1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('flprog_i2_c_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">flprogI2C.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="flprog_i2_c_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;Arduino.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_utilites_8h.html">flprogUtilites.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifdef FLPROG_CORE_ESP8266</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define FLPROG_I2CSPEED 100000UL;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="flprog_i2_c_8h.html#a5d14ac1e40046405a287e54485b3f6cb">    9</a></span><span class="preprocessor">#define FLPROG_I2CSPEED 400000UL;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#if defined(CORE_ESP32) || defined(CORE_STM32)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define FLPROG_CAN_USE_I2C_1</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="class_f_l_prog_i2_c.html">FLProgI2C</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="class_f_l_prog_i2_c.html">FLProgI2C</a>(<span class="keywordtype">byte</span> busNumber = 0);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#aa02c7b40c4a8ad16717a6a8816bdc9c8">begin</a>();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#aa02c7b40c4a8ad16717a6a8816bdc9c8">begin</a>(<span class="keywordtype">int</span> pinSDA, <span class="keywordtype">int</span> pinSCL);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#ab8d5bc5b0df5ae4a328465f262aac13b">findAddr</a>(uint8_t addr);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#a30302d29cd76fc7a4335af7f6adffb5d">   23</a></span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a30302d29cd76fc7a4335af7f6adffb5d">getErrorCode</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="class_f_l_prog_i2_c.html#adae7361cf9e79156465ef455cf8bfafe">codeErr</a>; };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#afa212327f982acb0c007365867f5f85c">fullWrite</a>(uint8_t addr, uint8_t data);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#afa212327f982acb0c007365867f5f85c">fullWrite</a>(uint8_t addr, <span class="keyword">const</span> uint8_t *data, uint8_t quantity);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#abd81f98e7f06c1e539e7cb053f4fe425">fullRequestFrom</a>(uint8_t address, uint8_t quantity);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</a>(uint8_t addr, uint8_t *data, uint8_t quantity);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</a>(uint8_t addr, uint16_t *data, uint8_t quantity);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a305b69dc03da92d44a3ab5cfbc42f4c3">fullRead</a>(uint8_t addr, uint32_t *data, uint8_t quantity);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a892e08882728362457ead1b8d391d3b1">fullReadReg</a>(uint8_t addr, uint8_t reg);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a6109b4ca3f00c5d064a26007b0f45c55">fullWriteReg</a>(uint8_t addr, uint8_t reg, uint8_t value);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a74f8323be61a90bedcbc37d4bdbd525c">beginTransmission</a>(uint8_t addr);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a80b48594359954559e75faf5e4be7295">write</a>(<span class="keyword">const</span> uint8_t *data, uint8_t quantity);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a80b48594359954559e75faf5e4be7295">write</a>(uint8_t data);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#ab40e40756e66c34b99e3e513302d6afd">endTransmission</a>();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#aba022e66607f05597b9ddaec870be996">available</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a268ba68fcfd993189ab01ce61dfb50e7">read</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">virtual</span> uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#a5d816185c13673ebdb78c167f351f783">requestFrom</a>(uint8_t address, uint8_t quantity);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keyword">virtual</span> uint8_t <a class="code hl_function" href="class_f_l_prog_i2_c.html#aee6e857b6f238b3dc994823e7f32a04d">waitingForData</a>(uint8_t count);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a88f3780a228f2ce6bb12e7e12fb1720f">setSpeed</a>(uint32_t newSpeed);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a503c79844364a2a62d063cb1bdb47c33">resetSpeedFrom</a>(uint32_t newSpeed);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#a126715f17f31ecdf2ea449ca6999bb1f">checkBus</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#a9f2ea9ffa26cacbe15713a8c273b1840">   46</a></span>    uint8_t <a class="code hl_variable" href="class_f_l_prog_i2_c.html#a9f2ea9ffa26cacbe15713a8c273b1840">bus</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#ac5af99710bd684c5f92196ebb1d7a62e">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_f_l_prog_i2_c.html#ac5af99710bd684c5f92196ebb1d7a62e">busy</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#aaca60585af5d855d44bc1a9448dcf951">   48</a></span>    uint8_t <a class="code hl_variable" href="class_f_l_prog_i2_c.html#aaca60585af5d855d44bc1a9448dcf951">status</a> = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#adae7361cf9e79156465ef455cf8bfafe">   49</a></span>    uint8_t <a class="code hl_variable" href="class_f_l_prog_i2_c.html#adae7361cf9e79156465ef455cf8bfafe">codeErr</a> = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#acc22da1b4dd7d3f0a8af37f6d0306077">   50</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_f_l_prog_i2_c.html#acc22da1b4dd7d3f0a8af37f6d0306077">sda</a> = -1;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#a2c16c5e38d1ad15a41df894e4485dcce">   51</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_f_l_prog_i2_c.html#a2c16c5e38d1ad15a41df894e4485dcce">scl</a> = -1;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_f_l_prog_i2_c.html#a315834924a91711026b3afe436cef7a5">   52</a></span>    uint32_t <a class="code hl_variable" href="class_f_l_prog_i2_c.html#a315834924a91711026b3afe436cef7a5">speed</a> = <a class="code hl_define" href="flprog_i2_c_8h.html#a5d14ac1e40046405a287e54485b3f6cb">FLPROG_I2CSPEED</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_i2_c.html#af54dc06c96fa360014e4f87cfd2e07a4">beginWire0</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#ifdef FLPROG_CAN_USE_I2C_1</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">bool</span> beginWire1();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &quot;<a class="code" href="flprog_i2_c__sensors_basic_8h.html">flprogI2C_sensorsBasic.h</a>&quot;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_f_l_prog_t_c_a9548_a.html">   61</a></span><span class="keyword">class </span><a class="code hl_class" href="class_f_l_prog_t_c_a9548_a.html">FLProgTCA9548A</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_f_l_prog_t_c_a9548_a.html">FLProgTCA9548A</a>(<a class="code hl_class" href="class_f_l_prog_i2_c.html">FLProgI2C</a> *device, uint8_t deviceAddress);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_class" href="class_f_l_prog_t_c_a9548_a.html">FLProgTCA9548A</a>(<a class="code hl_class" href="class_f_l_prog_i2_c.html">FLProgI2C</a> *device);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#aed692e8c5a9afa68ded1473c01242061">beginTransmission</a>(uint8_t addr, uint8_t chanel);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#a5365a243dfe70ba78a3afb1e05334eaa">write</a>(<span class="keyword">const</span> uint8_t *data, uint8_t quantity, uint8_t chanel);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#a5365a243dfe70ba78a3afb1e05334eaa">write</a>(uint8_t data, uint8_t chanel);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#a4a527cd34332b4ec2810b4c10c080ccc">endTransmission</a>();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#a6f5d6034334ef43006ff10928cce572f">available</a>(uint8_t chanel);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#acf146e5bdfe3b2c794bfccb374ee41ac">read</a>(uint8_t chanel);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    uint8_t <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#aee5d3e1387cee3410655be01042107f5">requestFrom</a>(uint8_t address, uint8_t quantity, uint8_t chanel);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#a3dca5052bce732d52235c4231a3776fa">setSpeed</a>(uint32_t newSpeed, uint8_t chanel);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#afa05ee993ca840058edb29c0e5e97672">resetSpeedFrom</a>(uint32_t newSpeed, uint8_t chanel);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_t_c_a9548_a.html#a5e2624fc72576aacf71b804680f0b791">checkBus</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> switchToChanel(uint8_t chanel);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_class" href="class_f_l_prog_i2_c.html">FLProgI2C</a> *i2cDevice;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    uint8_t address;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    uint8_t currentChanel = 10;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    uint8_t errorCode = 0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="class_f_l_prog_virtual_i2_c.html">   85</a></span><span class="keyword">class </span><a class="code hl_class" href="class_f_l_prog_virtual_i2_c.html">FLProgVirtualI2C</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_f_l_prog_i2_c.html">FLProgI2C</a></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="class_f_l_prog_virtual_i2_c.html">FLProgVirtualI2C</a>(<a class="code hl_class" href="class_f_l_prog_t_c_a9548_a.html">FLProgTCA9548A</a> *parentDevice, uint8_t chanelOnParent);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#afe867564e2df6c4a4edea71d4ad0cc83">begin</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a709dce8dc7a0acebe0ea05c60f38c8c3">beginTransmission</a>(uint8_t addr);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a44b86916cf4d59f08c86b5d002f054ea">write</a>(<span class="keyword">const</span> uint8_t *data, uint8_t quantity);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a44b86916cf4d59f08c86b5d002f054ea">write</a>(uint8_t data);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keyword">virtual</span> uint8_t <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#aa704301ef938bddf5c8b898bde2e186f">endTransmission</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a13624df645155c7176c9d789fdf31a70">available</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#adbf25e8d737c80071b4bea1d560dde42">read</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">virtual</span> uint8_t <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a4f37c90d6ae2d3d15386c886ced36a5d">requestFrom</a>(uint8_t address, uint8_t quantity);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a4709597c5e1da12cde67ad82ea50ac8e">setSpeed</a>(uint32_t newSpeed);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#a3fa439599c69346113f22e098af6a454">resetSpeedFrom</a>(uint32_t newSpeed);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_f_l_prog_virtual_i2_c.html#ae7438d0b9d03a0d80525ac930a8dca45">checkBus</a>();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_class" href="class_f_l_prog_t_c_a9548_a.html">FLProgTCA9548A</a> *parent;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    uint8_t chanel;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html"><div class="ttname"><a href="class_f_l_prog_i2_c.html">FLProgI2C</a></div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00016">flprogI2C.h:17</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a126715f17f31ecdf2ea449ca6999bb1f"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a126715f17f31ecdf2ea449ca6999bb1f">FLProgI2C::checkBus</a></div><div class="ttdeci">virtual bool checkBus()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00012">flprogI2C.cpp:12</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a268ba68fcfd993189ab01ce61dfb50e7"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a268ba68fcfd993189ab01ce61dfb50e7">FLProgI2C::read</a></div><div class="ttdeci">virtual int read()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00280">flprogI2C.cpp:280</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a2c16c5e38d1ad15a41df894e4485dcce"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a2c16c5e38d1ad15a41df894e4485dcce">FLProgI2C::scl</a></div><div class="ttdeci">int scl</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00051">flprogI2C.h:51</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a30302d29cd76fc7a4335af7f6adffb5d"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a30302d29cd76fc7a4335af7f6adffb5d">FLProgI2C::getErrorCode</a></div><div class="ttdeci">uint8_t getErrorCode()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00023">flprogI2C.h:23</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a305b69dc03da92d44a3ab5cfbc42f4c3"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a305b69dc03da92d44a3ab5cfbc42f4c3">FLProgI2C::fullRead</a></div><div class="ttdeci">uint8_t fullRead(uint8_t addr, uint8_t *data, uint8_t quantity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00164">flprogI2C.cpp:164</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a315834924a91711026b3afe436cef7a5"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a315834924a91711026b3afe436cef7a5">FLProgI2C::speed</a></div><div class="ttdeci">uint32_t speed</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00052">flprogI2C.h:52</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a503c79844364a2a62d063cb1bdb47c33"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a503c79844364a2a62d063cb1bdb47c33">FLProgI2C::resetSpeedFrom</a></div><div class="ttdeci">virtual void resetSpeedFrom(uint32_t newSpeed)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00375">flprogI2C.cpp:375</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a5d816185c13673ebdb78c167f351f783"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a5d816185c13673ebdb78c167f351f783">FLProgI2C::requestFrom</a></div><div class="ttdeci">virtual uint8_t requestFrom(uint8_t address, uint8_t quantity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00295">flprogI2C.cpp:295</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a6109b4ca3f00c5d064a26007b0f45c55"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a6109b4ca3f00c5d064a26007b0f45c55">FLProgI2C::fullWriteReg</a></div><div class="ttdeci">uint8_t fullWriteReg(uint8_t addr, uint8_t reg, uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00415">flprogI2C.cpp:415</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a74f8323be61a90bedcbc37d4bdbd525c"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a74f8323be61a90bedcbc37d4bdbd525c">FLProgI2C::beginTransmission</a></div><div class="ttdeci">virtual void beginTransmission(uint8_t addr)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00206">flprogI2C.cpp:206</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a80b48594359954559e75faf5e4be7295"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a80b48594359954559e75faf5e4be7295">FLProgI2C::write</a></div><div class="ttdeci">virtual void write(const uint8_t *data, uint8_t quantity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00225">flprogI2C.cpp:225</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a88f3780a228f2ce6bb12e7e12fb1720f"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a88f3780a228f2ce6bb12e7e12fb1720f">FLProgI2C::setSpeed</a></div><div class="ttdeci">virtual void setSpeed(uint32_t newSpeed)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00352">flprogI2C.cpp:352</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a892e08882728362457ead1b8d391d3b1"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a892e08882728362457ead1b8d391d3b1">FLProgI2C::fullReadReg</a></div><div class="ttdeci">uint8_t fullReadReg(uint8_t addr, uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00399">flprogI2C.cpp:399</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_a9f2ea9ffa26cacbe15713a8c273b1840"><div class="ttname"><a href="class_f_l_prog_i2_c.html#a9f2ea9ffa26cacbe15713a8c273b1840">FLProgI2C::bus</a></div><div class="ttdeci">uint8_t bus</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00046">flprogI2C.h:46</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_aa02c7b40c4a8ad16717a6a8816bdc9c8"><div class="ttname"><a href="class_f_l_prog_i2_c.html#aa02c7b40c4a8ad16717a6a8816bdc9c8">FLProgI2C::begin</a></div><div class="ttdeci">virtual bool begin()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00037">flprogI2C.cpp:37</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_aaca60585af5d855d44bc1a9448dcf951"><div class="ttname"><a href="class_f_l_prog_i2_c.html#aaca60585af5d855d44bc1a9448dcf951">FLProgI2C::status</a></div><div class="ttdeci">uint8_t status</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00048">flprogI2C.h:48</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_ab40e40756e66c34b99e3e513302d6afd"><div class="ttname"><a href="class_f_l_prog_i2_c.html#ab40e40756e66c34b99e3e513302d6afd">FLProgI2C::endTransmission</a></div><div class="ttdeci">virtual uint8_t endTransmission()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00244">flprogI2C.cpp:244</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_ab8d5bc5b0df5ae4a328465f262aac13b"><div class="ttname"><a href="class_f_l_prog_i2_c.html#ab8d5bc5b0df5ae4a328465f262aac13b">FLProgI2C::findAddr</a></div><div class="ttdeci">bool findAddr(uint8_t addr)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00119">flprogI2C.cpp:119</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_aba022e66607f05597b9ddaec870be996"><div class="ttname"><a href="class_f_l_prog_i2_c.html#aba022e66607f05597b9ddaec870be996">FLProgI2C::available</a></div><div class="ttdeci">virtual int available()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00265">flprogI2C.cpp:265</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_abd81f98e7f06c1e539e7cb053f4fe425"><div class="ttname"><a href="class_f_l_prog_i2_c.html#abd81f98e7f06c1e539e7cb053f4fe425">FLProgI2C::fullRequestFrom</a></div><div class="ttdeci">uint8_t fullRequestFrom(uint8_t address, uint8_t quantity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00153">flprogI2C.cpp:153</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_ac5af99710bd684c5f92196ebb1d7a62e"><div class="ttname"><a href="class_f_l_prog_i2_c.html#ac5af99710bd684c5f92196ebb1d7a62e">FLProgI2C::busy</a></div><div class="ttdeci">bool busy</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00047">flprogI2C.h:47</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_acc22da1b4dd7d3f0a8af37f6d0306077"><div class="ttname"><a href="class_f_l_prog_i2_c.html#acc22da1b4dd7d3f0a8af37f6d0306077">FLProgI2C::sda</a></div><div class="ttdeci">int sda</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00050">flprogI2C.h:50</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_adae7361cf9e79156465ef455cf8bfafe"><div class="ttname"><a href="class_f_l_prog_i2_c.html#adae7361cf9e79156465ef455cf8bfafe">FLProgI2C::codeErr</a></div><div class="ttdeci">uint8_t codeErr</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00049">flprogI2C.h:49</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_aee6e857b6f238b3dc994823e7f32a04d"><div class="ttname"><a href="class_f_l_prog_i2_c.html#aee6e857b6f238b3dc994823e7f32a04d">FLProgI2C::waitingForData</a></div><div class="ttdeci">virtual uint8_t waitingForData(uint8_t count)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00335">flprogI2C.cpp:335</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_af54dc06c96fa360014e4f87cfd2e07a4"><div class="ttname"><a href="class_f_l_prog_i2_c.html#af54dc06c96fa360014e4f87cfd2e07a4">FLProgI2C::beginWire0</a></div><div class="ttdeci">bool beginWire0()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00063">flprogI2C.cpp:63</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_i2_c_html_afa212327f982acb0c007365867f5f85c"><div class="ttname"><a href="class_f_l_prog_i2_c.html#afa212327f982acb0c007365867f5f85c">FLProgI2C::fullWrite</a></div><div class="ttdeci">uint8_t fullWrite(uint8_t addr, uint8_t data)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00137">flprogI2C.cpp:137</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html">FLProgTCA9548A</a></div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00061">flprogI2C.h:62</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_a3dca5052bce732d52235c4231a3776fa"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#a3dca5052bce732d52235c4231a3776fa">FLProgTCA9548A::setSpeed</a></div><div class="ttdeci">void setSpeed(uint32_t newSpeed, uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00478">flprogI2C.cpp:478</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_a4a527cd34332b4ec2810b4c10c080ccc"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#a4a527cd34332b4ec2810b4c10c080ccc">FLProgTCA9548A::endTransmission</a></div><div class="ttdeci">uint8_t endTransmission()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00454">flprogI2C.cpp:454</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_a5365a243dfe70ba78a3afb1e05334eaa"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#a5365a243dfe70ba78a3afb1e05334eaa">FLProgTCA9548A::write</a></div><div class="ttdeci">void write(const uint8_t *data, uint8_t quantity, uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00444">flprogI2C.cpp:444</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_a5e2624fc72576aacf71b804680f0b791"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#a5e2624fc72576aacf71b804680f0b791">FLProgTCA9548A::checkBus</a></div><div class="ttdeci">bool checkBus()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00490">flprogI2C.cpp:490</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_a6f5d6034334ef43006ff10928cce572f"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#a6f5d6034334ef43006ff10928cce572f">FLProgTCA9548A::available</a></div><div class="ttdeci">int available(uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00460">flprogI2C.cpp:460</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_acf146e5bdfe3b2c794bfccb374ee41ac"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#acf146e5bdfe3b2c794bfccb374ee41ac">FLProgTCA9548A::read</a></div><div class="ttdeci">int read(uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00466">flprogI2C.cpp:466</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_aed692e8c5a9afa68ded1473c01242061"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#aed692e8c5a9afa68ded1473c01242061">FLProgTCA9548A::beginTransmission</a></div><div class="ttdeci">void beginTransmission(uint8_t addr, uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00438">flprogI2C.cpp:438</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_aee5d3e1387cee3410655be01042107f5"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#aee5d3e1387cee3410655be01042107f5">FLProgTCA9548A::requestFrom</a></div><div class="ttdeci">uint8_t requestFrom(uint8_t address, uint8_t quantity, uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00472">flprogI2C.cpp:472</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_t_c_a9548_a_html_afa05ee993ca840058edb29c0e5e97672"><div class="ttname"><a href="class_f_l_prog_t_c_a9548_a.html#afa05ee993ca840058edb29c0e5e97672">FLProgTCA9548A::resetSpeedFrom</a></div><div class="ttdeci">void resetSpeedFrom(uint32_t newSpeed, uint8_t chanel)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00484">flprogI2C.cpp:484</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html">FLProgVirtualI2C</a></div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00085">flprogI2C.h:86</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_a13624df645155c7176c9d789fdf31a70"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#a13624df645155c7176c9d789fdf31a70">FLProgVirtualI2C::available</a></div><div class="ttdeci">virtual int available()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00547">flprogI2C.cpp:547</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_a3fa439599c69346113f22e098af6a454"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#a3fa439599c69346113f22e098af6a454">FLProgVirtualI2C::resetSpeedFrom</a></div><div class="ttdeci">virtual void resetSpeedFrom(uint32_t newSpeed)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00567">flprogI2C.cpp:567</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_a44b86916cf4d59f08c86b5d002f054ea"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#a44b86916cf4d59f08c86b5d002f054ea">FLProgVirtualI2C::write</a></div><div class="ttdeci">virtual void write(const uint8_t *data, uint8_t quantity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00532">flprogI2C.cpp:532</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_a4709597c5e1da12cde67ad82ea50ac8e"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#a4709597c5e1da12cde67ad82ea50ac8e">FLProgVirtualI2C::setSpeed</a></div><div class="ttdeci">virtual void setSpeed(uint32_t newSpeed)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00562">flprogI2C.cpp:562</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_a4f37c90d6ae2d3d15386c886ced36a5d"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#a4f37c90d6ae2d3d15386c886ced36a5d">FLProgVirtualI2C::requestFrom</a></div><div class="ttdeci">virtual uint8_t requestFrom(uint8_t address, uint8_t quantity)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00557">flprogI2C.cpp:557</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_a709dce8dc7a0acebe0ea05c60f38c8c3"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#a709dce8dc7a0acebe0ea05c60f38c8c3">FLProgVirtualI2C::beginTransmission</a></div><div class="ttdeci">virtual void beginTransmission(uint8_t addr)</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00527">flprogI2C.cpp:527</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_aa704301ef938bddf5c8b898bde2e186f"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#aa704301ef938bddf5c8b898bde2e186f">FLProgVirtualI2C::endTransmission</a></div><div class="ttdeci">virtual uint8_t endTransmission()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00542">flprogI2C.cpp:542</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_adbf25e8d737c80071b4bea1d560dde42"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#adbf25e8d737c80071b4bea1d560dde42">FLProgVirtualI2C::read</a></div><div class="ttdeci">virtual int read()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00552">flprogI2C.cpp:552</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_ae7438d0b9d03a0d80525ac930a8dca45"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#ae7438d0b9d03a0d80525ac930a8dca45">FLProgVirtualI2C::checkBus</a></div><div class="ttdeci">virtual bool checkBus()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00572">flprogI2C.cpp:572</a></div></div>
+<div class="ttc" id="aclass_f_l_prog_virtual_i2_c_html_afe867564e2df6c4a4edea71d4ad0cc83"><div class="ttname"><a href="class_f_l_prog_virtual_i2_c.html#afe867564e2df6c4a4edea71d4ad0cc83">FLProgVirtualI2C::begin</a></div><div class="ttdeci">virtual bool begin()</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8cpp_source.html#l00522">flprogI2C.cpp:522</a></div></div>
+<div class="ttc" id="aflprog_i2_c_8h_html_a5d14ac1e40046405a287e54485b3f6cb"><div class="ttname"><a href="flprog_i2_c_8h.html#a5d14ac1e40046405a287e54485b3f6cb">FLPROG_I2CSPEED</a></div><div class="ttdeci">#define FLPROG_I2CSPEED</div><div class="ttdef"><b>Definition:</b> <a href="flprog_i2_c_8h_source.html#l00009">flprogI2C.h:9</a></div></div>
+<div class="ttc" id="aflprog_i2_c__sensors_basic_8h_html"><div class="ttname"><a href="flprog_i2_c__sensors_basic_8h.html">flprogI2C_sensorsBasic.h</a></div></div>
+<div class="ttc" id="aflprog_utilites_8h_html"><div class="ttname"><a href="flprog_utilites_8h.html">flprogUtilites.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4dc4bab0c83361445d1434e79b04c26d.html">i2c</a></li><li class="navelem"><a class="el" href="flprog_i2_c_8h.html">flprogI2C.h</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

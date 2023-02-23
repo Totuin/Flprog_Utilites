@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="flprog_tcp_device_8cpp" kind="file" language="C++">
+    <compoundname>flprogTcpDevice.cpp</compoundname>
+    <includes refid="flprog_tcp_device_8h" local="yes">flprogTcpDevice.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>Arduino.h</label>
+      </node>
+      <node id="10">
+        <label>Ethernet.h</label>
+      </node>
+      <node id="4">
+        <label>./flprogUtilites.h</label>
+        <link refid="flprog_utilites_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>i2c/flprogI2C.h</label>
+        <link refid="flprog_i2_c_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>flprogI2C_sensorsBasic.h</label>
+        <link refid="flprog_i2_c__sensors_basic_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/tcp/flprogTcpDevice.cpp</label>
+        <link refid="flprog_tcp_device_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>flprogTcpDevice.h</label>
+        <link refid="flprog_tcp_device_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>uart/flprogUart.h</label>
+        <link refid="flprog_uart_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>softwareUart\flprogSoftwareUart.h</label>
+        <link refid="flprog_software_uart_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>SPI.h</label>
+      </node>
+      <node id="6">
+        <label>Wire.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flprog_tcp_device_8h" kindref="compound">flprogTcpDevice.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//------------FLProgTcpDevice--------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="class_f_l_prog_tcp_device_1a79a6dcab0f5f8b3d176e0a84e7f1eb89" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a79a6dcab0f5f8b3d176e0a84e7f1eb89" kindref="member">FLProgTcpDevice::setPort</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1aa645e6062fed7ab7380606c83ac14fcf" kindref="member">tcpPort</ref><sp/>==<sp/>port)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1aa645e6062fed7ab7380606c83ac14fcf" kindref="member">tcpPort</ref><sp/>=<sp/>port;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1ab251ab3378529ff4c80bf2d44a0afca2" kindref="member">restart</ref>();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_f_l_prog_tcp_device_1a6284fa6d5ebbb5d80dbac1d33c8169ad" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a6284fa6d5ebbb5d80dbac1d33c8169ad" kindref="member">FLProgTcpDevice::beClient</ref>()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref>)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref><sp/>=<sp/><ref refid="flprog_tcp_device_8h_1a04f51819679f0e7eb603a652f2e8fb45" kindref="member">FLPROG_TSP_CLIENT_MODE</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1ab251ab3378529ff4c80bf2d44a0afca2" kindref="member">restart</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_f_l_prog_tcp_device_1a19b4deabd8751ad90ffc8f78074786d7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a19b4deabd8751ad90ffc8f78074786d7" kindref="member">FLProgTcpDevice::beServer</ref>()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref>)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref><sp/>=<sp/><ref refid="flprog_tcp_device_8h_1aabcce68db3bc9710dc01623fabc76cea" kindref="member">FLPROG_TCP_SERVER_MODE</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1ab251ab3378529ff4c80bf2d44a0afca2" kindref="member">restart</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_f_l_prog_tcp_device_1ab251ab3378529ff4c80bf2d44a0afca2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1ab251ab3378529ff4c80bf2d44a0afca2" kindref="member">FLProgTcpDevice::restart</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1af26e6967e9cef10b93c5d6e5b60cd2e3" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref><sp/>&amp;&amp;<sp/>(<ref refid="class_f_l_prog_tcp_device_1a8beddb2d793cb22786c1ccde51807ffa" kindref="member">hasServer</ref>()))</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1aa4d64e12f9dfdb00126a74cd9d9e8e7a" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_f_l_prog_tcp_device_1af26e6967e9cef10b93c5d6e5b60cd2e3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1af26e6967e9cef10b93c5d6e5b60cd2e3" kindref="member">FLProgTcpDevice::stop</ref>()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;stop();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_f_l_prog_tcp_device_1a640fbd479b1cce71b96cbd2d57e29c93" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a640fbd479b1cce71b96cbd2d57e29c93" kindref="member">FLProgTcpDevice::available</ref>()</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;<ref refid="class_f_l_prog_tcp_device_1af85f742fc5af14497d586707a35e8852" kindref="member">connected</ref>())</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;available();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_f_l_prog_tcp_device_1af8b5c4ec514ae4187b72f9150cd11dcd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1af8b5c4ec514ae4187b72f9150cd11dcd" kindref="member">FLProgTcpDevice::read</ref>()</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;read();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="class_f_l_prog_tcp_device_1af85f742fc5af14497d586707a35e8852" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1af85f742fc5af14497d586707a35e8852" kindref="member">FLProgTcpDevice::connected</ref>()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;connected();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_f_l_prog_tcp_device_1a1847080cabb96d96ba936478c9d344bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a1847080cabb96d96ba936478c9d344bf" kindref="member">FLProgTcpDevice::print</ref>(String<sp/>data)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;print(data);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="class_f_l_prog_tcp_device_1a89be399dd246d274c43866c28342e25d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a89be399dd246d274c43866c28342e25d" kindref="member">FLProgTcpDevice::write</ref>(</highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>buffer[],<sp/></highlight><highlight class="keywordtype">byte</highlight><highlight class="normal"><sp/>size)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;write(buffer,<sp/>size);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="class_f_l_prog_tcp_device_1aa03e43ea6cc1646f02b0577de0e500dc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a154982dbaa1113ed868f976a21e463b4" kindref="member">FLProgTcpDevice::connect</ref>(uint16_t<sp/>ipFirst,<sp/>uint16_t<sp/>ipSecond,<sp/>uint16_t<sp/>ipThird,<sp/>uint16_t<sp/>ipFourth,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newPort)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a86057670ad2c44794686d9d492448c5c" kindref="member">workIp</ref>[0]<sp/>=<sp/>ipFirst;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a86057670ad2c44794686d9d492448c5c" kindref="member">workIp</ref>[1]<sp/>=<sp/>ipSecond;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a86057670ad2c44794686d9d492448c5c" kindref="member">workIp</ref>[2]<sp/>=<sp/>ipThird;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a86057670ad2c44794686d9d492448c5c" kindref="member">workIp</ref>[3]<sp/>=<sp/>ipFourth;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a154982dbaa1113ed868f976a21e463b4" kindref="member">connect</ref>(<ref refid="class_f_l_prog_tcp_device_1a86057670ad2c44794686d9d492448c5c" kindref="member">workIp</ref>,<sp/>newPort);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="class_f_l_prog_tcp_device_1ae373c7a0ad06e3952ba73c0258057107" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_tcp_device_1a154982dbaa1113ed868f976a21e463b4" kindref="member">FLProgTcpDevice::connect</ref>(IPAddress<sp/>newIp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newPort)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref>)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;<ref refid="class_f_l_prog_tcp_device_1af85f742fc5af14497d586707a35e8852" kindref="member">connected</ref>())</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a0c3fcd4630440016a9fd506e38f99673" kindref="member">setAvalibleClientFromServer</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;<ref refid="class_f_l_prog_tcp_device_1af85f742fc5af14497d586707a35e8852" kindref="member">connected</ref>())</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1aac287f2c4f4ebd7d402c686d2759349e" kindref="member">clientRemoteIp</ref>()<sp/>==<sp/>newIp)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1a02c88623d43e6d6496f9ac716ba12fb5" kindref="member">clientRemotePort</ref>()<sp/>==<sp/>newPort)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1af26e6967e9cef10b93c5d6e5b60cd2e3" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_f_l_prog_tcp_device_1a4433d323e544ae9a190040b3dd69fe79" kindref="member">tcpClient</ref>()-&gt;connect(newIp,<sp/>newPort);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">//----------FLProgW5100TcpDevice--------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FLPROG_CORE_ESP8266_OR_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_f_l_prog_w5100_tcp_device_1af00df1f2de48023e9e66a03d753e08d6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_w5100_tcp_device_1af00df1f2de48023e9e66a03d753e08d6" kindref="member">FLProgW5100TcpDevice::begin</ref>()</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_f_l_prog_tcp_device_1a0c233255b7b7d05fc3450ad0cb5c2514" kindref="member">mode</ref>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>server<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>EthernetServer(<ref refid="class_f_l_prog_tcp_device_1aa645e6062fed7ab7380606c83ac14fcf" kindref="member">tcpPort</ref>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>server-&gt;begin();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="class_f_l_prog_w5100_tcp_device_1ad097d1f33176353990744dc642346e8a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_f_l_prog_w5100_tcp_device_1ad097d1f33176353990744dc642346e8a" kindref="member">FLProgW5100TcpDevice::setAvalibleClientFromServer</ref>()</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(server<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>client<sp/>=<sp/>server-&gt;available();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">//-------------FLProgWiFiTcpDevice-----------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FLPROG_CORE_ESP8266_OR_ESP32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FLProgWiFiTcpDevice::begin()</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mode)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>server<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>WiFiServer(tcpPort);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>server-&gt;begin();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>FLProgWiFiTcpDevice::setAvalibleClientFromServer()</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(server<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>client<sp/>=<sp/>server-&gt;available();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="src/tcp/flprogTcpDevice.cpp"/>
+  </compounddef>
+</doxygen>

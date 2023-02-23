@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_68267d1309a1af8e8297ef4c3efbcdba" xml:lang="ru">
+<title>Содержание директории src</title>
+<indexterm><primary>Содержание директории src</primary></indexterm>
+<simplesect>
+    <title>Директории    </title>
+        <itemizedlist>
+            <listitem><para>директория <link linkend="_dir_4dc4bab0c83361445d1434e79b04c26d">i2c</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_a65467b043fce6081aa9e597b27062f1">tcp</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_8b266d93855f0425f0e4b297b7e4f33e">uart</link></para>
+</listitem>
+            <listitem><para>директория <link linkend="_dir_f2ecabf86f9f4faa7d56fdb58a0dcc99">variant</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Файлы    </title>
+        <itemizedlist>
+            <listitem><para>файл <link linkend="_flprog_utilites_8cpp">flprogUtilites.cpp</link></para>
+</listitem>
+            <listitem><para>файл <link linkend="_flprog_utilites_8h">flprogUtilites.h</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

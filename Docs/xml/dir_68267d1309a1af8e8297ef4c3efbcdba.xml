@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_4dc4bab0c83361445d1434e79b04c26d">src/i2c</innerdir>
+    <innerdir refid="dir_a65467b043fce6081aa9e597b27062f1">src/tcp</innerdir>
+    <innerdir refid="dir_8b266d93855f0425f0e4b297b7e4f33e">src/uart</innerdir>
+    <innerdir refid="dir_f2ecabf86f9f4faa7d56fdb58a0dcc99">src/variant</innerdir>
+    <innerfile refid="flprog_utilites_8cpp">flprogUtilites.cpp</innerfile>
+    <innerfile refid="flprog_utilites_8h">flprogUtilites.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_f_l_prog_uart_basic" xml:lang="ru">
+<title>Класс FLProgUartBasic</title>
+<indexterm><primary>FLProgUartBasic</primary></indexterm>
+<para>
+<computeroutput>#include &lt;flprogUart.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Открытые члены    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_uart_basic_1a064ae107b3e87fcbda914dd1ae691d57">begin</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1af91715460cd727c8e537215acfc94953">begin</link> (int32_t speed)</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1affab4206d98bed8cce55ab256e06a521">getPortSpeed</link> ()</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1aa35751c71930dc9f99741577f31edc3f">getPortDataBits</link> ()</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1aeb7a724e88efb3abb8185eb18c7b6bda">getPortStopBits</link> ()</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1abb933091697af83bfe1c070e98e336de">getPortParity</link> ()</para>
+</listitem>
+            <listitem><para>virtual bool <link linkend="_class_f_l_prog_uart_basic_1a76ec6264530f2bd0cf20fd3ccced3370">hasPort</link> ()</para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_f_l_prog_uart_basic_1a9d2aed1e23569871e0fc5c2099db85dc">restartPort</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1ae19963e8ca7e14733296f01c78648ed3">setPortSpeed</link> (byte speed)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1ab77fe56e34df9f7da88c90cb2ccedb96">setPortDataBits</link> (byte dataBits)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a70c29e0dfa22aeddd9a266743fd72fe7">setPortStopBits</link> (byte stopBits)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a5790668bb8a773686a99c7fcb0bacb47">setPortParity</link> (byte parity)</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1a9c8935bb47982daeddc7ba42623f16d9">available</link> ()</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1a9244f5a52d9185a600353a154b9680a5">read</link> ()</para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1aca2a08da2874f79d44364e4d41dd42ba">write</link> (byte *buffer, byte size)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1ad8d23d6f30b4c2c3ba1baa1dc272103a">print</link> (String str)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a050637813ff315ec48c23c291d07b69b">print</link> (const char str[])</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1ae20ca481eb8d3ad7b683a59d39bb43a8">print</link> (char str)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1abc041b32487b257e3436cf1b8163a92d">print</link> (byte val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a37d29215cc3e727579fc1b1b66b9661c">print</link> (int val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a0111d35725e6d0d692d7e014fa311176">print</link> (long val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a66cf37d2ff12b9f753250f480ff62413">print</link> (unsigned long val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a55f75a099c8fffaca8ee1d75fb981a84">print</link> (float val, int mode=2)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1aaa9d2c34cbe789403311c00ca3243f8e">println</link> (String str)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a7e41f15b0b508ca01335773fbe659d32">println</link> (char str)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a8f88093ae0345c0748675e969a86e835">println</link> (const char str[])</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a2881361255d990b7efc1b387350235f9">println</link> (byte val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1ab2c50d03ac5529bf02bf0c01379cbebb">println</link> (int val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1aac398f36ba44a7ba4aee1111b5b57974">println</link> (long val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a4f6c606c25190595c28599515aafe649">println</link> (unsigned long val, int mode=DEC)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a692cf188993c6fe0c349679047285e66">println</link> (float val, int mode=2)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1a3fd1c1900f151545bb041064dedd1ddc">println</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Защищенные члены    </title>
+        <itemizedlist>
+            <listitem><para>virtual Stream * <link linkend="_class_f_l_prog_uart_basic_1a746fd4b3995e52b77d8845be2235bd15">uartPort</link> ()</para>
+</listitem>
+            <listitem><para>uint32_t <link linkend="_class_f_l_prog_uart_basic_1aa72d7875446176e7e549a241873fdb14">speedFromCode</link> ()</para>
+</listitem>
+            <listitem><para>int <link linkend="_class_f_l_prog_uart_basic_1a7f4dcee936a0335377ff21df3ed3b59f">serialCodeForParametrs</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_f_l_prog_uart_basic_1aed506376652d64a4674d61a7ed99c08c">setCodeFromSpeed</link> (int32_t speed)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Защищенные данные    </title>
+        <itemizedlist>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1ac96e85e10437faff18e6a6c6e70f2254">portSpeed</link> = <link linkend="_flprog_uart_8h_1a586e15e7a1f8a2af0a6968318705bc76">FLPROG_SPEED_9600</link></para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1a540010cda343171fbdf6ecaebc05052e">portDataBits</link> = <link linkend="_flprog_uart_8h_1ac2fb88096fc933887317f27d9944721d">FLPROG_PORT_DATA_BITS_8</link></para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1a2fe374ae305d62f83c9c3666128839ba">portStopBits</link> = <link linkend="_flprog_uart_8h_1a2960dbd875a0ba70e1c6d59811383829">FLPROG_PORT_STOP_BITS_1</link></para>
+</listitem>
+            <listitem><para>byte <link linkend="_class_f_l_prog_uart_basic_1a1323d724631592443ca2f50280021e3e">portParity</link> = <link linkend="_flprog_uart_8h_1af02172935433823ce803d3ceef53305c">FLPROG_PORT_PARITY_NONE</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Подробное описание</title>
+<para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00045">45</link></para>
+</section>
+<section>
+<title>Методы</title>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a9c8935bb47982daeddc7ba42623f16d9"/><section>
+    <title>available()</title>
+<indexterm><primary>available</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>available</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::available ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00060">60</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a064ae107b3e87fcbda914dd1ae691d57"/><section>
+    <title>begin()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput>virtual void FLProgUartBasic::begin ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00048">48</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1af91715460cd727c8e537215acfc94953"/><section>
+    <title>begin()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>begin</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>begin</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::begin (int32_t speed)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00113">113</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aa35751c71930dc9f99741577f31edc3f"/><section>
+    <title>getPortDataBits()</title>
+<indexterm><primary>getPortDataBits</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>getPortDataBits</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::getPortDataBits ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00051">51</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1abb933091697af83bfe1c070e98e336de"/><section>
+    <title>getPortParity()</title>
+<indexterm><primary>getPortParity</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>getPortParity</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::getPortParity ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00053">53</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1affab4206d98bed8cce55ab256e06a521"/><section>
+    <title>getPortSpeed()</title>
+<indexterm><primary>getPortSpeed</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>getPortSpeed</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::getPortSpeed ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00050">50</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aeb7a724e88efb3abb8185eb18c7b6bda"/><section>
+    <title>getPortStopBits()</title>
+<indexterm><primary>getPortStopBits</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>getPortStopBits</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::getPortStopBits ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00052">52</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a76ec6264530f2bd0cf20fd3ccced3370"/><section>
+    <title>hasPort()</title>
+<indexterm><primary>hasPort</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>hasPort</secondary></indexterm>
+<para><computeroutput>virtual bool FLProgUartBasic::hasPort ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00054">54</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1abc041b32487b257e3436cf1b8163a92d"/><section>
+    <title>print()<computeroutput>[1/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (byte val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00067">67</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1ae20ca481eb8d3ad7b683a59d39bb43a8"/><section>
+    <title>print()<computeroutput>[2/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (char str)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00066">66</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a050637813ff315ec48c23c291d07b69b"/><section>
+    <title>print()<computeroutput>[3/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (const char str[])<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00065">65</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a55f75a099c8fffaca8ee1d75fb981a84"/><section>
+    <title>print()<computeroutput>[4/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (float val, int mode = <computeroutput>2</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00071">71</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a37d29215cc3e727579fc1b1b66b9661c"/><section>
+    <title>print()<computeroutput>[5/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (int val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00068">68</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a0111d35725e6d0d692d7e014fa311176"/><section>
+    <title>print()<computeroutput>[6/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (long val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00069">69</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1ad8d23d6f30b4c2c3ba1baa1dc272103a"/><section>
+    <title>print()<computeroutput>[7/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (String str)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00064">64</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a66cf37d2ff12b9f753250f480ff62413"/><section>
+    <title>print()<computeroutput>[8/8]</computeroutput></title>
+<indexterm><primary>print</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>print</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::print (unsigned long val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00070">70</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a3fd1c1900f151545bb041064dedd1ddc"/><section>
+    <title>println()<computeroutput>[1/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00080">80</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a2881361255d990b7efc1b387350235f9"/><section>
+    <title>println()<computeroutput>[2/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (byte val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00075">75</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a7e41f15b0b508ca01335773fbe659d32"/><section>
+    <title>println()<computeroutput>[3/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (char str)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00073">73</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a8f88093ae0345c0748675e969a86e835"/><section>
+    <title>println()<computeroutput>[4/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (const char str[])<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00074">74</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a692cf188993c6fe0c349679047285e66"/><section>
+    <title>println()<computeroutput>[5/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (float val, int mode = <computeroutput>2</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00079">79</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1ab2c50d03ac5529bf02bf0c01379cbebb"/><section>
+    <title>println()<computeroutput>[6/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (int val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00076">76</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aac398f36ba44a7ba4aee1111b5b57974"/><section>
+    <title>println()<computeroutput>[7/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (long val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00077">77</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aaa9d2c34cbe789403311c00ca3243f8e"/><section>
+    <title>println()<computeroutput>[8/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (String str)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00072">72</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a4f6c606c25190595c28599515aafe649"/><section>
+    <title>println()<computeroutput>[9/9]</computeroutput></title>
+<indexterm><primary>println</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>println</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::println (unsigned long val, int mode = <computeroutput>DEC</computeroutput>
+)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00078">78</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a9244f5a52d9185a600353a154b9680a5"/><section>
+    <title>read()</title>
+<indexterm><primary>read</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>read</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::read ( )<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00061">61</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a9d2aed1e23569871e0fc5c2099db85dc"/><section>
+    <title>restartPort()</title>
+<indexterm><primary>restartPort</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>restartPort</secondary></indexterm>
+<para><computeroutput>virtual void FLProgUartBasic::restartPort ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00055">55</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a7f4dcee936a0335377ff21df3ed3b59f"/><section>
+    <title>serialCodeForParametrs()</title>
+<indexterm><primary>serialCodeForParametrs</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>serialCodeForParametrs</secondary></indexterm>
+<para><computeroutput>int FLProgUartBasic::serialCodeForParametrs ( )<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00073">73</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aed506376652d64a4674d61a7ed99c08c"/><section>
+    <title>setCodeFromSpeed()</title>
+<indexterm><primary>setCodeFromSpeed</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>setCodeFromSpeed</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::setCodeFromSpeed (int32_t speed)<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00108">108</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1ab77fe56e34df9f7da88c90cb2ccedb96"/><section>
+    <title>setPortDataBits()</title>
+<indexterm><primary>setPortDataBits</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>setPortDataBits</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::setPortDataBits (byte dataBits)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00017">17</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a5790668bb8a773686a99c7fcb0bacb47"/><section>
+    <title>setPortParity()</title>
+<indexterm><primary>setPortParity</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>setPortParity</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::setPortParity (byte parity)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00054">54</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1ae19963e8ca7e14733296f01c78648ed3"/><section>
+    <title>setPortSpeed()</title>
+<indexterm><primary>setPortSpeed</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>setPortSpeed</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::setPortSpeed (byte speed)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00003">3</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a70c29e0dfa22aeddd9a266743fd72fe7"/><section>
+    <title>setPortStopBits()</title>
+<indexterm><primary>setPortStopBits</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>setPortStopBits</secondary></indexterm>
+<para><computeroutput>void FLProgUartBasic::setPortStopBits (byte stopBits)</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00035">35</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aa72d7875446176e7e549a241873fdb14"/><section>
+    <title>speedFromCode()</title>
+<indexterm><primary>speedFromCode</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>speedFromCode</secondary></indexterm>
+<para><computeroutput>uint32_t FLProgUartBasic::speedFromCode ( )<computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8cpp_source">flprogUart.cpp</link> строка <link linkend="_flprog_uart_8cpp_source_1l00103">103</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a746fd4b3995e52b77d8845be2235bd15"/><section>
+    <title>uartPort()</title>
+<indexterm><primary>uartPort</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>uartPort</secondary></indexterm>
+<para><computeroutput>virtual Stream * FLProgUartBasic::uartPort ( )<computeroutput>[inline]</computeroutput>, <computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00083">83</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1aca2a08da2874f79d44364e4d41dd42ba"/><section>
+    <title>write()</title>
+<indexterm><primary>write</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>write</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::write (byte * buffer, byte size)<computeroutput>[inline]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00062">62</link></para>
+</section>
+</section>
+<section>
+<title>Данные класса</title>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a540010cda343171fbdf6ecaebc05052e"/><section>
+    <title>portDataBits</title>
+<indexterm><primary>portDataBits</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>portDataBits</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::portDataBits = <link linkend="_flprog_uart_8h_1ac2fb88096fc933887317f27d9944721d">FLPROG_PORT_DATA_BITS_8</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00088">88</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a1323d724631592443ca2f50280021e3e"/><section>
+    <title>portParity</title>
+<indexterm><primary>portParity</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>portParity</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::portParity = <link linkend="_flprog_uart_8h_1af02172935433823ce803d3ceef53305c">FLPROG_PORT_PARITY_NONE</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00090">90</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1ac96e85e10437faff18e6a6c6e70f2254"/><section>
+    <title>portSpeed</title>
+<indexterm><primary>portSpeed</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>portSpeed</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::portSpeed = <link linkend="_flprog_uart_8h_1a586e15e7a1f8a2af0a6968318705bc76">FLPROG_SPEED_9600</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00087">87</link></para>
+</section>
+<anchor xml:id="_class_f_l_prog_uart_basic_1a2fe374ae305d62f83c9c3666128839ba"/><section>
+    <title>portStopBits</title>
+<indexterm><primary>portStopBits</primary><secondary>FLProgUartBasic</secondary></indexterm>
+<indexterm><primary>FLProgUartBasic</primary><secondary>portStopBits</secondary></indexterm>
+<para><computeroutput>byte FLProgUartBasic::portStopBits = <link linkend="_flprog_uart_8h_1a2960dbd875a0ba70e1c6d59811383829">FLPROG_PORT_STOP_BITS_1</link><computeroutput>[protected]</computeroutput></computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_uart_8h_source">flprogUart.h</link> строка <link linkend="_flprog_uart_8h_source_1l00089">89</link></para>
+</section>
+<para>
+Объявления и описания членов классов находятся в файлах:</para>
+src/uart/<link linkend="_flprog_uart_8h">flprogUart.h</link>src/uart/<link linkend="_flprog_uart_8cpp">flprogUart.cpp</link></section>
+</section>

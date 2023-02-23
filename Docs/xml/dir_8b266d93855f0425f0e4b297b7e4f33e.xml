@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.6" xml:lang="ru">
+  <compounddef id="dir_8b266d93855f0425f0e4b297b7e4f33e" kind="dir">
+    <compoundname>src/uart</compoundname>
+    <innerdir refid="dir_0b2f99012199ca32aa54ed225bfa1706">src/uart/bluetoothSerial</innerdir>
+    <innerdir refid="dir_5d9238f78242bc1c17a932899f7687c7">src/uart/hardwareUart</innerdir>
+    <innerdir refid="dir_87013a70f8ac8b373092903932313f26">src/uart/softwareUart</innerdir>
+    <innerfile refid="flprog_uart_8cpp">flprogUart.cpp</innerfile>
+    <innerfile refid="flprog_uart_8h">flprogUart.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/uart/"/>
+  </compounddef>
+</doxygen>

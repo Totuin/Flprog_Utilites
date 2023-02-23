@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_flprog_i2_c_8h" xml:lang="ru">
+<title>Файл src/i2c/flprogI2C.h</title>
+<indexterm><primary>src/i2c/flprogI2C.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">#include &quot;Arduino.h&quot;<?linebreak?>#include &lt;Wire.h&gt;<?linebreak?>#include &quot;flprogUtilites.h&quot;<?linebreak?>#include &quot;flprogI2C_sensorsBasic.h&quot;<?linebreak?></programlisting><simplesect>
+    <title>Классы    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_f_l_prog_i2_c">FLProgI2C</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_f_l_prog_virtual_i2_c">FLProgVirtualI2C</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Макросы    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb">FLPROG_I2CSPEED</link>&#160;&#160;&#160;400000UL;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Макросы</title>
+<anchor xml:id="_flprog_i2_c_8h_1a5d14ac1e40046405a287e54485b3f6cb"/><section>
+    <title>FLPROG_I2CSPEED</title>
+<indexterm><primary>FLPROG_I2CSPEED</primary><secondary>flprogI2C.h</secondary></indexterm>
+<indexterm><primary>flprogI2C.h</primary><secondary>FLPROG_I2CSPEED</secondary></indexterm>
+<para><computeroutput>#define FLPROG_I2CSPEED&#160;&#160;&#160;400000UL;</computeroutput></para><para>
+См. определение в файле <link linkend="_flprog_i2_c_8h_source">flprogI2C.h</link> строка <link linkend="_flprog_i2_c_8h_source_1l00009">9</link></para>
+</section>
+</section>
+</section>

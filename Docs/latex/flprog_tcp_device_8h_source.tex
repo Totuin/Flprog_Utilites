@@ -1,0 +1,95 @@
+\hypertarget{flprog_tcp_device_8h_source}{}\doxysection{flprog\+Tcp\+Device.\+h}
+\label{flprog_tcp_device_8h_source}\index{src/tcp/flprogTcpDevice.h@{src/tcp/flprogTcpDevice.h}}
+\mbox{\hyperlink{flprog_tcp_device_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}Arduino.h"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{flprog_utilites_8h}{./flprogUtilites.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ FLPROG\_CORE\_ESP8266\_OR\_ESP32}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}Ethernet.h"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}SPI.h"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00007}00007\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00008}00008\ \textcolor{preprocessor}{\#ifdef\ ESP8266}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <ESP8266WiFi.h>}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00010}00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00011}00011\ \textcolor{preprocessor}{\#ifdef\ ESP32}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}WiFi.h"{}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00013}00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00014}\mbox{\hyperlink{flprog_tcp_device_8h_aabcce68db3bc9710dc01623fabc76cea}{00014}}\ \textcolor{preprocessor}{\#define\ FLPROG\_TCP\_SERVER\_MODE\ 1}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00015}\mbox{\hyperlink{flprog_tcp_device_8h_a04f51819679f0e7eb603a652f2e8fb45}{00015}}\ \textcolor{preprocessor}{\#define\ FLPROG\_TSP\_CLIENT\_MODE\ 0}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00017}\mbox{\hyperlink{class_f_l_prog_tcp_device}{00017}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_l_prog_tcp_device}{FLProgTcpDevice}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00019}00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a6284fa6d5ebbb5d80dbac1d33c8169ad}{beClient}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a19b4deabd8751ad90ffc8f78074786d7}{beServer}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a640fbd479b1cce71b96cbd2d57e29c93}{available}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_af8b5c4ec514ae4187b72f9150cd11dcd}{read}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a79a6dcab0f5f8b3d176e0a84e7f1eb89}{setPort}}(\textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_af85f742fc5af14497d586707a35e8852}{connected}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00026}\mbox{\hyperlink{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}{00026}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}{connect}}()\ \{\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}{connect}}(0,\ 0,\ 0,\ 0);\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00027}\mbox{\hyperlink{class_f_l_prog_tcp_device_a61d78922101dbbd0c4952998637be220}{00027}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a61d78922101dbbd0c4952998637be220}{connect}}(\textcolor{keywordtype}{byte}\ ipFirst,\ \textcolor{keywordtype}{byte}\ ipSecond,\ \textcolor{keywordtype}{byte}\ ipThird,\ \textcolor{keywordtype}{byte}\ ipFourth)\ \{\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a61d78922101dbbd0c4952998637be220}{connect}}(ipFirst,\ ipSecond,\ ipThird,\ ipFourth,\ \mbox{\hyperlink{class_f_l_prog_tcp_device_aa645e6062fed7ab7380606c83ac14fcf}{tcpPort}});\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}{connect}}(uint16\_t\ ipFirst,\ uint16\_t\ ipSecond,\ uint16\_t\ ipThird,\ uint16\_t\ ipFourth,\ \textcolor{keywordtype}{int}\ newPort);}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a154982dbaa1113ed868f976a21e463b4}{connect}}(IPAddress\ newIp,\ \textcolor{keywordtype}{int}\ newPort);}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a1847080cabb96d96ba936478c9d344bf}{print}}(String\ data);}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{byte}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a89be399dd246d274c43866c28342e25d}{write}}(\textcolor{keywordtype}{byte}\ buffer[],\ \textcolor{keywordtype}{byte}\ size);}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00032}\mbox{\hyperlink{class_f_l_prog_tcp_device_aa4d64e12f9dfdb00126a74cd9d9e8e7a}{00032}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_aa4d64e12f9dfdb00126a74cd9d9e8e7a}{begin}}()\{\};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_ab251ab3378529ff4c80bf2d44a0afca2}{restart}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_af26e6967e9cef10b93c5d6e5b60cd2e3}{stop}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00035}\mbox{\hyperlink{class_f_l_prog_tcp_device_a9f82bc3efe62e9346d2e0e3a24fdd693}{00035}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a9f82bc3efe62e9346d2e0e3a24fdd693}{hasClient}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00036}\mbox{\hyperlink{class_f_l_prog_tcp_device_a8beddb2d793cb22786c1ccde51807ffa}{00036}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a8beddb2d793cb22786c1ccde51807ffa}{hasServer}}()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00038}00038\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00039}\mbox{\hyperlink{class_f_l_prog_tcp_device_a0c233255b7b7d05fc3450ad0cb5c2514}{00039}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a0c233255b7b7d05fc3450ad0cb5c2514}{mode}}\ =\ \mbox{\hyperlink{flprog_tcp_device_8h_a04f51819679f0e7eb603a652f2e8fb45}{FLPROG\_TSP\_CLIENT\_MODE}};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00040}\mbox{\hyperlink{class_f_l_prog_tcp_device_aa645e6062fed7ab7380606c83ac14fcf}{00040}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_aa645e6062fed7ab7380606c83ac14fcf}{tcpPort}}\ =\ 502;}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00041}\mbox{\hyperlink{class_f_l_prog_tcp_device_a4433d323e544ae9a190040b3dd69fe79}{00041}}\ \ \ \ \ \textcolor{keyword}{virtual}\ Client\ *\mbox{\hyperlink{class_f_l_prog_tcp_device_a4433d323e544ae9a190040b3dd69fe79}{tcpClient}}()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00042}\mbox{\hyperlink{class_f_l_prog_tcp_device_a0c3fcd4630440016a9fd506e38f99673}{00042}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a0c3fcd4630440016a9fd506e38f99673}{setAvalibleClientFromServer}}()\{\};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00043}\mbox{\hyperlink{class_f_l_prog_tcp_device_aac287f2c4f4ebd7d402c686d2759349e}{00043}}\ \ \ \ \ \textcolor{keyword}{virtual}\ IPAddress\ \mbox{\hyperlink{class_f_l_prog_tcp_device_aac287f2c4f4ebd7d402c686d2759349e}{clientRemoteIp}}()\ \{\ \textcolor{keywordflow}{return}\ IPAddress(0,\ 0,\ 0,\ 0);\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00044}\mbox{\hyperlink{class_f_l_prog_tcp_device_a02c88623d43e6d6496f9ac716ba12fb5}{00044}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a02c88623d43e6d6496f9ac716ba12fb5}{clientRemotePort}}()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00045}\mbox{\hyperlink{class_f_l_prog_tcp_device_a86057670ad2c44794686d9d492448c5c}{00045}}\ \ \ \ \ IPAddress\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a86057670ad2c44794686d9d492448c5c}{workIp}};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00047}00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00048}00048\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00050}00050\ \textcolor{preprocessor}{\#ifndef\ FLPROG\_CORE\_ESP8266\_OR\_ESP32}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00051}\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device}{00051}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device}{FLProgW5100TcpDevice}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_l_prog_tcp_device}{FLProgTcpDevice}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00053}00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_af00df1f2de48023e9e66a03d753e08d6}{begin}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00055}\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a5c420af9d3787d1a6be1ddb1ce9c6689}{00055}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a5c420af9d3787d1a6be1ddb1ce9c6689}{hasClient}}()\ \{\ \textcolor{keywordflow}{return}\ client;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00056}\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_abf01392b4e0aa774956c89413256d9cf}{00056}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_abf01392b4e0aa774956c89413256d9cf}{hasServer}}()\ \{\ \textcolor{keywordflow}{return}\ server\ !=\ 0;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00058}00058\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00059}\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a54f5b27a381f63ce3938df3d84785ade}{00059}}\ \ \ \ \ \textcolor{keyword}{virtual}\ Client\ *\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a54f5b27a381f63ce3938df3d84785ade}{tcpClient}}()\ \{\ \textcolor{keywordflow}{return}\ \&client;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_ad097d1f33176353990744dc642346e8a}{setAvalibleClientFromServer}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00061}\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a3da91dd567b9c4584263d26e7c36f99e}{00061}}\ \ \ \ \ \textcolor{keyword}{virtual}\ IPAddress\ \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a3da91dd567b9c4584263d26e7c36f99e}{clientRemoteIp}}()\ \{\ \textcolor{keywordflow}{return}\ client.remoteIP();\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00062}\mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a0441a81eb1c4713e0dda53550f196e76}{00062}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_l_prog_w5100_tcp_device_a0441a81eb1c4713e0dda53550f196e76}{clientRemotePort}}()\ \{\ \textcolor{keywordflow}{return}\ client.remotePort();\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00065}00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00066}00066\ \ \ \ \ EthernetServer\ *server;}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00067}00067\ \ \ \ \ EthernetClient\ client;}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00068}00068\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00069}00069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00071}00071\ \textcolor{preprocessor}{\#ifdef\ FLPROG\_CORE\_ESP8266\_OR\_ESP32}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00072}00072\ \textcolor{keyword}{class\ }FLProgWiFiTcpDevice\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_f_l_prog_tcp_device}{FLProgTcpDevice}}}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00074}00074\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00075}00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_aa4d64e12f9dfdb00126a74cd9d9e8e7a}{begin}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00076}00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a9f82bc3efe62e9346d2e0e3a24fdd693}{hasClient}}()\ \{\ \textcolor{keywordflow}{return}\ client;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a8beddb2d793cb22786c1ccde51807ffa}{hasServer}}()\ \{\ \textcolor{keywordflow}{return}\ server\ !=\ 0;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00079}00079\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{virtual}\ Client\ *\mbox{\hyperlink{class_f_l_prog_tcp_device_a4433d323e544ae9a190040b3dd69fe79}{tcpClient}}()\ \{\ \textcolor{keywordflow}{return}\ \&client;\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a0c3fcd4630440016a9fd506e38f99673}{setAvalibleClientFromServer}}();}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{virtual}\ IPAddress\ \mbox{\hyperlink{class_f_l_prog_tcp_device_aac287f2c4f4ebd7d402c686d2759349e}{clientRemoteIp}}()\ \{\ \textcolor{keywordflow}{return}\ client.remoteIP();\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00083}00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_f_l_prog_tcp_device_a02c88623d43e6d6496f9ac716ba12fb5}{clientRemotePort}}()\ \{\ \textcolor{keywordflow}{return}\ client.remotePort();\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00085}00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00086}00086\ \ \ \ \ WiFiServer\ *server;}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00087}00087\ \ \ \ \ WiFiClient\ client;}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00088}00088\ \};}
+\DoxyCodeLine{\Hypertarget{flprog_tcp_device_8h_source_l00089}00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
