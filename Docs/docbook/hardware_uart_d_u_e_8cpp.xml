@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_hardware_uart_d_u_e_8cpp" xml:lang="ru">
-<title>Файл src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.cpp</title>
-<indexterm><primary>src/uart/hardwareUart/hardwareUartDUE/hardwareUartDUE.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;hardwareUartDUE.h&quot;<?linebreak?></programlisting></section>

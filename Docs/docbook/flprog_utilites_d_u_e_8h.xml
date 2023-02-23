@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_flprog_utilites_d_u_e_8h" xml:lang="ru">
-<title>Файл src/variant/arduino/due/flprogUtilitesDUE.h</title>
-<indexterm><primary>src/variant/arduino/due/flprogUtilitesDUE.h</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &lt;Arduino.h&gt;<?linebreak?>#include &quot;flprogUtilites.h&quot;<?linebreak?></programlisting></section>

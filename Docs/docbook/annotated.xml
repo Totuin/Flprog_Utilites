@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="ru">
-<title>Классы</title>
-Классы с их кратким описанием.<link linkend="_class_f_l_prog_i2_c">FLProgI2C</link><link linkend="_class_f_l_prog_i2c_basic_sensor">FLProgI2cBasicSensor</link><link linkend="_class_f_l_prog_i2c_step_work_sensor">FLProgI2cStepWorkSensor</link><link linkend="_class_f_l_prog_t_c_a9548_a">FLProgTCA9548A</link><link linkend="_class_f_l_prog_tcp_device">FLProgTcpDevice</link><link linkend="_class_f_l_prog_uart_basic">FLProgUartBasic</link><link linkend="_class_f_l_prog_virtual_i2_c">FLProgVirtualI2C</link><link linkend="_class_f_l_prog_w5100_tcp_device">FLProgW5100TcpDevice</link></section>

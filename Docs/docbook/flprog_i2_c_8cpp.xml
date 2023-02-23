@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_flprog_i2_c_8cpp" xml:lang="ru">
-<title>Файл src/i2c/flprogI2C.cpp</title>
-<indexterm><primary>src/i2c/flprogI2C.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;flprogI2C.h&quot;<?linebreak?></programlisting></section>

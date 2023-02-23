@@ -1,5 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_flprog_uart_bluetooth_serial_8cpp" xml:lang="ru">
-<title>Файл src/uart/bluetoothSerial/flprogUartBluetoothSerial.cpp</title>
-<indexterm><primary>src/uart/bluetoothSerial/flprogUartBluetoothSerial.cpp</primary></indexterm>
-<programlisting linenumbering="unnumbered">#include &quot;flprogUartBluetoothSerial.h&quot;<?linebreak?></programlisting></section>
