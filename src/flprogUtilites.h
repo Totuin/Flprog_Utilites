@@ -62,6 +62,7 @@
 #include "i2c/flprogI2C.h"
 #include "uart/flprogUart.h"
 #include "tcp/flprogTcpDevice.h"
+#include "flprog_Blocks.h"
 
 namespace flprog
 {
