@@ -91,29 +91,29 @@ protected:
 };
 
 #ifdef FLPROG_CORE_ESP8266
-#include "hardwareUart\hardwareUartESP8266\hardwareUartESP8266.h"
+#include "hardwareUart/hardwareUartESP8266/hardwareUartESP8266.h"
 #endif
 
 #ifdef FLPROG_CORE_AVR_DUE
-#include "hardwareUart\hardwareUartDUE\hardwareUartDUE.h"
+#include "hardwareUart/hardwareUartDUE/hardwareUartDUE.h"
 #endif
 
 #ifdef FLPROG_CORE_AVR
-#include "hardwareUart\hardwareUartAVR\hardwareUartAVR.h"
+#include "hardwareUart/hardwareUartAVR/hardwareUartAVR.h"
 #endif
 
 #ifdef FLPROG_CORE_ESP32
-#include "hardwareUart\hardwareUartESP32\hardwareUartESP32.h"
+#include "hardwareUart/hardwareUartESP32/hardwareUartESP32.h"
 #endif
 
 #ifdef FLPROG_CORE_STM
-#include "hardwareUart\hardwareUartSTM\hardwareUartSTM.h"
+#include "hardwareUart/hardwareUartSTM/hardwareUartSTM.h"
 #endif
 
 #ifdef FLPROG_CAN_USE_BLUETOOTH_SERIAL
-#include "bluetoothSerial\flprogUartBluetoothSerial.h"
+#include "bluetoothSerial/flprogUartBluetoothSerial.h"
 #endif
 
 #ifdef FLPROG_CAN_USE_SOFTWARE_SERIAL
-#include "softwareUart\flprogSoftwareUart.h"
+#include "softwareUart/flprogSoftwareUart.h"
 #endif

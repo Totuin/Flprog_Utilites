@@ -20,12 +20,12 @@
 
 #ifdef ESP8266
 #define FLPROG_CORE_ESP8266
-#include "variant\esp8266\flprogUtilitesESP8266.h"
+#include "variant/esp8266/flprogUtilitesESP8266.h"
 #endif
 
 #ifdef ESP32
 #define FLPROG_CORE_ESP32
-#include "variant\esp32\flprogUtilitesESP32.h"
+#include "variant/esp32/flprogUtilitesESP32.h"
 #endif
 
 #ifdef _STM32_DEF_
@@ -46,7 +46,7 @@
 
 #ifdef _UART_CLASS_
 #define FLPROG_CORE_AVR_DUE
-#include "variant\arduino\due\flprogUtilitesDUE.h"
+#include "variant/arduino/due/flprogUtilitesDUE.h"
 #endif
 
 #ifdef __AVR__
