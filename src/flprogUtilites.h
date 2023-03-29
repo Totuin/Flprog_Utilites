@@ -17,6 +17,7 @@
 #define FLPROG_CORE_ESP8266_OR_ESP32
 #endif
 
+
 #ifdef ESP8266
 #define FLPROG_CORE_ESP8266
 #include "variant\esp8266\flprogUtilitesESP8266.h"
