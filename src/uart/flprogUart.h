@@ -2,18 +2,6 @@
 #include "Arduino.h"
 #include "flprogUtilites.h"
 
-#ifndef FLPROG_CORE_ESP32
-#ifndef FLPROG_CORE_AVR_DUE
-#ifndef FLPROG_CORE_STM
-#define FLPROG_CAN_USE_SOFTWARE_SERIAL
-#endif
-#endif
-#endif
-
-#ifdef FLPROG_CORE_ESP32
-#define FLPROG_CAN_USE_BLUETOOTH_SERIAL
-#endif
-
 #define FLPROG_HARDWARE_UART 0
 #define FLPROG_USB_UART 1
 
@@ -90,30 +78,18 @@ protected:
     byte portParity = FLPROG_PORT_PARITY_NONE;
 };
 
-#ifdef FLPROG_CORE_ESP8266
-#include "hardwareUart/hardwareUartESP8266/hardwareUartESP8266.h"
+#ifdef FLPROG_CORE_AVR
+#include "variant/avr/flprogUartAvr.h"
 #endif
 
 #ifdef FLPROG_CORE_AVR_DUE
-#include "hardwareUart/hardwareUartDUE/hardwareUartDUE.h"
+#include "variant/due/flprogUartDUE.h"
 #endif
 
-#ifdef FLPROG_CORE_AVR
-#include "hardwareUart/hardwareUartAVR/hardwareUartAVR.h"
-#endif
-
-#ifdef FLPROG_CORE_ESP32
-#include "hardwareUart/hardwareUartESP32/hardwareUartESP32.h"
+#ifdef FLPROG_CORE_ESP
+#include "variant/esp/flprogUartEsp.h"
 #endif
 
 #ifdef FLPROG_CORE_STM
-#include "hardwareUart/hardwareUartSTM/hardwareUartSTM.h"
-#endif
-
-#ifdef FLPROG_CAN_USE_BLUETOOTH_SERIAL
-#include "bluetoothSerial/flprogUartBluetoothSerial.h"
-#endif
-
-#ifdef FLPROG_CAN_USE_SOFTWARE_SERIAL
-#include "softwareUart/flprogSoftwareUart.h"
+#include "variant/stm/flprogUartStm.h"
 #endif
