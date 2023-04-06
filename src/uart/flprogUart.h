@@ -35,24 +35,25 @@ class FLProgUartBasic
 public:
     virtual void begin(){};
     void begin(int32_t speed);
-    byte getPortSpeed() { return portSpeed; };
-    byte getPortDataBits() { return portDataBits; };
-    byte getPortStopBits() { return portStopBits; };
-    byte getPortParity() { return portParity; };
+    uint8_t getPortSpeed() { return portSpeed; };
+    uint8_t getPortDataBits() { return portDataBits; };
+    uint8_t getPortStopBits() { return portStopBits; };
+    uint8_t getPortParity() { return portParity; };
     virtual bool hasPort() { return false; };
     virtual void restartPort(){};
-    void setPortSpeed(byte speed);
-    void setPortDataBits(byte dataBits);
-    void setPortStopBits(byte stopBits);
-    void setPortParity(byte parity);
-    byte available() { return uartPort()->available(); };
-    byte read() { return uartPort()->read(); };
-    byte write(byte *buffer, byte size) { return uartPort()->write(buffer, size); };
+    void setPortSpeed(uint8_t speed);
+    void setPortDataBits(uint8_t dataBits);
+    void setPortStopBits(uint8_t stopBits);
+    void setPortParity(uint8_t parity);
+    uint8_t available() { return uartPort()->available(); };
+    uint8_t read() { return uartPort()->read(); };
+    uint8_t write(uint8_t *buffer, uint8_t size) { return uartPort()->write(buffer, size); };
+    uint8_t write(uint8_t data) { return uartPort()->write(data); };
 
     void print(String str) { uartPort()->print(str); };
     void print(const char str[]) { uartPort()->print(str); };
     void print(char str) { uartPort()->print(str); };
-    void print(byte val, int mode = DEC) { uartPort()->print(val, mode); };
+    void print(uint8_t val, int mode = DEC) { uartPort()->print(val, mode); };
     void print(int val, int mode = DEC) { uartPort()->print(val, mode); };
     void print(long val, int mode = DEC) { uartPort()->print(val, mode); };
     void print(unsigned long val, int mode = DEC) { uartPort()->print(val, mode); };
@@ -60,7 +61,7 @@ public:
     void println(String str) { uartPort()->println(str); };
     void println(char str) { uartPort()->println(str); };
     void println(const char str[]) { uartPort()->println(str); };
-    void println(byte val, int mode = DEC) { uartPort()->println(val, mode); };
+    void println(uint8_t val, int mode = DEC) { uartPort()->println(val, mode); };
     void println(int val, int mode = DEC) { uartPort()->println(val, mode); };
     void println(long val, int mode = DEC) { uartPort()->println(val, mode); };
     void println(unsigned long val, int mode = DEC) { uartPort()->println(val, mode); };
@@ -72,10 +73,10 @@ protected:
     uint32_t speedFromCode();
     int serialCodeForParametrs();
     void setCodeFromSpeed(int32_t speed);
-    byte portSpeed = FLPROG_SPEED_9600;
-    byte portDataBits = FLPROG_PORT_DATA_BITS_8;
-    byte portStopBits = FLPROG_PORT_STOP_BITS_1;
-    byte portParity = FLPROG_PORT_PARITY_NONE;
+    uint8_t portSpeed = FLPROG_SPEED_9600;
+    uint8_t portDataBits = FLPROG_PORT_DATA_BITS_8;
+    uint8_t portStopBits = FLPROG_PORT_STOP_BITS_1;
+    uint8_t portParity = FLPROG_PORT_PARITY_NONE;
 };
 
 #ifdef FLPROG_CORE_AVR

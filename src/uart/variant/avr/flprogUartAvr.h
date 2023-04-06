@@ -10,6 +10,6 @@ namespace flprog
 };
 
 
-#include  "hardvareUart/hardwareUartAVR.cpp"
+#include  "hardvareUart/hardwareUartAVR.h"
 #include  "softwareUart/flprogSoftwareUartAVR.h"
 #endif

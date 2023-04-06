@@ -104,7 +104,7 @@ void FLProgTcpDevice::connect(IPAddress newIp, int newPort)
 }
 
 //----------FLProgW5100TcpDevice--------
-#ifndef FLPROG_CORE_ESP8266_OR_ESP32
+#ifndef FLPROG_CORE_ESP
 void FLProgW5100TcpDevice::begin()
 {
     if (mode)
@@ -124,7 +124,7 @@ void FLProgW5100TcpDevice::setAvalibleClientFromServer()
 #endif
 
 //-------------FLProgWiFiTcpDevice-----------
-#ifdef FLPROG_CORE_ESP8266_OR_ESP32
+#ifdef FLPROG_CORE_ESP
 void FLProgWiFiTcpDevice::begin()
 {
     if (mode)

@@ -10,6 +10,6 @@ namespace flprog
 };
 
 
-#include  "hardvareUart/hardwareUartEsp32.cpp"
+#include  "hardvareUart/hardwareUartEsp32.h"
 #include "bluetoothSerial/flprogUartBluetoothSerial.h"
 #endif

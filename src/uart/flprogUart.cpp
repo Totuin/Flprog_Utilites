@@ -1,6 +1,6 @@
 #include "flprogUart.h"
 
-void FLProgUartBasic::setPortSpeed(byte speed)
+void FLProgUartBasic::setPortSpeed(uint8_t speed)
 {
     if (portSpeed == speed)
     {
@@ -14,7 +14,7 @@ void FLProgUartBasic::setPortSpeed(byte speed)
     restartPort();
 }
 
-void FLProgUartBasic::setPortDataBits(byte dataBits)
+void FLProgUartBasic::setPortDataBits(uint8_t dataBits)
 {
     if ((dataBits < 5) || (dataBits > 8))
     {
@@ -32,7 +32,7 @@ void FLProgUartBasic::setPortDataBits(byte dataBits)
     restartPort();
 }
 
-void FLProgUartBasic::setPortStopBits(byte stopBits)
+void FLProgUartBasic::setPortStopBits(uint8_t stopBits)
 {
     if ((stopBits < 1) || (stopBits > 2))
     {
@@ -51,7 +51,7 @@ void FLProgUartBasic::setPortStopBits(byte stopBits)
     restartPort();
 }
 
-void FLProgUartBasic::setPortParity(byte parity)
+void FLProgUartBasic::setPortParity(uint8_t parity)
 {
     if ((parity < 0) || (parity > 2))
     {

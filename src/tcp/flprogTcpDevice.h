@@ -1,14 +1,14 @@
 #pragma once
 #include "Arduino.h"
 #include "./flprogUtilites.h"
-#ifndef FLPROG_CORE_ESP8266_OR_ESP32
+#ifndef FLPROG_CORE_ESP
 #include "Ethernet.h"
 #include "SPI.h"
 #endif
-#ifdef ESP8266
+#ifdef FLPROG_CORE_ESP8266
 #include <ESP8266WiFi.h>
 #endif
-#ifdef ESP32
+#ifdef FLPROG_CORE_ESP32
 #include "WiFi.h"
 #endif
 #define FLPROG_TCP_SERVER_MODE 1
@@ -47,7 +47,7 @@ protected:
 private:
 };
 
-#ifndef FLPROG_CORE_ESP8266_OR_ESP32
+#ifndef FLPROG_CORE_ESP
 class FLProgW5100TcpDevice : public FLProgTcpDevice
 {
 public:
@@ -68,7 +68,7 @@ private:
 };
 #endif
 
-#ifdef FLPROG_CORE_ESP8266_OR_ESP32
+#ifdef FLPROG_CORE_ESP
 class FLProgWiFiTcpDevice : public FLProgTcpDevice
 {
 public:

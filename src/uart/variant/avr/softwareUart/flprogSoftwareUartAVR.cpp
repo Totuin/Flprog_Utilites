@@ -1,4 +1,4 @@
-#include "flprogSoftwareUart.h"
+#include "flprogSoftwareUartAVR.h"
 #ifdef FLPROG_CORE_AVR
 
 FLProgSoftwareUart::FLProgSoftwareUart(byte receivePin, byte transmitPin)
