@@ -10,5 +10,5 @@ namespace flprog
 };
 
 
-#include  "hardvareUart/hardwareUartStm32.cpp"
+#include  "hardvareUart/hardwareUartStm32.h"
 #endif
