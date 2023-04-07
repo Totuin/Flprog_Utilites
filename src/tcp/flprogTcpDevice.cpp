@@ -53,6 +53,11 @@ byte FLProgTcpDevice::read()
     return tcpClient()->read();
 }
 
+int FLProgTcpDevice::read(uint8_t *buf, size_t size)
+{
+    return tcpClient()->read(buf, size);
+}
+
 bool FLProgTcpDevice::connected()
 {
     return tcpClient()->connected();
@@ -63,31 +68,40 @@ void FLProgTcpDevice::print(String data)
     tcpClient()->print(data);
 }
 
+void FLProgTcpDevice::println(String data)
+{
+    tcpClient()->println(data);
+}
+void FLProgTcpDevice::println()
+{
+    tcpClient()->println();
+}
+
 byte FLProgTcpDevice::write(byte buffer[], byte size)
 {
     return tcpClient()->write(buffer, size);
 }
 
-void FLProgTcpDevice::connect(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, int newPort)
+int FLProgTcpDevice::connect(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, int newPort)
 {
     workIp[0] = ipFirst;
     workIp[1] = ipSecond;
     workIp[2] = ipThird;
     workIp[3] = ipFourth;
 
-    connect(workIp, newPort);
+    return connect(workIp, newPort);
 }
 
-void FLProgTcpDevice::connect(IPAddress newIp, int newPort)
+int FLProgTcpDevice::connect(IPAddress newIp, int newPort)
 {
     if (mode)
     {
         if (!tcpClient()->connected())
         {
             setAvalibleClientFromServer();
-            return;
+            return 1;
         }
-        return;
+        return 1;
     }
     if (tcpClient()->connected())
     {
@@ -95,50 +109,15 @@ void FLProgTcpDevice::connect(IPAddress newIp, int newPort)
         {
             if (clientRemotePort() == newPort)
             {
-                return;
+                return 1;
             }
         }
     }
     stop();
-    tcpClient()->connect(newIp, newPort);
+    return tcpClient()->connect(newIp, newPort);
 }
 
-//----------FLProgW5100TcpDevice--------
-#ifndef FLPROG_CORE_ESP
-void FLProgW5100TcpDevice::begin()
+int FLProgTcpDevice::connect(const char *host, uint16_t newPort)
 {
-    if (mode)
-    {
-        server = new EthernetServer(tcpPort);
-        server->begin();
-    }
+    return tcpClient()->connect(host, newPort);
 }
-
-void FLProgW5100TcpDevice::setAvalibleClientFromServer()
-{
-    if (server == 0)
-        return;
-    client = server->available();
-}
-
-#endif
-
-//-------------FLProgWiFiTcpDevice-----------
-#ifdef FLPROG_CORE_ESP
-void FLProgWiFiTcpDevice::begin()
-{
-    if (mode)
-    {
-        server = new WiFiServer(tcpPort);
-        server->begin();
-    }
-}
-
-void FLProgWiFiTcpDevice::setAvalibleClientFromServer()
-{
-    if (server == 0)
-        return;
-    client = server->available();
-}
-
-#endif
