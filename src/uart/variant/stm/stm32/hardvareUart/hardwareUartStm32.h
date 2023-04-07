@@ -4,6 +4,10 @@
 
 #ifdef FLPROG_CORE_STM32
 
+#if defined(USBCON) && defined(USBD_USE_CDC)
+#define FLPROG_STM32_USB_COM0
+#endif
+
 class FLProgUart : public FLProgUartBasic
 {
 public:

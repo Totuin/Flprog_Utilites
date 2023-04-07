@@ -8,7 +8,7 @@ UARTClass::UARTModes flprog::serialModeFromParametrs(byte portDataBits, byte por
 }
 
 UARTClass::UARTModes flprog::serialModeFromInt(int16_t code)
-{
+{ 
     switch (code)
     {
     case 0x06:

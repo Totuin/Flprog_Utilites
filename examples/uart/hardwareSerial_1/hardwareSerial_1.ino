@@ -1,5 +1,5 @@
 #include "flprogUtilites.h"
-FLProgUart uart1(&Serial);
+FLProgUart uart1(&Serial1);
 
 void setup()
 {

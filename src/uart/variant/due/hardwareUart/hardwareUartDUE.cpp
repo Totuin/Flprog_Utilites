@@ -9,13 +9,33 @@ FLProgUart::FLProgUart(UARTClass *hardwarePort)
 
 void FLProgUart::restartPort()
 {
+    if (!portIsInit)
+    {
+        return;
+    }
     port->end();
     begin();
 }
 
 void FLProgUart::begin()
 {
-    port->begin(speedFromCode(), serialModeFromParametrs());
+    portIsInit = true;
+    if (port == &Serial1)
+    {
+        Serial1.begin(speedFromCode(), serialModeFromParametrs());
+        return;
+    }
+    if (port == &Serial2)
+    {
+        Serial2.begin(speedFromCode(), serialModeFromParametrs());
+        return;
+    }
+    if (port == &Serial3)
+    {
+        Serial3.begin(speedFromCode(), serialModeFromParametrs());
+        return;
+    }
+    Serial.begin(speedFromCode(), serialModeFromParametrs());
 }
 
 void FLProgUart::begin(int32_t speed, UARTClass::UARTModes mode)

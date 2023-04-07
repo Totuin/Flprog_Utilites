@@ -3,6 +3,8 @@
 #include "flprogUtilites.h"
 
 #ifdef FLPROG_CORE_AVR_DUE
+
+
 class FLProgUart : public FLProgUartBasic
 {
 public:
@@ -18,6 +20,7 @@ protected:
     UARTClass *port;
     UARTClass::UARTModes serialModeFromParametrs();
     void setSerialMode(UARTClass::UARTModes mode);
+    bool portIsInit = false;
 };
 
 #endif
