@@ -13,15 +13,19 @@ bool FLProgSoftwareUart::hasPort()
 
 void FLProgSoftwareUart::restartPort()
 {
-    softwarePort->end();
-    begin();
-    return;
+    if (hasPort())
+    {
+        softwarePort->end();
+        begin();
+    }
 }
 
 void FLProgSoftwareUart::begin()
 {
-    softwarePort->begin(speedFromCode());
-    return;
+    if (hasPort())
+    {
+        softwarePort->begin(speedFromCode());
+    }
 }
 
 #endif

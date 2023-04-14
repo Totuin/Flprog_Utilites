@@ -41,13 +41,19 @@ void FLProgUart::restartPort()
 #ifdef FLPROG_STM32_USB_COM0
     if (type == FLPROG_USB_UART)
     {
-        usbPort->end();
-        begin();
-        return;
+        if (hasPort())
+        {
+            usbPort->end();
+            begin();
+            return;
+        }
     }
 #endif
-    port->end();
-    begin();
+    if (hasPort())
+    {
+        port->end();
+        begin();
+    }
 }
 
 void FLProgUart::begin()
@@ -55,11 +61,17 @@ void FLProgUart::begin()
 #ifdef FLPROG_STM32_USB_COM0
     if (type == FLPROG_USB_UART)
     {
-        usbPort->begin(speedFromCode(), serialModeFromParametrs());
-        return;
+        if (hasPort())
+        {
+            usbPort->begin(speedFromCode(), serialModeFromParametrs());
+            return;
+        }
     }
 #endif
-    port->begin(speedFromCode(), serialModeFromParametrs());
+    if (hasPort())
+    {
+        port->begin(speedFromCode(), serialModeFromParametrs());
+    }
 }
 
 void FLProgUart::begin(int32_t speed, int mode)

@@ -54,18 +54,24 @@ bool FLProgBluetoothUart::hasPort()
 
 void FLProgBluetoothUart::restartPort()
 {
-    bluetoothPort->end();
-    begin();
+    if (hasPort())
+    {
+        bluetoothPort->end();
+        begin();
+    }
 }
 
 void FLProgBluetoothUart::begin()
 {
-    bluetoothPort->begin(deviceName);
-    if (isMaster)
+    if (hasPort())
     {
-        bluetoothPort->connect(partnerName);
+        bluetoothPort->begin(deviceName);
+        if (isMaster)
+        {
+            bluetoothPort->connect(partnerName);
+        }
+        return;
     }
-    return;
 }
 
 #endif

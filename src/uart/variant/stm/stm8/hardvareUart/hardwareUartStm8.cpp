@@ -18,13 +18,19 @@ bool FLProgUart::hasPort()
 
 void FLProgUart::restartPort()
 {
-    port->end();
-    begin();
+    if (hasPort())
+    {
+        port->end();
+        begin();
+    }
 }
 
 void FLProgUart::begin()
 {
-    port->begin(speedFromCode(), serialModeFromParametrs());
+    if (hasPort())
+    {
+        port->begin(speedFromCode(), serialModeFromParametrs());
+    }
 }
 
 void FLProgUart::begin(int32_t speed, int mode)
