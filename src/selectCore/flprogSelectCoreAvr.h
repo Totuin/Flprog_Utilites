@@ -30,6 +30,24 @@
 #endif
 
 //---------------------------------------------------------------------------------------------------
+
+#if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_AVR_MICRO) //====КОНТРОЛЛЕР Arduino Pro or Pro Mini;
+#define FLPROG_CORE_CODE 6                                   //--Идентификатор типа выбора платы c кодом платы;
+#define FLPROG_CORE_NAME "Arduino Micro"                     //--Наименование платы;
+#define FLPROG_CORE_AVR_PRO                                  //--Идентификатор типа платы
+#define FLPROG_CORE_AVR_MICRO                                //--Идентификатор программной среды
+#endif
+
+//---------------------------------------------------------------------------------------------------
+
+#if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_AVR_LEONARDO) //====КОНТРОЛЛЕР Arduino Pro or Pro Mini;
+#define FLPROG_CORE_CODE 6                                      //--Идентификатор типа выбора платы c кодом платы;
+#define FLPROG_CORE_NAME "Arduino Leonardo"                     //--Наименование платы;
+#define FLPROG_CORE_AVR_PRO                                     //--Идентификатор типа платы
+#define FLPROG_CORE_AVR_LEONARDO                                //--Идентификатор программной среды
+#endif
+
+//---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_AVR_MEGA2560) //====КОНТРОЛЛЕР Arduino Mega 2560;
 #define FLPROG_CORE_CODE 4                                      //--Идентификатор выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Arduino Mega 2560"                    //--Наименование платы;
