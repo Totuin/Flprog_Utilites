@@ -10,7 +10,7 @@ class FLProgBluetoothUart : public FLProgUartBasic
 {
 public:
     FLProgBluetoothUart(String name);
-    void setDeviceName(String name);
+    virtual void setDeviceName(String name);
     void setPartnerName(String name);
     void beBluetoothMaster();
     void beBluetoothSlave();

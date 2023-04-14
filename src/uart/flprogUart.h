@@ -45,6 +45,7 @@ public:
     void setPortDataBits(uint8_t dataBits);
     void setPortStopBits(uint8_t stopBits);
     void setPortParity(uint8_t parity);
+    virtual void setDeviceName(String name){};
     uint8_t available() { return uartPort()->available(); };
     uint8_t read() { return uartPort()->read(); };
     uint8_t write(uint8_t *buffer, uint8_t size) { return uartPort()->write(buffer, size); };
