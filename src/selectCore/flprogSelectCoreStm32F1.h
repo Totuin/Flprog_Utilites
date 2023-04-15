@@ -13,6 +13,7 @@
 #define FLPROG_CORE_STM32_D                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLUEPILL_F103CB) //====КОНТРОЛЛЕР (D)BluePill F103CB
@@ -24,6 +25,7 @@
 #define FLPROG_CORE_STM32_D                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLACKPILL_F103C8) //====КОНТРОЛЛЕР (D)BlackPill F103C8
@@ -35,6 +37,7 @@
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLACKPILL_F103CB) //====КОНТРОЛЛЕР (D)BlackPill F103CB
@@ -46,6 +49,7 @@
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GENERIC_F103CBTX) //====КОНТРОЛЛЕР (D)Generic F103CBTx
@@ -57,6 +61,7 @@
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -69,6 +74,7 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //=================================================================================================
 //-------------------------------------------------------------------------------------------------
@@ -80,6 +86,7 @@
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -91,6 +98,7 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_F1_M
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //=================================================================================================
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GENERIC_F103VETX) //====КОНТРОЛЛЕР (D)Generic F103VETx
@@ -101,6 +109,7 @@
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //--------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -112,5 +121,6 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1
 #define FLPROG_CORE_STM 
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif
 //=================================================================================================

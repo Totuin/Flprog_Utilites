@@ -132,16 +132,15 @@ uint8_t AbstractFLProgI2C::fullWriteReg(uint8_t addr, uint8_t reg, uint8_t value
     return codeErr;
 }
 
+//------------------------FLProgTCA9548A------------------
 
-//--------------FLProgTCA9548A----------
-
-FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress)
+FLProgTCA9548A::FLProgTCA9548A(AbstractFLProgI2C *device, uint8_t deviceAddress)
 {
     i2cDevice = device;
     address = deviceAddress;
 }
 
-FLProgTCA9548A::FLProgTCA9548A(FLProgI2C *device)
+FLProgTCA9548A::FLProgTCA9548A(AbstractFLProgI2C *device)
 {
     i2cDevice = device;
     address = 0x70;
@@ -223,7 +222,8 @@ void FLProgTCA9548A::switchToChanel(uint8_t chanel)
     currentChanel = chanel;
 }
 
-//--------------FLProgVirtualI2C----------
+
+//------------------------------FLProgVirtualI2C------------------
 
 FLProgVirtualI2C::FLProgVirtualI2C(FLProgTCA9548A *parentDevice, uint8_t chanelOnParent)
 {

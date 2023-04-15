@@ -1,8 +1,8 @@
 #pragma once
 #include "Arduino.h"
+#include "flprogUtilites.h"
 #include "flprogI2C.h"
-
-
+#include "flprogI2C_Base.h"
 
 class FLProgI2cBasicSensor
 {
@@ -10,7 +10,7 @@ public:
     uint8_t getError() { return codeError; };
 
 protected:
-    FLProgI2C *i2cDevice;
+    AbstractFLProgI2C *i2cDevice;
     uint8_t addres;
     uint32_t speed = FLPROG_I2CSPEED;
     uint8_t codeError = FLPROG_SENSOR_NOT_ERROR;

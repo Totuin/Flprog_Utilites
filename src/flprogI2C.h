@@ -3,15 +3,6 @@
 #include <Wire.h>
 #include "flprogUtilites.h"
 
-#ifdef FLPROG_CORE_ESP8266
-#define FLPROG_I2CSPEED 100000UL;
-#else
-#define FLPROG_I2CSPEED 400000UL;
-#endif
-
-#if defined(CORE_ESP32) || defined(CORE_STM32)
-#define FLPROG_CAN_USE_I2C_1
-#endif
 class AbstractFLProgI2C
 {
 public:
@@ -30,6 +21,13 @@ public:
     virtual void beginTransmission(uint8_t addr){};
     virtual uint8_t endTransmission() { return 0; };
     virtual int available() { return 0; };
+    virtual bool checkBus() { return false; };
+    virtual void write(const uint8_t *data, uint8_t quantity){};
+    virtual void write(uint8_t data){};
+    virtual int read() { return 0; };
+    virtual uint8_t requestFrom(uint8_t address, uint8_t quantity) { return 0; };
+    virtual void setSpeed(uint32_t newSpeed){};
+    virtual void resetSpeedFrom(uint32_t newSpeed){};
 
 protected:
     uint8_t bus;
@@ -38,17 +36,14 @@ protected:
     uint8_t codeErr = 0;
     int sda = -1;
     int scl = -1;
-    uint32_t speed = FLPROG_I2CSPEED;
+    uint32_t speed ;
 };
-
-
-#include "i2C/flprogI2C_Base.h"
 
 class FLProgTCA9548A
 {
 public:
-    FLProgTCA9548A(FLProgI2C *device, uint8_t deviceAddress);
-    FLProgTCA9548A(FLProgI2C *device);
+    FLProgTCA9548A(AbstractFLProgI2C *device, uint8_t deviceAddress);
+    FLProgTCA9548A(AbstractFLProgI2C *device);
     void beginTransmission(uint8_t addr, uint8_t chanel);
     void write(const uint8_t *data, uint8_t quantity, uint8_t chanel);
     void write(uint8_t data, uint8_t chanel);
@@ -62,13 +57,14 @@ public:
 
 private:
     void switchToChanel(uint8_t chanel);
-    FLProgI2C *i2cDevice;
+    AbstractFLProgI2C *i2cDevice;
     uint8_t address;
     uint8_t currentChanel = 10;
     uint8_t errorCode = 0;
 };
 
-class FLProgVirtualI2C : public FLProgI2C
+
+class FLProgVirtualI2C : public AbstractFLProgI2C
 {
 public:
     FLProgVirtualI2C(FLProgTCA9548A *parentDevice, uint8_t chanelOnParent);
@@ -89,4 +85,8 @@ private:
     uint8_t chanel;
 };
 
+
+
+#include "i2C/flprogI2C_Base.h"
 #include "i2C/flprogI2C_sensorsBasic.h"
+

@@ -5,7 +5,7 @@
 
 #ifdef FLPROG_CORE_STM8
 
-#define FLPROG_I2CSPEED 400000UL;
+
 
 class FLProgI2C : public AbstractFLProgI2C
 {

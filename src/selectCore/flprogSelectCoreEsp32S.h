@@ -10,7 +10,8 @@
 #define FLPROG_CORE_ESP32S_DEV                               //--Идентификатор типа платы [variant.esp32]
 #define FLPROG_CORE_ESP                                      //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                    //--Идентификатор программной среды
-#define FLPROG_CORE_ESP32S                                   //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //								4.Контроллеры программной среды esp32
@@ -21,7 +22,8 @@
 #define FLPROG_CORE_ESP32S_DEV_BTH_EIS                                //--Идентификатор типа платы [variant.esp32]
 #define FLPROG_CORE_ESP                                               //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                             //--Идентификатор программной среды
-#define FLPROG_CORE_ESP32S                                            //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TTGO_T1) //====КОНТРОЛЛЕР TTGO T-Display [подобранный аналог]
@@ -30,7 +32,8 @@
 #define FLPROG_CORE_ESP32_TTGO_T1                          //--Идентификатор типа платы [variant.ttgo-t1];
 #define FLPROG_CORE_ESP                                    //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                  //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                 //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN_D32) //====КОНТРОЛЛЕР LOLIN32;
@@ -39,7 +42,8 @@
 #define FLPROG_CORE_ESP32_LOLIN_D32                          //--Идентификатор типа платы [variant.d32];
 #define FLPROG_CORE_ESP                                      //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                    //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                   //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_D1_MINI32) //====КОНТРОЛЛЕР WEMOS D1 MINI ESP32
@@ -48,6 +52,7 @@
 #define FLPROG_CORE_ESP32S_D1_MINI32                         //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                      //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                    //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                   //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 //=================================================================================================

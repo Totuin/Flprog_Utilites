@@ -10,7 +10,8 @@
 #define FLPROG_CORE_ESP32S2_DEV                                //--Идентификатор типа платы
 #define FLPROG_CORE_ESP                                        //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                      //--Идентификатор программной среды
-#define FLPROG_CORE_ESP32S2                                    //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S2    
+ #define FLPROG_I2CSPEED 400000UL;                                  //--Идентификатор программной среды
 #endif
 
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN_S2_PRO) //====КОНТРОЛЛЕР LOLIN S2 PRO;
@@ -19,7 +20,8 @@
 #define FLPROG_CORE_LOLIN_S2_PRO                                //--Идентификатор типа платы
 #define FLPROG_CORE_ESP                                         //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                       //--Идентификатор программной среды
-#define FLPROG_CORE_ESP32S2                                     //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S2  
+ #define FLPROG_I2CSPEED 400000UL;                                     //--Идентификатор программной среды
 #endif
 
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN_S2_MINI) //====КОНТРОЛЛЕР LOLIN S2 MINI;
@@ -28,7 +30,8 @@
 #define FLPROG_CORE_LOLIN_S2_MINI                                //--Идентификатор типа платы
 #define FLPROG_CORE_ESP                                          //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                        //--Идентификатор программной среды
-#define FLPROG_CORE_ESP32S2                                      //--Идентификатор программной среды
+#define FLPROG_CORE_ESP32S2   
+ #define FLPROG_I2CSPEED 400000UL;                                     //--Идентификатор программной среды
 #endif
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

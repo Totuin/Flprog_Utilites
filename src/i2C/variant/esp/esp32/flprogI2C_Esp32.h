@@ -5,7 +5,6 @@
 
 #ifdef FLPROG_CORE_ESP32
 
-#define FLPROG_I2CSPEED 400000UL;
 
 class FLProgI2C : public AbstractFLProgI2C
 {

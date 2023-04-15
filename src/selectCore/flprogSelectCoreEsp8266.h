@@ -12,7 +12,8 @@
 #define RT_HW_BOARD_NAME "Generic ESP8266 Module" //--Наименование платы;
 #define FLPROG_CORE_ESP8266_GENERIC               //--Идентификатор типа платы [variant.generic]
 #define FLPROG_CORE_ESP                           //--Идентификатор программной среды
-#define FLPROG_CORE_ESP8266                       //--Идентификатор программной среды
+#define FLPROG_CORE_ESP8266
+#define FLPROG_I2CSPEED 100000UL; //--Идентификатор программной среды
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1MINILITE) //====КОНТРОЛЛЕР LOLIN(WEMOS) D1 Lite;
@@ -23,6 +24,7 @@
 #define FLPROG_CORE_ESP8266_WEMOS_D1MINILITE         //--Идентификатор типа платы [variant.d1_mini]
 #define FLPROG_CORE_ESP                              //--Идентификатор программной среды
 #define FLPROG_CORE_ESP8266                          //--Идентификатор программной среды
+#define FLPROG_I2CSPEED 100000UL;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1MINIPRO) //====КОНТРОЛЛЕР LOLIN(WEMOS) D1 Pro;
@@ -33,6 +35,7 @@
 #define FLPROG_CORE_ESP8266_WEMOS_D1MINIPRO         //--Идентификатор типа платы [variant.d1_mini]
 #define FLPROG_CORE_ESP                             //--Идентификатор программной среды
 #define FLPROG_CORE_ESP8266                         //--Идентификатор программной среды
+#define FLPROG_I2CSPEED 100000UL;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_NODEMCU_ESP12) //====КОНТРОЛЛЕР NodeMCU 0.9 (ESP12 Module);
@@ -43,6 +46,7 @@
 #define FLPROG_CORE_ESP8266_NODEMCU_ESP12              //--Идентификатор типа платы [variant.d1_mini]
 #define FLPROG_CORE_ESP                                //--Идентификатор программной среды
 #define FLPROG_CORE_ESP8266                            //--Идентификатор программной среды
+#define FLPROG_I2CSPEED 100000UL;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_NODEMCU_ESP12E) //====КОНТРОЛЛЕР NodeMCU 1.0 (ESP12E Module);
@@ -53,6 +57,7 @@
 #define FLPROG_CORE_ESP8266_NODEMCU_ESP12E              //--Идентификатор типа платы [variant.d1_mini]
 #define FLPROG_CORE_ESP                                 //--Идентификатор программной среды
 #define FLPROG_CORE_ESP8266                             //--Идентификатор программной среды
+#define FLPROG_I2CSPEED 100000UL
 #endif
 //------Идентификация к группе контроллеров ESP8266---------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ARCH_ESP8266)
@@ -61,5 +66,6 @@
 #define FLPROG_CORE_ESP8266_UNKNOW                             //--Идентификатор типа платы [variant.standart]
 #define FLPROG_CORE_ESP                                        //--Идентификатор программной среды
 #define FLPROG_CORE_ESP8266                                    //--Идентификатор программной среды
+#define FLPROG_I2CSPEED 100000UL
 #endif
 //=================================================================================================

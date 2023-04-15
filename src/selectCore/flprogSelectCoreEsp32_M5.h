@@ -11,7 +11,8 @@
 #define FLPROG_CORE_M5Stack_Core_ESP32                                //--Идентификатор типа платы [variant.m5_stack_core_esp32];
 #define FLPROG_CORE_ESP                                               //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                             //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                            //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5Stack_Fire) //====КОНТРОЛЛЕР M5Stack-Fire
@@ -20,7 +21,8 @@
 #define FLPROG_CORE_M5Stack_ATOM                                //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                         //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                       //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                      //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5Stick_C) //====КОНТРОЛЛЕР M5Stick-C
@@ -29,7 +31,8 @@
 #define FLPROG_CORE_M5Stick_C                                //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                      //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                    //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                   //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5Stack_ATOM) //====КОНТРОЛЛЕР WEMOS D1 MINI ESP32
@@ -38,7 +41,8 @@
 #define FLPROG_CORE_M5Stack_ATOM                                //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                         //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                       //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                      //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5Stack_Core2) //====КОНТРОЛЛЕР WEMOS D1 MINI ESP32
@@ -47,7 +51,8 @@
 #define FLPROG_CORE_M5Stack_Core2                                //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                          //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                        //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                       //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5Stack_Time_CAM) //====КОНТРОЛЛЕР WEMOS D1 MINI ESP32
@@ -56,7 +61,8 @@
 #define FLPROG_CORE_M5Stack_Time_CAM                                //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                             //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                           //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                          //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5Stack_CoreInk) //====КОНТРОЛЛЕР WEMOS D1 MINI ESP32
@@ -65,7 +71,8 @@
 #define FLPROG_CORE_M5Stack_CoreInk                                //--Идентификатор типа платы [variant.d1_mini32];
 #define FLPROG_CORE_ESP                                            //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                          //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32S                                         //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32S
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //=================================================================================================
 //									ESP32-PICO
@@ -77,6 +84,7 @@
 #define FLPROG_CORE_ESP                                       //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                     //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32S                                    //--Идентификатор программной среды для контроллеров ESP32;
-#define FLPROG_CORE_ESP32PICO                                 //--Идентификатор программной среды для контроллеров ESP32S;
+#define FLPROG_CORE_ESP32PICO
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды для контроллеров ESP32S;
 #endif
 //=================================================================================================

@@ -5,7 +5,7 @@
 
 #ifdef FLPROG_CORE_ESP8266
 
-#define FLPROG_I2CSPEED 100000UL;
+
 
 
 class FLProgI2C : public AbstractFLProgI2C

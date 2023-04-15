@@ -6,6 +6,7 @@ TwoWire Wire1(PB11, PB10);
 FLProgI2C::FLProgI2C(byte busNumber)
 {
     bus = busNumber;
+    speed = FLPROG_I2CSPEED;
 }
 
 bool FLProgI2C::checkBus()

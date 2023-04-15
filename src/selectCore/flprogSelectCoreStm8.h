@@ -9,4 +9,5 @@
 #define FLPROG_CORE_NAME "STM8" //--Имя CORE;
 #define FLPROG_CORE_STM8        //--Идентификатор CORE;
 #define FLPROG_CORE_STM         //--Идентификатор CORE групповой;
+ #define FLPROG_I2CSPEED 400000UL;  
 #endif

@@ -8,7 +8,8 @@
 #define FLPROG_CORE_CODE 1                                 //--Идентификатор выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Arduno Uno"                      //--Наименование платы;
 #define FLPROG_CORE_AVR_UNO                                //--Идентификатор типа платы
-#define FLPROG_CORE_AVR                                    //--Идентификатор программной среды
+#define FLPROG_CORE_AVR
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 
 //---------------------------------------------------------------------------------------------------
@@ -17,7 +18,8 @@
 #define FLPROG_CORE_CODE 2                                  //--Идентификатор выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Arduino Nano"                     //--Наименование платы;
 #define FLPROG_CORE_AVR_NANO                                //--Идентификатор типа платы
-#define FLPROG_CORE_AVR                                     //--Идентификатор программной среды
+#define FLPROG_CORE_AVR
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 
 //---------------------------------------------------------------------------------------------------
@@ -26,7 +28,8 @@
 #define FLPROG_CORE_CODE 3                                 //--Идентификатор типа выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Arduino Pro or Pro mini"         //--Наименование платы;
 #define FLPROG_CORE_AVR_PRO                                //--Идентификатор типа платы
-#define FLPROG_CORE_AVR                                    //--Идентификатор программной среды
+#define FLPROG_CORE_AVR
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 
 //---------------------------------------------------------------------------------------------------
@@ -35,7 +38,8 @@
 #define FLPROG_CORE_CODE 6                                   //--Идентификатор типа выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Arduino Micro"                     //--Наименование платы;
 #define FLPROG_CORE_AVR_PRO                                  //--Идентификатор типа платы
-#define FLPROG_CORE_AVR_MICRO                                //--Идентификатор программной среды
+#define FLPROG_CORE_AVR_MICRO
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 
 //---------------------------------------------------------------------------------------------------
@@ -44,7 +48,8 @@
 #define FLPROG_CORE_CODE 6                                      //--Идентификатор типа выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Arduino Leonardo"                     //--Наименование платы;
 #define FLPROG_CORE_AVR_PRO                                     //--Идентификатор типа платы
-#define FLPROG_CORE_AVR_LEONARDO                                //--Идентификатор программной среды
+#define FLPROG_CORE_AVR_LEONARDO
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
 
 //---------------------------------------------------------------------------------------------------
@@ -59,6 +64,7 @@
 #endif                                                          //		для работы
 #define PROGMEM __attribute__((section(".progmem.data")))       // 		с PROGMEM для RAM>64kB;
 #endif
+#define FLPROG_I2CSPEED 400000UL;
 #endif
 
 //------Идентификация к группе неопознанных контроллеров AVR----------------------------------------
@@ -67,5 +73,6 @@
 #define FLPROG_CORE_CODE 5                                //--Идентификатор выбора платы c кодом платы;
 #define FLPROG_CORE_NAME "Unknow board [near Arduno Uno]" //--Наименование платы;
 #define FLPROG_CORE_AVR_UNKNOW                            //--Идентификатор типа платы [variant.standart]
-#define FLPROG_CORE_AVR                                   //--Идентификатор программной среды
+#define FLPROG_CORE_AVR
+#define FLPROG_I2CSPEED 400000UL; //--Идентификатор программной среды
 #endif
