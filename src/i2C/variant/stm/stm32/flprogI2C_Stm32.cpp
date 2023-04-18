@@ -64,7 +64,7 @@ bool FLProgI2C::beginWire0()
     {
         Wire.begin(sda, scl);
     }
-    Wire1.setClock(speed);
+    Wire.setClock(speed);
     status = 1;
     return true;
 }
@@ -132,7 +132,7 @@ uint8_t FLProgI2C::endTransmission()
     }
     if (bus == 1)
     {
-        return Wire1.endTransmission();
+         return Wire1.endTransmission();
     }
     return 0;
 }
