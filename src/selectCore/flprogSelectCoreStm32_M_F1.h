@@ -13,7 +13,10 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 
@@ -26,7 +29,10 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GENERIC_STM32F103V) //====КОНТРОЛЛЕР (M)Generic_STM32F103V series;
@@ -37,6 +43,9 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //=================================================================================================

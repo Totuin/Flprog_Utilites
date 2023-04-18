@@ -12,7 +12,10 @@
 #define FLPROG_CORE_STM32_D                                          //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D_H7                                       //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //---------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WeActMiniH750VBTX) //====КОНТРОЛЛЕР (D)Generic H743VITX
@@ -23,6 +26,9 @@
 #define FLPROG_CORE_STM32_D                                          //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D_H7                                       //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //=================================================================================================

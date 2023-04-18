@@ -25,6 +25,89 @@ FLProgUart::FLProgUart(USBSerial *port)
 }
 #endif
 
+FLProgUart::FLProgUart(uint8_t portNumber)
+{
+#ifdef FLPROG_STM32_USB_COM0
+    if (portNumber == 0)
+    {
+        usbPort = &Serial;
+        type = FLPROG_USB_UART;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL1
+    if (portNumber == 1)
+    {
+        port = &Serial1;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL2
+    if (portNumber == 2)
+    {
+        port = &Serial2;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL3
+    if (portNumber == 3)
+    {
+        port = &Serial3;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL4
+    if (portNumber == 4)
+    {
+        port = &Serial4;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL5
+    if (portNumber == 5)
+    {
+        port = &Serial5;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL6
+    if (portNumber == 6)
+    {
+        port = &Serial6;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL7
+    if (portNumber == 7)
+    {
+        port = &Serial7;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL8
+    if (portNumber == 8)
+    {
+        port = &Serial8;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL9
+    if (portNumber == 9)
+    {
+        port = &Serial9;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL10
+    if (portNumber == 10)
+    {
+        port = &Serial10;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL_LP1
+    if (portNumber == 11)
+    {
+        port = &SerialLP1;
+    }
+#endif
+#ifdef FLPROG_STM32_SERIAL_LP2
+    if (portNumber == 12)
+    {
+        port = &SerialLP2;
+    }
+#endif
+}
+
 bool FLProgUart::hasPort()
 {
 #ifdef FLPROG_STM32_USB_COM0

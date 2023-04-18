@@ -9,6 +9,6 @@
 #define FLPROG_CORE_NAME "Arduino DUE"                     //--Наименование платы;
 #define FLPROG_CORE_AVR_DUE_SAM                            //--Идентификатор типа платы
 #define FLPROG_CORE_AVR_DUE   
- #define FLPROG_I2CSPEED 400000UL;                               //--Идентификатор программной среды
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //=================================================================================================

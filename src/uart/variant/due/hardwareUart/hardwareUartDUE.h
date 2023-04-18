@@ -10,6 +10,7 @@ class FLProgUart : public FLProgUartBasic
 public:
     FLProgUart(){};
     FLProgUart(UARTClass *hardwarePort);
+    FLProgUart(uint8_t portNumber);
     virtual void begin();
     void begin(int32_t speed, UARTClass::UARTModes mode);
     virtual bool hasPort() { return !(port == 0); };

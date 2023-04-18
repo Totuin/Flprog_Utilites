@@ -7,6 +7,26 @@ FLProgUart::FLProgUart(UARTClass *hardwarePort)
     port = hardwarePort;
 }
 
+FLProgUart::FLProgUart(uint8_t portNumber)
+{
+    if (portNumber == 0)
+    {
+        port = &Serial;
+    }
+    if (portNumber == 1)
+    {
+        port = &Serial1;
+    }
+    if (portNumber == 2)
+    {
+        port = &Serial2;
+    }
+    if (portNumber == 3)
+    {
+        port = &Serial3;
+    }
+}
+
 void FLProgUart::restartPort()
 {
     if (!portIsInit)

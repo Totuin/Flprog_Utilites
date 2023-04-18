@@ -4,17 +4,6 @@
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //							 22.Контроллеры программной среды (D) STM32F1
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLUEPILL_F103C8) //====КОНТРОЛЛЕР (D)BluePill F103C8
-#define FLPROG_CORE_CODE 110                                       //--Идентификатор выбора платы c кодом платы;
-#define FLPROG_CORE_NAME "(D)BluePill F103C8"                      //--Наименование платы;
-#define FLPROG_CORE_ADD "Memory ROM=64k,RAM=20k"                   //--Дополнительные параметры;
-#define FLPROG_CORE_D_GENERIC_F103CXX                              //--Идентификатор типа платы;
-#define FLPROG_CORE_STM32                                          //--Идентификатор программной среды
-#define FLPROG_CORE_STM32_D                                        //--Идентификатор программной среды
-#define FLPROG_CORE_STM32F1_D
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
-#endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLUEPILL_F103CB) //====КОНТРОЛЛЕР (D)BluePill F103CB
 #define FLPROG_CORE_CODE 110                                       //--Идентификатор выбора платы c кодом платы;
@@ -24,8 +13,11 @@
 #define FLPROG_CORE_STM32                                          //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLACKPILL_F103C8) //====КОНТРОЛЛЕР (D)BlackPill F103C8
@@ -36,8 +28,12 @@
 #define FLPROG_CORE_STM32                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
+
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BLACKPILL_F103CB) //====КОНТРОЛЛЕР (D)BlackPill F103CB
@@ -49,7 +45,10 @@
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GENERIC_F103CBTX) //====КОНТРОЛЛЕР (D)Generic F103CBTx
@@ -60,8 +59,11 @@
 #define FLPROG_CORE_STM32                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -73,8 +75,11 @@
 #define FLPROG_CORE_STM32                                             //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //=================================================================================================
 //-------------------------------------------------------------------------------------------------
@@ -85,8 +90,11 @@
 #define FLPROG_CORE_STM32                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -97,8 +105,11 @@
 #define FLPROG_CORE_STM32                                             //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_F1_M
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //=================================================================================================
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GENERIC_F103VETX) //====КОНТРОЛЛЕР (D)Generic F103VETx
@@ -108,8 +119,11 @@
 #define FLPROG_CORE_STM32                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_D                                         //--Идентификатор программной среды
 #define FLPROG_CORE_STM32F1_D
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //--------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------
@@ -120,7 +134,10 @@
 #define FLPROG_CORE_STM32                                             //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F1
-#define FLPROG_CORE_STM 
- #define FLPROG_I2CSPEED 400000UL;  
+#define FLPROG_CORE_STM
+
+#define FLPROG_I2CSPEED 400000UL
+#define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //=================================================================================================

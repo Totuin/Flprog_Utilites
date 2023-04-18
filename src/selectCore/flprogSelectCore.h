@@ -22,6 +22,6 @@
 #define FLPROG_CORE_CODE 90     //--Код CORE;
 #define FLPROG_CORE_NAME "ANON" //--Имя CORE;
 #define FLPROG_CORE_ANON        //--Идентификатор CORE;
-#define FLPROG_I2CSPEED 400000UL;
+#define FLPROG_I2CSPEED 400000UL
 #endif
 

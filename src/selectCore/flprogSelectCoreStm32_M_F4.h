@@ -16,7 +16,10 @@
 #define FLPROG_CORE_STM32_M                                           //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F4                                        //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+ #define FLPROG_I2CSPEED 400000UL
+ #define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //-------------------------------------------------------------------------------------------------
 // #if !defined(RT_HW_BOARD_CODE) && defined(_BOARD_GENERIC_F407V_H_)				//====КОНТРОЛЕР (M)Generic STM32F407V series;
@@ -37,7 +40,10 @@
 #define FLPROG_CORE_STM32_M                                       //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F4                                    //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+ #define FLPROG_I2CSPEED 400000UL
+ #define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10 
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(RT_HW_BOARD_CODE) && (defined(ARDUINO_disco_f411)) //====КОНТРОЛЛЕР (M)BlackPill F401CCU6
@@ -48,6 +54,9 @@
 #define FLPROG_CORE_STM32_M                                     //--Идентификатор программной среды
 #define FLPROG_CORE_STM32_M_F4                                  //--Идентификатор программной среды
 #define FLPROG_CORE_STM
- #define FLPROG_I2CSPEED 400000UL;  
+
+ #define FLPROG_I2CSPEED 400000UL  
+ #define FLPROG_I2C1_SDA PB11
+#define FLPROG_I2C1_SCL PB10
 #endif
 //================================================================================================

@@ -1,7 +1,7 @@
 #include "flprogI2C_Stm32.h"
 
 #ifdef FLPROG_CORE_STM32
-TwoWire Wire1(PB11, PB10);
+TwoWire Wire1(FLPROG_I2C1_SDA, FLPROG_I2C1_SCL);
 
 FLProgI2C::FLProgI2C(byte busNumber)
 {

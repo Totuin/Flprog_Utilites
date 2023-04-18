@@ -11,7 +11,7 @@
 #define FLPROG_CORE_ESP                                        //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                      //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32C3     
- #define FLPROG_I2CSPEED 400000UL;                                 //--Идентификатор программной среды для контроллеров ESP32C3;
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32C3_STAMP_C3_EIS) //====КОНТРОЛЛЕР ESP32C3 STAMP C3 EIS
@@ -21,7 +21,7 @@
 #define FLPROG_CORE_ESP                                                 //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                               //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32C3    
- #define FLPROG_I2CSPEED 400000UL;                                           //--Идентификатор программной среды для контроллеров ESP32C3;
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32C3_STAMP_C3U_EIS) //====КОНТРОЛЛЕР ESP32C3 STAMP C3U EIS;
@@ -31,7 +31,7 @@
 #define FLPROG_CORE_ESP                                                  //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                                //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32C3    
- #define FLPROG_I2CSPEED 400000UL;                                            //--Идентификатор программной среды для контроллеров ESP32C3;
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32C3_TTGO_T_OI_PLUS_EIS) //====КОНТРОЛЛЕР ESP32C3 TTGO T OI PLUS EIS;
@@ -41,7 +41,7 @@
 #define FLPROG_CORE_ESP                                                       //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                                     //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32C3  
- #define FLPROG_I2CSPEED 400000UL;                                                   //--Идентификатор программной среды для контроллеров ESP32C3;
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32C3_LUATOS_USB_EIS) //====КОНТРОЛЛЕР ESP32C3 LUATOS USB EIS;
@@ -51,7 +51,7 @@
 #define FLPROG_CORE_ESP                                                   //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                                 //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32C3   
- #define FLPROG_I2CSPEED 400000UL;                                              //--Идентификатор программной среды для контроллеров ESP32C3;
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //-------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32C3_LUATOS_CLASSIC_EIS) //====КОНТРОЛЛЕР ESP32C3 LUATOS CLASSIC EIS;
@@ -61,5 +61,5 @@
 #define FLPROG_CORE_ESP                                                       //--Идентификатор программной среды для контроллеров ESP;
 #define FLPROG_CORE_ESP32                                                     //--Идентификатор программной среды для контроллеров ESP32;
 #define FLPROG_CORE_ESP32C3 
- #define FLPROG_I2CSPEED 400000UL;                                                    //--Идентификатор программной среды для контроллеров ESP32C3;
+ #define FLPROG_I2CSPEED 400000UL
 #endif

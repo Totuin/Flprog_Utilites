@@ -9,7 +9,7 @@
 #define FLPROG_CORE_NAME "Seeeduno XIAO M0"                      //--Наименование платы;
 #define FLPROG_CORE_SEEED_XIAO_M0                                //--Идентификатор типа платы [variant.XIAO_m0];
 #define FLPROG_CORE_SEEED  
- #define FLPROG_I2CSPEED 400000UL;                                        //--Идентификатор программной среды
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //								2.Контроллер Seeeduno Z0
@@ -19,7 +19,7 @@
 #define FLPROG_CORE_NAME "Seeeduno Zero"                      //--Наименование платы;
 #define FLPROG_CORE_SEEED_ZERO                                //--Идентификатор типа платы [variant.XIAO_m0];
 #define FLPROG_CORE_SEEED     
- #define FLPROG_I2CSPEED 400000UL;                                  //--Идентификатор программной среды
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 
 //------Идентификация к группе контроллеров SEEED--------------------------------------------------
@@ -27,6 +27,6 @@
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ARCH_SEEED) //--??? Не проверенный идентификатор
 #define FLPROG_CORE_CODE 17
 #define FLPROG_CORE_SEEED //--Идентификатор программной среды	
- #define FLPROG_I2CSPEED 400000UL;  									//--Идентификатор программной среды
+ #define FLPROG_I2CSPEED 400000UL
 #endif
 //=================================================================================================
