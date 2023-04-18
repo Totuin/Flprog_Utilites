@@ -24,3 +24,4 @@
 #define FLPROG_CORE_ANON        //--Идентификатор CORE;
 #define FLPROG_I2CSPEED 400000UL;
 #endif
+
