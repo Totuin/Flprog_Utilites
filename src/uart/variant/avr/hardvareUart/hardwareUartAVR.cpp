@@ -1,9 +1,10 @@
 #include "hardwareUartAVR.h"
 
 #ifdef FLPROG_CORE_AVR
-FLProgUart::FLProgUart(HardwareSerial *hardwarePort)
+
+FLProgUart::FLProgUart()
 {
-    port = hardwarePort;
+    port = &Serial;
 }
 
 FLProgUart::FLProgUart(uint8_t portNumber)

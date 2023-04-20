@@ -1,11 +1,10 @@
 #include "hardwareUartEsp32.h"
 
 #ifdef FLPROG_CORE_ESP32
-FLProgUart::FLProgUart(HardwareSerial *hardwarePort)
+FLProgUart::FLProgUart()
 {
-    port = hardwarePort;
+    port = &Serial;
 }
-
 FLProgUart::FLProgUart(uint8_t portNumber)
 {
     if (portNumber == 0)

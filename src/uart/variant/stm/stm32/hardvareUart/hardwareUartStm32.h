@@ -3,6 +3,7 @@
 #include "flprogUtilites.h"
 
 #ifdef FLPROG_CORE_STM32
+// HardwareSerial Serial2(FLPROG_UART2_RX, FLPROG_UART2_TX);
 
 #if defined(USBCON) && defined(USBD_USE_CDC)
 #define FLPROG_STM32_USB_COM0
@@ -59,12 +60,8 @@
 class FLProgUart : public FLProgUartBasic
 {
 public:
-    FLProgUart(){};
-    FLProgUart(HardwareSerial *hardwarePort);
-#ifdef FLPROG_STM32_USB_COM0
-    FLProgUart(USBSerial *port);
-#endif
-    FLProgUart(uint8_t portNumber);
+    FLProgUart();
+    FLProgUart(uint8_t portNamber);
     virtual void begin();
     void begin(int32_t speed, int mode);
     virtual bool hasPort();

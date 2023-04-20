@@ -7,8 +7,7 @@
 class FLProgUart : public FLProgUartBasic
 {
 public:
-    FLProgUart(){};
-    FLProgUart(HardwareSerial *hardwarePort);
+    FLProgUart();
     FLProgUart(uint8_t portNumber);
     virtual void begin();
     void begin(int32_t speed, int mode);

@@ -1,8 +1,9 @@
 #include "hardwareUartEsp8266.h"
 #ifdef FLPROG_CORE_ESP8266
-FLProgUart::FLProgUart(HardwareSerial *hardwarePort)
+
+FLProgUart::FLProgUart()
 {
-    port = hardwarePort;
+    port = &Serial;
 }
 
 FLProgUart::FLProgUart(uint8_t portNumber)

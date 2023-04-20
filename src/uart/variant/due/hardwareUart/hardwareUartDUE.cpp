@@ -2,9 +2,9 @@
 
 #ifdef FLPROG_CORE_AVR_DUE
 
-FLProgUart::FLProgUart(UARTClass *hardwarePort)
+FLProgUart::FLProgUart()
 {
-    port = hardwarePort;
+    port = &Serial;
 }
 
 FLProgUart::FLProgUart(uint8_t portNumber)

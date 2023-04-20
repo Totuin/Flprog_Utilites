@@ -4,12 +4,10 @@
 
 #ifdef FLPROG_CORE_AVR_DUE
 
-
 class FLProgUart : public FLProgUartBasic
 {
 public:
-    FLProgUart(){};
-    FLProgUart(UARTClass *hardwarePort);
+    FLProgUart();
     FLProgUart(uint8_t portNumber);
     virtual void begin();
     void begin(int32_t speed, UARTClass::UARTModes mode);

@@ -12,97 +12,128 @@ Stream *FLProgUart::uartPort()
     return port;
 }
 
-FLProgUart::FLProgUart(HardwareSerial *hardwarePort)
+FLProgUart::FLProgUart()
 {
-    port = hardwarePort;
-}
-
 #ifdef FLPROG_STM32_USB_COM0
-FLProgUart::FLProgUart(USBSerial *port)
-{
-    usbPort = port;
+    usbPort = &Serial;
     type = FLPROG_USB_UART;
-}
 #endif
+}
 
-FLProgUart::FLProgUart(uint8_t portNumber)
+FLProgUart::FLProgUart(uint8_t portNamber)
 {
 #ifdef FLPROG_STM32_USB_COM0
-    if (portNumber == 0)
+    if (portNamber == 0)
     {
         usbPort = &Serial;
         type = FLPROG_USB_UART;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL1
-    if (portNumber == 1)
+    if (portNamber == 1)
     {
+#ifdef FLPROG_NEED_CREATE_UART1
+        HardwareSerial Serial1(FLPROG_UART1_RX, FLPROG_UART1_TX);
+#endif
         port = &Serial1;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL2
-    if (portNumber == 2)
+    if (portNamber == 2)
     {
+#ifdef FLPROG_NEED_CREATE_UART2
+        HardwareSerial Serial2(FLPROG_UART2_RX, FLPROG_UART2_TX);
+#endif
         port = &Serial2;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL3
-    if (portNumber == 3)
+    if (portNamber == 3)
     {
+#ifdef FLPROG_NEED_CREATE_UART2
+        HardwareSerial Serial3(FLPROG_UART3_RX, FLPROG_UART3_TX);
+#endif
         port = &Serial3;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL4
-    if (portNumber == 4)
+    if (portNamber == 4)
     {
+#ifdef FLPROG_NEED_CREATE_UART4
+        HardwareSerial Serial4(FLPROG_UART4_RX, FLPROG_UART4_TX);
+#endif
         port = &Serial4;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL5
-    if (portNumber == 5)
+    if (portNamber == 5)
     {
+#ifdef FLPROG_NEED_CREATE_UART5
+        HardwareSerial Serial5(FLPROG_UART5_RX, FLPROG_UART5_TX);
+#endif
         port = &Serial5;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL6
-    if (portNumber == 6)
+    if (portNamber == 6)
     {
+#ifdef FLPROG_NEED_CREATE_UART6
+        HardwareSerial Serial6(FLPROG_UART6_RX, FLPROG_UART6_TX);
+#endif
         port = &Serial6;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL7
-    if (portNumber == 7)
+    if (portNamber == 7)
     {
+#ifdef FLPROG_NEED_CREATE_UART7
+        HardwareSerial Serial7(FLPROG_UART7_RX, FLPROG_UART7_TX);
+#endif
         port = &Serial7;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL8
-    if (portNumber == 8)
+    if (portNamber == 8)
     {
+#ifdef FLPROG_NEED_CREATE_UART8
+        HardwareSerial Serial8(FLPROG_UART8_RX, FLPROG_UART8_TX);
+#endif
         port = &Serial8;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL9
-    if (portNumber == 9)
+    if (portNamber == 9)
     {
+#ifdef FLPROG_NEED_CREATE_UART9
+        HardwareSerial Serial9(FLPROG_UART9_RX, FLPROG_UART9_TX);
+#endif
         port = &Serial9;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL10
-    if (portNumber == 10)
+    if (portNamber == 10)
     {
+#ifdef FLPROG_NEED_CREATE_UART10
+        HardwareSerial Serial10(FLPROG_UART10_RX, FLPROG_UART10_TX);
+#endif
         port = &Serial10;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL_LP1
-    if (portNumber == 11)
+    if (portNamber == 11)
     {
+#ifdef FLPROG_NEED_CREATE_UART_LP1
+        HardwareSerial SerialLP1(FLPROG_UART_LP1_RX, FLPROG_UART_LP1_TX);
+#endif
         port = &SerialLP1;
     }
 #endif
 #ifdef FLPROG_STM32_SERIAL_LP2
-    if (portNumber == 12)
+    if (portNamber == 12)
     {
+#ifdef FLPROG_NEED_CREATE_UART_LP2
+        HardwareSerial SerialLP2(FLPROG_UART_LP2_RX, FLPROG_UART_LP2_TX);
+#endif
         port = &SerialLP2;
     }
 #endif
