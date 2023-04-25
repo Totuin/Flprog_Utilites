@@ -1,27 +1,19 @@
 #pragma once
 #include <Arduino.h>
-#include "flprogSelectCoreAvr.h"
-#include "flprogSelectCoreSam.h"
-#include "flprogSelectCoreSamD21.h"
-#include "flprogSelectCoreEsp8266.h"
-#include "flprogSelectCoreEsp32_M5.h"
-#include "flprogSelectCoreEsp32_Pico.h"
-#include "flprogSelectCoreEsp32C3.h"
-#include "flprogSelectCoreEsp32S.h"
-#include "flprogSelectCoreEsp32S2.h"
-#include "flprogSelectCoreEsp32S3.h"
-#include "flprogSelectCore_Rp_Pico.h"
-#include "flprogSelectCoreStm32F1.h"
-#include "flprogSelectCoreStm32F4.h"
-#include "flprogSelectCoreStm32H7.h"
-#include "flprogSelectCoreStm32_M_F1.h"
-#include "flprogSelectCoreStm32_M_F4.h"
-#include "flprogSelectCoreStm8.h"
-
+#include "flprogSelectCore_poterna.h"
+#include "flprogSelectCore_avr.h"
+#include "flprogSelectCore_due.h"
+#include "flprogSelectCore_esp32.h"
+#include "flprogSelectCore_esp8266.h"
+#include "flprogSelectCore_intel.h"
+#include "flprogSelectCore_rp2040.h"
+#include "flprogSelectCore_stm8.h"
+#include "flprogSelectCore_stm32.h"
+#include "flprogSelectCore_larduino.h"
 #if !defined(FLPROG_CORE_CODE)
-#define FLPROG_CORE_CODE 90     //--Код CORE;
-#define FLPROG_CORE_NAME "ANON" //--Имя CORE;
-#define FLPROG_CORE_ANON        //--Идентификатор CORE;
+#define FLPROG_CORE_CODE 0
+#define FLPROG_CORE_NAME "ANON"
+#define FLPROG_CORE_ANON 
 #define FLPROG_I2CSPEED 400000UL
+#define FLPROG_HAS_UART0
 #endif
-
