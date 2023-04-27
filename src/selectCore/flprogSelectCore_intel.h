@@ -7,6 +7,7 @@
 #define FLPROG_CORE_INTEL 
 #define FLPROG_I2CSPEED 400000UL 
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GALILEOGEN2) 
@@ -16,5 +17,6 @@
 #define FLPROG_CORE_INTEL 
 #define FLPROG_I2CSPEED 400000UL 
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

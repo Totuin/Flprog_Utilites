@@ -1,7 +1,20 @@
 #include "flprogI2C.h"
 
 
+
 //-------- AbstractFLProgI2C-----------
+
+bool AbstractFLProgI2C::begin(int pinSDA, int pinSCL)
+{
+    sda = pinSDA;
+    scl = pinSCL;
+    return begin();
+}
+
+bool AbstractFLProgI2C::checkBus()
+{
+    return !(oneWare == 0);
+}
 
 bool AbstractFLProgI2C::findAddr(uint8_t addr)
 {
@@ -132,6 +145,103 @@ uint8_t AbstractFLProgI2C::fullWriteReg(uint8_t addr, uint8_t reg, uint8_t value
     return codeErr;
 }
 
+int AbstractFLProgI2C::available()
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return 0;
+    }
+    return oneWare->available();
+}
+
+int AbstractFLProgI2C::read()
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return 0;
+    }
+    return oneWare->read();
+}
+
+void AbstractFLProgI2C::write(uint8_t data)
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return;
+    }
+    oneWare->write(data);
+}
+
+uint8_t AbstractFLProgI2C::requestFrom(uint8_t address, uint8_t quantity)
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return codeErr;
+    }
+    return oneWare->requestFrom(address, quantity);
+}
+
+uint8_t AbstractFLProgI2C::endTransmission()
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return codeErr;
+    }
+    return oneWare->endTransmission();
+}
+
+void AbstractFLProgI2C::write(const uint8_t *data, uint8_t quantity)
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return;
+    }
+    oneWare->write(data, quantity);
+}
+
+void AbstractFLProgI2C::beginTransmission(uint8_t addr)
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return;
+    }
+    oneWare->beginTransmission(addr);
+}
+
+void AbstractFLProgI2C::setSpeed(uint32_t newSpeed)
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return;
+    }
+    if (newSpeed == speed)
+    {
+        return;
+    }
+    oneWare->setClock(newSpeed);
+}
+
+void AbstractFLProgI2C::resetSpeedFrom(uint32_t newSpeed)
+{
+    if (!checkBus())
+    {
+        codeErr = 65;
+        return;
+    }
+    if (newSpeed == speed)
+    {
+        return;
+    }
+    oneWare->setClock(speed);
+}
 //------------------------FLProgTCA9548A------------------
 
 FLProgTCA9548A::FLProgTCA9548A(AbstractFLProgI2C *device, uint8_t deviceAddress)
@@ -221,7 +331,6 @@ void FLProgTCA9548A::switchToChanel(uint8_t chanel)
     errorCode = i2cDevice->endTransmission();
     currentChanel = chanel;
 }
-
 
 //------------------------------FLProgVirtualI2C------------------
 

@@ -7,6 +7,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA1280
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -17,7 +18,11 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA2560
+#define FLPROG_HAS_UART1
+#define FLPROG_HAS_UART2
+#define FLPROG_HAS_UART3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_AVR_MEGA2560) 
@@ -27,7 +32,11 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA2560
+#define FLPROG_HAS_UART1
+#define FLPROG_HAS_UART2
+#define FLPROG_HAS_UART3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_AVR_BT) 
@@ -37,6 +46,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,6 +57,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -57,6 +68,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -67,6 +79,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -77,6 +90,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -87,6 +101,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -97,6 +112,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -107,6 +123,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -117,6 +134,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,6 +145,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -137,6 +156,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA328P
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -147,6 +167,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -157,6 +178,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -167,6 +189,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -177,6 +200,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -187,6 +211,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -197,6 +222,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -207,6 +233,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -217,6 +244,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -227,6 +255,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -237,6 +266,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -247,6 +277,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -257,6 +288,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATMEGA32U4
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -267,6 +299,7 @@
 #define FLPROG_CORE_AVR
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_AVR_ATTINY85
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

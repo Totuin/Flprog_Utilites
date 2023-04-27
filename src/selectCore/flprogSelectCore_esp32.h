@@ -8,7 +8,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_ITSYBITSY_ESP32) 
@@ -19,7 +23,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_QTPY_ESP32_PICO) 
@@ -30,7 +38,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ALKS) 
@@ -41,7 +53,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BPI_BIT) 
@@ -52,7 +68,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_COREESP32) 
@@ -63,7 +83,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_D1_MINI32) 
@@ -74,7 +98,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_D1_UNO32) 
@@ -85,7 +113,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DENKY) 
@@ -96,7 +128,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DFROBOT_FIREBEETLE_2_ESP32E) 
@@ -107,7 +143,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DPU_ESP32) 
@@ -118,7 +158,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DYDK) 
@@ -129,7 +173,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DYDK1A) 
@@ -140,7 +188,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_D_DUINO_32) 
@@ -151,7 +203,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP320) 
@@ -162,7 +218,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_DEV) 
@@ -173,7 +233,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_DEVKIT_LIPO) 
@@ -184,7 +248,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_EVB) 
@@ -195,7 +263,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_GATEWAY) 
@@ -206,7 +278,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_IOT_REDBOARD) 
@@ -217,7 +293,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_MICROMOD) 
@@ -228,7 +308,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_PICO) 
@@ -239,7 +323,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_POE) 
@@ -250,7 +338,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_POE_ISO) 
@@ -261,7 +353,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_THING) 
@@ -272,7 +368,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_THING_PLUS) 
@@ -283,7 +383,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_THING_PLUS_C) 
@@ -294,7 +398,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_WROOM_DA) 
@@ -305,7 +413,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32_WROVER_KIT) 
@@ -316,7 +428,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESPECTRO32) 
@@ -327,7 +443,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESPEA32) 
@@ -338,7 +458,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESPINO32) 
@@ -349,7 +473,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ET_BOARD) 
@@ -360,7 +488,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_FEATHER_ESP32) 
@@ -371,7 +503,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_FROG_ESP32) 
@@ -382,7 +518,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HEALTHYPI_4) 
@@ -393,7 +533,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HONEYLEMON) 
@@ -404,7 +548,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HORNBILL_ESP32_DEV) 
@@ -415,7 +563,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HORNBILL_ESP32_MINIMA) 
@@ -426,7 +578,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_IMBRIOS_LOGSENS_V1P1) 
@@ -437,7 +593,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_INTOROBOT_ESP32_DEV) 
@@ -448,7 +608,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN32) 
@@ -459,7 +623,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN32_LITE) 
@@ -470,7 +638,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN_D32) 
@@ -481,7 +653,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOLIN_D32_PRO) 
@@ -492,7 +668,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LION_BIT_DEV_BOARD) 
@@ -503,7 +683,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOPY) 
@@ -514,7 +698,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_LOPY4) 
@@ -525,7 +713,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_CORE2) 
@@ -536,7 +728,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_FIRE) 
@@ -547,7 +743,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_ATOM) 
@@ -558,7 +758,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_COREINK) 
@@ -569,7 +773,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_CORE_ESP32) 
@@ -580,7 +788,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_STATION) 
@@ -591,7 +803,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STACK_TIMER_CAM) 
@@ -602,7 +818,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_M5STICK_C) 
@@ -613,7 +833,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MGBOT_IOTIK32A) 
@@ -624,7 +848,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MGBOT_IOTIK32B) 
@@ -635,7 +863,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MH_ET_LIVE_ESP32DEVKIT) 
@@ -646,7 +878,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MH_ET_LIVE_ESP32MINIKIT) 
@@ -657,7 +893,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_METRO) 
@@ -668,7 +908,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_NANO32) 
@@ -679,7 +923,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_NODE32S) 
@@ -690,7 +938,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_NODEMCU_32S) 
@@ -701,7 +953,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ODROID_ESP32) 
@@ -712,7 +968,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ONEHORSE_ESP32_DEV) 
@@ -723,7 +983,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_OROCA_EDUBOT) 
@@ -734,7 +998,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_PYCOM_GPY) 
@@ -745,7 +1013,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_PIRANHA) 
@@ -756,7 +1028,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_POCKET32) 
@@ -767,7 +1043,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_QUANTUM) 
@@ -778,7 +1058,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_SONOFF_DUALR3) 
@@ -789,7 +1073,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TBEAM) 
@@ -800,7 +1088,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TINYPICO) 
@@ -811,7 +1103,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TTGO_LORA32) 
@@ -822,7 +1118,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TTGO_T1) 
@@ -833,7 +1133,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TTGO_T7_V13_MINI32) 
@@ -844,7 +1148,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TTGO_T7_V14_MINI32) 
@@ -855,7 +1163,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TWATCH) 
@@ -866,7 +1178,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TRUEVERIT_ESP32_UNIVERSAL_IOT_DRIVER) 
@@ -877,7 +1193,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_TRUEVERIT_ESP32_UNIVERSAL_IOT_DRIVER_MK_II) 
@@ -888,7 +1208,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_UBLOX_NINA_W10) 
@@ -899,7 +1223,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WATCHY) 
@@ -910,7 +1238,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WESP32) 
@@ -921,7 +1253,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIDORA_AIR) 
@@ -932,7 +1268,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIPY3) 
@@ -943,7 +1283,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WT32_ETH01) 
@@ -954,7 +1298,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIFIDUINO32) 
@@ -965,7 +1313,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CONNAXIO_ESPOIR) 
@@ -976,7 +1328,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP32VN_IOT_UNO) 
@@ -987,7 +1343,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_FM_DEVKIT) 
@@ -998,7 +1358,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HELTEC_WIFI_KIT_32) 
@@ -1009,7 +1373,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HELTEC_WIFI_LORA_32) 
@@ -1020,7 +1388,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HELTEC_WIFI_LORA_32_V2) 
@@ -1031,7 +1403,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HELTEC_WIRELESS_STICK) 
@@ -1042,7 +1418,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_HELTEC_WIRELESS_STICK_LITE) 
@@ -1053,7 +1433,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_OPENKB) 
@@ -1064,7 +1448,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ROBOHEART_HERCULES) 
@@ -1075,7 +1463,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_SENSESIOT_WEIZEN) 
@@ -1086,7 +1478,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_UPESY_WROOM) 
@@ -1097,7 +1493,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_UPESY_WROVER) 
@@ -1108,7 +1508,11 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_BASIC
+
+#define FLPROG_I2C0_SDA 21
+#define FLPROG_I2C0_SCL 22
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_QTPY_ESP32C3) 
@@ -1119,6 +1523,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1130,6 +1535,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1141,6 +1547,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1152,6 +1559,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1163,6 +1571,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1174,6 +1583,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1185,6 +1595,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1196,6 +1607,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1207,6 +1619,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1218,6 +1631,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1229,6 +1643,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1240,6 +1655,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_C3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1251,6 +1667,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1262,6 +1679,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1273,6 +1691,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1284,6 +1703,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1295,6 +1715,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1306,6 +1727,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1317,6 +1739,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1328,6 +1751,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1339,6 +1763,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1350,6 +1775,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1361,6 +1787,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1372,6 +1799,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1383,6 +1811,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1394,6 +1823,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1405,6 +1835,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1416,6 +1847,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1427,6 +1859,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1438,6 +1871,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1449,6 +1883,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1460,6 +1895,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1471,6 +1907,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1482,6 +1919,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1493,6 +1931,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1504,6 +1943,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S2
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1515,6 +1955,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1526,6 +1967,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1537,6 +1979,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1548,6 +1991,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1559,6 +2003,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1570,6 +2015,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1581,6 +2027,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1592,6 +2039,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1603,6 +2051,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1614,6 +2063,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1625,6 +2075,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1636,6 +2087,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1647,6 +2099,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1658,6 +2111,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1669,6 +2123,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1680,6 +2135,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1691,6 +2147,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1702,6 +2159,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1713,6 +2171,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1724,6 +2183,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1735,6 +2195,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1746,6 +2207,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1757,6 +2219,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1768,6 +2231,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1779,6 +2243,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1790,6 +2255,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1801,6 +2267,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1812,6 +2279,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1823,6 +2291,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1834,6 +2303,7 @@
 #define FLPROG_CORE_ESP32 
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #define FLPROG_CORE_ESP32_S3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

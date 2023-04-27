@@ -14,14 +14,17 @@ Stream *FLProgUart::uartPort()
 
 FLProgUart::FLProgUart()
 {
+#ifdef FLPROG_HAS_UART0
 #ifdef FLPROG_STM32_USB_COM0
     usbPort = &Serial;
     type = FLPROG_USB_UART;
+#endif
 #endif
 }
 
 FLProgUart::FLProgUart(uint8_t portNamber)
 {
+#ifdef FLPROG_HAS_UART0
 #ifdef FLPROG_STM32_USB_COM0
     if (portNamber == 0)
     {
@@ -29,6 +32,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         type = FLPROG_USB_UART;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART1
 #ifdef FLPROG_STM32_SERIAL1
     if (portNamber == 1)
     {
@@ -38,6 +43,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial1;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART2
 #ifdef FLPROG_STM32_SERIAL2
     if (portNamber == 2)
     {
@@ -47,6 +54,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial2;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART3
 #ifdef FLPROG_STM32_SERIAL3
     if (portNamber == 3)
     {
@@ -56,6 +65,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial3;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART4
 #ifdef FLPROG_STM32_SERIAL4
     if (portNamber == 4)
     {
@@ -65,6 +76,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial4;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART5
 #ifdef FLPROG_STM32_SERIAL5
     if (portNamber == 5)
     {
@@ -74,6 +87,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial5;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART6
 #ifdef FLPROG_STM32_SERIAL6
     if (portNamber == 6)
     {
@@ -83,6 +98,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial6;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART7
 #ifdef FLPROG_STM32_SERIAL7
     if (portNamber == 7)
     {
@@ -92,6 +109,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial7;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART8
 #ifdef FLPROG_STM32_SERIAL8
     if (portNamber == 8)
     {
@@ -101,6 +120,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial8;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART9
 #ifdef FLPROG_STM32_SERIAL9
     if (portNamber == 9)
     {
@@ -110,6 +131,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial9;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART10
 #ifdef FLPROG_STM32_SERIAL10
     if (portNamber == 10)
     {
@@ -119,6 +142,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &Serial10;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART11
 #ifdef FLPROG_STM32_SERIAL_LP1
     if (portNamber == 11)
     {
@@ -128,6 +153,8 @@ FLProgUart::FLProgUart(uint8_t portNamber)
         port = &SerialLP1;
     }
 #endif
+#endif
+#ifdef FLPROG_HAS_UART12
 #ifdef FLPROG_STM32_SERIAL_LP2
     if (portNamber == 12)
     {
@@ -136,6 +163,7 @@ FLProgUart::FLProgUart(uint8_t portNamber)
 #endif
         port = &SerialLP2;
     }
+#endif
 #endif
 }
 

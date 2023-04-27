@@ -7,6 +7,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_FEATHER_RP2040) 
@@ -16,6 +17,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_DVI) 
@@ -25,6 +27,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_RFM) 
@@ -34,6 +37,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_SCORPIO) 
@@ -43,6 +47,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_THINKINK) 
@@ -52,6 +57,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_USB_HOST) 
@@ -61,6 +67,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_ITSYBITSY_RP2040) 
@@ -70,6 +77,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_KB2040_RP2040) 
@@ -79,6 +87,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_MACROPAD_RP2040) 
@@ -88,6 +97,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_QTPY_RP2040) 
@@ -97,6 +107,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_STEMMAFRIEND_RP2040) 
@@ -106,6 +117,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ADAFRUIT_TRINKEYQT_RP2040) 
@@ -115,6 +127,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_BRIDGETEK_IDM2040_7A) 
@@ -124,6 +137,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_LORA_RP2040) 
@@ -133,6 +147,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_LTE_RP2040) 
@@ -142,6 +157,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_NFC_RP2040) 
@@ -151,6 +167,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_SDRTC_RP2040) 
@@ -160,6 +177,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_SUBGHZ_RP2040) 
@@ -169,6 +187,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_UWB_RP2040) 
@@ -178,6 +197,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_WIFI_BLE_RP2040) 
@@ -187,6 +207,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_2040_WIFI_RP2040) 
@@ -196,6 +217,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CHALLENGER_NB_2040_WIFI_RP2040) 
@@ -205,6 +227,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CYTRON_MAKER_NANO_RP2040) 
@@ -214,6 +237,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_CYTRON_MAKER_PI_RP2040) 
@@ -223,6 +247,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DATANOISETV_PICOADK) 
@@ -232,6 +257,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_DFROBOT_BEETLE_RP2040) 
@@ -241,6 +267,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ELECTRONICCATS_HUNTERCAT_NFC) 
@@ -250,6 +277,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_EXTREMEELEXTRONICS_RC2040) 
@@ -259,6 +287,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_FLYBOARD2040_CORE) 
@@ -268,6 +297,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GENERIC_RP2040) 
@@ -277,6 +307,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ILABS_2040_RPICO32_RP2040) 
@@ -286,6 +317,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MELOPERO_COOKIE_RP2040) 
@@ -295,6 +327,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MELOPERO_SHAKE_RP2040) 
@@ -304,6 +337,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_NANO_RP2040_CONNECT) 
@@ -313,6 +347,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_NEKOSYSTEMS_BL2040_MINI) 
@@ -322,6 +357,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_NULLBITS_BIT_C_PRO) 
@@ -331,6 +367,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_PIMORONI_PGA2040) 
@@ -340,6 +377,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_RASPBERRY_PI_PICO) 
@@ -349,6 +387,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_RASPBERRY_PI_PICO_W) 
@@ -358,6 +397,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_SEEED_XIAO_RP2040) 
@@ -367,6 +407,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_SOLDERPARTY_RP2040_STAMP) 
@@ -376,6 +417,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_SPARKFUN_PROMICRO_RP2040) 
@@ -385,6 +427,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_SPARKFUN_THINGPLUS_RP2040) 
@@ -394,6 +437,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_UPESY_RP2040_DEVKIT) 
@@ -403,6 +447,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_VIYALAB_MIZU_RP2040) 
@@ -412,6 +457,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WAVESHARE_RP2040_LCD_0_96) 
@@ -421,6 +467,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WAVESHARE_RP2040_LCD_1_28) 
@@ -430,6 +477,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WAVESHARE_RP2040_ONE) 
@@ -439,6 +487,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WAVESHARE_RP2040_PLUS) 
@@ -448,6 +497,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WAVESHARE_RP2040_ZERO) 
@@ -457,6 +507,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIZNET_5100S_EVB_PICO) 
@@ -466,6 +517,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIZNET_5500_EVB_PICO) 
@@ -475,6 +527,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIZNET_WIZFI360_EVB_PICO) 
@@ -484,6 +537,7 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_YD_RP2040) 
@@ -493,5 +547,6 @@
 #define FLPROG_CORE_RP2040 
 #define FLPROG_I2CSPEED 400000UL  
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -8,5 +8,9 @@
 #define FLPROG_CORE_AVR_DUE    
 #define FLPROG_I2CSPEED 400000UL
 #define FLPROG_HAS_UART0
+#define FLPROG_HAS_I2C0
+#define FLPROG_HAS_UART1
+#define FLPROG_HAS_UART2
+#define FLPROG_HAS_UART3
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

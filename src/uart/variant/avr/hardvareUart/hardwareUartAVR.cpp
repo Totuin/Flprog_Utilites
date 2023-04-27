@@ -9,19 +9,25 @@ FLProgUart::FLProgUart()
 
 FLProgUart::FLProgUart(uint8_t portNumber)
 {
+#ifdef FLPROG_HAS_UART0
     if (portNumber == 0)
     {
         port = &Serial;
     }
-#ifdef FLPROG_CORE_AVR_MEGA2560
+#endif
+#ifdef FLPROG_HAS_UART1
     if (portNumber == 1)
     {
         port = &Serial1;
     }
+#endif
+#ifdef FLPROG_HAS_UART2
     if (portNumber == 2)
     {
         port = &Serial2;
     }
+#endif
+#ifdef FLPROG_HAS_UART3
     if (portNumber == 3)
     {
         port = &Serial3;

@@ -6,6 +6,8 @@
 class AbstractFLProgI2C
 {
 public:
+    virtual bool begin() { return false; };
+    virtual bool begin(int pinSDA, int pinSCL);
     uint8_t getErrorCode() { return codeErr; };
     bool findAddr(uint8_t addr);
     uint8_t fullWrite(uint8_t addr, uint8_t data);
@@ -18,25 +20,25 @@ public:
     uint8_t fullReadReg(uint8_t addr, uint8_t reg);
     uint8_t fullWriteReg(uint8_t addr, uint8_t reg, uint8_t value);
 
-    virtual void beginTransmission(uint8_t addr){};
-    virtual uint8_t endTransmission() { return 0; };
-    virtual int available() { return 0; };
-    virtual bool checkBus() { return false; };
-    virtual void write(const uint8_t *data, uint8_t quantity){};
-    virtual void write(uint8_t data){};
-    virtual int read() { return 0; };
-    virtual uint8_t requestFrom(uint8_t address, uint8_t quantity) { return 0; };
-    virtual void setSpeed(uint32_t newSpeed){};
-    virtual void resetSpeedFrom(uint32_t newSpeed){};
+    virtual void beginTransmission(uint8_t addr);
+    virtual uint8_t endTransmission();
+    virtual int available();
+    virtual bool checkBus();
+    virtual void write(const uint8_t *data, uint8_t quantity);
+    virtual void write(uint8_t data);
+    virtual int read();
+    virtual uint8_t requestFrom(uint8_t address, uint8_t quantity);
+    virtual void setSpeed(uint32_t newSpeed);
+    virtual void resetSpeedFrom(uint32_t newSpeed);
 
 protected:
-    uint8_t bus;
     bool busy = false;
     uint8_t status = 0;
     uint8_t codeErr = 0;
     int sda = -1;
     int scl = -1;
-    uint32_t speed ;
+    uint32_t speed;
+    TwoWire *oneWare;
 };
 
 class FLProgTCA9548A
@@ -63,7 +65,6 @@ private:
     uint8_t errorCode = 0;
 };
 
-
 class FLProgVirtualI2C : public AbstractFLProgI2C
 {
 public:
@@ -85,8 +86,5 @@ private:
     uint8_t chanel;
 };
 
-
-
 #include "i2C/flprogI2C_Base.h"
 #include "i2C/flprogI2C_sensorsBasic.h"
-

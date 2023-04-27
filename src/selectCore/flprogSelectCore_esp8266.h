@@ -8,6 +8,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ADAFRUIT_HUZZAH) 
@@ -18,6 +22,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_AGRUMINO_LEMON_V4) 
@@ -28,6 +36,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ARDUINO) 
@@ -38,6 +50,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESP01) 
@@ -48,6 +64,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESP13) 
@@ -58,6 +78,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESP210) 
@@ -68,6 +92,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESPECTRO_CORE) 
@@ -78,6 +106,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESPINO_ESP12) 
@@ -88,6 +120,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESPINO_ESP13) 
@@ -98,6 +134,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESPRESSO_LITE_V1) 
@@ -108,6 +148,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_ESPRESSO_LITE_V2) 
@@ -118,6 +162,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_GENERIC) 
@@ -128,6 +176,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_INVENT_ONE) 
@@ -138,6 +190,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_NODEMCU_ESP12) 
@@ -148,6 +204,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_NODEMCU_ESP12E) 
@@ -158,6 +218,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_OAK) 
@@ -168,6 +232,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_PHOENIX_V1) 
@@ -178,6 +246,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_PHOENIX_V2) 
@@ -188,6 +260,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_SCHIRMILABS_EDUINO_WIFI) 
@@ -198,6 +274,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_SONOFF_SV) 
@@ -208,6 +288,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_THING) 
@@ -218,6 +302,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_THING_DEV) 
@@ -228,6 +316,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1MINI) 
@@ -238,6 +330,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1MINILITE) 
@@ -248,6 +344,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1MINIPRO) 
@@ -258,6 +358,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1R1) 
@@ -268,6 +372,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WEMOS_D1WROOM02) 
@@ -278,6 +386,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_WIO_LINK) 
@@ -288,6 +400,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_ESP8266_XINABOX_CW01) 
@@ -298,6 +414,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_GEN4_IOD) 
@@ -308,6 +428,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_MOD_WIFI_ESP8266) 
@@ -318,6 +442,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIFIDUINO_ESP8266) 
@@ -328,6 +456,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIFINFO) 
@@ -338,6 +470,10 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #if !defined(FLPROG_CORE_CODE) && defined(ARDUINO_WIFI_KIT_8) 
@@ -348,5 +484,9 @@
 #define FLPROG_CORE_ESP8266
 #define FLPROG_I2CSPEED 100000UL
 #define FLPROG_HAS_UART_0
+#define FLPROG_HAS_I2C0
+
+#define FLPROG_I2C0_SDA 4
+#define FLPROG_I2C0_SCL 5
 #endif
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
