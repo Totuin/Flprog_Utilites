@@ -10,6 +10,7 @@ public:
     virtual bool begin(int pinMOSI, int pinMISO, int pinSCLK, int pinSSEL) { return begin(); };
     uint8_t getErrorCode() { return codeErr; };
     uint8_t transfer(uint8_t data);
+    bool isReady() { return checkBus(); }
 
 protected:
     bool checkBus();
