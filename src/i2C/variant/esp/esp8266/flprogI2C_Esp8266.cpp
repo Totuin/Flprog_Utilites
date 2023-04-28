@@ -57,4 +57,11 @@ bool FLProgI2C::begin()
     return true;
 }
 
+bool FLProgI2C::begin(int pinSDA, int pinSCL)
+{
+    sda = pinSDA;
+    scl = pinSCL;
+    return begin();
+}
+
 #endif

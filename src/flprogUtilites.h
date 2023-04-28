@@ -13,6 +13,37 @@
 #define FLPROG_SENSOR_WAITING_READ_STEP 0
 #define FLPROG_SENSOR_WAITING_DELAY 1
 
+class FLProgStream
+{
+public:
+    uint8_t available();
+    virtual uint8_t read();
+    uint8_t write(uint8_t *buffer, uint8_t size);
+    uint8_t write(uint8_t data);
+
+    void print(String str);
+    void print(const char str[]);
+    void print(char str);
+    void print(uint8_t val, int mode = DEC);
+    void print(int val, int mode = DEC);
+    void print(long val, int mode = DEC);
+    void print(unsigned long val, int mode = DEC);
+    void print(float val, int mode = 2);
+    void println(String str);
+    void println(char str);
+    void println(const char str[]);
+    void println(uint8_t val, int mode = DEC);
+    void println(int val, int mode = DEC);
+    void println(long val, int mode = DEC);
+    void println(unsigned long val, int mode = DEC);
+    void println(float val, int mode = 2);
+    void println();
+
+protected:
+    virtual Stream *stream() { return 0; };
+    virtual bool hasStream() { return false; };
+};
+
 #include "selectCore/flprogSelectCore.h"
 
 #include "uart/flprogUart.h"

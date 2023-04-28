@@ -21,13 +21,12 @@
 #define FLPROG_TCP_SERVER_MODE 1
 #define FLPROG_TSP_CLIENT_MODE 0
 
-class FLProgTcpDevice
+class FLProgTcpDevice : public FLProgStream
 {
 public:
     void beClient();
     void beServer();
-    byte available();
-    byte read();
+    uint8_t read();
     int read(uint8_t *buf, size_t size);
     void setPort(int port);
     bool connected();
@@ -35,11 +34,7 @@ public:
     void connect(byte ipFirst, byte ipSecond, byte ipThird, byte ipFourth) { connect(ipFirst, ipSecond, ipThird, ipFourth, tcpPort); };
     virtual int connect(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, int newPort);
     virtual int connect(IPAddress newIp, int newPort);
-    virtual int connect(const char * host, uint16_t newPort);
-    void print(String data);
-    void println(String data);
-    void println();
-    byte write(byte buffer[], byte size);
+    virtual int connect(const char *host, uint16_t newPort);
     virtual void begin(){};
     void restart();
     void stop();
@@ -49,6 +44,10 @@ public:
 protected:
     bool mode = FLPROG_TSP_CLIENT_MODE;
     int tcpPort = 502;
+
+    virtual Stream *stream() { return tcpClient(); };
+    virtual bool hasStream() { return tcpClient()->connected(); };
+
     virtual Client *tcpClient() { return 0; };
     virtual void setAvalibleClientFromServer(){};
     virtual IPAddress clientRemoteIp() { return IPAddress(0, 0, 0, 0); };

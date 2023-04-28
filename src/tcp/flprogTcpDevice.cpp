@@ -38,18 +38,8 @@ void FLProgTcpDevice::stop()
     tcpClient()->stop();
 }
 
-byte FLProgTcpDevice::available()
+uint8_t FLProgTcpDevice::read()
 {
-    if (!tcpClient()->connected())
-    {
-        return 0;
-    }
-    return tcpClient()->available();
-}
-
-byte FLProgTcpDevice::read()
-{
-
     return tcpClient()->read();
 }
 
@@ -61,25 +51,6 @@ int FLProgTcpDevice::read(uint8_t *buf, size_t size)
 bool FLProgTcpDevice::connected()
 {
     return tcpClient()->connected();
-}
-
-void FLProgTcpDevice::print(String data)
-{
-    tcpClient()->print(data);
-}
-
-void FLProgTcpDevice::println(String data)
-{
-    tcpClient()->println(data);
-}
-void FLProgTcpDevice::println()
-{
-    tcpClient()->println();
-}
-
-byte FLProgTcpDevice::write(byte buffer[], byte size)
-{
-    return tcpClient()->write(buffer, size);
 }
 
 int FLProgTcpDevice::connect(uint16_t ipFirst, uint16_t ipSecond, uint16_t ipThird, uint16_t ipFourth, int newPort)
