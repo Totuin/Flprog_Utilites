@@ -8,7 +8,7 @@
 class FLProgI2C : public AbstractFLProgI2C
 {
 public:
-    FLProgI2C(byte busNumber = 0);
+    FLProgI2C(uint8_t busNumber = 0);
     virtual bool begin(int pinSDA, int pinSCL) { return begin(); };
     virtual bool begin();
 };

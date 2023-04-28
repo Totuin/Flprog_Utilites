@@ -1,7 +1,7 @@
 #include "flprogI2C_Avr.h"
 
 #ifdef FLPROG_CORE_AVR
-FLProgI2C::FLProgI2C(byte busNumber)
+FLProgI2C::FLProgI2C(uint8_t busNumber)
 {
 #ifdef FLPROG_HAS_I2C0
     if (busNumber == 0)
