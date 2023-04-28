@@ -11,6 +11,9 @@ public:
     uint8_t getErrorCode() { return codeErr; };
     uint8_t transfer(uint8_t data);
     bool isReady() { return checkBus(); }
+    void beginTransaction(SPISettings settings) { spi->beginTransaction(settings); };
+    uint16_t transfer16(uint16_t data) { return spi->transfer16(data); }
+    void endTransaction() { spi->endTransaction(); };
 
 protected:
     bool checkBus();
