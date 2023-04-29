@@ -17,15 +17,9 @@ public:
     void setDataMode(uint8_t mode) { spi->setDataMode(mode); };
     void setClockDivider(uint8_t mode) { spi->setClockDivider(mode); };
 #ifdef FLPROG_CORE_STM
-    virtual void setBitOrder(BitOrder mode)
-    {
-        spi->setBitOrder(mode);
-    };
+    virtual void setBitOrder(BitOrder mode) { spi->setBitOrder(mode); };
 #else
-    virtual void setBitOrder(uint8_t mode)
-    {
-        spi->setBitOrder(mode);
-    };
+    virtual void setBitOrder(uint8_t mode){spi->setBitOrder(mode); };
 #endif
 
 protected:
