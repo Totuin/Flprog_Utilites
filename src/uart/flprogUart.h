@@ -62,17 +62,28 @@ protected:
 };
 
 #ifdef FLPROG_CORE_AVR
+#define FLPROG_EXISTS_SELECT_UART
 #include "variant/avr/flprogUartAvr.h"
 #endif
 
 #ifdef FLPROG_CORE_AVR_DUE
+#define FLPROG_EXISTS_SELECT_UART
 #include "variant/due/flprogUartDUE.h"
 #endif
 
 #ifdef FLPROG_CORE_ESP
+#define FLPROG_EXISTS_SELECT_UART
 #include "variant/esp/flprogUartEsp.h"
 #endif
 
 #ifdef FLPROG_CORE_STM
+#define FLPROG_EXISTS_SELECT_UART
 #include "variant/stm/flprogUartStm.h"
 #endif
+
+#ifndef  FLPROG_EXISTS_SELECT_UART
+#define FLPROG_EXISTS_SELECT_UART
+#define FLPROG_ANON_SELECT_UART
+#include "variant\anon\flprogUartAnon.h"
+#endif
+

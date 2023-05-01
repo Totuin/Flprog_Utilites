@@ -3,23 +3,29 @@
 #include "flprogUtilites.h"
 
 #ifdef FLPROG_CORE_AVR
+#define FLPROG_EXISTS_SELECT_TCP
 #include "variant/avr/flprogTCPDeviceAvrConnectedLibs.h"
 #endif
 
 #ifdef FLPROG_CORE_AVR_DUE
+#define FLPROG_EXISTS_SELECT_TCP
 #include "variant/due/flprogTCPDeviceDueConnectedLibs.h"
 #endif
 
 #ifdef FLPROG_CORE_ESP
+#define FLPROG_EXISTS_SELECT_TCP
 #include "variant/esp/flprogTCPDeviceEspConnectedLibs.h"
 #endif
 
 #ifdef FLPROG_CORE_STM
+#define FLPROG_EXISTS_SELECT_TCP
 #include "variant/stm/flprogTCPDeviceStmConnectedLibs.h"
 #endif
 
 #define FLPROG_TCP_SERVER_MODE 1
 #define FLPROG_TSP_CLIENT_MODE 0
+
+#ifdef FLPROG_EXISTS_SELECT_TCP
 
 class FLProgTcpDevice : public FLProgStream
 {
@@ -69,4 +75,9 @@ protected:
 
 #ifdef FLPROG_CORE_STM
 #include "variant/stm/flprogTCPDeviceStm.h"
+#endif
+
+#else
+#define FLPROG_ANON_SELECT_TCP
+#include "variant\anon\flprogTCPDeviceAnon.h"
 #endif

@@ -1,5 +1,5 @@
-#include "flprogUartBluetoothSerial.h"
-#ifdef FLPROG_CORE_ESP32
+#include "flprogUartBluetoothSerial_Basic.h"
+#ifdef FLPROG_CORE_ESP32_BASIC
 
 FLProgBluetoothUart::FLProgBluetoothUart(String name)
 {

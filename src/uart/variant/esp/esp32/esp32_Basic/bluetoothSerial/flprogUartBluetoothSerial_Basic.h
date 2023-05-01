@@ -2,7 +2,7 @@
 #include "Arduino.h"
 #include "flprogUtilites.h"
 
-#ifdef FLPROG_CORE_ESP32
+#ifdef FLPROG_CORE_ESP32_BASIC
 
 #include "BluetoothSerial.h"
 

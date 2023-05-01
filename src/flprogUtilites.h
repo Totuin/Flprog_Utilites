@@ -44,8 +44,7 @@ protected:
     virtual bool hasStream() { return false; };
 };
 
-#include "selectCore/flprogSelectCore.h"
-
+#include "flprogSelectCore.h"
 #include "uart/flprogUart.h"
 #include "tcp/flprogTcpDevice.h"
 #include "flprog_Blocks.h"

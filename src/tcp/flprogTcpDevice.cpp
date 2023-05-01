@@ -1,4 +1,6 @@
-#include "flprogTcpDevice.h"
+#include "flprogTcpDevice.h" 
+
+#ifdef FLPROG_EXISTS_SELECT_TCP
 //------------FLProgTcpDevice--------
 void FLProgTcpDevice::setPort(int port)
 {
@@ -92,3 +94,4 @@ int FLProgTcpDevice::connect(const char *host, uint16_t newPort)
 {
     return tcpClient()->connect(host, newPort);
 }
+#endif

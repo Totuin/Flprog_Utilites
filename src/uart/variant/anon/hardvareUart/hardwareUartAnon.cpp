@@ -1,41 +1,24 @@
-#include "hardwareUartEsp32.h"
+#include "hardwareUartAnon.h"
 
-#ifdef FLPROG_CORE_ESP32
+#ifdef FLPROG_ANON_SELECT_UART
+
 FLProgUart::FLProgUart()
 {
-    port = &Serial;
 }
+
 FLProgUart::FLProgUart(uint8_t portNumber)
 {
-    if (portNumber == 0)
-    {
-        port = &Serial;
-    }
-    if (portNumber == 1)
-    {
-        port = &Serial1;
-    }
-    if (portNumber == 2)
-    {
-        port = &Serial2;
-    }
 }
 
 void FLProgUart::restartPort()
 {
-    if (hasPort())
-    {
-        port->end();
-        begin();
-    }
+    Serial.end();
+    begin();
 }
 
 void FLProgUart::begin()
 {
-    if (hasPort())
-    {
-        port->begin(speedFromCode(), serialModeFromParametrs());
-    }
+    Serial.begin(speedFromCode(), serialModeFromParametrs());
 }
 
 void FLProgUart::begin(int32_t speed, int mode)
@@ -203,5 +186,4 @@ void FLProgUart::setSerialMode(int16_t mode)
     portStopBits = FLPROG_PORT_STOP_BITS_1;
     portParity = FLPROG_PORT_PARITY_NONE;
 }
-
 #endif

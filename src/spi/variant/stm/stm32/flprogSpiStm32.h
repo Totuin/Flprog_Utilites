@@ -16,8 +16,10 @@ class FLProgSPI : public AbstractFLProgSPI
 {
 public:
     FLProgSPI(uint8_t busNumber = 0);
+    virtual void setBitOrder(BitOrder mode) { spi->setBitOrder(mode); };
     virtual bool begin();
-    
+    void setDataMode(uint8_t mode) { spi->setDataMode(mode); };
+    void setClockDivider(uint8_t mode) { spi->setClockDivider(mode); };
 };
 
 #endif

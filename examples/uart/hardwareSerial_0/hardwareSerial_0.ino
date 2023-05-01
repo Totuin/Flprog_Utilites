@@ -1,6 +1,6 @@
 #include "flprogUtilites.h"
-// FLProgUart uart1(&Serial);
-// FLProgUart uart1(0);
+
+// FLProgUart uart1(1); // Работа 
 FLProgUart uart1; // По умолчанию Serial
 
 void setup()
