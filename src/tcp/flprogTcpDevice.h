@@ -79,5 +79,5 @@ protected:
 
 #else
 #define FLPROG_ANON_SELECT_TCP
-#include "variant\anon\flprogTCPDeviceAnon.h"
+#include "variant/anon/flprogTCPDeviceAnon.h"
 #endif

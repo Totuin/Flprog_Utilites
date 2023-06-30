@@ -23,4 +23,4 @@ protected:
     SPIClass *spi;
 };
 
-#include "spi\flprogSpiSelect.h"
+#include "spi/flprogSpiSelect.h"

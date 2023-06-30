@@ -84,6 +84,6 @@ protected:
 #ifndef  FLPROG_EXISTS_SELECT_UART
 #define FLPROG_EXISTS_SELECT_UART
 #define FLPROG_ANON_SELECT_UART
-#include "variant\anon\flprogUartAnon.h"
+#include "variant/anon/flprogUartAnon.h"
 #endif
 

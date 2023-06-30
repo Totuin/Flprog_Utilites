@@ -27,7 +27,7 @@
 #ifndef  FLPROG_EXISTS_SELECT_I2C
 #define FLPROG_EXISTS_SELECT_I2C
 #define FLPROG_ANON_SELECT_I2C
-#include "variant\anon\flprogI2C_Anon.h"
+#include "variant/anon/flprogI2C_Anon.h"
 #endif
 
 
