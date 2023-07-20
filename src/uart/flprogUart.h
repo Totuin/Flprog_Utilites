@@ -59,6 +59,8 @@ protected:
     uint8_t portDataBits = FLPROG_PORT_DATA_BITS_8;
     uint8_t portStopBits = FLPROG_PORT_STOP_BITS_1;
     uint8_t portParity = FLPROG_PORT_PARITY_NONE;
+    int16_t rxPin = -1;
+    int16_t txPin = -1;
 };
 
 #ifdef FLPROG_CORE_AVR
@@ -81,9 +83,8 @@ protected:
 #include "variant/stm/flprogUartStm.h"
 #endif
 
-#ifndef  FLPROG_EXISTS_SELECT_UART
+#ifndef FLPROG_EXISTS_SELECT_UART
 #define FLPROG_EXISTS_SELECT_UART
 #define FLPROG_ANON_SELECT_UART
 #include "variant/anon/flprogUartAnon.h"
 #endif
-

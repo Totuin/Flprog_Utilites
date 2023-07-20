@@ -7,18 +7,42 @@ FLProgUart::FLProgUart()
 }
 FLProgUart::FLProgUart(uint8_t portNumber)
 {
+#ifdef FLPROG_HAS_UART0
     if (portNumber == 0)
     {
+#ifdef FLPROG_UART0_RX
+        rxPin = FLPROG_UART1_RX;
+#endif
+#ifdef FLPROG_UART0_TX
+        txPin = FLPROG_UART1_TX;
+#endif
         port = &Serial;
     }
+#endif
+#ifdef FLPROG_HAS_UART1
     if (portNumber == 1)
     {
+#ifdef FLPROG_UART1_RX
+        rxPin = FLPROG_UART1_RX;
+#endif
+#ifdef FLPROG_UART1_TX
+        txPin = FLPROG_UART1_TX;
+#endif
         port = &Serial1;
     }
+#endif
+#ifdef FLPROG_HAS_UART2
     if (portNumber == 2)
     {
+#ifdef FLPROG_UART2_RX
+        rxPin = FLPROG_UART2_RX;
+#endif
+#ifdef FLPROG_UART2_TX
+        txPin = FLPROG_UART2_TX;
+#endif
         port = &Serial2;
     }
+#endif
 }
 
 void FLProgUart::restartPort()
@@ -34,7 +58,14 @@ void FLProgUart::begin()
 {
     if (hasPort())
     {
-        port->begin(speedFromCode(), serialModeFromParametrs());
+        if ((rxPin > -1) && (txPin > 0))
+        {
+            port->begin(speedFromCode(), serialModeFromParametrs(), rxPin, txPin);
+        }
+        else
+        {
+            port->begin(speedFromCode(), serialModeFromParametrs());
+        }
     }
 }
 
