@@ -176,6 +176,39 @@ void FLProgStream::println()
 
 //--------------namespace flprog-------------------------
 
+
+uint32_t flprog::difference32(uint32_t start, uint32_t end)
+{
+    if (end >= start)
+    {
+        return end - start;
+    }
+    return (0xfFFFFFFF - start) + end;
+}
+
+bool flprog::isTimer(uint32_t startTime, uint32_t period)
+{
+    return (difference32(startTime, (millis()))) >= period;
+}
+
+bool flprog::isTimerMicros(unsigned long startTime, unsigned long period)
+{
+    return (difference32(startTime, (micros()))) >= period;
+}
+
+uint32_t flprog::timeBack(uint32_t value)
+{
+    uint32_t current = millis();
+    if (value < current)
+    {
+        return current - value;
+    }
+    return (0xfFFFFFFF - value) + current;
+}
+
+
+//--------------namespace flprog-------------------------
+
 int flprog::serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity)
 {
     int code = 0;
@@ -294,33 +327,4 @@ uint8_t flprog::codeFromSpeed(int32_t speed)
         break;
     }
     return FLPROG_SPEED_9600;
-}
-
-uint32_t flprog::difference32(uint32_t start, uint32_t end)
-{
-    if (end >= start)
-    {
-        return end - start;
-    }
-    return (0xfFFFFFFF - start) + end;
-}
-
-bool flprog::isTimer(uint32_t startTime, uint32_t period)
-{
-    return (difference32(startTime, (millis()))) >= period;
-}
-
-bool flprog::isTimerMicros(unsigned long startTime, unsigned long period)
-{
-    return (difference32(startTime, (micros()))) >= period;
-}
-
-uint32_t flprog::timeBack(uint32_t value)
-{
-    uint32_t current = millis();
-    if (value < current)
-    {
-        return current - value;
-    }
-    return (0xfFFFFFFF - value) + current;
 }
