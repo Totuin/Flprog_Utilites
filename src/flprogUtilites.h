@@ -43,14 +43,13 @@
 #define FLPROG_PORT_PARITY_EVEN 1
 #define FLPROG_PORT_PARITY_ODD 2
 
-
 class FLProgStream
 {
 public:
-    uint8_t available();
+    virtual uint8_t available();
     virtual uint8_t read();
+    virtual uint8_t write(uint8_t data);
     uint8_t write(uint8_t *buffer, uint8_t size);
-    uint8_t write(uint8_t data);
 
     void print(String str);
     void print(const char str[]);
@@ -75,14 +74,13 @@ protected:
     virtual bool hasStream() { return false; };
 };
 
-
 namespace flprog
 {
     bool isTimer(uint32_t startTime, uint32_t period);
     bool isTimerMicros(unsigned long startTime, unsigned long period);
     uint32_t difference32(uint32_t start, uint32_t end);
     uint32_t timeBack(uint32_t value);
-     int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
+    int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
     uint32_t speedFromCode(byte code);
     uint8_t codeFromSpeed(int32_t speed);
 
