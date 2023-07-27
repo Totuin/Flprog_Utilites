@@ -1,7 +1,6 @@
 #pragma once
 #include <Arduino.h>
 
-//#include "flprogSelectCore.h"
 #include "flprog_Blocks.h"
 
 #define FLPROG_SENSOR_NOT_ERROR 0
