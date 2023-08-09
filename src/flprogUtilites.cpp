@@ -190,7 +190,7 @@ bool flprog::isTimer(uint32_t startTime, uint32_t period)
     return (difference32(startTime, (millis()))) >= period;
 }
 
-bool flprog::isTimerMicros(unsigned long startTime, unsigned long period)
+bool flprog::isTimerMicros(uint32_t startTime, uint32_t period)
 {
     return (difference32(startTime, (micros()))) >= period;
 }

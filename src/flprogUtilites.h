@@ -77,7 +77,7 @@ protected:
 namespace flprog
 {
     bool isTimer(uint32_t startTime, uint32_t period);
-    bool isTimerMicros(unsigned long startTime, unsigned long period);
+    bool isTimerMicros(uint32_t startTime, uint32_t period);
     uint32_t difference32(uint32_t start, uint32_t end);
     uint32_t timeBack(uint32_t value);
     uint32_t speedFromCode(byte code);
