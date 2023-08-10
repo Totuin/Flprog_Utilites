@@ -10,11 +10,15 @@ flprog	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
+applyMac	KEYWORD2
 available	KEYWORD2
+checkMacAddres	KEYWORD2
 codeFromSpeed	KEYWORD2
 difference32	KEYWORD2
+hexStrToInt	KEYWORD2
 isTimer	KEYWORD2
 isTimerMicros	KEYWORD2
+parseMacAddressString	KEYWORD2
 print	KEYWORD2
 println	KEYWORD2
 read	KEYWORD2

@@ -83,4 +83,9 @@ namespace flprog
     uint32_t speedFromCode(byte code);
     uint8_t codeFromSpeed(int32_t speed);
     int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
+
+    bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
+    bool checkMacAddres(uint8_t *target);
+    void parseMacAddressString(String value, uint8_t *array);
+    int hexStrToInt(String str);
 };

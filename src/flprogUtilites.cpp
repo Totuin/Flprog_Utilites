@@ -325,3 +325,104 @@ int flprog::serialCodeForParametrs(byte portDataBits, byte portStopBits, byte po
     return code;
 }
 
+bool flprog::applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target)
+{
+    bool result = false;
+
+    if (m0 != target[0])
+    {
+        target[0] = m0;
+        result = true;
+    }
+    if (m1 != target[1])
+    {
+        target[1] = m1;
+        result = true;
+    }
+    if (m2 != target[2])
+    {
+        target[2] = m2;
+        result = true;
+    }
+    if (m3 != target[3])
+    {
+        target[3] = m3;
+        result = true;
+    }
+    if (m4 != target[4])
+    {
+        target[4] = m4;
+        result = true;
+    }
+    if (m5 != target[5])
+    {
+        target[5] = m5;
+        result = true;
+    }
+    return result;
+}
+
+bool flprog::checkMacAddres(uint8_t *target)
+{
+    bool result = 0;
+    for (uint8_t i = 0; i < 6; i++)
+    {
+        if (target[i] == 255)
+        {
+            return false;
+        }
+        if (target[i] > 0)
+        {
+            result = true;
+        }
+    }
+    return result;
+}
+
+void flprog::parseMacAddressString(String value, uint8_t *array)
+{
+    int index;
+    uint8_t buffer[6] = {255, 255, 255, 255, 255, 255};
+    uint8_t raz = 0;
+    String tempString;
+    while ((value.length() > 0) && (raz <= 6))
+    {
+        index = value.indexOf(":");
+        if (index == -1)
+        {
+            tempString = value;
+            value = "";
+        }
+        else
+        {
+            tempString = value.substring(0, index);
+            value = value.substring(index + 1);
+        }
+        buffer[raz] = byte(flprog::hexStrToInt(tempString));
+        raz++;
+    }
+    if (flprog::checkMacAddres(buffer))
+    {
+        for (byte i = 0; i < 6; i++)
+        {
+            array[i] = buffer[i];
+        }
+    }
+}
+
+int flprog::hexStrToInt(String str)
+{
+  uint8_t len = str.length();
+    if  (len == 0) return 0;
+    int result = 0;
+    for (uint8_t i = 0; i < 8; i++)    // только первые 8 цыфар влезуть в uint32
+    {
+        char ch = str[i];
+        if (ch == 0) break;
+        result <<= 4;
+        if (isdigit(ch))
+        result = result | (ch - '0');
+        else result = result | (ch - 'A' + 10);
+    }
+    return result;   
+}
