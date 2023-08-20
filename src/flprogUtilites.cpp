@@ -412,17 +412,110 @@ void flprog::parseMacAddressString(String value, uint8_t *array)
 
 int flprog::hexStrToInt(String str)
 {
-  uint8_t len = str.length();
-    if  (len == 0) return 0;
+    uint8_t len = str.length();
+    if (len == 0)
+        return 0;
     int result = 0;
-    for (uint8_t i = 0; i < 8; i++)    // только первые 8 цыфар влезуть в uint32
+    for (uint8_t i = 0; i < 8; i++) // только первые 8 цыфар влезуть в uint32
     {
         char ch = str[i];
-        if (ch == 0) break;
+        if (ch == 0)
+            break;
         result <<= 4;
         if (isdigit(ch))
-        result = result | (ch - '0');
-        else result = result | (ch - 'A' + 10);
+            result = result | (ch - '0');
+        else
+            result = result | (ch - 'A' + 10);
     }
-    return result;   
+    return result;
 }
+
+//--------------------FLProgAbstractTcpInterface----------------
+
+void FLProgAbstractTcpInterface::setDhcp()
+{
+    if (isDhcp)
+    {
+        return;
+    }
+    isDhcp = true;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::resetDhcp()
+{
+    if (!isDhcp)
+    {
+        return;
+    }
+    isDhcp = false;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::dhcpMode(bool val)
+{
+    if (isDhcp == val)
+    {
+        return;
+    }
+    isDhcp = val;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::localIP(IPAddress _ip)
+{
+    if (ip == _ip)
+    {
+        return;
+    }
+    ip = _ip;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::dns(IPAddress _ip)
+{
+    if (dnsIp == _ip)
+    {
+        return;
+    }
+    dnsIp = _ip;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::subnet(IPAddress _ip)
+{
+    if (subnetIp == _ip)
+    {
+        return;
+    }
+    subnetIp = _ip;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::gateway(IPAddress _ip)
+{
+    if (gatewayIp == _ip)
+    {
+        return;
+    }
+    gatewayIp = _ip;
+    isNeedReconect = true;
+}
+
+void FLProgAbstractTcpInterface::mac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5)
+{
+    if (flprog::applyMac(m0, m1, m2, m3, m4, m5, macAddress))
+    {
+        isNeedReconect = true;
+    }
+}
+
+void FLProgAbstractTcpInterface::mac(uint8_t *mac_address)
+{
+    for (uint8_t i = 0; i < 6; i++)
+    {
+        mac_address[i] = macAddress[i];
+    }
+}
+
+
