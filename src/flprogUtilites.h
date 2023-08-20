@@ -48,31 +48,14 @@
 #define FLPROG_ETHERNET_INTERFACE 1
 #define FLPROG_WIFI_INTERFACE 2
 
-class FLProgStream
+class FLProgStream : public Stream
 {
 public:
-    virtual uint8_t available();
-    virtual uint8_t read();
-    virtual uint8_t write(uint8_t data);
-    uint8_t write(uint8_t *buffer, uint8_t size);
-
-    void print(String str);
-    void print(const char str[]);
-    void print(char str);
-    void print(uint8_t val, int mode = DEC);
-    void print(int val, int mode = DEC);
-    void print(long val, int mode = DEC);
-    void print(unsigned long val, int mode = DEC);
-    void print(float val, int mode = 2);
-    void println(String str);
-    void println(char str);
-    void println(const char str[]);
-    void println(uint8_t val, int mode = DEC);
-    void println(int val, int mode = DEC);
-    void println(long val, int mode = DEC);
-    void println(unsigned long val, int mode = DEC);
-    void println(float val, int mode = 2);
-    void println();
+    virtual int available();
+    virtual int read();
+    virtual size_t write(uint8_t data);
+    virtual size_t write(uint8_t *buffer, uint8_t size);
+    virtual int peek();
 
 protected:
     virtual Stream *stream() { return 0; };

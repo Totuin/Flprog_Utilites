@@ -2,7 +2,7 @@
 
 //------------------FLProgStream-----------------
 
-uint8_t FLProgStream::available()
+int FLProgStream::available()
 {
     if (hasStream())
     {
@@ -11,7 +11,7 @@ uint8_t FLProgStream::available()
     return 0;
 }
 
-uint8_t FLProgStream::read()
+int FLProgStream::read()
 {
     if (hasStream())
     {
@@ -20,7 +20,7 @@ uint8_t FLProgStream::read()
     return 0;
 }
 
-uint8_t FLProgStream::write(uint8_t *buffer, uint8_t size)
+size_t FLProgStream::write(uint8_t *buffer, uint8_t size)
 {
     if (hasStream())
     {
@@ -29,7 +29,7 @@ uint8_t FLProgStream::write(uint8_t *buffer, uint8_t size)
     return 0;
 }
 
-uint8_t FLProgStream::write(uint8_t data)
+size_t FLProgStream::write(uint8_t data)
 {
     if (hasStream())
     {
@@ -38,140 +38,13 @@ uint8_t FLProgStream::write(uint8_t data)
     return 0;
 }
 
-void FLProgStream::print(String str)
+int FLProgStream::peek()
 {
     if (hasStream())
     {
-        stream()->print(str);
+        return stream()->peek();
     }
-}
-
-void FLProgStream::print(const char str[])
-{
-    if (hasStream())
-    {
-        stream()->print(str);
-    }
-}
-
-void FLProgStream::print(char str)
-{
-    if (hasStream())
-    {
-        stream()->print(str);
-    }
-}
-
-void FLProgStream::print(uint8_t val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->print(val, mode);
-    }
-}
-
-void FLProgStream::print(int val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->print(val, mode);
-    }
-}
-
-void FLProgStream::print(long val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->print(val, mode);
-    }
-}
-
-void FLProgStream::print(unsigned long val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->print(val, mode);
-    }
-}
-
-void FLProgStream::print(float val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->print(val, mode);
-    }
-}
-
-void FLProgStream::println(String str)
-{
-    if (hasStream())
-    {
-        stream()->println(str);
-    }
-}
-
-void FLProgStream::println(char str)
-{
-    if (hasStream())
-    {
-        stream()->println(str);
-    }
-}
-
-void FLProgStream::println(const char str[])
-{
-    if (hasStream())
-    {
-        stream()->println(str);
-    }
-}
-
-void FLProgStream::println(uint8_t val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->println(val, mode);
-    }
-}
-
-void FLProgStream::println(int val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->println(val, mode);
-    }
-}
-
-void FLProgStream::println(long val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->println(val, mode);
-    }
-}
-
-void FLProgStream::println(unsigned long val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->println(val, mode);
-    }
-}
-
-void FLProgStream::println(float val, int mode)
-{
-    if (hasStream())
-    {
-        stream()->println(val, mode);
-    }
-}
-
-void FLProgStream::println()
-{
-    if (hasStream())
-    {
-        stream()->println();
-    }
+    return 0;
 }
 
 //--------------namespace flprog-------------------------
@@ -517,5 +390,3 @@ void FLProgAbstractTcpInterface::mac(uint8_t *mac_address)
         mac_address[i] = macAddress[i];
     }
 }
-
-
