@@ -11,6 +11,14 @@ int FLProgStream::available()
     return 0;
 }
 
+void FLProgStream::flush()
+{
+    if (hasStream())
+    {
+        stream()->flush();
+    }
+}
+
 int FLProgStream::read()
 {
     if (hasStream())

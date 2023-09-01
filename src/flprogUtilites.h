@@ -56,6 +56,7 @@ public:
     virtual size_t write(uint8_t data);
     virtual size_t write(uint8_t *buffer, uint8_t size);
     virtual int peek();
+     virtual void flush();
 
 protected:
     virtual Stream *stream() { return 0; };
