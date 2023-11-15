@@ -1,5 +1,6 @@
 #pragma once
 #include <Arduino.h>
+#include "RT_HW_BASE.h"
 #include "IPAddress.h"
 #include "flprog_Blocks.h"
 #include "Client.h"
