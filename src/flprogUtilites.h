@@ -49,21 +49,6 @@
 #define FLPROG_ETHERNET_INTERFACE 1
 #define FLPROG_WIFI_INTERFACE 2
 
-class FLProgStream : public Stream
-{
-public:
-    virtual int available();
-    virtual int read();
-    virtual size_t write(uint8_t data);
-    virtual size_t write(uint8_t *buffer, uint8_t size);
-    virtual int peek();
-     virtual void flush();
-
-protected:
-    virtual Stream *stream() { return 0; };
-    virtual bool hasStream() { return stream() != 0; };
-};
-
 namespace flprog
 {
     bool isTimer(uint32_t startTime, uint32_t period);
@@ -80,6 +65,21 @@ namespace flprog
     int hexStrToInt(String str);
 };
 
+class FLProgStream : public Stream
+{
+public:
+    virtual int available();
+    virtual int read();
+    virtual size_t write(uint8_t data);
+    virtual size_t write(uint8_t *buffer, uint8_t size);
+    virtual int peek();
+    virtual void flush();
+
+protected:
+    virtual Stream *stream() { return 0; };
+    virtual bool hasStream() { return stream() != 0; };
+};
+
 class FLProgAbstractTcpServer;
 
 class FLProgAbstractTcpInterface
@@ -90,15 +90,20 @@ public:
     void dhcpMode(bool val);
     bool dhcpMode() { return isDhcp; };
 
+    virtual void pool(){};
+
     IPAddress localIP() { return ip; };
     void localIP(IPAddress _ip);
     void localIP(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { localIP(IPAddress(ip0, ip1, ip2, ip3)); };
+
     IPAddress dns() { return dnsIp; };
     void dns(IPAddress _ip);
     void dns(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { dns(IPAddress(ip0, ip1, ip2, ip3)); };
+
     IPAddress subnet() { return subnetIp; };
     void subnet(IPAddress _ip);
     void subnet(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { subnet(IPAddress(ip0, ip1, ip2, ip3)); };
+
     IPAddress gateway() { return gatewayIp; };
     void gateway(IPAddress _ip);
     void gateway(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { gateway(IPAddress(ip0, ip1, ip2, ip3)); };
@@ -109,15 +114,19 @@ public:
 
     virtual bool isBusy() { return busy; };
     virtual void isBusy(bool val) { busy = val; };
+
     void setBusy() { busy = true; };
     void resetBusy() { busy = false; };
 
-    virtual void pool(){};
     virtual bool isReady() { return false; };
+
     virtual uint8_t type() { return FLPROG_ANON_INTERFACE; }
+
     virtual FLProgAbstractTcpServer *getServer(int port) = 0;
     virtual Client *getClient() = 0;
+
     virtual bool isImitation() { return true; }
+
     bool canStartServer() { return true; };
 
 protected:
