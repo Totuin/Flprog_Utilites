@@ -1,60 +1,5 @@
 #include "flprogUtilites.h"
 
-//------------------FLProgStream-----------------
-
-int FLProgStream::available()
-{
-    if (hasStream())
-    {
-        return stream()->available();
-    }
-    return 0;
-}
-
-void FLProgStream::flush()
-{
-    if (hasStream())
-    {
-        stream()->flush();
-    }
-}
-
-int FLProgStream::read()
-{
-    if (hasStream())
-    {
-        return stream()->read();
-    }
-    return 0;
-}
-
-size_t FLProgStream::write(uint8_t *buffer, uint8_t size)
-{
-    if (hasStream())
-    {
-        return stream()->write(buffer, size);
-    }
-    return 0;
-}
-
-size_t FLProgStream::write(uint8_t data)
-{
-    if (hasStream())
-    {
-        return stream()->write(data);
-    }
-    return 0;
-}
-
-int FLProgStream::peek()
-{
-    if (hasStream())
-    {
-        return stream()->peek();
-    }
-    return 0;
-}
-
 //--------------namespace flprog-------------------------
 
 uint32_t flprog::difference32(uint32_t start, uint32_t end)
@@ -309,6 +254,187 @@ int flprog::hexStrToInt(String str)
             result = result | (ch - 'A' + 10);
     }
     return result;
+}
+
+bool flprog::inet_aton(const char *address, IPAddress &result)
+{
+    uint16_t acc = 0;
+    uint8_t dots = 0;
+    while (*address)
+    {
+        char c = *address++;
+        if (c >= '0' && c <= '9')
+        {
+            acc = acc * 10 + (c - '0');
+            if (acc > 255)
+            {
+                return false;
+            }
+        }
+        else if (c == '.')
+        {
+            if (dots == 3)
+            {
+                return false;
+            }
+            result[dots++] = acc;
+            acc = 0;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    if (dots != 3)
+    {
+        return false;
+    }
+    result[3] = acc;
+    return true;
+}
+
+String flprog::flprogCodeName(uint8_t code)
+{
+    if (code == FLPROG_NOT_REDY_STATUS)
+    {
+        return "FLPROG_NOT_REDY_STATUS";
+    }
+    if (code == FLPROG_READY_STATUS)
+    {
+        return "FLPROG_READY_STATUS";
+    }
+    if (code == FLPROG_WAIT_STATUS)
+    {
+        return "FLPROG_WAIT_STATUS";
+    }
+    if (code == FLPROG_SUCCESS)
+    {
+        return "FLPROG_SUCCESS";
+    }
+    if (code == FLPROG_TIMED_OUT)
+    {
+        return "FLPROG_SUCCESS";
+    }
+    if (code == FLPROG_EHERNET_ERROR)
+    {
+        return "FLPROG_EHERNET_ERROR";
+    }
+    if (code == FLPROG_DNS_INVALID_SERVER)
+    {
+        return "FLPROG_DNS_INVALID_SERVER";
+    }
+    if (code == FLPROG_DNS_TRUNCATED)
+    {
+        return "FLPROG_DNS_TRUNCATED";
+    }
+    if (code == FLPROG_DNS_INVALID_RESPONSE)
+    {
+        return "FLPROG_DNS_INVALID_RESPONSE";
+    }
+    if (code == FLPROG_DNS_INVALID_UDP)
+    {
+        return "FLPROG_DNS_INVALID_UDP";
+    }
+    if (code == FLPROG_W5100_NOT_INIT_STATUS)
+    {
+        return "FLPROG_W5100_NOT_INIT_STATUS";
+    }
+    if (code == FLPROG_W5100_WHITE_INIT_STATUS)
+    {
+        return "FLPROG_W5100_WHITE_INIT_STATUS";
+    }
+    if (code == FLPROG_ETHERNET_LINK_UNKNOWN)
+    {
+        return "FLPROG_ETHERNET_LINK_UNKNOWN";
+    }
+    if (code == FLPROG_ETHERNET_LINK_ON)
+    {
+        return "FLPROG_ETHERNET_LINK_ON";
+    }
+    if (code == FLPROG_ETHERNET_LINK_OFF)
+    {
+        return "FLPROG_ETHERNET_LINK_OFF";
+    }
+    if (code == FLPROG_ETHERNET_NO_HARDWARE)
+    {
+        return "FLPROG_ETHERNET_NO_HARDWARE";
+    }
+    if (code == FLPROG_ETHERNET_W5100)
+    {
+        return "FLPROG_ETHERNET_W5100";
+    }
+    if (code == FLPROG_ETHERNET_W5200)
+    {
+        return "FLPROG_ETHERNET_W5200";
+    }
+    if (code == FLPROG_ETHERNET_W5500)
+    {
+        return "FLPROG_ETHERNET_W5500";
+    }
+    if (code == FLPROG_HARDWARE_INIT_STATUS)
+    {
+        return "FLPROG_HARDWARE_INIT_STATUS";
+    }
+    if (code == FLPROG_ETHERNET_STATUS_WHITE_DHCP)
+    {
+        return "FLPROG_ETHERNET_STATUS_WHITE_DHCP";
+    }
+    return "Unknown code";
+}
+
+//------------------FLProgStream-----------------
+
+int FLProgStream::available()
+{
+    if (hasStream())
+    {
+        return stream()->available();
+    }
+    return 0;
+}
+
+void FLProgStream::flush()
+{
+    if (hasStream())
+    {
+        stream()->flush();
+    }
+}
+
+int FLProgStream::read()
+{
+    if (hasStream())
+    {
+        return stream()->read();
+    }
+    return 0;
+}
+
+size_t FLProgStream::write(uint8_t *buffer, uint8_t size)
+{
+    if (hasStream())
+    {
+        return stream()->write(buffer, size);
+    }
+    return 0;
+}
+
+size_t FLProgStream::write(uint8_t data)
+{
+    if (hasStream())
+    {
+        return stream()->write(data);
+    }
+    return 0;
+}
+
+int FLProgStream::peek()
+{
+    if (hasStream())
+    {
+        return stream()->peek();
+    }
+    return 0;
 }
 
 //--------------------FLProgAbstractTcpInterface----------------

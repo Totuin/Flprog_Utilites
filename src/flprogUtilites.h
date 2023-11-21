@@ -35,12 +35,10 @@
 
 #define FLPROG_PORT_STOP_BITS_1 1
 #define FLPROG_PORT_STOP_BITS_2 2
-
 #define FLPROG_PORT_DATA_BITS_5 5
 #define FLPROG_PORT_DATA_BITS_6 6
 #define FLPROG_PORT_DATA_BITS_7 7
 #define FLPROG_PORT_DATA_BITS_8 8
-
 #define FLPROG_PORT_PARITY_NONE 0
 #define FLPROG_PORT_PARITY_EVEN 1
 #define FLPROG_PORT_PARITY_ODD 2
@@ -48,6 +46,37 @@
 #define FLPROG_ANON_INTERFACE 0
 #define FLPROG_ETHERNET_INTERFACE 1
 #define FLPROG_WIFI_INTERFACE 2
+
+#define FLPROG_NOT_REDY_STATUS 0
+#define FLPROG_READY_STATUS 1
+#define FLPROG_WAIT_STATUS 2
+#define FLPROG_SUCCESS 3
+#define FLPROG_TIMED_OUT 4
+
+#define FLPROG_EHERNET_ERROR 5
+#define FLPROG_DNS_INVALID_SERVER 6
+#define FLPROG_DNS_TRUNCATED 7
+#define FLPROG_DNS_INVALID_RESPONSE 8
+#define FLPROG_DNS_INVALID_UDP 9
+
+
+
+#define FLPROG_W5100_NOT_INIT_STATUS 10
+#define FLPROG_W5100_WHITE_INIT_STATUS 11
+#define FLPROG_W5100_INIT_STATUS 12
+
+#define FLPROG_ETHERNET_LINK_UNKNOWN 13
+#define FLPROG_ETHERNET_LINK_ON 14
+#define FLPROG_ETHERNET_LINK_OFF 15
+
+#define FLPROG_ETHERNET_NO_HARDWARE 16
+#define FLPROG_ETHERNET_W5100 17
+#define FLPROG_ETHERNET_W5200 18
+#define FLPROG_ETHERNET_W5500 19
+
+#define FLPROG_HARDWARE_INIT_STATUS 20
+#define FLPROG_ETHERNET_STATUS_WHITE_DHCP 21
+
 
 namespace flprog
 {
@@ -63,6 +92,10 @@ namespace flprog
     bool checkMacAddres(uint8_t *target);
     void parseMacAddressString(String value, uint8_t *array);
     int hexStrToInt(String str);
+
+    bool inet_aton(const char *aIPAddrString, IPAddress &aResult);
+    String flprogCodeName(uint8_t code);
+
 };
 
 class FLProgStream : public Stream
