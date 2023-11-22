@@ -59,7 +59,7 @@
 // Контсанты результатов выполнения операций
 #define FLPROG_ERROR 0
 #define FLPROG_SUCCESS 1
-#define FLPROG_WITE 1
+#define FLPROG_WITE 2
 
 // Константы статусов
 #define FLPROG_NOT_REDY_STATUS 0
