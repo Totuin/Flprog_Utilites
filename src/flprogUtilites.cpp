@@ -379,11 +379,14 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_SOKET_UDP_NOT_CORRECT_DATA_ERROR";
     }
-  if (code == FLPROG_ETHERNET_SOKET_SEND_TIMEOUT_ERROR)
+    if (code == FLPROG_ETHERNET_SOKET_SEND_TIMEOUT_ERROR)
     {
         return "FLPROG_ETHERNET_SOKET_SEND_TIMEOUT_ERROR";
     }
-
+    if (code == FLPROG_ETHERNET_LINK_OFF_ERROR)
+    {
+        return "FLPROG_ETHERNET_LINK_OFF_ERROR";
+    }
     return "Unknown error code";
 }
 

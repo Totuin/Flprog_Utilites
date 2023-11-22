@@ -4,6 +4,10 @@
 #include "IPAddress.h"
 #include "flprog_Blocks.h"
 #include "Client.h"
+//Базовые константы
+#define  FLPROG_INADDR_NONE IPAddress(0,0,0,0)
+
+
 
 // Константы для датчиков
 #define FLPROG_SENSOR_NOT_ERROR 0
@@ -89,6 +93,7 @@
 #define FLPROG_ETHERNET_SOKET_NOT_INIT_ERROR 13
 #define FLPROG_ETHERNET_SOKET_SEND_TIMEOUT_ERROR 14
 #define FLPROG_ETHERNET_SOKET_UDP_NOT_CORRECT_DATA_ERROR 15
+#define FLPROG_ETHERNET_LINK_OFF_ERROR 16
 
 
 #define FLPROG_ETHERNET_DHCP_NOT_CORRECT_RESULT_ERROR 20
