@@ -5,6 +5,7 @@
 #include "flprog_Blocks.h"
 #include "Client.h"
 
+// Константы для датчиков
 #define FLPROG_SENSOR_NOT_ERROR 0
 #define FLPROG_SENSOR_NOT_READY_ERROR 1
 #define FLPROG_SENSOR_DEVICE_NOT_FOUND_ERROR 2
@@ -16,10 +17,12 @@
 #define FLPROG_SENSOR_WAITING_READ_STEP 0
 #define FLPROG_SENSOR_WAITING_DELAY 1
 
+// Типы UART-ов
 #define FLPROG_USB_UART 0
 #define FLPROG_UART_UART 1
 #define FLPROG_USART_UART 2
 
+// Константы скоростей UART
 #define FLPROG_SPEED_300 0
 #define FLPROG_SPEED_600 1
 #define FLPROG_SPEED_1200 2
@@ -33,49 +36,72 @@
 #define FLPROG_SPEED_57600 10
 #define FLPROG_SPEED_115200 11
 
+// Константы Stop Bits UART
 #define FLPROG_PORT_STOP_BITS_1 1
 #define FLPROG_PORT_STOP_BITS_2 2
+
+// Константы Data Bits UART
 #define FLPROG_PORT_DATA_BITS_5 5
 #define FLPROG_PORT_DATA_BITS_6 6
 #define FLPROG_PORT_DATA_BITS_7 7
 #define FLPROG_PORT_DATA_BITS_8 8
+
+// Константы четности UART
 #define FLPROG_PORT_PARITY_NONE 0
 #define FLPROG_PORT_PARITY_EVEN 1
 #define FLPROG_PORT_PARITY_ODD 2
 
+// Типы сетевых интерфейсов
 #define FLPROG_ANON_INTERFACE 0
 #define FLPROG_ETHERNET_INTERFACE 1
 #define FLPROG_WIFI_INTERFACE 2
 
+// Контсанты результатов выполнения операций
+#define FLPROG_SUCCESS 3
+#define FLPROG_WITE 22
+#define FLPROG_ERROR 23
+
+// Константы статусов
 #define FLPROG_NOT_REDY_STATUS 0
 #define FLPROG_READY_STATUS 1
-#define FLPROG_WAIT_STATUS 2
-#define FLPROG_SUCCESS 3
-#define FLPROG_TIMED_OUT 4
+#define FLPROG_WAIT_ETHERNET_HARDWARE_INIT_STATUS 2
+#define FLPROG_WAIT_ETHERNET_DHCP_STATUS 23
+#define FLPROG_WAIT_ETHERNET_DNS_STATUS 4
+#define FLPROG_WAIT_ETHERNET_UDP_STATUS 5
 
-#define FLPROG_EHERNET_ERROR 5
-#define FLPROG_DNS_INVALID_SERVER 6
-#define FLPROG_DNS_TRUNCATED 7
-#define FLPROG_DNS_INVALID_RESPONSE 8
-#define FLPROG_DNS_INVALID_UDP 9
-
-
-
-#define FLPROG_W5100_NOT_INIT_STATUS 10
-#define FLPROG_W5100_WHITE_INIT_STATUS 11
-#define FLPROG_W5100_INIT_STATUS 12
-
+// Коды статуса линии Ethernet
 #define FLPROG_ETHERNET_LINK_UNKNOWN 13
 #define FLPROG_ETHERNET_LINK_ON 14
 #define FLPROG_ETHERNET_LINK_OFF 15
 
-#define FLPROG_ETHERNET_NO_HARDWARE 16
-#define FLPROG_ETHERNET_W5100 17
-#define FLPROG_ETHERNET_W5200 18
-#define FLPROG_ETHERNET_W5500 19
+// Коды чипов
+#define FLPROG_ETHERNET_NO_HARDWARE 0
+#define FLPROG_ETHERNET_W5100 51
+#define FLPROG_ETHERNET_W5200 52
+#define FLPROG_ETHERNET_W5500 55
 
-#define FLPROG_HARDWARE_INIT_STATUS 20
-#define FLPROG_ETHERNET_STATUS_WHITE_DHCP 21
+// Коды ошибок
+#define FLPROG_NOT_ERROR 0
+
+#define FLPROG_ETHERNET_HARDWARE_INIT_ERROR 10
+#define FLPROG_ETHERNET_INTERFACE_NOT_READY_ERROR 11
+#define FLPROG_ETHERNET_SOKET_INDEX_ERROR 12
+
+#define FLPROG_ETHERNET_DHCP_NOT_CORRECT_RESULT_ERROR 20
+#define FLPROG_ETHERNET_DHCP_DISCOVERY_TIMEOUT_ERROR 21
+#define FLPROG_ETHERNET_DHCP_DISCOVERY_ERROR_ID_ERROR 22
+#define FLPROG_ETHERNET_DHCP_REREQUEST_TIMEOUT_ERROR 23
+#define FLPROG_ETHERNET_DHCP_REREQUEST_ERROR_ID_ERROR 24
+#define FLPROG_ETHERNET_DHCP_REREQUEST_NAK_ERROR 25
+#define FLPROG_ETHERNET_DHCP_NOT_DEFINED_ERROR 26
+
+#define FLPROG_ETHERNET_DNS_NOT_READY_ERROR 30
+#define FLPROG_ETHERNET_DNS_INVALID_SERVER 31
+#define FLPROG_ETHERNET_DNS_TRUNCATED 32
+#define FLPROG_ETHERNET_DNS_INVALID_RESPONSE 33
+
+#define FLPROG_ETHERNET_UDP_SOKET_START_ERROR 40
+#define FLPROG_ETHERNET_UDP_TIMEOUT_ERROR 41
 
 
 namespace flprog
@@ -94,7 +120,9 @@ namespace flprog
     int hexStrToInt(String str);
 
     bool inet_aton(const char *aIPAddrString, IPAddress &aResult);
-    String flprogCodeName(uint8_t code);
+    void ipToArray(IPAddress ip, uint8_t *array);
+    String flprogErrorCodeName(uint8_t code);
+    String flprogStatusCodeName(uint8_t code);
 
 };
 
@@ -121,37 +149,35 @@ public:
     void setDhcp();
     void resetDhcp();
     void dhcpMode(bool val);
-    bool dhcpMode() { return isDhcp; };
+    bool dhcpMode() { return _isDhcp; };
 
     virtual void pool(){};
 
-    IPAddress localIP() { return ip; };
-    void localIP(IPAddress _ip);
+    IPAddress localIP() { return _ip; };
+    void localIP(IPAddress ip);
     void localIP(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { localIP(IPAddress(ip0, ip1, ip2, ip3)); };
 
-    IPAddress dns() { return dnsIp; };
-    void dns(IPAddress _ip);
+    IPAddress dns() { return _dnsIp; };
+    void dns(IPAddress ip);
     void dns(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { dns(IPAddress(ip0, ip1, ip2, ip3)); };
 
-    IPAddress subnet() { return subnetIp; };
-    void subnet(IPAddress _ip);
+    IPAddress subnet() { return _subnetIp; };
+    void subnet(IPAddress ip);
     void subnet(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { subnet(IPAddress(ip0, ip1, ip2, ip3)); };
 
-    IPAddress gateway() { return gatewayIp; };
-    void gateway(IPAddress _ip);
+    IPAddress gateway() { return _gatewayIp; };
+    void gateway(IPAddress ip);
     void gateway(uint8_t ip0, uint8_t ip1, uint8_t ip2, uint8_t ip3) { gateway(IPAddress(ip0, ip1, ip2, ip3)); };
 
     void mac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5);
-    uint8_t *mac() { return macAddress; };
+    uint8_t *mac() { return _macAddress; };
     virtual void mac(uint8_t *mac_address);
 
-    virtual bool isBusy() { return busy; };
-    virtual void isBusy(bool val) { busy = val; };
+    virtual bool isBusy() { return _busy; };
+    virtual void isBusy(bool busy) { _busy = busy; };
 
-    void setBusy() { busy = true; };
-    void resetBusy() { busy = false; };
-
-    virtual bool isReady() { return false; };
+    void setBusy() { _busy = true; };
+    void resetBusy() { _busy = false; };
 
     virtual uint8_t type() { return FLPROG_ANON_INTERFACE; }
 
@@ -160,17 +186,24 @@ public:
 
     virtual bool isImitation() { return true; }
 
-    bool canStartServer() { return true; };
+    bool canStartServer() { return false; };
+
+    uint8_t getStatus() { return _status; }
+    uint8_t getError() { return _errorCode; }
+    virtual bool isReady() { return _status == FLPROG_READY_STATUS; };
 
 protected:
-    bool busy = false;
-    bool isDhcp = true;
-    IPAddress ip = IPAddress(0, 0, 0, 0);
-    IPAddress dnsIp = IPAddress(0, 0, 0, 0);
-    IPAddress subnetIp = IPAddress(255, 255, 255, 0);
-    IPAddress gatewayIp = IPAddress(0, 0, 0, 0);
-    uint8_t macAddress[6] = {0, 0, 0, 0, 0, 0};
-    bool isNeedReconect = false;
+    bool _busy = false;
+    bool _isDhcp = true;
+    uint8_t _status = FLPROG_NOT_REDY_STATUS;
+    uint8_t _errorCode = FLPROG_NOT_ERROR;
+    bool _needUpdateData = false;
+    IPAddress _ip = INADDR_NONE;
+    IPAddress _dnsIp = INADDR_NONE;
+    IPAddress _subnetIp = IPAddress(255, 255, 255, 0);
+    IPAddress _gatewayIp = INADDR_NONE;
+    uint8_t _macAddress[6] = {0, 0, 0, 0, 0, 0};
+    bool _isNeedReconect = true;
 };
 
 class FLProgAbstractTcpServer

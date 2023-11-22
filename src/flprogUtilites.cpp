@@ -293,7 +293,88 @@ bool flprog::inet_aton(const char *address, IPAddress &result)
     return true;
 }
 
-String flprog::flprogCodeName(uint8_t code)
+void flprog::ipToArray(IPAddress ip, uint8_t *array)
+{
+    array[0] = ip[0];
+    array[1] = ip[1];
+    array[2] = ip[2];
+    array[3] = ip[3];
+}
+
+String flprog::flprogErrorCodeName(uint8_t code)
+{
+    if (code == FLPROG_NOT_ERROR)
+    {
+        return "FLPROG_NOT_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_HARDWARE_INIT_ERROR)
+    {
+        return "FLPROG_ETHERNET_HARDWARE_INIT_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_INTERFACE_NOT_READY_ERROR)
+    {
+        return "FLPROG_ETHERNET_INTERFACE_NOT_READY_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_SOKET_INDEX_ERROR)
+    {
+        return "FLPROG_ETHERNET_SOKET_INDEX_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_NOT_CORRECT_RESULT_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_NOT_CORRECT_RESULT_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_DISCOVERY_TIMEOUT_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_DISCOVERY_TIMEOUT_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_DISCOVERY_ERROR_ID_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_DISCOVERY_ERROR_ID_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_REREQUEST_TIMEOUT_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_REREQUEST_TIMEOUT_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_REREQUEST_ERROR_ID_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_REREQUEST_ERROR_ID_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_REREQUEST_NAK_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_REREQUEST_NAK_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DHCP_NOT_DEFINED_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_NOT_DEFINED_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DNS_NOT_READY_ERROR)
+    {
+        return "FLPROG_ETHERNET_DNS_NOT_READY_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_DNS_INVALID_SERVER)
+    {
+        return "FLPROG_ETHERNET_DNS_INVALID_SERVER";
+    }
+    if (code == FLPROG_ETHERNET_DNS_TRUNCATED)
+    {
+        return "FLPROG_ETHERNET_DNS_TRUNCATED";
+    }
+    if (code == FLPROG_ETHERNET_DNS_INVALID_RESPONSE)
+    {
+        return "FLPROG_ETHERNET_DNS_INVALID_RESPONSE";
+    }
+    if (code == FLPROG_ETHERNET_UDP_SOKET_START_ERROR)
+    {
+        return "FLPROG_ETHERNET_UDP_SOKET_START_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_UDP_TIMEOUT_ERROR)
+    {
+        return "FLPROG_ETHERNET_UDP_TIMEOUT_ERROR";
+    }
+    return "Unknown error code";
+}
+
+String flprog::flprogStatusCodeName(uint8_t code)
 {
     if (code == FLPROG_NOT_REDY_STATUS)
     {
@@ -303,85 +384,24 @@ String flprog::flprogCodeName(uint8_t code)
     {
         return "FLPROG_READY_STATUS";
     }
-    if (code == FLPROG_WAIT_STATUS)
+    if (code == FLPROG_WAIT_ETHERNET_HARDWARE_INIT_STATUS)
     {
-        return "FLPROG_WAIT_STATUS";
+        return "FLPROG_WAIT_ETHERNET_HARDWARE_INIT_STATUS";
     }
-    if (code == FLPROG_SUCCESS)
+    if (code == FLPROG_WAIT_ETHERNET_DHCP_STATUS)
     {
-        return "FLPROG_SUCCESS";
+        return "FLPROG_WAIT_ETHERNET_DHCP_STATUS";
     }
-    if (code == FLPROG_TIMED_OUT)
+    if (code == FLPROG_WAIT_ETHERNET_DNS_STATUS)
     {
-        return "FLPROG_SUCCESS";
+        return "FLPROG_WAIT_ETHERNET_DNS_STATUS";
     }
-    if (code == FLPROG_EHERNET_ERROR)
+    if (code == FLPROG_WAIT_ETHERNET_UDP_STATUS)
     {
-        return "FLPROG_EHERNET_ERROR";
+        return "FLPROG_WAIT_ETHERNET_UDP_STATUS";
     }
-    if (code == FLPROG_DNS_INVALID_SERVER)
-    {
-        return "FLPROG_DNS_INVALID_SERVER";
-    }
-    if (code == FLPROG_DNS_TRUNCATED)
-    {
-        return "FLPROG_DNS_TRUNCATED";
-    }
-    if (code == FLPROG_DNS_INVALID_RESPONSE)
-    {
-        return "FLPROG_DNS_INVALID_RESPONSE";
-    }
-    if (code == FLPROG_DNS_INVALID_UDP)
-    {
-        return "FLPROG_DNS_INVALID_UDP";
-    }
-    if (code == FLPROG_W5100_NOT_INIT_STATUS)
-    {
-        return "FLPROG_W5100_NOT_INIT_STATUS";
-    }
-    if (code == FLPROG_W5100_WHITE_INIT_STATUS)
-    {
-        return "FLPROG_W5100_WHITE_INIT_STATUS";
-    }
-    if (code == FLPROG_ETHERNET_LINK_UNKNOWN)
-    {
-        return "FLPROG_ETHERNET_LINK_UNKNOWN";
-    }
-    if (code == FLPROG_ETHERNET_LINK_ON)
-    {
-        return "FLPROG_ETHERNET_LINK_ON";
-    }
-    if (code == FLPROG_ETHERNET_LINK_OFF)
-    {
-        return "FLPROG_ETHERNET_LINK_OFF";
-    }
-    if (code == FLPROG_ETHERNET_NO_HARDWARE)
-    {
-        return "FLPROG_ETHERNET_NO_HARDWARE";
-    }
-    if (code == FLPROG_ETHERNET_W5100)
-    {
-        return "FLPROG_ETHERNET_W5100";
-    }
-    if (code == FLPROG_ETHERNET_W5200)
-    {
-        return "FLPROG_ETHERNET_W5200";
-    }
-    if (code == FLPROG_ETHERNET_W5500)
-    {
-        return "FLPROG_ETHERNET_W5500";
-    }
-    if (code == FLPROG_HARDWARE_INIT_STATUS)
-    {
-        return "FLPROG_HARDWARE_INIT_STATUS";
-    }
-    if (code == FLPROG_ETHERNET_STATUS_WHITE_DHCP)
-    {
-        return "FLPROG_ETHERNET_STATUS_WHITE_DHCP";
-    }
-    return "Unknown code";
+    return "Unknown status code";
 }
-
 //------------------FLProgStream-----------------
 
 int FLProgStream::available()
@@ -441,79 +461,79 @@ int FLProgStream::peek()
 
 void FLProgAbstractTcpInterface::setDhcp()
 {
-    if (isDhcp)
+    if (_isDhcp)
     {
         return;
     }
-    isDhcp = true;
-    isNeedReconect = true;
+    _isDhcp = true;
+    _isNeedReconect = true;
 }
 
 void FLProgAbstractTcpInterface::resetDhcp()
 {
-    if (!isDhcp)
+    if (!_isDhcp)
     {
         return;
     }
-    isDhcp = false;
-    isNeedReconect = true;
+    _isDhcp = false;
+    _isNeedReconect = true;
 }
 
 void FLProgAbstractTcpInterface::dhcpMode(bool val)
 {
-    if (isDhcp == val)
+    if (_isDhcp == val)
     {
         return;
     }
-    isDhcp = val;
-    isNeedReconect = true;
+    _isDhcp = val;
+    _isNeedReconect = true;
 }
 
-void FLProgAbstractTcpInterface::localIP(IPAddress _ip)
+void FLProgAbstractTcpInterface::localIP(IPAddress ip)
 {
-    if (ip == _ip)
+    if (_ip == ip)
     {
         return;
     }
-    ip = _ip;
-    isNeedReconect = true;
+    _ip = ip;
+    _isNeedReconect = true;
 }
 
-void FLProgAbstractTcpInterface::dns(IPAddress _ip)
+void FLProgAbstractTcpInterface::dns(IPAddress ip)
 {
-    if (dnsIp == _ip)
+    if (_dnsIp == ip)
     {
         return;
     }
-    dnsIp = _ip;
-    isNeedReconect = true;
+    _dnsIp = ip;
+    _isNeedReconect = true;
 }
 
-void FLProgAbstractTcpInterface::subnet(IPAddress _ip)
+void FLProgAbstractTcpInterface::subnet(IPAddress ip)
 {
-    if (subnetIp == _ip)
+    if (_subnetIp == ip)
     {
         return;
     }
-    subnetIp = _ip;
-    isNeedReconect = true;
+    _subnetIp = ip;
+    _isNeedReconect = true;
 }
 
-void FLProgAbstractTcpInterface::gateway(IPAddress _ip)
+void FLProgAbstractTcpInterface::gateway(IPAddress ip)
 {
-    if (gatewayIp == _ip)
+    if (_gatewayIp == _ip)
     {
         return;
     }
-    gatewayIp = _ip;
-    isNeedReconect = true;
+    _gatewayIp = _ip;
+    _isNeedReconect = true;
 }
 
 void FLProgAbstractTcpInterface::mac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5)
 {
-    if (flprog::applyMac(m0, m1, m2, m3, m4, m5, macAddress))
+    if (flprog::applyMac(m0, m1, m2, m3, m4, m5, _macAddress))
     {
-        isNeedReconect = true;
+        _isNeedReconect = true;
     }
 }
 
@@ -521,6 +541,6 @@ void FLProgAbstractTcpInterface::mac(uint8_t *mac_address)
 {
     for (uint8_t i = 0; i < 6; i++)
     {
-        mac_address[i] = macAddress[i];
+        mac_address[i] = _macAddress[i];
     }
 }
