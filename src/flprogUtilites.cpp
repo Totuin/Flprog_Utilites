@@ -387,7 +387,20 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_LINK_OFF_ERROR";
     }
-    return "Unknown error code";
+    if (code == FLPROG_ETHERNET_CLIENT_SOKET_START_ERROR)
+    {
+        return "FLPROG_ETHERNET_CLIENT_SOKET_START_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_CLIENT_CONNECT_TIMEOUT_ERROR)
+    {
+        return "FLPROG_ETHERNET_CLIENT_CONNECT_TIMEOUT_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_CLIENT_SOKET_CLOSED_ERROR)
+    {
+        return "FLPROG_ETHERNET_CLIENT_SOKET_CLOSED_ERROR";
+    }
+
+    return "Unknown error code: " + String(code);
 }
 
 String flprog::flprogStatusCodeName(uint8_t code)
@@ -416,7 +429,11 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_ETHERNET_UDP_STATUS";
     }
-    return "Unknown status code";
+    if (code == FLPROG_WAIT_ETHERNET_CLIENT_CONNECT_STATUS)
+    {
+        return "FLPROG_WAIT_ETHERNET_CLIENT_CONNECT_STATUS";
+    }
+    return "Unknown status code: " + String(code);
 }
 //------------------FLProgStream-----------------
 
