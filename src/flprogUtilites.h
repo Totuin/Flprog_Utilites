@@ -154,7 +154,7 @@ protected:
     virtual bool hasStream() { return stream() != 0; };
 };
 
-class FLProgAbstractTcpServer
+class FLProgAbstractTcpServer : public Print
 {
 public:
     virtual uint8_t pool() = 0;
@@ -209,6 +209,14 @@ public:
     uint8_t getStatus() { return _status; };
     uint8_t getError() { return _errorCode; };
     virtual bool isReady() { return _status == FLPROG_READY_STATUS; };
+
+    virtual uint8_t socetConnected(uint8_t socet) = 0;
+    virtual int readFromSocet(uint8_t socet) = 0;
+    virtual size_t writeToSocet(const uint8_t *buffer, size_t size, uint8_t socet) = 0;
+    virtual int availableSocet(uint8_t socet) = 0;
+    virtual void disconnecSocet(uint8_t socet) = 0;
+    virtual uint8_t getTCPSocet(uint16_t port) = 0;
+     virtual bool isListenSocet(uint8_t socet) = 0;
 
 protected:
     bool _busy = false;
