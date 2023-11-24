@@ -114,6 +114,9 @@
 #define FLPROG_ETHERNET_CLIENT_CONNECT_TIMEOUT_ERROR 51
 #define FLPROG_ETHERNET_CLIENT_SOKET_CLOSED_ERROR 52
 
+#define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
+#define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
+
 namespace flprog
 {
     bool isTimer(uint32_t startTime, uint32_t period);
@@ -151,7 +154,12 @@ protected:
     virtual bool hasStream() { return stream() != 0; };
 };
 
-class FLProgAbstractTcpServer;
+class FLProgAbstractTcpServer
+{
+public:
+    virtual uint8_t pool() = 0;
+    virtual uint8_t setPort(uint16_t port) = 0;
+};
 
 class FLProgAbstractTcpInterface
 {
@@ -189,7 +197,7 @@ public:
     void setBusy() { _busy = true; };
     void resetBusy() { _busy = false; };
 
-    virtual uint8_t type() { return FLPROG_ANON_INTERFACE; }
+    virtual uint8_t type() { return FLPROG_ANON_INTERFACE; };
 
     virtual FLProgAbstractTcpServer *getServer(int port) = 0;
     virtual Client *getClient() = 0;
@@ -198,8 +206,8 @@ public:
 
     bool canStartServer() { return false; };
 
-    uint8_t getStatus() { return _status; }
-    uint8_t getError() { return _errorCode; }
+    uint8_t getStatus() { return _status; };
+    uint8_t getError() { return _errorCode; };
     virtual bool isReady() { return _status == FLPROG_READY_STATUS; };
 
 protected:
@@ -214,13 +222,4 @@ protected:
     IPAddress _gatewayIp = INADDR_NONE;
     uint8_t _macAddress[6] = {0, 0, 0, 0, 0, 0};
     bool _isNeedReconect = true;
-};
-
-class FLProgAbstractTcpServer
-{
-public:
-    virtual void begin(){};
-    virtual void begin(uint16_t port) = 0;
-    virtual void setClient(){};
-    virtual Client *client() { return 0; };
 };

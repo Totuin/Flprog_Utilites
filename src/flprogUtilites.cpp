@@ -399,7 +399,14 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_CLIENT_SOKET_CLOSED_ERROR";
     }
-
+    if (code == FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR)
+    {
+        return "FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR";
+    }
+    if (code == FLPROG_ETHERNET_SERVER_SOKET_ERROR)
+    {
+        return "FLPROG_ETHERNET_SERVER_SOKET_ERROR";
+    }
     return "Unknown error code: " + String(code);
 }
 
