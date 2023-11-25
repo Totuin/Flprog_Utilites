@@ -3,9 +3,16 @@
 #include "RT_HW_BASE.h"
 #include "IPAddress.h"
 #include "flprog_Blocks.h"
-#include "Client.h"
+
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
+#ifndef FLPROG_ETHERNET_MAX_SOCK_NUM
+#if defined(RAMEND) && defined(RAMSTART) && ((RAMEND - RAMSTART) <= 2048)
+#define FLPROG_ETHERNET_MAX_SOCK_NUM 4
+#else
+#define FLPROG_ETHERNET_MAX_SOCK_NUM 8
+#endif
+#endif
 
 // Константы для датчиков
 #define FLPROG_SENSOR_NOT_ERROR 0
@@ -154,13 +161,6 @@ protected:
     virtual bool hasStream() { return stream() != 0; };
 };
 
-class FLProgAbstractTcpServer : public Print
-{
-public:
-    virtual uint8_t pool() = 0;
-    virtual uint8_t setPort(uint16_t port) = 0;
-};
-
 class FLProgAbstractTcpInterface
 {
 public:
@@ -168,8 +168,6 @@ public:
     void resetDhcp();
     void dhcpMode(bool val);
     bool dhcpMode() { return _isDhcp; };
-
-    virtual void pool(){};
 
     IPAddress localIP() { return _ip; };
     void localIP(IPAddress ip);
@@ -198,25 +196,38 @@ public:
     void resetBusy() { _busy = false; };
 
     virtual uint8_t type() { return FLPROG_ANON_INTERFACE; };
-
-    virtual FLProgAbstractTcpServer *getServer(int port) = 0;
-    virtual Client *getClient() = 0;
-
     virtual bool isImitation() { return true; }
-
-    bool canStartServer() { return false; };
 
     uint8_t getStatus() { return _status; };
     uint8_t getError() { return _errorCode; };
     virtual bool isReady() { return _status == FLPROG_READY_STATUS; };
 
-    virtual uint8_t socetConnected(uint8_t socet) = 0;
-    virtual int readFromSocet(uint8_t socet) = 0;
-    virtual size_t writeToSocet(const uint8_t *buffer, size_t size, uint8_t socet) = 0;
-    virtual int availableSocet(uint8_t socet) = 0;
-    virtual void disconnecSocet(uint8_t socet) = 0;
-    virtual uint8_t getTCPSocet(uint16_t port) = 0;
-     virtual bool isListenSocet(uint8_t socet) = 0;
+    // API обязательное для реализации наследниками
+    virtual void pool() = 0;
+    virtual uint8_t soketConnected(uint8_t soket) = 0;
+    virtual int readFromSoket(uint8_t soket) = 0;
+    virtual int readFromSoket(uint8_t soket, uint8_t *buf, int16_t len) = 0;
+    virtual size_t writeToSoket(const uint8_t *buffer, size_t size, uint8_t soket) = 0;
+    virtual int availableSoket(uint8_t soket) = 0;
+    virtual void disconnecSoket(uint8_t soket) = 0;
+    virtual uint8_t getTCPSoket(uint16_t port) = 0;
+    virtual uint8_t getUDPSoket(uint16_t port) = 0;
+    virtual bool isListenSoket(uint8_t soket) = 0;
+    virtual void closeSoket(uint8_t soket) = 0;
+    virtual uint8_t startUdpSoket(uint8_t soket, uint8_t *addr, uint16_t port) = 0;
+    virtual uint8_t sendUdpSoket(uint8_t soket) = 0;
+    virtual uint16_t bufferDataSoket(uint8_t soket, uint16_t offset, const uint8_t *buf, uint16_t len) = 0;
+    virtual int recvSoket(uint8_t soket, uint8_t *buf, int16_t len) = 0;
+    virtual uint8_t peekSoket(uint8_t soket) = 0;
+    virtual uint8_t beginMulticastSoket(IPAddress ip, uint16_t port) = 0;
+    virtual uint8_t connectSoket(uint8_t soket, IPAddress ip, uint16_t port) = 0;
+    virtual uint8_t isConnectStatusSoket(uint8_t soket) = 0;
+    virtual uint8_t isCosedStatusSoket(uint8_t soket) = 0;
+    virtual uint8_t peekSoket(uint8_t soket) = 0;
+    virtual uint8_t statusSoket(uint8_t soket) = 0;
+    virtual uint16_t localPortSoket(uint8_t soket) = 0;
+    virtual IPAddress remoteIPSoket(uint8_t soket) = 0;
+    virtual uint16_t remotePortSoket(uint8_t soket) = 0;
 
 protected:
     bool _busy = false;
