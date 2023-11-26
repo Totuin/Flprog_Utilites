@@ -102,12 +102,11 @@
 #define FLPROG_ETHERNET_LINK_OFF_ERROR 16
 
 #define FLPROG_ETHERNET_DHCP_NOT_CORRECT_RESULT_ERROR 20
-#define FLPROG_ETHERNET_DHCP_DISCOVERY_TIMEOUT_ERROR 21
+#define FLPROG_ETHERNET_DHCP_TIMEOUT_ERROR 21
 #define FLPROG_ETHERNET_DHCP_DISCOVERY_ERROR_ID_ERROR 22
-#define FLPROG_ETHERNET_DHCP_REREQUEST_TIMEOUT_ERROR 23
 #define FLPROG_ETHERNET_DHCP_REREQUEST_ERROR_ID_ERROR 24
-#define FLPROG_ETHERNET_DHCP_REREQUEST_NAK_ERROR 25
-#define FLPROG_ETHERNET_DHCP_NOT_DEFINED_ERROR 26
+#define FLPROG_ETHERNET_DHCP_REREQUEST_NAK_ERROR 24
+#define FLPROG_ETHERNET_DHCP_NOT_DEFINED_ERROR 25
 
 #define FLPROG_ETHERNET_DNS_NOT_READY_ERROR 30
 #define FLPROG_ETHERNET_DNS_INVALID_SERVER 31
@@ -145,19 +144,3 @@ namespace flprog
     String flprogStatusCodeName(uint8_t code);
 
 };
-
-class FLProgStream : public Stream
-{
-public:
-    virtual int available();
-    virtual int read();
-    virtual size_t write(uint8_t data);
-    virtual size_t write(uint8_t *buffer, uint8_t size);
-    virtual int peek();
-    virtual void flush();
-
-protected:
-    virtual Stream *stream() { return 0; };
-    virtual bool hasStream() { return stream() != 0; };
-};
-

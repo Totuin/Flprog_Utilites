@@ -323,18 +323,15 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_DHCP_NOT_CORRECT_RESULT_ERROR";
     }
-    if (code == FLPROG_ETHERNET_DHCP_DISCOVERY_TIMEOUT_ERROR)
+    if (code == FLPROG_ETHERNET_DHCP_TIMEOUT_ERROR)
     {
-        return "FLPROG_ETHERNET_DHCP_DISCOVERY_TIMEOUT_ERROR";
+        return "FLPROG_ETHERNET_DHCP_TIMEOUT_ERROR";
     }
     if (code == FLPROG_ETHERNET_DHCP_DISCOVERY_ERROR_ID_ERROR)
     {
         return "FLPROG_ETHERNET_DHCP_DISCOVERY_ERROR_ID_ERROR";
     }
-    if (code == FLPROG_ETHERNET_DHCP_REREQUEST_TIMEOUT_ERROR)
-    {
-        return "FLPROG_ETHERNET_DHCP_REREQUEST_TIMEOUT_ERROR";
-    }
+
     if (code == FLPROG_ETHERNET_DHCP_REREQUEST_ERROR_ID_ERROR)
     {
         return "FLPROG_ETHERNET_DHCP_REREQUEST_ERROR_ID_ERROR";
@@ -442,145 +439,4 @@ String flprog::flprogStatusCodeName(uint8_t code)
     }
     return "Unknown status code: " + String(code);
 }
-//------------------FLProgStream-----------------
 
-int FLProgStream::available()
-{
-    if (hasStream())
-    {
-        return stream()->available();
-    }
-    return 0;
-}
-
-void FLProgStream::flush()
-{
-    if (hasStream())
-    {
-        stream()->flush();
-    }
-}
-
-int FLProgStream::read()
-{
-    if (hasStream())
-    {
-        return stream()->read();
-    }
-    return 0;
-}
-
-size_t FLProgStream::write(uint8_t *buffer, uint8_t size)
-{
-    if (hasStream())
-    {
-        return stream()->write(buffer, size);
-    }
-    return 0;
-}
-
-size_t FLProgStream::write(uint8_t data)
-{
-    if (hasStream())
-    {
-        return stream()->write(data);
-    }
-    return 0;
-}
-
-int FLProgStream::peek()
-{
-    if (hasStream())
-    {
-        return stream()->peek();
-    }
-    return 0;
-}
-
-//--------------------FLProgAbstractTcpInterface----------------
-
-void FLProgAbstractTcpInterface::setDhcp()
-{
-    if (_isDhcp)
-    {
-        return;
-    }
-    _isDhcp = true;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::resetDhcp()
-{
-    if (!_isDhcp)
-    {
-        return;
-    }
-    _isDhcp = false;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::dhcpMode(bool val)
-{
-    if (_isDhcp == val)
-    {
-        return;
-    }
-    _isDhcp = val;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::localIP(IPAddress ip)
-{
-    if (_ip == ip)
-    {
-        return;
-    }
-    _ip = ip;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::dns(IPAddress ip)
-{
-    if (_dnsIp == ip)
-    {
-        return;
-    }
-    _dnsIp = ip;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::subnet(IPAddress ip)
-{
-    if (_subnetIp == ip)
-    {
-        return;
-    }
-    _subnetIp = ip;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::gateway(IPAddress ip)
-{
-    if (_gatewayIp == _ip)
-    {
-        return;
-    }
-    _gatewayIp = _ip;
-    _isNeedReconect = true;
-}
-
-void FLProgAbstractTcpInterface::mac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5)
-{
-    if (flprog::applyMac(m0, m1, m2, m3, m4, m5, _macAddress))
-    {
-        _isNeedReconect = true;
-    }
-}
-
-void FLProgAbstractTcpInterface::mac(uint8_t *mac_address)
-{
-    for (uint8_t i = 0; i < 6; i++)
-    {
-        mac_address[i] = _macAddress[i];
-    }
-}
