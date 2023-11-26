@@ -303,6 +303,9 @@ void flprog::ipToArray(IPAddress ip, uint8_t *array)
 
 String flprog::flprogErrorCodeName(uint8_t code)
 {
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    return String(code);
+#else
     if (code == FLPROG_NOT_ERROR)
     {
         return "FLPROG_NOT_ERROR";
@@ -405,10 +408,14 @@ String flprog::flprogErrorCodeName(uint8_t code)
         return "FLPROG_ETHERNET_SERVER_SOKET_ERROR";
     }
     return "Unknown error code: " + String(code);
+#endif
 }
 
 String flprog::flprogStatusCodeName(uint8_t code)
 {
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    return String(code);
+#else
     if (code == FLPROG_NOT_REDY_STATUS)
     {
         return "FLPROG_NOT_REDY_STATUS";
@@ -438,5 +445,5 @@ String flprog::flprogStatusCodeName(uint8_t code)
         return "FLPROG_WAIT_ETHERNET_CLIENT_CONNECT_STATUS";
     }
     return "Unknown status code: " + String(code);
+#endif
 }
-

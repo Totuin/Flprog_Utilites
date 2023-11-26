@@ -1,8 +1,18 @@
 #pragma once
 #include <Arduino.h>
-#include "RT_HW_BASE.h"
 #include "IPAddress.h"
+
+
+#ifdef ARDUINO_ARCH_AVR
+#if !(defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega640__) || defined(__AVR_ATmega641__) || defined(ARDUINO_AVR_MEGA2560))
+#define FLPROG_COMPACT_LIBRARY_MODE
+#endif
+#endif
+
 #include "flprog_Blocks.h"
+#ifndef FLPROG_COMPACT_LIBRARY_MODE
+#include "RT_HW_BASE.h"
+#endif
 
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
