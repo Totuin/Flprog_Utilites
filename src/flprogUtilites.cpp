@@ -295,10 +295,10 @@ bool flprog::inet_aton(const char *address, IPAddress &result)
 
 void flprog::ipToArray(IPAddress ip, uint8_t *array)
 {
-    array[0] = ip[0];
-    array[1] = ip[1];
-    array[2] = ip[2];
-    array[3] = ip[3];
+    for (uint8_t i = 0; i < 4; i++)
+    {
+        array[i] = ip[i];
+    }
 }
 
 String flprog::flprogErrorCodeName(uint8_t code)
