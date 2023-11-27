@@ -444,6 +444,19 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_ETHERNET_CLIENT_CONNECT_STATUS";
     }
+    if (code == FLPROG_WAIT_ETHERNET_LINK_ON_STATUS)
+    {
+        return "FLPROG_WAIT_ETHERNET_LINK_ON_STATUS";
+    }
+    if (code == FLPROG_ETHERNET_HARDWARE_INIT_STATUS)
+    {
+        return "FLPROG_ETHERNET_HARDWARE_INIT_STATUS";
+    }
+    if (code == FLPROG_WAIT_ETHERNET_CONNECT_STATUS)
+    {
+        return "FLPROG_WAIT_ETHERNET_CONNECT_STATUS";
+    }
+
     return "Unknown status code: " + String(code);
 #endif
 }
