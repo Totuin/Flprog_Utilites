@@ -160,5 +160,6 @@ namespace flprog
     void ipToArray(IPAddress ip, uint8_t *array);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
+    void printConsole();
 
 };
