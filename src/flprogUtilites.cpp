@@ -464,14 +464,17 @@ String flprog::flprogStatusCodeName(uint8_t code)
 #endif
 }
 
-void flprog::printConsole()
+void flprog::printConsole(String title)
 {
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
     RT_HW_Base.consoleBegin();
     if (RT_HW_Base.consoleHead())
     {
         RT_HW_Base.consoleCR(3);
-        RT_HW_Base.consoleHead(String(F("BASIC TEST №2(Вывод на консоль)")), '=');
+        if (title.length() > 0)
+        {
+            RT_HW_Base.consoleHead(title, '=');
+        }
         RT_HW_Base.consoleHead(String(F("Main parameters")), '-');
         RT_HW_Base.mess.modePin = 'T';
         RT_HW_Base.consoleBoardGeneral();
@@ -482,7 +485,7 @@ void flprog::printConsole()
         RT_HW_Base.consoleBoardAdd();
         RT_HW_Base.consoleHead(String(F("Task parameters")));
         RT_HW_Base.consoleShedulerParameters();
-        // RT_HW_Base.consoleHead(String(F("PGM array"))); 
+        // RT_HW_Base.consoleHead(String(F("PGM array")));
         // RT_HW_Base.mess.modePin='T'; RT_HW_Base.consoleFromPGM();
         RT_HW_Base.consoleHead(String(F("Available pins")));
         RT_HW_Base.mess.modePin = 'A';
@@ -494,7 +497,7 @@ void flprog::printConsole()
         RT_HW_Base.mess.modePin = 'T';
         RT_HW_Base.consolePinsSystem();
         RT_HW_Base.consolePinsTest();
-        // RT_HW_Base.consoleHead(String(F("Scan i2c")));   
+        // RT_HW_Base.consoleHead(String(F("Scan i2c")));
         // RT_HW_Base.mess.modePin='T'; RT_HW_Base.i2cScanBus(0);
         RT_HW_Base.consoleLine('+');
     }

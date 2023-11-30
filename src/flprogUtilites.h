@@ -107,7 +107,6 @@
 #define FLPROG_ETHERNET_W5200 52
 #define FLPROG_ETHERNET_W5500 55
 
-
 // Коды ошибок
 #define FLPROG_NOT_ERROR 0
 
@@ -160,6 +159,6 @@ namespace flprog
     void ipToArray(IPAddress ip, uint8_t *array);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
-    void printConsole();
+    void printConsole(String title = "");
 
 };
