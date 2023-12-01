@@ -407,6 +407,10 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_SERVER_SOKET_ERROR";
     }
+    if (code == FLPROG_ETHERNET_DHCP_NOT_READY_ERROR)
+    {
+        return "FLPROG_ETHERNET_DHCP_NOT_READY_ERROR";
+    }
     return "Unknown error code: " + String(code);
 #endif
 }
@@ -468,8 +472,8 @@ void flprog::printConsole(String title)
 {
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
     RT_HW_Base.consoleBegin();
-    if (RT_HW_Base.consoleHead())
-    {
+  //  if (RT_HW_Base.consoleHead())
+  // {
         RT_HW_Base.consoleCR(3);
         if (title.length() > 0)
         {
@@ -500,6 +504,6 @@ void flprog::printConsole(String title)
         // RT_HW_Base.consoleHead(String(F("Scan i2c")));
         // RT_HW_Base.mess.modePin='T'; RT_HW_Base.i2cScanBus(0);
         RT_HW_Base.consoleLine('+');
-    }
+   // }
 #endif
 }
