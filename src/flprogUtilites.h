@@ -151,6 +151,15 @@ namespace flprog
     uint8_t codeFromSpeed(int32_t speed);
     int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
 
+    void beginUart(uint8_t number);
+    void endUart(uint8_t number);
+    int availableUart(uint8_t number);
+    uint8_t readUart(uint8_t number);
+    void writeUart(uint8_t val, uint8_t number);
+    void writeUart(uint8_t *buffer, uint16_t size, uint8_t number);
+    uint32_t getSpeedUart(uint8_t number);
+
+
     bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
     bool checkMacAddres(uint8_t *target);
     void parseMacAddressString(String value, uint8_t *array);
@@ -166,13 +175,6 @@ namespace flprog
 
 /*
  RT_HW_Base.
-
-uartBegin(uint8_t n)
-uartEnd(uint8_t num)
-
-uartAvailable(uint8_t n)
-uartRead(uint8_t n)
-uartWrite(uint8_t val, uint8_t n)
 uartPrint( String str,uint8_t n)
 
 void uartSetSpeed(uint32_t speed, uint8_t num = 0)
@@ -191,7 +193,7 @@ void uartSetParity(uint8_t vr, uint8_t num = 0)
 uint32_t uartGetDataBit(uint8_t num = 0)
 uint32_t uartGetParity(uint8_t num = 0)
 uint32_t uartGetStopBit(uint8_t num = 0)
-uint32_t uartGetSpeed(uint8_t num = 0)
+
 void uartSetPinRX(uint8_t rx, uint8_t num = 0)
 void uartSetPinTX(uint8_t tx, uint8_t num = 0)
 uint8_t uartGetPinRX(uint8_t num = 0)
