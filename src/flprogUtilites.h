@@ -163,3 +163,38 @@ namespace flprog
     void printConsole(String title = "");
 
 };
+
+/*
+ RT_HW_Base.
+
+uartBegin(uint8_t n)
+uartEnd(uint8_t num)
+
+uartAvailable(uint8_t n)
+uartRead(uint8_t n)
+uartWrite(uint8_t val, uint8_t n)
+uartPrint( String str,uint8_t n)
+
+void uartSetSpeed(uint32_t speed, uint8_t num = 0)
+
+void uartSetPins(uint8_t rx, uint8_t tx, uint8_t bus)
+
+
+void uartSetConfig(uint32_t config, uint8_t num = 0)
+
+void uartSetDataBit(uint8_t vr, uint8_t num = 0)
+
+void uartSetStopBit(uint8_t vr, uint8_t num = 0)
+
+void uartSetParity(uint8_t vr, uint8_t num = 0)
+
+uint32_t uartGetDataBit(uint8_t num = 0)
+uint32_t uartGetParity(uint8_t num = 0)
+uint32_t uartGetStopBit(uint8_t num = 0)
+uint32_t uartGetSpeed(uint8_t num = 0)
+void uartSetPinRX(uint8_t rx, uint8_t num = 0)
+void uartSetPinTX(uint8_t tx, uint8_t num = 0)
+uint8_t uartGetPinRX(uint8_t num = 0)
+uint8_t uartGetPinTX(uint8_t num = 0)
+
+*/
