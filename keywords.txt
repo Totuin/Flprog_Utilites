@@ -10,11 +10,15 @@ flprog	KEYWORD1
 # Methods and Functions (KEYWORD2)
 #######################################
 applyMac	KEYWORD2
+availableUart	KEYWORD2
+beginUart	KEYWORD2
 checkMacAddres	KEYWORD2
 codeFromSpeed	KEYWORD2
 difference32	KEYWORD2
+endUart	KEYWORD2
 flprogErrorCodeName	KEYWORD2
 flprogStatusCodeName	KEYWORD2
+getSpeedUart	KEYWORD2
 hexStrToInt	KEYWORD2
 inet_aton	KEYWORD2
 ipToArray	KEYWORD2
@@ -22,9 +26,11 @@ isTimer	KEYWORD2
 isTimerMicros	KEYWORD2
 parseMacAddressString	KEYWORD2
 printConsole	KEYWORD2
+readUart	KEYWORD2
 serialCodeForParametrs	KEYWORD2
 speedFromCode	KEYWORD2
 timeBack	KEYWORD2
+writeUart	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
