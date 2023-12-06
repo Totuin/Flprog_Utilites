@@ -16,7 +16,7 @@ struct FLProgCompactUartStruct
     uint32_t speed = 9600;
     uint8_t dataBit = 8;
     uint8_t stopBit = 1;
-     uint8_t parity = 0;
+    uint8_t parity = 0;
     uint8_t status = 0;
 };
 #else
@@ -25,6 +25,7 @@ struct FLProgCompactUartStruct
 
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
+
 #ifndef FLPROG_ETHERNET_MAX_SOCK_NUM
 #if defined(RAMEND) && defined(RAMSTART) && ((RAMEND - RAMSTART) <= 2048)
 #define FLPROG_ETHERNET_MAX_SOCK_NUM 4
@@ -35,11 +36,11 @@ struct FLProgCompactUartStruct
 
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
 #define FLPROG_MODBUS_BUFER_SIZE 64
+#define FLPROG_HOST_NAME_LENGTH 64
 #else
-#define FLPROG_MODBUS_BUFER_SIZE 200
+#define FLPROG_MODBUS_BUFER_SIZE 250
+#define FLPROG_HOST_NAME_LENGTH 250
 #endif
-
-
 
 // Константы для датчиков
 #define FLPROG_SENSOR_NOT_ERROR 0
@@ -158,7 +159,6 @@ struct FLProgCompactUartStruct
 
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
-
 
 namespace flprog
 {
