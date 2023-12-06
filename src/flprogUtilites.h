@@ -9,7 +9,17 @@
 #endif
 
 #include "flprog_Blocks.h"
-#ifndef FLPROG_COMPACT_LIBRARY_MODE
+
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+struct FLProgCompactUartStruct
+{
+    uint32_t speed = 9600;
+    uint8_t dataBit = 8;
+    uint8_t stopBit = 1;
+     uint8_t parity = 0;
+    uint8_t status = 0;
+};
+#else
 #include "RT_HW_BASE.h"
 #endif
 
@@ -22,6 +32,14 @@
 #define FLPROG_ETHERNET_MAX_SOCK_NUM 8
 #endif
 #endif
+
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+#define FLPROG_MODBUS_BUFER_SIZE 64
+#else
+#define FLPROG_MODBUS_BUFER_SIZE 200
+#endif
+
+
 
 // Константы для датчиков
 #define FLPROG_SENSOR_NOT_ERROR 0
@@ -141,16 +159,20 @@
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
 
+
 namespace flprog
 {
-    bool isTimer(uint32_t startTime, uint32_t period);
+    //-------------Таймера------------------------
+    bool
+    isTimer(uint32_t startTime, uint32_t period);
     bool isTimerMicros(uint32_t startTime, uint32_t period);
     uint32_t difference32(uint32_t start, uint32_t end);
     uint32_t timeBack(uint32_t value);
-    uint32_t speedFromCode(byte code);
+
+    //-----------Uart---------------------------------------
+    uint32_t speedFromCode(uint8_t code);
     uint8_t codeFromSpeed(int32_t speed);
     int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
-
     void beginUart(uint8_t number);
     void endUart(uint8_t number);
     int availableUart(uint8_t number);
@@ -158,8 +180,21 @@ namespace flprog
     void writeUart(uint8_t val, uint8_t number);
     void writeUart(uint8_t *buffer, uint16_t size, uint8_t number);
     uint32_t getSpeedUart(uint8_t number);
+    void setSpeedUart(uint32_t speed, uint8_t number);
+    uint8_t getStatusUart(uint8_t number);
+    uint8_t getDataBitUart(uint8_t number);
+    void setDataBitUart(uint8_t value, uint8_t number);
+    uint8_t getStopBitUart(uint8_t number);
+    void setStopBitUart(uint8_t value, uint8_t number);
+    uint8_t getParityUart(uint8_t number);
+    void setParityUart(uint8_t value, uint8_t number);
+    uint8_t getPinRxUart(uint8_t number);
+    void setPinRxUart(uint8_t pin, uint8_t number);
+    uint8_t getPinTxUart(uint8_t number);
+    void setPinTxUart(uint8_t pin, uint8_t number);
+    void setPinsUart(uint8_t pinRx, uint8_t pinTx, uint8_t number);
 
-
+    //---------------Сеть---------------------------------------------
     bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
     bool checkMacAddres(uint8_t *target);
     void parseMacAddressString(String value, uint8_t *array);
@@ -170,33 +205,8 @@ namespace flprog
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
     void printConsole(String title = "");
-
 };
 
 /*
- RT_HW_Base.
-uartPrint( String str,uint8_t n)
-
-void uartSetSpeed(uint32_t speed, uint8_t num = 0)
-
-void uartSetPins(uint8_t rx, uint8_t tx, uint8_t bus)
-
-
-void uartSetConfig(uint32_t config, uint8_t num = 0)
-
-void uartSetDataBit(uint8_t vr, uint8_t num = 0)
-
-void uartSetStopBit(uint8_t vr, uint8_t num = 0)
-
-void uartSetParity(uint8_t vr, uint8_t num = 0)
-
-uint32_t uartGetDataBit(uint8_t num = 0)
-uint32_t uartGetParity(uint8_t num = 0)
-uint32_t uartGetStopBit(uint8_t num = 0)
-
-void uartSetPinRX(uint8_t rx, uint8_t num = 0)
-void uartSetPinTX(uint8_t tx, uint8_t num = 0)
-uint8_t uartGetPinRX(uint8_t num = 0)
-uint8_t uartGetPinTX(uint8_t num = 0)
-
+ RT_HW_Base.void uartSetConfig(uint32_t config, uint8_t num = 0)
 */

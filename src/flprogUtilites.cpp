@@ -1,43 +1,284 @@
+
 #include "flprogUtilites.h"
 
-//--------------namespace flprog-------------------------
+/*
+---------------------------------------
+            namespace flprog
+---------------------------------------
+*/
+
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+static FLProgCompactUartStruct flprogCompactUart;
+#endif
+
+// ----------------Управление Uart---------
 void flprog::beginUart(uint8_t number)
 {
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    Serial.begin(flprogCompactUart.speed);
+    flprogCompactUart.status = 1;
+#else
     RT_HW_Base.uartBegin(number);
-}
-
-int flprog::availableUart(uint8_t number)
-{
-    return RT_HW_Base.uartAvailable(number);
+#endif
 }
 
 void flprog::endUart(uint8_t number)
 {
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    Serial.end();
+    flprogCompactUart.status = 0;
+#else
     RT_HW_Base.uartEnd(number);
+
+#endif
+}
+
+int flprog::availableUart(uint8_t number)
+{
+    if (getStatusUart(number) == 0)
+    {
+        beginUart(number);
+        return 0;
+    }
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    return Serial.available();
+#else
+    return RT_HW_Base.uartAvailable(number);
+#endif
 }
 
 uint8_t flprog::readUart(uint8_t number)
 {
+    if (getStatusUart(number) == 0)
+    {
+        beginUart(number);
+        return 0;
+    }
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    return Serial.read();
+#else
     return RT_HW_Base.uartRead(number);
+#endif
 }
 
 void flprog::writeUart(uint8_t val, uint8_t number)
 {
+    if (getStatusUart(number) == 0)
+    {
+        beginUart(number);
+        return;
+    }
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    Serial.write(val);
+#else
     RT_HW_Base.uartWrite(val, number);
+#endif
 }
 
 void flprog::writeUart(uint8_t *buffer, uint16_t size, uint8_t number)
 {
+    if (getStatusUart(number) == 0)
+    {
+        beginUart(number);
+        return;
+    }
     for (uint16_t i = 0; i < size; i++)
     {
         writeUart(buffer[i], number);
     }
 }
 
+void flprog::setSpeedUart(uint32_t speed, uint8_t number)
+{
+    uint32_t newSpeed;
+    if (speed < 50)
+    {
+        newSpeed = speedFromCode(speed);
+    }
+    else
+    {
+        newSpeed = speed;
+    }
+
+    if (getSpeedUart(number) == newSpeed)
+    {
+        return;
+    }
+
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    flprogCompactUart.speed = speed;
+#else
+    RT_HW_Base.uartSetSpeed(newSpeed, number);
+#endif
+    endUart(number);
+}
+
+void flprog::setDataBitUart(uint8_t value, uint8_t number)
+{
+    if (getDataBitUart(number) == value)
+    {
+        return;
+    }
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    flprogCompactUart.dataBit = value;
+#else
+    RT_HW_Base.uartSetDataBit(value, number);
+#endif
+    endUart(number);
+}
+
+void flprog::setStopBitUart(uint8_t value, uint8_t number)
+{
+    if (getStopBitUart(number) == value)
+    {
+        return;
+    }
+
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    flprogCompactUart.stopBit = value;
+#else
+    RT_HW_Base.uartSetStopBit(value, number);
+#endif
+    endUart(number);
+}
+
+void flprog::setParityUart(uint8_t value, uint8_t number)
+{
+    if (getParityUart(number) == value)
+    {
+        return;
+    }
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    flprogCompactUart.parity = value;
+#else
+    RT_HW_Base.uartSetParity(value, number);
+#endif
+    endUart(number);
+}
+
+void flprog::setPinRxUart(uint8_t pin, uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)pin;
+    (void)number;
+#else
+    if (getPinRxUart(number) == pin)
+    {
+        return;
+    }
+    RT_HW_Base.uartSetPinRX(pin, number);
+    endUart(number);
+#endif
+}
+
+void flprog::setPinTxUart(uint8_t pin, uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)pin;
+    (void)number;
+#else
+    if (getPinTxUart(number) == pin)
+    {
+        return;
+    }
+    RT_HW_Base.uartSetPinTX(pin, number);
+    endUart(number);
+#endif
+}
+
+void flprog::setPinsUart(uint8_t pinRx, uint8_t pinTx, uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)pinRx;
+    (void)pinTx;
+    (void)number;
+#else
+    if (getPinRxUart(number) == pinRx)
+    {
+        if (getPinTxUart(number) == pinTx)
+        {
+            return;
+        }
+    }
+    RT_HW_Base.uartSetPins(pinRx, pinTx, number);
+    endUart(number);
+#endif
+}
+
 uint32_t flprog::getSpeedUart(uint8_t number)
 {
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return flprogCompactUart.speed;
+#else
     return RT_HW_Base.uartGetSpeed(number);
+#endif
 }
+
+uint8_t flprog::getDataBitUart(uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return flprogCompactUart.dataBit;
+#else
+    return RT_HW_Base.uartGetDataBit(number);
+#endif
+}
+
+uint8_t flprog::getStopBitUart(uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return flprogCompactUart.stopBit;
+
+#else
+    return RT_HW_Base.uartGetStopBit(number);
+#endif
+}
+
+uint8_t flprog::getParityUart(uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return flprogCompactUart.parity;
+#else
+    return RT_HW_Base.uartGetParity(number);
+#endif
+}
+
+uint8_t flprog::getPinRxUart(uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return 0;
+#else
+    return RT_HW_Base.uartGetPinRX(number);
+#endif
+}
+
+uint8_t flprog::getPinTxUart(uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return 1;
+#else
+    return RT_HW_Base.uartGetPinTX(number);
+#endif
+}
+
+uint8_t flprog::getStatusUart(uint8_t number)
+{
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)number;
+    return flprogCompactUart.status;
+#else
+    return RT_HW_Base.uartGetStatus(number);
+#endif
+}
+
+//-----------------------------Работа с таймерами---------------------------------------------
 
 uint32_t flprog::difference32(uint32_t start, uint32_t end)
 {
@@ -68,7 +309,8 @@ uint32_t flprog::timeBack(uint32_t value)
     return (0xfFFFFFFF - value) + current;
 }
 
-uint32_t flprog::speedFromCode(byte code)
+//------------------- Режимы уарт--------------------------------------
+uint32_t flprog::speedFromCode(uint8_t code)
 {
     switch (code)
     {
@@ -188,6 +430,7 @@ int flprog::serialCodeForParametrs(byte portDataBits, byte portStopBits, byte po
     return code;
 }
 
+//--------------------------------------Сетевые утилиты------------------------------------------------------
 bool flprog::applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target)
 {
     bool result = false;
@@ -507,7 +750,9 @@ String flprog::flprogStatusCodeName(uint8_t code)
 
 void flprog::printConsole(String title)
 {
-#ifndef FLPROG_COMPACT_LIBRARY_MODE
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)title;
+#else
     RT_HW_Base.consoleBegin();
     //  if (RT_HW_Base.consoleHead())
     // {
