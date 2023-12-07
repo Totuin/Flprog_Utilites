@@ -748,7 +748,10 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_ETHERNET_START_CLIENT_CONNECT_STATUS";
     }
-
+    if (code == FLPROG_WAIT_WEB_SERVER_READ_REQEST)
+    {
+        return "FLPROG_WAIT_WEB_SERVER_READ_REQEST";
+    }
     return "Unknown status code: " + String(code);
 #endif
 }
