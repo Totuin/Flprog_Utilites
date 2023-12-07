@@ -744,6 +744,11 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_WIFI_CLIENT_CONNECT_STATUS";
     }
+    if (code == FLPROG_WAIT_ETHERNET_START_CLIENT_CONNECT_STATUS)
+    {
+        return "FLPROG_WAIT_ETHERNET_START_CLIENT_CONNECT_STATUS";
+    }
+
     return "Unknown status code: " + String(code);
 #endif
 }
