@@ -3,9 +3,12 @@
 #include "IPAddress.h"
 
 #ifdef ARDUINO_ARCH_AVR
+#define FLPROG_WRITE_BUFFER_SIZE 100 
 #if !(defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega640__) || defined(__AVR_ATmega641__) || defined(ARDUINO_AVR_MEGA2560))
 #define FLPROG_COMPACT_LIBRARY_MODE
 #endif
+#else
+#define FLPROG_WRITE_BUFFER_SIZE 800 
 #endif
 
 #include "flprog_Blocks.h"
@@ -116,7 +119,7 @@ struct FLProgCompactUartStruct
 #define FLPROG_WAIT_WIFI_CLIENT_CONNECT_STATUS 10
 #define FLPROG_WAIT_ETHERNET_START_CLIENT_CONNECT_STATUS 11
 #define FLPROG_WAIT_WEB_SERVER_READ_REQEST 12
-#define FLPROG_WAIT_WEB_SERVER_SEND_BUFER 12
+#define FLPROG_WAIT_WEB_SERVER_SEND_ANSVER 13
 
 // Коды статуса линии Ethernet
 #define FLPROG_ETHERNET_LINK_UNKNOWN 13

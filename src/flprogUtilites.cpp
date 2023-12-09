@@ -752,9 +752,9 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_WEB_SERVER_READ_REQEST";
     }
-    if (code == FLPROG_WAIT_WEB_SERVER_SEND_BUFER)
+    if (code == FLPROG_WAIT_WEB_SERVER_SEND_ANSVER)
     {
-        return "FLPROG_WAIT_WEB_SERVER_SEND_BUFER";
+        return "FLPROG_WAIT_WEB_SERVER_SEND_ANSVER";
     }
     return "Unknown status code: " + String(code);
 #endif
