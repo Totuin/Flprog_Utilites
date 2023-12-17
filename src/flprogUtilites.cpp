@@ -592,7 +592,7 @@ String flprog::flprogErrorCodeName(uint8_t code)
     }
     if (code == FLPROG_ETHERNET_HARDWARE_INIT_ERROR)
     {
-        return "FLPROG_ETHERNET_HARDWARE_INIT_ERROR";
+        return "ETH_HW_INIT_ERR";
     }
     if (code == FLPROG_ETHERNET_INTERFACE_NOT_READY_ERROR)
     {
@@ -766,8 +766,11 @@ void flprog::printConsole(String title)
     (void)title;
 #else
     RT_HW_Base.consoleBegin();
-    //  if (RT_HW_Base.consoleHead())
-    // {
+    if (!RT_HW_Base.console.head)
+    {
+        return;
+    }
+
     RT_HW_Base.consoleCR(3);
     if (title.length() > 0)
     {
@@ -798,6 +801,6 @@ void flprog::printConsole(String title)
     // RT_HW_Base.consoleHead(String(F("Scan i2c")));
     // RT_HW_Base.mess.modePin='T'; RT_HW_Base.i2cScanBus(0);
     RT_HW_Base.consoleLine('+');
-    // }
+
 #endif
 }
