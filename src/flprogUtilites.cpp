@@ -756,6 +756,10 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_WEB_SERVER_SEND_ANSVER";
     }
+    if (code == FLPROG_WAIT_SEND_UDP_PACAGE)
+    {
+        return "FLPROG_WAIT_SEND_UDP_PACAGE";
+    }
     return "Unknown status code: " + String(code);
 #endif
 }

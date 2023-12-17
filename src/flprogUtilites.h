@@ -40,9 +40,11 @@ struct FLProgCompactUartStruct
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
 #define FLPROG_MODBUS_BUFER_SIZE 64
 #define FLPROG_HOST_NAME_LENGTH 64
+#define FLPROG_LED_PIN 13
 #else
 #define FLPROG_MODBUS_BUFER_SIZE 250
 #define FLPROG_HOST_NAME_LENGTH 250
+#define FLPROG_LED_PIN  RT_HW_Base.device.pin.led
 #endif
 
 // Константы для датчиков
@@ -120,6 +122,7 @@ struct FLProgCompactUartStruct
 #define FLPROG_WAIT_ETHERNET_START_CLIENT_CONNECT_STATUS 11
 #define FLPROG_WAIT_WEB_SERVER_READ_REQEST 12
 #define FLPROG_WAIT_WEB_SERVER_SEND_ANSVER 13
+#define FLPROG_WAIT_SEND_UDP_PACAGE 14
 
 // Коды статуса линии Ethernet
 #define FLPROG_ETHERNET_LINK_UNKNOWN 13
