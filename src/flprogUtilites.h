@@ -166,7 +166,7 @@ struct FLProgCompactUartStruct
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
 
-Serial.print('dssdaas');
+
 
 namespace flprog
 {
