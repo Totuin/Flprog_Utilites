@@ -581,6 +581,28 @@ void flprog::ipToArray(IPAddress ip, uint8_t *array)
     }
 }
 
+uint32_t flprog::ipToNumber(IPAddress value)
+{
+    uint8_t bufer[4] = {0, 0, 0, 0};
+    for (uint8_t i = 0; i < 4; i++)
+    {
+        bufer[i] = value[i];
+    }
+    unsigned long *y = (unsigned long *)&bufer;
+    return y[0];
+}
+
+IPAddress flprog::numberToIp(uint32_t value)
+{
+    IPAddress result;
+    uint8_t *x = (uint8_t *)&value;
+    for (uint8_t i = 0; i < 4; i++)
+    {
+        result[i] = x[i];
+    }
+    return result;
+}
+
 String flprog::flprogErrorCodeName(uint8_t code)
 {
 #ifdef FLPROG_COMPACT_LIBRARY_MODE

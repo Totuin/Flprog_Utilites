@@ -210,12 +210,16 @@ namespace flprog
     bool checkMacAddres(uint8_t *target);
     void parseMacAddressString(String value, uint8_t *array);
     int hexStrToInt(String str);
-
     bool inet_aton(const char *aIPAddrString, IPAddress &aResult);
     void ipToArray(IPAddress ip, uint8_t *array);
+    uint32_t ipToNumber(IPAddress value);
+    IPAddress numberToIp(uint32_t value);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
     void printConsole(String title = "");
+
+  
+
 };
 
 /*
