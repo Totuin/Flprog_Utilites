@@ -12,8 +12,12 @@ flprog	KEYWORD1
 applyMac	KEYWORD2
 availableUart	KEYWORD2
 beginUart	KEYWORD2
+checkIPAdressString	KEYWORD2
 checkMacAddres	KEYWORD2
+checkMacAddresString	KEYWORD2
 codeFromSpeed	KEYWORD2
+compareMacAddresWithString	KEYWORD2
+compareMacAddreses	KEYWORD2
 difference32	KEYWORD2
 endUart	KEYWORD2
 flprogErrorCodeName	KEYWORD2
@@ -29,7 +33,9 @@ hexStrToInt	KEYWORD2
 inet_aton	KEYWORD2
 ipToArray	KEYWORD2
 ipToNumber	KEYWORD2
+ipToString	KEYWORD2
 isTimerMicros	KEYWORD2
+macAddresToString	KEYWORD2
 numberToIp	KEYWORD2
 parseMacAddressString	KEYWORD2
 printConsole	KEYWORD2
@@ -43,6 +49,7 @@ setPinsUart	KEYWORD2
 setSpeedUart	KEYWORD2
 setStopBitUart	KEYWORD2
 speedFromCode	KEYWORD2
+stringToIp	KEYWORD2
 timeBack	KEYWORD2
 writeUart	KEYWORD2
 
