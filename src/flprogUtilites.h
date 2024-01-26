@@ -209,11 +209,18 @@ namespace flprog
     bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
     bool checkMacAddres(uint8_t *target);
     void parseMacAddressString(String value, uint8_t *array);
+    String macAddresToString(uint8_t *array);
+    bool checkMacAddresString(String value);
+    bool compareMacAddresWithString(uint8_t *array, String value);
+    bool compareMacAddreses(uint8_t *array1, uint8_t *array2);
     int hexStrToInt(String str);
     bool inet_aton(const char *aIPAddrString, IPAddress &aResult);
     void ipToArray(IPAddress ip, uint8_t *array);
     uint32_t ipToNumber(IPAddress value);
+    String ipToString(const IPAddress& ipAddress);
     IPAddress numberToIp(uint32_t value);
+    IPAddress stringToIp(String value);
+    bool checkIPAdressString(String value);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
     void printConsole(String title = "");

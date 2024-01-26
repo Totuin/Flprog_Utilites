@@ -509,11 +509,56 @@ void flprog::parseMacAddressString(String value, uint8_t *array)
     }
     if (flprog::checkMacAddres(buffer))
     {
-        for (byte i = 0; i < 6; i++)
+        for (uint8_t i = 0; i < 6; i++)
         {
             array[i] = buffer[i];
         }
     }
+}
+
+String flprog::macAddresToString(uint8_t *array)
+{
+    String result = "";
+    String temp = "";
+    for (uint8_t i = 0; i < 6; i++)
+    {
+        temp = String(array[i], HEX);
+        if (temp.length() < 2)
+        {
+            temp = String("0") + temp;
+        }
+        result = result + temp;
+        if (i < 5)
+        {
+            result = result + String(":");
+        }
+    }
+    result.toUpperCase();
+    return result;
+}
+
+bool flprog::checkMacAddresString(String value)
+{
+    uint8_t buffer[6] = {255, 255, 255, 255, 255, 255};
+    parseMacAddressString(value, buffer);
+    return checkMacAddres(buffer);
+}
+
+bool flprog::compareMacAddresWithString(uint8_t *array, String value)
+{
+    return value.equals(macAddresToString(array));
+}
+
+bool flprog::compareMacAddreses(uint8_t *array1, uint8_t *array2)
+{
+    for (uint8_t i = 0; i < 6; i++)
+    {
+        if (array1[i] != array2[i])
+        {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 int flprog::hexStrToInt(String str)
@@ -592,6 +637,11 @@ uint32_t flprog::ipToNumber(IPAddress value)
     return y[0];
 }
 
+String flprog::ipToString(const IPAddress &ipAddress)
+{
+    return String(ipAddress[0]) + String(".") + String(ipAddress[1]) + String(".") + String(ipAddress[2]) + String(".") + String(ipAddress[3]);
+}
+
 IPAddress flprog::numberToIp(uint32_t value)
 {
     IPAddress result;
@@ -601,6 +651,19 @@ IPAddress flprog::numberToIp(uint32_t value)
         result[i] = x[i];
     }
     return result;
+}
+
+bool flprog::checkIPAdressString(String value)
+{
+    IPAddress temp;
+    return temp.fromString(value);
+}
+
+IPAddress flprog::stringToIp(String value)
+{
+    IPAddress temp;
+    temp.fromString(value);
+    return temp;
 }
 
 String flprog::flprogErrorCodeName(uint8_t code)
