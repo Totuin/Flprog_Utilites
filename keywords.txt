@@ -34,6 +34,7 @@ inet_aton	KEYWORD2
 ipToArray	KEYWORD2
 ipToNumber	KEYWORD2
 ipToString	KEYWORD2
+isTimer	KEYWORD2
 isTimerMicros	KEYWORD2
 macAddresToString	KEYWORD2
 numberToIp	KEYWORD2

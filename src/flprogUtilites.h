@@ -3,12 +3,12 @@
 #include "IPAddress.h"
 
 #ifdef ARDUINO_ARCH_AVR
-#define FLPROG_WRITE_BUFFER_SIZE 100 
+#define FLPROG_WRITE_BUFFER_SIZE 100
 #if !(defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega640__) || defined(__AVR_ATmega641__) || defined(ARDUINO_AVR_MEGA2560))
 #define FLPROG_COMPACT_LIBRARY_MODE
 #endif
 #else
-#define FLPROG_WRITE_BUFFER_SIZE 800 
+#define FLPROG_WRITE_BUFFER_SIZE 800
 #endif
 
 #include "flprog_Blocks.h"
@@ -44,7 +44,7 @@ struct FLProgCompactUartStruct
 #else
 #define FLPROG_MODBUS_BUFER_SIZE 250
 #define FLPROG_HOST_NAME_LENGTH 250
-#define FLPROG_LED_PIN  RT_HW_Base.device.pin.led
+#define FLPROG_LED_PIN RT_HW_Base.device.pin.led
 #endif
 
 // Константы для датчиков
@@ -169,13 +169,12 @@ struct FLProgCompactUartStruct
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
 
-//gfgdfgfg
+// gfgdfgfg
 
 namespace flprog
 {
     //-------------Таймера------------------------
-    bool
-    isTimer(uint32_t startTime, uint32_t period);
+    bool isTimer(uint32_t startTime, uint32_t period);
     bool isTimerMicros(uint32_t startTime, uint32_t period);
     uint32_t difference32(uint32_t start, uint32_t end);
     uint32_t timeBack(uint32_t value);
@@ -217,15 +216,13 @@ namespace flprog
     bool inet_aton(const char *aIPAddrString, IPAddress &aResult);
     void ipToArray(IPAddress ip, uint8_t *array);
     uint32_t ipToNumber(IPAddress value);
-    String ipToString(const IPAddress& ipAddress);
+    String ipToString(const IPAddress &ipAddress);
     IPAddress numberToIp(uint32_t value);
     IPAddress stringToIp(String value);
     bool checkIPAdressString(String value);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
     void printConsole(String title = "");
-
-  
 
 };
 
