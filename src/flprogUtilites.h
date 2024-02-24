@@ -173,6 +173,10 @@ struct FLProgCompactUartStruct
 
 namespace flprog
 {
+    //-------------Конвертация------------------------
+    bool stringToBool(String value);
+    char stringToChar(String value);
+
     //-------------Таймера------------------------
     bool isTimer(uint32_t startTime, uint32_t period);
     bool isTimerMicros(uint32_t startTime, uint32_t period);

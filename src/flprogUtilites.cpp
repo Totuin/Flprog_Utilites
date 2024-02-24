@@ -7,11 +7,44 @@
 ---------------------------------------
 */
 
+//-------------Конвертация------------------------
+bool flprog::stringToBool(String value)
+{
+    if (value.length() == 0)
+    {
+        return false;
+    }
+    value.toLowerCase();
+    if (value.equals("true"))
+    {
+        return true;
+    }
+    if (value.equals("да"))
+    {
+        return true;
+    }
+    if (value.toInt() > 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+char flprog::stringToChar(String value)
+{
+    if (value.length() == 0)
+    {
+        return 0;
+    }
+    return value[0];
+}
+
+// ----------------Управление Uart---------
+
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
 static FLProgCompactUartStruct flprogCompactUart;
 #endif
 
-// ----------------Управление Uart---------
 void flprog::beginUart(uint8_t number)
 {
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
