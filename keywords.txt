@@ -50,6 +50,8 @@ setPinsUart	KEYWORD2
 setSpeedUart	KEYWORD2
 setStopBitUart	KEYWORD2
 speedFromCode	KEYWORD2
+stringToBool	KEYWORD2
+stringToChar	KEYWORD2
 stringToIp	KEYWORD2
 timeBack	KEYWORD2
 writeUart	KEYWORD2

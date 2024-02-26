@@ -6,6 +6,15 @@
             namespace flprog
 ---------------------------------------
 */
+//-------------Тестирование--------------------
+bool flprog::isNumberChar(char value)
+{
+    return ((value == '0') || (value == '1') || (value == '2') || (value == '3') || (value == '4') || (value == '5') || (value == '6') || (value == '7') || (value == '8') || (value == '9'));
+}
+bool flprog::isHexNumberChar(char value)
+{
+    return ((value == 'A') || (value == 'a') || (value == 'B') || (value == 'b') || (value == 'C') || (value == 'c') || (value == 'D') || (value == 'd') || (value == 'E') || (value == 'e') || (value == 'F') || (value == 'f'));
+}
 
 //-------------Конвертация------------------------
 bool flprog::stringToBool(String value)
@@ -37,6 +46,50 @@ char flprog::stringToChar(String value)
         return 0;
     }
     return value[0];
+}
+
+uint32_t flprog::hexStringToLong(String value)
+{
+    if (value.lengt() == 0)
+    {
+        return 0;
+    }
+    bool isNegaded = false;
+    int32_t decValue = 0;
+    int16_t nextInt;
+    String temp;
+    if (value[0] = '-')
+    {
+        temp = value.substring(1);
+        isNegaded = true;
+    }
+    else
+    {
+        temp = value;
+    }
+    for (int16_t i = 0; i < value.length(); i++)
+    {
+        nextInt = int(value.charAt(i));
+        if (nextInt >= 48 && nextInt <= 57)
+        {
+            nextInt = map(nextInt, 48, 57, 0, 9);
+        }
+        if (nextInt >= 65 && nextInt <= 70)
+        {
+            nextInt = map(nextInt, 65, 70, 10, 15);
+        }
+        if (nextInt >= 97 && nextInt <= 102)
+        {
+            nextInt = map(nextInt, 97, 102, 10, 15);
+        }
+        nextInt = constrain(nextInt, 0, 15);
+        decValue = (decValue * 16) + nextInt;
+    }
+    if (isNegaded)
+    {
+        decValue = 0 - decValue;
+    }
+    return decValue;
 }
 
 // ----------------Управление Uart---------
