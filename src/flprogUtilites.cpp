@@ -48,17 +48,15 @@ char flprog::stringToChar(String value)
     return value[0];
 }
 
-uint32_t flprog::hexStringToLong(String value)
+int32_t flprog::hexStringToLong(String value)
 {
-    if (value.lengt() == 0)
+    if (value.length() == 0)
     {
         return 0;
     }
     bool isNegaded = false;
-    int32_t decValue = 0;
-    int16_t nextInt;
     String temp;
-    if (value[0] = '-')
+    if (value.charAt(0) == '-')
     {
         temp = value.substring(1);
         isNegaded = true;
@@ -67,7 +65,23 @@ uint32_t flprog::hexStringToLong(String value)
     {
         temp = value;
     }
-    for (int16_t i = 0; i < value.length(); i++)
+    int32_t decValue = flprog::hexStringToUnsignedLong(temp);
+    if (isNegaded)
+    {
+        decValue = 0 - decValue;
+    }
+    return decValue;
+}
+
+uint32_t flprog::hexStringToUnsignedLong(String value)
+{
+    if (value.length() == 0)
+    {
+        return 0;
+    }
+    uint32_t decValue = 0;
+    int16_t nextInt;
+    for (uint16_t i = 0; i < value.length(); i++)
     {
         nextInt = int(value.charAt(i));
         if (nextInt >= 48 && nextInt <= 57)
@@ -85,11 +99,47 @@ uint32_t flprog::hexStringToLong(String value)
         nextInt = constrain(nextInt, 0, 15);
         decValue = (decValue * 16) + nextInt;
     }
+    return decValue;
+}
+
+int32_t flprog::binStringToLong(String value)
+{
+    if (value.length() == 0)
+    {
+        return 0;
+    }
+    bool isNegaded = false;
+    String temp;
+    if (value.charAt(0) == '-')
+    {
+        temp = value.substring(1);
+        isNegaded = true;
+    }
+    else
+    {
+        temp = value;
+    }
+    int32_t result = flprog::binStringToUnsignedLong(temp);
     if (isNegaded)
     {
-        decValue = 0 - decValue;
+        result = 0 - result;
     }
-    return decValue;
+    return result;
+}
+
+uint32_t flprog::binStringToUnsignedLong(String value)
+{
+    uint32_t result = 0;
+    uint8_t powNumber = 0;
+    for (int16_t i = (value.length() - 1); i >= 0; i--)
+    {
+        if ((value.charAt(i)) == '1')
+        {
+            result = result + (pow(2, powNumber));
+        }
+        powNumber++;
+    }
+    return result;
 }
 
 // ----------------Управление Uart---------

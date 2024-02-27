@@ -176,10 +176,14 @@ namespace flprog
     //-------------Тестирование--------------------
     bool isNumberChar(char value);
     bool isHexNumberChar(char value);
+
     //-------------Конвертация------------------------
     bool stringToBool(String value);
     char stringToChar(String value);
-    uint32_t hexStringToLong(String value);
+    int32_t hexStringToLong(String value);
+    uint32_t hexStringToUnsignedLong(String value);
+    int32_t binStringToLong(String value);
+    uint32_t binStringToUnsignedLong(String value);
 
     //-------------Таймера------------------------
     bool isTimer(uint32_t startTime, uint32_t period);
