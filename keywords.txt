@@ -12,6 +12,8 @@ flprog	KEYWORD1
 applyMac	KEYWORD2
 availableUart	KEYWORD2
 beginUart	KEYWORD2
+binStringToLong	KEYWORD2
+binStringToUnsignedLong	KEYWORD2
 checkIPAdressString	KEYWORD2
 checkMacAddres	KEYWORD2
 checkMacAddresString	KEYWORD2
@@ -30,10 +32,14 @@ getSpeedUart	KEYWORD2
 getStatusUart	KEYWORD2
 getStopBitUart	KEYWORD2
 hexStrToInt	KEYWORD2
+hexStringToLong	KEYWORD2
+hexStringToUnsignedLong	KEYWORD2
 inet_aton	KEYWORD2
 ipToArray	KEYWORD2
 ipToNumber	KEYWORD2
 ipToString	KEYWORD2
+isHexNumberChar	KEYWORD2
+isNumberChar	KEYWORD2
 isTimer	KEYWORD2
 isTimerMicros	KEYWORD2
 macAddresToString	KEYWORD2
