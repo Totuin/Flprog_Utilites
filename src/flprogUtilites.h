@@ -200,6 +200,7 @@ namespace flprog
     int availableUart(uint8_t number);
     uint8_t readUart(uint8_t number);
     void writeUart(uint8_t val, uint8_t number);
+    void printUart(String val, uint8_t number);
     void writeUart(uint8_t *buffer, uint16_t size, uint8_t number);
     uint32_t getSpeedUart(uint8_t number);
     void setSpeedUart(uint32_t speed, uint8_t number);

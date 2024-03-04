@@ -213,6 +213,14 @@ void flprog::writeUart(uint8_t val, uint8_t number)
 #endif
 }
 
+void flprog::printUart(String val, uint8_t number)
+{
+    for (uint16_t i = 0; i < val.length(); i++)
+    {
+        writeUart(((uint8_t)val.charAt(i)), number);
+    }
+}
+
 void flprog::writeUart(uint8_t *buffer, uint16_t size, uint8_t number)
 {
     if (getStatusUart(number) == 0)
