@@ -46,6 +46,7 @@ macAddresToString	KEYWORD2
 numberToIp	KEYWORD2
 parseMacAddressString	KEYWORD2
 printConsole	KEYWORD2
+printUart	KEYWORD2
 readUart	KEYWORD2
 serialCodeForParametrs	KEYWORD2
 setDataBitUart	KEYWORD2
