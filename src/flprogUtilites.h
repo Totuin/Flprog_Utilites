@@ -2,13 +2,30 @@
 #include <Arduino.h>
 #include "IPAddress.h"
 
+#ifdef ARDUINO_ARCH_ESP8266
+#define FLPROG_SOFTWARE_SERIAL
+#endif
+
 #ifdef ARDUINO_ARCH_AVR
+#define FLPROG_SOFTWARE_SERIAL
 #define FLPROG_WRITE_BUFFER_SIZE 100
 #if !(defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega640__) || defined(__AVR_ATmega641__) || defined(ARDUINO_AVR_MEGA2560))
 #define FLPROG_COMPACT_LIBRARY_MODE
 #endif
 #else
 #define FLPROG_WRITE_BUFFER_SIZE 800
+#endif
+
+#ifdef FLPROG_SOFTWARE_SERIAL
+#include <SoftwareSerial.h>
+struct FLProgSoftSerialStruct
+{
+    uint32_t speed = 115200;
+    uint8_t status = 0;
+    uint8_t rx = 4;
+    uint8_t tx = 0;
+    SoftwareSerial *port = 0;
+};
 #endif
 
 #include "flprog_Blocks.h"

@@ -148,8 +148,27 @@ uint32_t flprog::binStringToUnsignedLong(String value)
 static FLProgCompactUartStruct flprogCompactUart;
 #endif
 
+#ifdef FLPROG_SOFTWARE_SERIAL
+static FLProgSoftSerialStruct flprogSoftUart;
+#endif
+
 void flprog::beginUart(uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (flprogSoftUart.port == 0)
+        {
+            flprogSoftUart.port = new SoftwareSerial(flprogSoftUart.rx, flprogSoftUart.tx);
+        }
+        if (flprogSoftUart.status == 0)
+        {
+            flprogSoftUart.port->begin(flprogSoftUart.speed);
+            flprogSoftUart.status = 1;
+        }
+#endif
+        return;
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)number;
     Serial.begin(flprogCompactUart.speed);
@@ -161,6 +180,17 @@ void flprog::beginUart(uint8_t number)
 
 void flprog::endUart(uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (flprogSoftUart.port != 0)
+        {
+            flprogSoftUart.port->end();
+        }
+        flprogSoftUart.status = 0;
+#endif
+        return;
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)number;
     Serial.end();
@@ -178,6 +208,22 @@ int flprog::availableUart(uint8_t number)
         beginUart(number);
         return 0;
     }
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (flprogSoftUart.port == 0)
+        {
+            endUart(100);
+            return 0;
+        }
+        else
+        {
+            return flprogSoftUart.port->available();
+        }
+#else
+        return 0;
+#endif
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     return Serial.available();
 #else
@@ -192,6 +238,22 @@ uint8_t flprog::readUart(uint8_t number)
         beginUart(number);
         return 0;
     }
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (flprogSoftUart.port == 0)
+        {
+            endUart(100);
+            return 0;
+        }
+        else
+        {
+            return flprogSoftUart.port->read();
+        }
+#else
+        return 0;
+#endif
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     return Serial.read();
 #else
@@ -204,6 +266,21 @@ void flprog::writeUart(uint8_t val, uint8_t number)
     if (getStatusUart(number) == 0)
     {
         beginUart(number);
+        return;
+    }
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (flprogSoftUart.port == 0)
+        {
+            endUart(100);
+            return;
+        }
+        else
+        {
+            flprogSoftUart.port->write(val);
+        }
+#endif
         return;
     }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
@@ -250,7 +327,14 @@ void flprog::setSpeedUart(uint32_t speed, uint8_t number)
     {
         return;
     }
-
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        flprogSoftUart.speed = speed;
+        endUart(100);
+#endif
+        return;
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     flprogCompactUart.speed = speed;
 #else
@@ -261,6 +345,10 @@ void flprog::setSpeedUart(uint32_t speed, uint8_t number)
 
 void flprog::setDataBitUart(uint8_t value, uint8_t number)
 {
+    if (number == 100)
+    {
+        return;
+    }
     if (getDataBitUart(number) == value)
     {
         return;
@@ -275,6 +363,10 @@ void flprog::setDataBitUart(uint8_t value, uint8_t number)
 
 void flprog::setStopBitUart(uint8_t value, uint8_t number)
 {
+    if (number == 100)
+    {
+        return;
+    }
     if (getStopBitUart(number) == value)
     {
         return;
@@ -290,6 +382,10 @@ void flprog::setStopBitUart(uint8_t value, uint8_t number)
 
 void flprog::setParityUart(uint8_t value, uint8_t number)
 {
+    if (number == 100)
+    {
+        return;
+    }
     if (getParityUart(number) == value)
     {
         return;
@@ -304,6 +400,19 @@ void flprog::setParityUart(uint8_t value, uint8_t number)
 
 void flprog::setPinRxUart(uint8_t pin, uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (getPinRxUart(100) == pin)
+        {
+            return;
+        }
+        flprogSoftUart.rx = pin;
+        endUart(100);
+        flprogSoftUart.port = 0;
+#endif
+        return;
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)pin;
     (void)number;
@@ -319,6 +428,20 @@ void flprog::setPinRxUart(uint8_t pin, uint8_t number)
 
 void flprog::setPinTxUart(uint8_t pin, uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        if (getPinTxUart(100) == pin)
+        {
+            return;
+        }
+        flprogSoftUart.tx = pin;
+        endUart(100);
+        flprogSoftUart.port = 0;
+#endif
+        return;
+    }
+
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)pin;
     (void)number;
@@ -334,6 +457,14 @@ void flprog::setPinTxUart(uint8_t pin, uint8_t number)
 
 void flprog::setPinsUart(uint8_t pinRx, uint8_t pinTx, uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        setPinRxUart(pinRx, 100);
+        setPinTxUart(pinTx, 100);
+#endif
+        return;
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)pinRx;
     (void)pinTx;
@@ -353,6 +484,14 @@ void flprog::setPinsUart(uint8_t pinRx, uint8_t pinTx, uint8_t number)
 
 uint32_t flprog::getSpeedUart(uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        return flprogSoftUart.speed;
+#else
+        return 115200;
+#endif
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)number;
     return flprogCompactUart.speed;
@@ -394,6 +533,14 @@ uint8_t flprog::getParityUart(uint8_t number)
 
 uint8_t flprog::getPinRxUart(uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        return flprogSoftUart.rx;
+#else
+        return 0;
+#endif
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)number;
     return 0;
@@ -404,6 +551,14 @@ uint8_t flprog::getPinRxUart(uint8_t number)
 
 uint8_t flprog::getPinTxUart(uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        return flprogSoftUart.tx;
+#else
+        return 0;
+#endif
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)number;
     return 1;
@@ -414,6 +569,14 @@ uint8_t flprog::getPinTxUart(uint8_t number)
 
 uint8_t flprog::getStatusUart(uint8_t number)
 {
+    if (number == 100)
+    {
+#ifdef FLPROG_SOFTWARE_SERIAL
+        return flprogSoftUart.status;
+#else
+        return 0;
+#endif
+    }
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     (void)number;
     return flprogCompactUart.status;
