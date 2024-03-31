@@ -4,12 +4,18 @@
 #######################################
 # # Datatypes (KEYWORD1)
 #######################################
+FlprogAbstractUartExecutor	KEYWORD1
+FlprogBtUartExecutor	KEYWORD1
+FlprogSoftUartExecutor	KEYWORD1
+FlprogUartExecutor	KEYWORD1
 flprog	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 applyMac	KEYWORD2
+availableUart	KEYWORD2
+beginUart	KEYWORD2
 binStringToLong	KEYWORD2
 binStringToUnsignedLong	KEYWORD2
 checkIPAdressString	KEYWORD2
@@ -19,8 +25,16 @@ codeFromSpeed	KEYWORD2
 compareMacAddresWithString	KEYWORD2
 compareMacAddreses	KEYWORD2
 difference32	KEYWORD2
+endUart	KEYWORD2
 flprogErrorCodeName	KEYWORD2
 flprogStatusCodeName	KEYWORD2
+getDataBitUart	KEYWORD2
+getParityUart	KEYWORD2
+getPinRxUart	KEYWORD2
+getPinTxUart	KEYWORD2
+getSpeedUart	KEYWORD2
+getStatusUart	KEYWORD2
+getStopBitUart	KEYWORD2
 hexStrToInt	KEYWORD2
 hexStringToLong	KEYWORD2
 hexStringToUnsignedLong	KEYWORD2
@@ -36,19 +50,35 @@ macAddresToString	KEYWORD2
 numberToIp	KEYWORD2
 parseMacAddressString	KEYWORD2
 printConsole	KEYWORD2
+printUart	KEYWORD2
+readUart	KEYWORD2
 serialCodeForParametrs	KEYWORD2
+setBluetoothIsMasterName	KEYWORD2
+setBluetoothName	KEYWORD2
+setBluetoothTargetName	KEYWORD2
+setDataBitUart	KEYWORD2
+setParityUart	KEYWORD2
+setPinRxUart	KEYWORD2
+setPinTxUart	KEYWORD2
+setPinsUart	KEYWORD2
+setSpeedUart	KEYWORD2
+setStopBitUart	KEYWORD2
 speedFromCode	KEYWORD2
 stringToBool	KEYWORD2
 stringToChar	KEYWORD2
 stringToIp	KEYWORD2
 timeBack	KEYWORD2
+writeUart	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
 #######################################
 ARDUINO_ARCH_AVR	LITERAL1
+ARDUINO_ARCH_ESP32	LITERAL1
+ARDUINO_ARCH_ESP8266	LITERAL1
 ARDUINO_AVR_MEGA2560	LITERAL1
 FLPROG_ANON_INTERFACE	LITERAL1
+FLPROG_BLUETOOTH_SERIAL	LITERAL1
 FLPROG_COMPACT_LIBRARY_MODE	LITERAL1
 FLPROG_ERROR	LITERAL1
 FLPROG_ETHERNET_CLIENT_CONNECT_TIMEOUT_ERROR	LITERAL1
