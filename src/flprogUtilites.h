@@ -2,9 +2,12 @@
 #include <Arduino.h>
 #include "IPAddress.h"
 
-#ifdef ARDUINO_ARCH_ESP8266
-#define FLPROG_SOFTWARE_SERIAL
-#endif
+// #ifdef FLPROG_BLUETOOTH_SERIAL
+
+
+// #endif
+
+
 
 #ifdef ARDUINO_ARCH_AVR
 #define FLPROG_SOFTWARE_SERIAL
@@ -16,32 +19,11 @@
 #define FLPROG_WRITE_BUFFER_SIZE 800
 #endif
 
-#ifdef FLPROG_SOFTWARE_SERIAL
-#include <SoftwareSerial.h>
-struct FLProgSoftSerialStruct
-{
-    uint32_t speed = 115200;
-    uint8_t status = 0;
-    uint8_t rx = 4;
-    uint8_t tx = 0;
-    SoftwareSerial *port = 0;
-};
-#endif
-
-#include "flprog_Blocks.h"
-
-#ifdef FLPROG_COMPACT_LIBRARY_MODE
-struct FLProgCompactUartStruct
-{
-    uint32_t speed = 9600;
-    uint8_t dataBit = 8;
-    uint8_t stopBit = 1;
-    uint8_t parity = 0;
-    uint8_t status = 0;
-};
-#else
+#ifndef FLPROG_COMPACT_LIBRARY_MODE
 #include "RT_HW_BASE.h"
 #endif
+//#include "flprogUart.h"
+#include "flprog_Blocks.h"
 
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
@@ -75,40 +57,6 @@ struct FLProgCompactUartStruct
 #define FLPROG_SENSOR_CRC_ERROR 72
 #define FLPROG_SENSOR_WAITING_READ_STEP 0
 #define FLPROG_SENSOR_WAITING_DELAY 1
-
-// Типы UART-ов
-#define FLPROG_USB_UART 0
-#define FLPROG_UART_UART 1
-#define FLPROG_USART_UART 2
-
-// Константы скоростей UART
-#define FLPROG_SPEED_300 0
-#define FLPROG_SPEED_600 1
-#define FLPROG_SPEED_1200 2
-#define FLPROG_SPEED_2400 3
-#define FLPROG_SPEED_4800 4
-#define FLPROG_SPEED_9600 5
-#define FLPROG_SPEED_14400 6
-#define FLPROG_SPEED_19200 7
-#define FLPROG_SPEED_28800 8
-#define FLPROG_SPEED_38400 9
-#define FLPROG_SPEED_57600 10
-#define FLPROG_SPEED_115200 11
-
-// Константы Stop Bits UART
-#define FLPROG_PORT_STOP_BITS_1 1
-#define FLPROG_PORT_STOP_BITS_2 2
-
-// Константы Data Bits UART
-#define FLPROG_PORT_DATA_BITS_5 5
-#define FLPROG_PORT_DATA_BITS_6 6
-#define FLPROG_PORT_DATA_BITS_7 7
-#define FLPROG_PORT_DATA_BITS_8 8
-
-// Константы четности UART
-#define FLPROG_PORT_PARITY_NONE 0
-#define FLPROG_PORT_PARITY_EVEN 1
-#define FLPROG_PORT_PARITY_ODD 2
 
 // Типы сетевых интерфейсов
 #define FLPROG_ANON_INTERFACE 0
@@ -207,32 +155,6 @@ namespace flprog
     bool isTimerMicros(uint32_t startTime, uint32_t period);
     uint32_t difference32(uint32_t start, uint32_t end);
     uint32_t timeBack(uint32_t value);
-
-    //-----------Uart---------------------------------------
-    uint32_t speedFromCode(uint8_t code);
-    uint8_t codeFromSpeed(int32_t speed);
-    int serialCodeForParametrs(byte portDataBits, byte portStopBits, byte portParity);
-    void beginUart(uint8_t number);
-    void endUart(uint8_t number);
-    int availableUart(uint8_t number);
-    uint8_t readUart(uint8_t number);
-    void writeUart(uint8_t val, uint8_t number);
-    void printUart(String val, uint8_t number);
-    void writeUart(uint8_t *buffer, uint16_t size, uint8_t number);
-    uint32_t getSpeedUart(uint8_t number);
-    void setSpeedUart(uint32_t speed, uint8_t number);
-    uint8_t getStatusUart(uint8_t number);
-    uint8_t getDataBitUart(uint8_t number);
-    void setDataBitUart(uint8_t value, uint8_t number);
-    uint8_t getStopBitUart(uint8_t number);
-    void setStopBitUart(uint8_t value, uint8_t number);
-    uint8_t getParityUart(uint8_t number);
-    void setParityUart(uint8_t value, uint8_t number);
-    uint8_t getPinRxUart(uint8_t number);
-    void setPinRxUart(uint8_t pin, uint8_t number);
-    uint8_t getPinTxUart(uint8_t number);
-    void setPinTxUart(uint8_t pin, uint8_t number);
-    void setPinsUart(uint8_t pinRx, uint8_t pinTx, uint8_t number);
 
     //---------------Сеть---------------------------------------------
     bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
