@@ -2,6 +2,8 @@
 #include <Arduino.h>
 #include "flprogUartBase.h"
 
+#define FLPROG_BASE_SERIAL
+
 class FlprogUartExecutor : public FlprogAbstractUartExecutor
 {
 public:
