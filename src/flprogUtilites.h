@@ -208,7 +208,7 @@ namespace flprog
     bool checkIPAdressString(String value);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
-    void printConsole(String title = "");
+    //void printConsole(String title = "");
 
 };
 

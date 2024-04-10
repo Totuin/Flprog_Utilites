@@ -597,6 +597,7 @@ String flprog::flprogStatusCodeName(uint8_t code)
 #endif
 }
 
+/*
 void flprog::printConsole(String title)
 {
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
@@ -641,3 +642,4 @@ void flprog::printConsole(String title)
 
 #endif
 }
+*/
