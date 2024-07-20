@@ -21,6 +21,7 @@
 #endif
 // #include "flprogUart.h"
 #include "flprog_Blocks.h"
+#include "pin\FlprogPin.h"
 
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
