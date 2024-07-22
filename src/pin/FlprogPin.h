@@ -90,7 +90,15 @@ protected:
 #endif
 };
 
-#ifndef FLPROG_COMPACT_LIBRARY_MODE
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+class FlprogDacOutputPin
+{
+public:
+    FlprogDacOutputPin(uint8_t number) { (void)number; };
+    uint16_t analogRead() { return 0; };
+    void analogWrite(uint16_t value) { (void)value; };
+};
+#else
 class FlprogDacOutputPin
 {
 public:

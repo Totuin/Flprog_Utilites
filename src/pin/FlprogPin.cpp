@@ -12,22 +12,15 @@ bool FlprogAbstractDiscreteInputPin::checkInvert(bool value)
 }
 
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
-bool FlprogAbstractDiscreteInputPin::init()
+void FlprogAbstractDiscreteInputPin::init()
 {
     if (_pullMode == FLPROG_PULL_UP_MODE)
     {
-        pinMode(number, INPUT_PULLUP);
+        ::pinMode(_number, INPUT_PULLUP);
     }
     else
     {
-        if (_pullMode == FLPROG_PULL_DOWN_MODE)
-        {
-            pinMode(number, INPUT_PULLDOWN);
-        }
-        else
-        {
-            pinMode(number, INPUT);
-        }
+        ::pinMode(_number, INPUT);
     }
     _isInit = true;
 }
@@ -48,7 +41,7 @@ bool FlprogDiscreteInputPin::digitalRead()
     {
         init();
     }
-    return checkInvert(digitalRead(_number));
+    return checkInvert(::digitalRead(_number));
 #else
     return checkInvert(RT_HW_Base.pinDigitalRead(_structure, _number, _pullMode));
 #endif
@@ -69,11 +62,11 @@ bool FlprogBounceDiscreteInputPin::digitalRead()
     if (!_isInit)
     {
         init();
-        _result = digitalRead(_number);
+        _result = ::digitalRead(_number);
         _oldValue = _result;
         return checkInvert(_result);
     }
-    bool temp = digitalRead(_number);
+    bool temp = ::digitalRead(_number);
     if (!(_oldValue == temp))
     {
         _startTime = millis();
@@ -112,10 +105,10 @@ void FlprogDiscreteOutputPin::digitalWrite(bool value)
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     if (!_isInit)
     {
-        pinMode(number, OUTPUT);
+        ::pinMode(_number, OUTPUT);
         _isInit = true;
     }
-    digitalWrite(number, _cash);
+    ::digitalWrite(_number, _cash);
 #else
     RT_HW_Base.pinDigitalWrite(_structure, _number, _cash, 'N');
 #endif
@@ -135,7 +128,7 @@ void FlprogShimOutputPin::analogWrite(uint16_t value)
 {
     _cash = value;
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
-    analogWrite(_number, _cash);
+    ::analogWrite(_number, _cash);
 #else
     RT_HW_Base.pinPWM(_structure, _number, _cash);
 #endif
@@ -150,9 +143,10 @@ FlprogAnalogInputPin::FlprogAnalogInputPin(uint8_t number)
 uint16_t FlprogAnalogInputPin::analogRead()
 {
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
-    return analogRead(_number)
+    return ::analogRead(_number);
 #else
-    return RT_HW_Base.pinAnalogRead(_structure, _number);
+    RT_HW_Base.pinAnalogRead(_structure, _number);
+    return _structure.vPin;
 #endif
 }
 
