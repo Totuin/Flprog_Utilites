@@ -55,9 +55,8 @@ public:
 protected:
     bool _cash = 0;
     uint8_t _number;
-#ifdef FLPROG_COMPACT_LIBRARY_MODE
     bool _isInit = false;
-#else
+#ifndef FLPROG_COMPACT_LIBRARY_MODE
     RT_HW_PIN_DIR_ID _structure;
 #endif
 };
@@ -70,10 +69,14 @@ public:
     uint16_t analogRead() { return _cash; };
 
 protected:
+    bool isInit = false;
+    void init();
     uint8_t _number;
     uint16_t _cash = 0;
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
+#ifndef ARDUINO_ARCH_ESP32
     RT_HW_PIN_PWM_ID _structure;
+#endif
 #endif
 };
 
@@ -107,6 +110,8 @@ public:
     void analogWrite(uint16_t value);
 
 protected:
+    bool isInit = false;
+    void init();
     uint8_t _number;
     uint16_t _cash = 0;
     RT_HW_PIN_DAC_ID _structure;

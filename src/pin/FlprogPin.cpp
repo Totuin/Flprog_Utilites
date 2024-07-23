@@ -101,13 +101,24 @@ FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number)
 
 void FlprogDiscreteOutputPin::digitalWrite(bool value)
 {
-    _cash = value;
-#ifdef FLPROG_COMPACT_LIBRARY_MODE
+
     if (!_isInit)
     {
+        _cash = 0;
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
         ::pinMode(_number, OUTPUT);
+        ::digitalWrite(_number, _cash);
+#else
+        RT_HW_Base.pinDigitalWrite(_structure, _number, _cash, 'N');
+#endif
         _isInit = true;
     }
+    if (_cash == value)
+    {
+        return;
+    }
+    _cash = value;
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
     ::digitalWrite(_number, _cash);
 #else
     RT_HW_Base.pinDigitalWrite(_structure, _number, _cash, 'N');
@@ -119,18 +130,46 @@ FlprogShimOutputPin::FlprogShimOutputPin(uint8_t number)
 {
     _number = number;
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
+#ifndef ARDUINO_ARCH_ESP32
     _structure.freq = 1000;
     _structure.mode = 'N';
+#endif
 #endif
 }
 
 void FlprogShimOutputPin::analogWrite(uint16_t value)
 {
+    if (!isInit)
+    {
+        init();
+    }
+    if (_cash == value)
+    {
+        return;
+    }
     _cash = value;
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
     ::analogWrite(_number, _cash);
 #else
+#ifdef ARDUINO_ARCH_ESP32
+    ledcWrite(_number, _cash);
+#else
     RT_HW_Base.pinPWM(_structure, _number, _cash);
+#endif
+#endif
+}
+
+void FlprogShimOutputPin::init()
+{
+    _cash = 0;
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    ::analogWrite(_number, _cash);
+#else
+#ifdef ARDUINO_ARCH_ESP32
+    ledcWrite(_number, _cash);
+#else
+    RT_HW_Base.pinPWM(_structure, _number, _cash);
+#endif
 #endif
 }
 
@@ -159,7 +198,22 @@ FlprogDacOutputPin::FlprogDacOutputPin(uint8_t number)
 
 void FlprogDacOutputPin::analogWrite(uint16_t value)
 {
+    if (!isInit)
+    {
+        init();
+    }
+    if (_cash == value)
+    {
+        return;
+    }
     _cash = value;
     RT_HW_Base.pinDAC(_structure, _number, _cash);
 }
+
+void FlprogDacOutputPin::init()
+{
+    _cash = 0;
+    RT_HW_Base.pinDAC(_structure, _number, 0);
+}
+
 #endif
