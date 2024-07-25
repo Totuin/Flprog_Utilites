@@ -24,7 +24,6 @@
 #include "flprog_Blocks.h"
 #include "pin\FlprogPin.h"
 
-
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
 
@@ -136,7 +135,6 @@
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
 
-
 // Типы UART-ов
 #define FLPROG_USB_UART 0
 #define FLPROG_UART_UART 1
@@ -172,6 +170,7 @@
 #define FLPROG_PORT_PARITY_ODD 2
 
 // gfgdfgfg
+
 
 namespace flprog
 {
@@ -211,9 +210,11 @@ namespace flprog
     bool checkIPAdressString(String value);
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
-    //void printConsole(String title = "");
-
+    // void printConsole(String title = "");
 };
+
+
+
 
 /*
  RT_HW_Base.void uartSetConfig(uint32_t config, uint8_t num = 0)

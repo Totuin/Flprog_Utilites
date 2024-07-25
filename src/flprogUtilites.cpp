@@ -8,7 +8,6 @@
 */
 //-------------Тестирование--------------------
 
-
 bool flprog::isNumberChar(char value)
 {
     return ((value == '0') || (value == '1') || (value == '2') || (value == '3') || (value == '4') || (value == '5') || (value == '6') || (value == '7') || (value == '8') || (value == '9'));
@@ -176,7 +175,6 @@ uint32_t flprog::timeBack(uint32_t value)
 }
 
 //------------------- Режимы уарт--------------------------------------
-
 
 //--------------------------------------Сетевые утилиты------------------------------------------------------
 bool flprog::applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target)
@@ -596,6 +594,9 @@ String flprog::flprogStatusCodeName(uint8_t code)
     return "Unknown status code: " + String(code);
 #endif
 }
+
+
+
 
 /*
 void flprog::printConsole(String title)

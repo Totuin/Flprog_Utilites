@@ -101,7 +101,6 @@ FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number)
 
 void FlprogDiscreteOutputPin::digitalWrite(bool value)
 {
-
     if (!_isInit)
     {
         _cash = 0;
@@ -166,7 +165,7 @@ void FlprogShimOutputPin::init()
     ::analogWrite(_number, _cash);
 #else
 #ifdef ARDUINO_ARCH_ESP32
-    ledcWrite(_number, _cash);
+    ::ledcWrite(_number, _cash);
 #else
     RT_HW_Base.pinPWM(_structure, _number, _cash);
 #endif
