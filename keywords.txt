@@ -4,9 +4,12 @@
 #######################################
 # # Datatypes (KEYWORD1)
 #######################################
+FlprogAbstractDiscreteInputPin	KEYWORD1
 FlprogAbstractUartExecutor	KEYWORD1
+FlprogAnalogInputPin	KEYWORD1
 FlprogBounceDiscreteInputPin	KEYWORD1
 FlprogBtUartExecutor	KEYWORD1
+FlprogDacOutputPin	KEYWORD1
 FlprogDiscreteInputPin	KEYWORD1
 FlprogDiscreteOutputPin	KEYWORD1
 FlprogShimOutputPin	KEYWORD1
@@ -17,6 +20,8 @@ flprog	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
+analogRead	KEYWORD2
+analogWrite	KEYWORD2
 applyMac	KEYWORD2
 availableUart	KEYWORD2
 beginUart	KEYWORD2
