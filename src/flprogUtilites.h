@@ -171,7 +171,6 @@
 
 // gfgdfgfg
 
-
 namespace flprog
 {
     //-------------Тестирование--------------------
@@ -212,9 +211,6 @@ namespace flprog
     String flprogStatusCodeName(uint8_t code);
     // void printConsole(String title = "");
 };
-
-
-
 
 /*
  RT_HW_Base.void uartSetConfig(uint32_t config, uint8_t num = 0)
