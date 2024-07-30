@@ -4,6 +4,12 @@
 #######################################
 # # Datatypes (KEYWORD1)
 #######################################
+FLProgBooleanSystemParametr	KEYWORD1
+FLProgInt16SystemParametr	KEYWORD1
+FLProgInt32SystemParametr	KEYWORD1
+FLProgStringSystemParametr	KEYWORD1
+FLProgUint32SystemParametr	KEYWORD1
+FLProgUint8SystemParametr	KEYWORD1
 FlprogAbstractDiscreteInputPin	KEYWORD1
 FlprogAbstractUartExecutor	KEYWORD1
 FlprogAnalogInputPin	KEYWORD1
@@ -39,6 +45,7 @@ digitalWrite	KEYWORD2
 endUart	KEYWORD2
 flprogErrorCodeName	KEYWORD2
 flprogStatusCodeName	KEYWORD2
+get	KEYWORD2
 getDataBitUart	KEYWORD2
 getParityUart	KEYWORD2
 getPinRxUart	KEYWORD2
@@ -64,6 +71,7 @@ printConsole	KEYWORD2
 printUart	KEYWORD2
 readUart	KEYWORD2
 serialCodeForParametrs	KEYWORD2
+set	KEYWORD2
 setBluetoothIsMasterName	KEYWORD2
 setBluetoothName	KEYWORD2
 setBluetoothTargetName	KEYWORD2

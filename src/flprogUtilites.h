@@ -22,7 +22,9 @@
 // #include "flprogUart.h"
 #include "RT_HW_SHEDULER.h"
 #include "flprog_Blocks.h"
-#include "pin\FlprogPin.h"
+#include "pin/FlprogPin.h"
+#include "systemParametrs/flprogSystemParametr.h"
+
 
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
@@ -169,7 +171,7 @@
 #define FLPROG_PORT_PARITY_EVEN 1
 #define FLPROG_PORT_PARITY_ODD 2
 
-// gfgdfgfg
+
 
 namespace flprog
 {
