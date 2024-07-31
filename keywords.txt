@@ -5,6 +5,8 @@
 # # Datatypes (KEYWORD1)
 #######################################
 FLProgBooleanSystemParametr	KEYWORD1
+FLProgByteArraySystemParametr	KEYWORD1
+FLProgFloatSystemParametr	KEYWORD1
 FLProgInt16SystemParametr	KEYWORD1
 FLProgInt32SystemParametr	KEYWORD1
 FLProgStringSystemParametr	KEYWORD1

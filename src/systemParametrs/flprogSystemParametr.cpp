@@ -1,11 +1,10 @@
 #include "flprogSystemParametr.h"
 
 //-----------------------------------------------------------bool---------------------------------------------------------------------------
-FLProgBooleanSystemParametr::FLProgBooleanSystemParametr(FLProgSetBoolValueCallback setCallBack, FLProgGetBoolValueCallback getCallBack, bool value)
+FLProgBooleanSystemParametr::FLProgBooleanSystemParametr(FLProgSetBoolValueCallback setCallBack, FLProgGetBoolValueCallback getCallBack)
 {
     _setCallBack = setCallBack;
     _getCallBack = getCallBack;
-    set(value);
 }
 void FLProgBooleanSystemParametr::set(bool value)
 {
@@ -26,11 +25,10 @@ bool FLProgBooleanSystemParametr::get()
 }
 
 //-----------------------------------------------------------uint8_t---------------------------------------------------------------------------
-FLProgUint8SystemParametr::FLProgUint8SystemParametr(FLProgSetUint8ValueCallback setCallBack, FLProgGetUint8ValueCallback getCallBack, uint8_t value)
+FLProgUint8SystemParametr::FLProgUint8SystemParametr(FLProgSetUint8ValueCallback setCallBack, FLProgGetUint8ValueCallback getCallBack)
 {
     _setCallBack = setCallBack;
     _getCallBack = getCallBack;
-    set(value);
 }
 void FLProgUint8SystemParametr::set(uint8_t value)
 {
@@ -51,11 +49,10 @@ uint8_t FLProgUint8SystemParametr::get()
 }
 
 //-----------------------------------------------------------int16_t---------------------------------------------------------------------------
-FLProgInt16SystemParametr::FLProgInt16SystemParametr(FLProgSetInt16ValueCallback setCallBack, FLProgGetInt16ValueCallback getCallBack, int16_t value)
+FLProgInt16SystemParametr::FLProgInt16SystemParametr(FLProgSetInt16ValueCallback setCallBack, FLProgGetInt16ValueCallback getCallBack)
 {
     _setCallBack = setCallBack;
     _getCallBack = getCallBack;
-    set(value);
 }
 void FLProgInt16SystemParametr::set(int16_t value)
 {
@@ -76,11 +73,10 @@ int16_t FLProgInt16SystemParametr::get()
 }
 
 //-----------------------------------------------------------int32_t---------------------------------------------------------------------------
-FLProgInt32SystemParametr::FLProgInt32SystemParametr(FLProgSetInt32ValueCallback setCallBack, FLProgGetInt32ValueCallback getCallBack, int32_t value)
+FLProgInt32SystemParametr::FLProgInt32SystemParametr(FLProgSetInt32ValueCallback setCallBack, FLProgGetInt32ValueCallback getCallBack)
 {
     _setCallBack = setCallBack;
     _getCallBack = getCallBack;
-    set(value);
 }
 void FLProgInt32SystemParametr::set(int32_t value)
 {
@@ -101,11 +97,10 @@ int32_t FLProgInt32SystemParametr::get()
 }
 
 //-----------------------------------------------------------uint32_t---------------------------------------------------------------------------
-FLProgUint32SystemParametr::FLProgUint32SystemParametr(FLProgSetUint32ValueCallback setCallBack, FLProgGetUint32ValueCallback getCallBack, uint32_t value)
+FLProgUint32SystemParametr::FLProgUint32SystemParametr(FLProgSetUint32ValueCallback setCallBack, FLProgGetUint32ValueCallback getCallBack)
 {
     _setCallBack = setCallBack;
     _getCallBack = getCallBack;
-    set(value);
 }
 void FLProgUint32SystemParametr::set(uint32_t value)
 {
@@ -126,11 +121,10 @@ uint32_t FLProgUint32SystemParametr::get()
 }
 
 //-----------------------------------------------------------String---------------------------------------------------------------------------
-FLProgStringSystemParametr::FLProgStringSystemParametr(FLProgSetStringValueCallback setCallBack, FLProgGetStringValueCallback getCallBack, String value)
+FLProgStringSystemParametr::FLProgStringSystemParametr(FLProgSetStringValueCallback setCallBack, FLProgGetStringValueCallback getCallBack)
 {
     _setCallBack = setCallBack;
     _getCallBack = getCallBack;
-    set(value);
 }
 void FLProgStringSystemParametr::set(String value)
 {
@@ -146,6 +140,54 @@ String FLProgStringSystemParametr::get()
     if (_getCallBack == 0)
     {
         return "";
+    }
+    return _getCallBack();
+}
+
+//-----------------------------------------------------------Float---------------------------------------------------------------------------
+FLProgFloatSystemParametr::FLProgFloatSystemParametr(FLProgSetFloatValueCallback setCallBack, FLProgGetFloatValueCallback getCallBack)
+{
+    _setCallBack = setCallBack;
+    _getCallBack = getCallBack;
+}
+void FLProgFloatSystemParametr::set(float value)
+{
+    if (_setCallBack == 0)
+    {
+        return;
+    }
+    _setCallBack(value);
+}
+
+float FLProgFloatSystemParametr::get()
+{
+    if (_getCallBack == 0)
+    {
+        return 0;
+    }
+    return _getCallBack();
+}
+
+//-----------------------------------------------------------ByteArray---------------------------------------------------------------------------
+FLProgByteArraySystemParametr::FLProgByteArraySystemParametr(FLProgSetByteArrayValueCallback setCallBack, FLProgGetByteArrayValueCallback getCallBack)
+{
+    _setCallBack = setCallBack;
+    _getCallBack = getCallBack;
+}
+void FLProgByteArraySystemParametr::set(uint8_t *value)
+{
+    if (_setCallBack == 0)
+    {
+        return;
+    }
+    _setCallBack(value);
+}
+
+uint8_t *FLProgByteArraySystemParametr::get()
+{
+    if (_getCallBack == 0)
+    {
+        return 0;
     }
     return _getCallBack();
 }
