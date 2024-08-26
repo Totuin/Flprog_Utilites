@@ -23,7 +23,7 @@
 #include "RT_HW_SHEDULER.h"
 #include "flprog_Blocks.h"
 #include "pin/FlprogPin.h"
-#include "systemParametrs/flprogSystemParametr.h"
+
 
 
 // Базовые константы
