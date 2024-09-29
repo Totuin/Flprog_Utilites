@@ -198,6 +198,7 @@ FlprogDacOutputPin::FlprogDacOutputPin(uint8_t number)
 void FlprogDacOutputPin::analogWrite(uint16_t value)
 {
     if (!isInit)
+     
     {
         init();
     }
