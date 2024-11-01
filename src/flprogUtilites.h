@@ -202,7 +202,7 @@ namespace flprog
     bool compareMacAddresWithString(uint8_t *array, String value);
     bool compareMacAddreses(uint8_t *array1, uint8_t *array2);
     int hexStrToInt(String str);
-    bool inet_aton(const char *aIPAddrString, IPAddress &aResult);
+    bool inet_aton_1(const char *aIPAddrString, IPAddress &aResult);
     void ipToArray(IPAddress ip, uint8_t *array);
     uint32_t ipToNumber(IPAddress value);
     String ipToString(const IPAddress &ipAddress);

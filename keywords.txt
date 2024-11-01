@@ -49,7 +49,7 @@ getStopBitUart	KEYWORD2
 hexStrToInt	KEYWORD2
 hexStringToLong	KEYWORD2
 hexStringToUnsignedLong	KEYWORD2
-inet_aton	KEYWORD2
+inet_aton_1	KEYWORD2
 ipToArray	KEYWORD2
 ipToNumber	KEYWORD2
 ipToString	KEYWORD2

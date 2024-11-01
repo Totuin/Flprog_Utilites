@@ -327,7 +327,7 @@ int flprog::hexStrToInt(String str)
     return result;
 }
 
-bool flprog::inet_aton(const char *address, IPAddress &result)
+bool flprog::inet_aton_1(const char *address, IPAddress &result)
 {
     uint16_t acc = 0;
     uint8_t dots = 0;

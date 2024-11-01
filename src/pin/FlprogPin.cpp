@@ -88,6 +88,7 @@ bool FlprogBounceDiscreteInputPin::digitalRead()
             return checkInvert(_result);
         }
     }
+    return false;
 #else
     return checkInvert(RT_HW_Base.chatterDIN(_bounce, (RT_HW_Base.pinDigitalRead(_structure, _number, _pullMode)), 50));
 #endif
@@ -198,7 +199,7 @@ FlprogDacOutputPin::FlprogDacOutputPin(uint8_t number)
 void FlprogDacOutputPin::analogWrite(uint16_t value)
 {
     if (!isInit)
-     
+
     {
         init();
     }
