@@ -20,11 +20,8 @@
 #include "RT_HW_BASE.h"
 #endif
 // #include "flprogUart.h"
-//#include "RT_HW_SHEDULER.h"
-#include "flprog_Blocks.h"
+// #include "RT_HW_SHEDULER.h"
 #include "pin/FlprogPin.h"
-
-
 
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
@@ -91,11 +88,12 @@
 #define FLPROG_WAIT_WEB_SERVER_READ_REQEST 12
 #define FLPROG_WAIT_WEB_SERVER_SEND_ANSVER 13
 #define FLPROG_WAIT_SEND_UDP_PACAGE 14
+#define FLPROG_WAIT_UDP_PACAGE_ANSVER 15
 
 // Коды статуса линии Ethernet
-#define FLPROG_ETHERNET_LINK_UNKNOWN 13
-#define FLPROG_ETHERNET_LINK_ON 14
-#define FLPROG_ETHERNET_LINK_OFF 15
+#define FLPROG_ETHERNET_LINK_UNKNOWN 16
+#define FLPROG_ETHERNET_LINK_ON 17
+#define FLPROG_ETHERNET_LINK_OFF 18
 
 // Коды чипов
 #define FLPROG_ETHERNET_NO_HARDWARE 0
@@ -138,6 +136,8 @@
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
 
+#define FLPROG_ETHERNET_NTP_NOT_SERVER_ERROR 70
+
 // Типы UART-ов
 #define FLPROG_USB_UART 0
 #define FLPROG_UART_UART 1
@@ -171,8 +171,6 @@
 #define FLPROG_PORT_PARITY_NONE 0
 #define FLPROG_PORT_PARITY_EVEN 1
 #define FLPROG_PORT_PARITY_ODD 2
-
-
 
 namespace flprog
 {
@@ -213,6 +211,43 @@ namespace flprog
     String flprogErrorCodeName(uint8_t code);
     String flprogStatusCodeName(uint8_t code);
     // void printConsole(String title = "");
+};
+
+class AbstractFLProgClass
+{
+public:
+    uint8_t getStatus() { return _status; };
+    uint8_t getError() { return _errorCode; };
+    uint8_t getErrorCode() { return _errorCode; };
+
+    // Флаги изменения параметров
+    bool getIsChangeStatus() { return _isChangeStatus; };
+    bool getIsChangeStatusWithReset();
+    void setIsChangeStatus(bool value) { _isChangeStatus = value; };
+
+    bool getIsChangeError() { return _isChangeError; };
+    bool getIsChangeErrorWithReset();
+    void setIsChangeError(bool value) { _isChangeError = value; };
+
+    uint32_t statusForExt() { return _statusForExt; };
+
+    bool statusForExtGetBit(uint8_t bit) { return bitRead(_statusForExt, bit); };
+    void statusForExtResetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 0); };
+
+    bool statusForExtGetBitWithReset(uint8_t bit);
+    void statusForExtSetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 1); };
+    virtual void setFlags();
+
+protected:
+    uint8_t _status = FLPROG_NOT_REDY_STATUS;
+    uint8_t _errorCode = FLPROG_NOT_ERROR;
+
+    // Флаги изменения параметров
+    uint8_t _oldStatus = FLPROG_NOT_REDY_STATUS;
+    bool _isChangeStatus = false;
+    uint8_t _oldError = FLPROG_NOT_ERROR;
+    bool _isChangeError = false;
+    uint32_t _statusForExt = 1;
 };
 
 /*

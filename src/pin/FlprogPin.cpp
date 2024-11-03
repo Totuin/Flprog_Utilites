@@ -95,21 +95,27 @@ bool FlprogBounceDiscreteInputPin::digitalRead()
 }
 
 // -----------------------------------------------FlprogDiscreteOutputPin---------------------------------------------
-FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number)
+FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number, bool isOk, bool inverted)
 {
     _number = number;
+    _inverted = inverted;
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)isOk;
+#else
+    if (isOk)
+    {
+        _structure.mode = 'O';
+    }
+#endif
 }
 
 void FlprogDiscreteOutputPin::digitalWrite(bool value)
 {
     if (!_isInit)
     {
-        _cash = 0;
+        _cash = !value;
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
         ::pinMode(_number, OUTPUT);
-        ::digitalWrite(_number, _cash);
-#else
-        RT_HW_Base.pinDigitalWrite(_structure, _number, _cash, 'N');
 #endif
         _isInit = true;
     }
@@ -119,21 +125,43 @@ void FlprogDiscreteOutputPin::digitalWrite(bool value)
     }
     _cash = value;
 #ifdef FLPROG_COMPACT_LIBRARY_MODE
-    ::digitalWrite(_number, _cash);
+    if (_inverted)
+    {
+        ::digitalWrite(_number, !_cash);
+    }
+    else
+    {
+        ::digitalWrite(_number, _cash);
+    }
 #else
-    RT_HW_Base.pinDigitalWrite(_structure, _number, _cash, 'N');
+    if (_inverted)
+    {
+        RT_HW_Base.pinDigitalWrite(_structure, _number, !_cash, _structure.mode);
+    }
+    else
+    {
+        RT_HW_Base.pinDigitalWrite(_structure, _number, _cash, _structure.mode);
+    }
 #endif
 }
 
 // -----------------------------------------------FlprogShimOutputPin---------------------------------------------
-FlprogShimOutputPin::FlprogShimOutputPin(uint8_t number)
+FlprogShimOutputPin::FlprogShimOutputPin(uint8_t number, bool isOk, bool inverted, uint16_t freq)
 {
     _number = number;
-#ifndef FLPROG_COMPACT_LIBRARY_MODE
-#ifndef ARDUINO_ARCH_ESP32
-    _structure.freq = 1000;
-    _structure.mode = 'N';
-#endif
+    _inverted = inverted;
+#ifdef FLPROG_COMPACT_LIBRARY_MODE
+    (void)isOk;
+    (void)freq;
+#else
+    if (isOk)
+    {
+        _structure.mode = 'O';
+    }
+    if (freq > 0)
+    {
+        _structure.freq = freq;
+    }
 #endif
 }
 

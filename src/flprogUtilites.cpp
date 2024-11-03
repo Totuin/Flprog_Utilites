@@ -1,6 +1,47 @@
 
 #include "flprogUtilites.h"
 
+
+void AbstractFLProgClass::setFlags()
+{
+    if (_oldStatus != _status)
+    {
+        _isChangeStatus = true;
+        _oldStatus = _status;
+    }
+    if (_oldError != _errorCode)
+    {
+        _isChangeError = true;
+        _oldError = _errorCode;
+    }
+    
+}
+
+bool AbstractFLProgClass::getIsChangeStatusWithReset()
+{
+    bool temp = _isChangeStatus;
+    _isChangeStatus = false;
+    return temp;
+}
+
+bool AbstractFLProgClass::getIsChangeErrorWithReset()
+{
+    bool temp = _isChangeError;
+    _isChangeError = false;
+    return temp;
+}
+
+
+
+bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
+{
+    bool temp = bitRead(_statusForExt, bit);
+    bitWrite(_statusForExt, bit, 0);
+    return temp;
+}
+
+
+
 /*
 ---------------------------------------
             namespace flprog
@@ -522,6 +563,10 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_DHCP_NOT_READY_ERROR";
     }
+    if (code == FLPROG_ETHERNET_NTP_NOT_SERVER_ERROR)
+    {
+        return "FLPROG_ETHERNET_NTP_NOT_SERVER_ERROR";
+    }
     return "Unknown error code: " + String(code);
 #endif
 }
@@ -591,12 +636,13 @@ String flprog::flprogStatusCodeName(uint8_t code)
     {
         return "FLPROG_WAIT_SEND_UDP_PACAGE";
     }
+    if (code == FLPROG_WAIT_UDP_PACAGE_ANSVER)
+    {
+        return "FLPROG_WAIT_UDP_PACAGE_ANSVER";
+    }
     return "Unknown status code: " + String(code);
 #endif
 }
-
-
-
 
 /*
 void flprog::printConsole(String title)

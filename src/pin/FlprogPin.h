@@ -48,7 +48,7 @@ protected:
 class FlprogDiscreteOutputPin
 {
 public:
-    FlprogDiscreteOutputPin(uint8_t number);
+    FlprogDiscreteOutputPin(uint8_t number, bool isOk = false, bool inverted = false);
     virtual bool digitalRead() { return _cash; };
     void digitalWrite(bool value);
 
@@ -56,6 +56,8 @@ protected:
     bool _cash = 0;
     uint8_t _number;
     bool _isInit = false;
+
+    bool _inverted = false;
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
     RT_HW_PIN_DIR_ID _structure;
 #endif
@@ -64,7 +66,7 @@ protected:
 class FlprogShimOutputPin
 {
 public:
-    FlprogShimOutputPin(uint8_t number);
+    FlprogShimOutputPin(uint8_t number, bool isOk = false, bool inverted = false, uint16_t freq = 0);
     void analogWrite(uint16_t value);
     uint16_t analogRead() { return _cash; };
 
@@ -72,6 +74,8 @@ protected:
     bool isInit = false;
     void init();
     uint8_t _number;
+
+    bool _inverted = false;
     uint16_t _cash = 0;
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
 #ifndef ARDUINO_ARCH_ESP32
