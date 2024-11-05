@@ -78,9 +78,7 @@ protected:
     bool _inverted = false;
     uint16_t _cash = 0;
 #ifndef FLPROG_COMPACT_LIBRARY_MODE
-#ifndef ARDUINO_ARCH_ESP32
     RT_HW_PIN_PWM_ID _structure;
-#endif
 #endif
 };
 

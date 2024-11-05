@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include "flprogUartBase.h"
 
-#ifdef ARDUINO_ARCH_ESP32
+#ifdef RT_HW_PERMIT_UARTB
 #define FLPROG_BLUETOOTH_SERIAL
 #include "BluetoothSerial.h"
 struct FLProgBluetoothSerialStruct

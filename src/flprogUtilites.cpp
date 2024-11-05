@@ -1,7 +1,6 @@
 
 #include "flprogUtilites.h"
 
-
 void AbstractFLProgClass::setFlags()
 {
     if (_oldStatus != _status)
@@ -14,7 +13,6 @@ void AbstractFLProgClass::setFlags()
         _isChangeError = true;
         _oldError = _errorCode;
     }
-    
 }
 
 bool AbstractFLProgClass::getIsChangeStatusWithReset()
@@ -31,16 +29,12 @@ bool AbstractFLProgClass::getIsChangeErrorWithReset()
     return temp;
 }
 
-
-
 bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
 {
     bool temp = bitRead(_statusForExt, bit);
     bitWrite(_statusForExt, bit, 0);
     return temp;
 }
-
-
 
 /*
 ---------------------------------------
@@ -567,6 +561,10 @@ String flprog::flprogErrorCodeName(uint8_t code)
     {
         return "FLPROG_ETHERNET_NTP_NOT_SERVER_ERROR";
     }
+    if (code == FLPROG_ETHERNET_CLIENT_ANSWER_TIMEOUT_ERROR)
+    {
+        return "FLPROG_ETHERNET_CLIENT_ANSWER_TIMEOUT_ERROR";
+    }
     return "Unknown error code: " + String(code);
 #endif
 }
@@ -639,6 +637,14 @@ String flprog::flprogStatusCodeName(uint8_t code)
     if (code == FLPROG_WAIT_UDP_PACAGE_ANSVER)
     {
         return "FLPROG_WAIT_UDP_PACAGE_ANSVER";
+    }
+    if (code == FLPROG_WAIT_ETHERNET_CLIENT_CONNECT_STATUS)
+    {
+        return "FLPROG_WAIT_ETHERNET_CLIENT_CONNECT_STATUS";
+    }
+    if (code == FLPROG_WAIT_ETHERNET_CLIENT_ANSWER_STATUS)
+    {
+        return "FLPROG_WAIT_ETHERNET_CLIENT_ANSWER_STATUS";
     }
     return "Unknown status code: " + String(code);
 #endif
