@@ -3,8 +3,6 @@
 #include <Arduino.h>
 #include "IPAddress.h"
 
-
-
 #ifdef ARDUINO_ARCH_AVR
 #define FLPROG_SOFTWARE_SERIAL
 #define FLPROG_WRITE_BUFFER_SIZE 100
@@ -36,7 +34,7 @@
 #else
 #define FLPROG_MODBUS_BUFER_SIZE 250
 #define FLPROG_HOST_NAME_LENGTH 250
-#define FLPROG_LED_PIN RT_HW_Base.device.pin.led
+#define FLPROG_LED_PIN RT_HW_Base.getPinLed();
 #endif
 
 // Константы для датчиков
