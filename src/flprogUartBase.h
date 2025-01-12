@@ -2,18 +2,6 @@
 #include <Arduino.h>
 #include "flprogUtilites.h"
 
-#ifdef FLPROG_COMPACT_LIBRARY_MODE
-struct FLProgCompactUartStruct
-{
-    uint32_t speed = 9600;
-    uint8_t dataBit = 8;
-    uint8_t stopBit = 1;
-    uint8_t parity = 0;
-    uint8_t status = 0;
-};
-
-static FLProgCompactUartStruct flprogCompactUart;
-#endif
 
 namespace flprog
 {

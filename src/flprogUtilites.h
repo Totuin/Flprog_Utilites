@@ -3,9 +3,7 @@
 #include <Arduino.h>
 #include "IPAddress.h"
 
-// #ifdef FLPROG_BLUETOOTH_SERIAL
 
-// #endif
 
 #ifdef ARDUINO_ARCH_AVR
 #define FLPROG_SOFTWARE_SERIAL
@@ -17,11 +15,7 @@
 #define FLPROG_WRITE_BUFFER_SIZE 800
 #endif
 
-#ifndef FLPROG_COMPACT_LIBRARY_MODE
 #include "RT_HW_BASE.h"
-#endif
-// #include "flprogUart.h"
-// #include "RT_HW_SHEDULER.h"
 #include "pin/FlprogPin.h"
 
 // Базовые константы
@@ -90,6 +84,11 @@
 #define FLPROG_WAIT_WEB_SERVER_SEND_ANSVER 13
 #define FLPROG_WAIT_SEND_UDP_PACAGE 14
 #define FLPROG_WAIT_UDP_PACAGE_ANSVER 15
+
+#define FLPROG_WAIT_I2C_INIT 16
+#define FLPROG_WAIT_I2C_FIND_ADDRESS 17
+#define FLPROG_WAIT_SEND_DISPLAY_BUFFER 18
+
 
 
 //Коды состояния клиента
@@ -258,7 +257,3 @@ protected:
     bool _isChangeError = false;
     uint32_t _statusForExt = 1;
 };
-
-/*
- RT_HW_Base.void uartSetConfig(uint32_t config, uint8_t num = 0)
-*/

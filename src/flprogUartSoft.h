@@ -1,5 +1,6 @@
 #pragma once
 #include <Arduino.h>
+
 #include "flprogUartBase.h"
 
 #ifdef ARDUINO_ARCH_ESP8266
@@ -49,5 +50,3 @@ public:
     virtual void setPinTxUart(uint8_t pin, uint8_t number);
     virtual void setPinsUart(uint8_t pinRx, uint8_t pinTx, uint8_t number);
 };
-
-   
