@@ -85,7 +85,9 @@
 
 #define FLPROG_WAIT_I2C_INIT 16
 #define FLPROG_WAIT_I2C_FIND_ADDRESS 17
-#define FLPROG_WAIT_SEND_DISPLAY_BUFFER 18
+#define FLPROG_WAIT_DISPLAY_INIT 18
+#define FLPROG_WAIT_SEND_DISPLAY_BUFFER 19
+
 
 
 
@@ -230,10 +232,12 @@ public:
     bool getIsChangeStatus() { return _isChangeStatus; };
     bool getIsChangeStatusWithReset();
     void setIsChangeStatus(bool value) { _isChangeStatus = value; };
+     void resetIsChangeStatus() { _isChangeStatus = false; };
 
     bool getIsChangeError() { return _isChangeError; };
     bool getIsChangeErrorWithReset();
     void setIsChangeError(bool value) { _isChangeError = value; };
+    void resetIsChangeError() { _isChangeError = false; };
 
     uint32_t statusForExt() { return _statusForExt; };
 
