@@ -88,11 +88,12 @@
 #define FLPROG_WAIT_DISPLAY_INIT 18
 #define FLPROG_WAIT_SEND_DISPLAY_BUFFER 19
 
-
-
-
 //Коды состояния клиента
 #define FLPROG_WAIT_ETHERNET_CLIENT_ANSWER_STATUS 20
+
+
+
+
 
 // Коды статуса линии Ethernet
 #define FLPROG_ETHERNET_LINK_UNKNOWN 16
