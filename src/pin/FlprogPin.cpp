@@ -1,5 +1,23 @@
 #include "FlprogPin.h"
 
+bool FlprogDiscreteInputPin::digitalRead()
+{
+    if (structure.pin == 255)
+    {
+        return 0;
+    }
+    return RT_HW_Base.pinDigitalRead(_structure);
+}
+
+bool FlprogBounceDiscreteInputPin::digitalRead()
+{
+    if (structure.pin == 255)
+    {
+        return 0;
+    }
+    return RT_HW_Base.pinDigitalRead(_structure);
+}
+
 // -----------------------------------------------FlprogDiscreteOutputPin---------------------------------------------
 FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number, bool isOk, bool inverted)
 {

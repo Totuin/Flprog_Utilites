@@ -14,7 +14,7 @@ class FlprogDiscreteInputPin
 {
 public:
     FlprogDiscreteInputPin(uint8_t number, char pullMode = RT_HW_MODE_DIN_INPUT, bool inverted = false) { _structure.setParam(number, inverted, pullMode); };
-    bool digitalRead() { return RT_HW_Base.pinDigitalRead(_structure); };
+    bool digitalRead();
     void setPin(uint8_t number) { _structure.setPin(number); };
 
 protected:
@@ -26,7 +26,7 @@ class FlprogBounceDiscreteInputPin
 public:
     FlprogBounceDiscreteInputPin(uint8_t number, char pullMode = RT_HW_MODE_DIN_INPUT, bool inverted = false) { _structure.setParam(number, (_structure.period), inverted, pullMode); };
     void setPeriod(uint16_t period) { _structure.setPeriod(period); };
-    bool digitalRead() { return RT_HW_Base.pinDigitalRead(_structure); };
+    bool digitalRead();
     void setPin(uint8_t number) { _structure.setPin(number); };
 
 protected:
