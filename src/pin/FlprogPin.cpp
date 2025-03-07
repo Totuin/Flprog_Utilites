@@ -2,7 +2,7 @@
 
 bool FlprogDiscreteInputPin::digitalRead()
 {
-    if (structure.pin == 255)
+    if (_structure.pin == 255)
     {
         return 0;
     }
@@ -11,7 +11,7 @@ bool FlprogDiscreteInputPin::digitalRead()
 
 bool FlprogBounceDiscreteInputPin::digitalRead()
 {
-    if (structure.pin == 255)
+    if (_structure.pin == 255)
     {
         return 0;
     }
