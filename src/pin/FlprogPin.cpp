@@ -1,21 +1,31 @@
 #include "FlprogPin.h"
 
-bool FlprogDiscreteInputPin::digitalRead()
+void FlprogAbstractPin::setPin(uint8_t number)
 {
-    if (_structure.pin == 255)
+    if (pinNumber() == number)
     {
-        return 0;
+        return;
     }
-    return RT_HW_Base.pinDigitalRead(_structure);
+    privateSetPin(number);
 }
 
-bool FlprogBounceDiscreteInputPin::digitalRead()
+bool FlprogAbstractPin::digitalRead()
 {
-    if (_structure.pin == 255)
+    if (pinNumber() == 255)
     {
         return 0;
     }
-    return RT_HW_Base.pinDigitalRead(_structure);
+    return privateDigitalRead();
+}
+
+// -----------------------------------------------FlprogBounceDiscreteInputPin---------------------------------------------
+void FlprogBounceDiscreteInputPin::setPeriod(uint16_t period)
+{
+    if (_structure.period == period)
+    {
+        return;
+    }
+    _structure.setPeriod(period);
 }
 
 // -----------------------------------------------FlprogDiscreteOutputPin---------------------------------------------
@@ -50,6 +60,10 @@ FlprogShimOutputPin::FlprogShimOutputPin(uint8_t number, bool isOk, bool inverte
 // -----------------------------------------------FlprogAnalogInputPin---------------------------------------------
 uint16_t FlprogAnalogInputPin::analogRead()
 {
+    if (pinNumber() == 255)
+    {
+        return 0;
+    }
     RT_HW_Base.pinAnalogRead(_structure);
     return _structure.vNorm;
 }
