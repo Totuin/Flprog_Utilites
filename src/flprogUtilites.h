@@ -16,6 +16,33 @@
 #include "RT_HW_BASE.h"
 #include "pin/FlprogPin.h"
 
+#ifdef RT_HW_CORE_STM32
+#include "variant/stm32/flprogUtilitesSTM32.h"
+#define FLPROG_UTILITES_CORE_SELECT
+#endif
+
+#ifdef RT_HW_CORE_RP2040
+#include "variant/rp2040/flprogUtilitesRP2040.h"
+#define FLPROG_UTILITES_CORE_SELECT
+#endif
+
+#ifdef RT_HW_CORE_ESP32
+#include "variant/esp32/flprogUtilitesESP32.h"
+#define FLPROG_UTILITES_CORE_SELECT
+#endif
+
+
+#ifdef RT_HW_CORE_ESP8266
+#include "variant/esp8266/flprogUtilitesESP8266.h"
+#define FLPROG_UTILITES_CORE_SELECT
+#endif
+
+
+#ifdef RT_HW_CORE_AVR
+#include "variant/avr/flprogUtilitesAVR.h"
+#define FLPROG_UTILITES_CORE_SELECT
+#endif
+
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
 
@@ -88,12 +115,8 @@
 #define FLPROG_WAIT_DISPLAY_INIT 18
 #define FLPROG_WAIT_SEND_DISPLAY_BUFFER 19
 
-//Коды состояния клиента
+// Коды состояния клиента
 #define FLPROG_WAIT_ETHERNET_CLIENT_ANSWER_STATUS 20
-
-
-
-
 
 // Коды статуса линии Ethernet
 #define FLPROG_ETHERNET_LINK_UNKNOWN 16
@@ -139,13 +162,10 @@
 #define FLPROG_ETHERNET_CLIENT_SOKET_CLOSED_ERROR 52
 #define FLPROG_ETHERNET_CLIENT_ANSWER_TIMEOUT_ERROR 53
 
-
 #define FLPROG_ETHERNET_SERVER_NOT_CALLBACK_ERROR 60
 #define FLPROG_ETHERNET_SERVER_SOKET_ERROR 61
 
 #define FLPROG_ETHERNET_NTP_NOT_SERVER_ERROR 70
-
-
 
 // Типы UART-ов
 #define FLPROG_USB_UART 0
@@ -233,7 +253,7 @@ public:
     bool getIsChangeStatus() { return _isChangeStatus; };
     bool getIsChangeStatusWithReset();
     void setIsChangeStatus(bool value) { _isChangeStatus = value; };
-     void resetIsChangeStatus() { _isChangeStatus = false; };
+    void resetIsChangeStatus() { _isChangeStatus = false; };
 
     bool getIsChangeError() { return _isChangeError; };
     bool getIsChangeErrorWithReset();
