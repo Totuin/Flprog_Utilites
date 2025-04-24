@@ -27,7 +27,7 @@
 
 namespace flprog
 {
-    uint32_t freeMemory() { return 0; };
+    uint32_t freeMemory();
 };
 
 #endif

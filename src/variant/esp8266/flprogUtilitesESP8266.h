@@ -6,6 +6,6 @@
 
 namespace flprog
 {
-    uint32_t freeMemory() { return ESP.getFreeHeap(); };
+    uint32_t freeMemory();
 };
 #endif

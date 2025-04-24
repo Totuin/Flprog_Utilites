@@ -43,6 +43,12 @@
 #define FLPROG_UTILITES_CORE_SELECT
 #endif
 
+#ifndef FLPROG_UTILITES_CORE_SELECT
+#include "variant/anon/flprogUtilitesAnon.h"
+#define FLPROG_UTILITES_CORE_SELECT
+#endif
+
+
 // Базовые константы
 #define FLPROG_INADDR_NONE IPAddress(0, 0, 0, 0)
 
