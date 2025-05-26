@@ -45,9 +45,15 @@ bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
 //-------------Базовое--------------------
 void flprog::specialSetup()
 {
+#ifdef RT_HW_SPECIAL_SETUP
+    RT_HW_SPECIAL_SETUP
+#endif
 }
 void flprog::specialPool()
 {
+#ifdef RT_HW_SPECIAL_POOL
+    RT_HW_SPECIAL_POOL
+#endif
 }
 
 //-------------Тестирование--------------------
