@@ -124,7 +124,6 @@
 // Коды состояния wifi
 #define FLPROG_WAIT_WIFI_CLIENT_CONNECT 21
 
-
 // Коды статуса линии Ethernet
 #define FLPROG_ETHERNET_LINK_UNKNOWN 16
 #define FLPROG_ETHERNET_LINK_ON 17
@@ -210,6 +209,9 @@
 
 namespace flprog
 {
+    //-------------Базовое--------------------
+    void specialSetup();
+    void specialPool();
     //-------------Тестирование--------------------
     bool isNumberChar(char value);
     bool isHexNumberChar(char value);

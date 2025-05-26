@@ -1,6 +1,6 @@
 #include "FlprogPin.h"
 
-void FlprogAbstractPin::setPin(uint8_t number)
+void FlprogAbstractPin::setPin(uint16_t number)
 {
     if (pinNumber() == number)
     {
@@ -11,7 +11,7 @@ void FlprogAbstractPin::setPin(uint8_t number)
 
 bool FlprogAbstractPin::digitalRead()
 {
-    if (pinNumber() == 255)
+    if (pinNumber() == FLPROG_NOT_EXIST_PIN)
     {
         return 0;
     }
@@ -29,7 +29,7 @@ void FlprogBounceDiscreteInputPin::setPeriod(uint16_t period)
 }
 
 // -----------------------------------------------FlprogDiscreteOutputPin---------------------------------------------
-FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number, bool isOk, bool inverted)
+FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint16_t number, bool isOk, bool inverted)
 {
     if (isOk)
     {
@@ -40,7 +40,7 @@ FlprogDiscreteOutputPin::FlprogDiscreteOutputPin(uint8_t number, bool isOk, bool
 }
 
 // -----------------------------------------------FlprogShimOutputPin---------------------------------------------
-FlprogShimOutputPin::FlprogShimOutputPin(uint8_t number, bool isOk, bool inverted, uint16_t freq)
+FlprogShimOutputPin::FlprogShimOutputPin(uint16_t number, bool isOk, bool inverted, uint16_t freq)
 {
     _structure.setInv(inverted);
     if (isOk)
@@ -60,7 +60,7 @@ FlprogShimOutputPin::FlprogShimOutputPin(uint8_t number, bool isOk, bool inverte
 // -----------------------------------------------FlprogAnalogInputPin---------------------------------------------
 uint16_t FlprogAnalogInputPin::analogRead()
 {
-    if (pinNumber() == 255)
+    if (pinNumber() == FLPROG_NOT_EXIST_PIN)
     {
         return 0;
     }

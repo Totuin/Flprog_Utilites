@@ -3,7 +3,7 @@
 #define RT_HW_ESP32_PERMIT_BLE
 #include "flprogUartBase.h"
 
-#ifdef RT_HW_PERMIT_UARTB
+#ifdef RT_HW_CORE_ESP32S
 #define FLPROG_BLUETOOTH_SERIAL
 #include "BluetoothSerial.h"
 struct FLProgBluetoothSerialStruct

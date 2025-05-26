@@ -41,6 +41,15 @@ bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
             namespace flprog
 ---------------------------------------
 */
+
+//-------------Базовое--------------------
+void flprog::specialSetup()
+{
+}
+void flprog::specialPool()
+{
+}
+
 //-------------Тестирование--------------------
 
 bool flprog::isNumberChar(char value)
