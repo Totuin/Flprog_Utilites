@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
+#include "RT_HW_BASE.h"
 #include "IPAddress.h"
 
 #ifdef ARDUINO_ARCH_AVR
@@ -13,7 +14,7 @@
 #define FLPROG_WRITE_BUFFER_SIZE 800
 #endif
 
-#include "RT_HW_BASE.h"
+
 #include "pin/FlprogPin.h"
 
 #ifdef RT_HW_CORE_STM32
