@@ -2,6 +2,14 @@
 #include <Arduino.h>
 #include "flprogUtilites.h"
 
+struct FLProgUartParametrs
+{
+    uint32_t speed = 115200;
+    uint8_t dataBit = 8;
+    uint8_t parity = 0;
+    uint8_t stopBit = 1;
+    uint8_t number = 255;
+};
 
 namespace flprog
 {
