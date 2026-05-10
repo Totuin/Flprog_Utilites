@@ -14,7 +14,6 @@
 #define FLPROG_WRITE_BUFFER_SIZE 800
 #endif
 
-
 #include "pin/FlprogPin.h"
 
 #ifdef RT_HW_CORE_STM32
@@ -212,83 +211,97 @@
 
 namespace flprog
 {
-    //-------------Базовое--------------------
-    void specialSetup();
-    void specialPool();
-    //-------------Тестирование--------------------
-    bool isNumberChar(char value);
-    bool isHexNumberChar(char value);
+  //-------------Базовое--------------------
+  void specialSetup();
+  void specialPool();
+  //-------------Тестирование--------------------
+  bool isNumberChar(char value);
+  bool isHexNumberChar(char value);
 
-    //-------------Конвертация------------------------
-    bool stringToBool(String value);
-    char stringToChar(String value);
-    int32_t hexStringToLong(String value);
-    uint32_t hexStringToUnsignedLong(String value);
-    int32_t binStringToLong(String value);
-    uint32_t binStringToUnsignedLong(String value);
+  //-------------Конвертация------------------------
+  bool stringToBool(String value);
+  char stringToChar(String value);
+  int32_t hexStringToLong(String value);
+  uint32_t hexStringToUnsignedLong(String value);
+  int32_t binStringToLong(String value);
+  uint32_t binStringToUnsignedLong(String value);
 
-    //-------------Таймера------------------------
-    bool isTimer(uint32_t startTime, uint32_t period);
-    bool isTimerMicros(uint32_t startTime, uint32_t period);
-    uint32_t difference32(uint32_t start, uint32_t end);
-    uint32_t timeBack(uint32_t value);
+  //-------------Таймера------------------------
+  bool isTimer(uint32_t startTime, uint32_t period);
+  bool isTimerMicros(uint32_t startTime, uint32_t period);
+  uint32_t difference32(uint32_t start, uint32_t end);
+  uint32_t timeBack(uint32_t value);
 
-    //---------------Сеть---------------------------------------------
-    bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
-    bool checkMacAddres(uint8_t *target);
-    void parseMacAddressString(String value, uint8_t *array);
-    String macAddresToString(uint8_t *array);
-    bool checkMacAddresString(String value);
-    bool compareMacAddresWithString(uint8_t *array, String value);
-    bool compareMacAddreses(uint8_t *array1, uint8_t *array2);
-    int hexStrToInt(String str);
-    bool inet_aton_1(const char *aIPAddrString, IPAddress &aResult);
-    void ipToArray(IPAddress ip, uint8_t *array);
-    uint32_t ipToNumber(IPAddress value);
-    String ipToString(const IPAddress &ipAddress);
-    IPAddress numberToIp(uint32_t value);
-    IPAddress stringToIp(String value);
-    bool checkIPAdressString(String value);
-    String flprogErrorCodeName(uint8_t code);
-    String flprogStatusCodeName(uint8_t code);
-    // void printConsole(String title = "");
+  //---------------Сеть---------------------------------------------
+  bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
+  bool checkMacAddres(uint8_t *target);
+  void parseMacAddressString(String value, uint8_t *array);
+  String macAddresToString(uint8_t *array);
+  bool checkMacAddresString(String value);
+  bool compareMacAddresWithString(uint8_t *array, String value);
+  bool compareMacAddreses(uint8_t *array1, uint8_t *array2);
+  int hexStrToInt(String str);
+  bool inet_aton_1(const char *aIPAddrString, IPAddress &aResult);
+  void ipToArray(IPAddress ip, uint8_t *array);
+  uint32_t ipToNumber(IPAddress value);
+  String ipToString(const IPAddress &ipAddress);
+  IPAddress numberToIp(uint32_t value);
+  IPAddress stringToIp(String value);
+  bool checkIPAdressString(String value);
+  String flprogErrorCodeName(uint8_t code);
+  String flprogStatusCodeName(uint8_t code);
+  // void printConsole(String title = "");
 };
 
 class AbstractFLProgClass
 {
 public:
-    uint8_t getStatus() { return _status; };
-    uint8_t getError() { return _errorCode; };
-    uint8_t getErrorCode() { return _errorCode; };
+  uint8_t getStatus() { return _status; };
+  uint8_t getError() { return _errorCode; };
+  uint8_t getErrorCode() { return _errorCode; };
 
-    // Флаги изменения параметров
-    bool getIsChangeStatus() { return _isChangeStatus; };
-    bool getIsChangeStatusWithReset();
-    void setIsChangeStatus(bool value) { _isChangeStatus = value; };
-    void resetIsChangeStatus() { _isChangeStatus = false; };
+  // Флаги изменения параметров
+  bool getIsChangeStatus() { return _isChangeStatus; };
+  bool getIsChangeStatusWithReset();
+  void setIsChangeStatus(bool value) { _isChangeStatus = value; };
+  void resetIsChangeStatus() { _isChangeStatus = false; };
 
-    bool getIsChangeError() { return _isChangeError; };
-    bool getIsChangeErrorWithReset();
-    void setIsChangeError(bool value) { _isChangeError = value; };
-    void resetIsChangeError() { _isChangeError = false; };
+  bool getIsChangeError() { return _isChangeError; };
+  bool getIsChangeErrorWithReset();
+  void setIsChangeError(bool value) { _isChangeError = value; };
+  void resetIsChangeError() { _isChangeError = false; };
 
-    uint32_t statusForExt() { return _statusForExt; };
+  uint32_t statusForExt() { return _statusForExt; };
 
-    bool statusForExtGetBit(uint8_t bit) { return bitRead(_statusForExt, bit); };
-    void statusForExtResetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 0); };
+  bool statusForExtGetBit(uint8_t bit) { return bitRead(_statusForExt, bit); };
+  void statusForExtResetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 0); };
 
-    bool statusForExtGetBitWithReset(uint8_t bit);
-    void statusForExtSetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 1); };
-    virtual void setFlags();
+  bool statusForExtGetBitWithReset(uint8_t bit);
+  void statusForExtSetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 1); };
+  virtual void setFlags();
 
 protected:
-    uint8_t _status = FLPROG_NOT_REDY_STATUS;
-    uint8_t _errorCode = FLPROG_NOT_ERROR;
+  uint8_t _status = FLPROG_NOT_REDY_STATUS;
+  uint8_t _errorCode = FLPROG_NOT_ERROR;
 
-    // Флаги изменения параметров
-    uint8_t _oldStatus = FLPROG_NOT_REDY_STATUS;
-    bool _isChangeStatus = false;
-    uint8_t _oldError = FLPROG_NOT_ERROR;
-    bool _isChangeError = false;
-    uint32_t _statusForExt = 1;
+  // Флаги изменения параметров
+  uint8_t _oldStatus = FLPROG_NOT_REDY_STATUS;
+  bool _isChangeStatus = false;
+  uint8_t _oldError = FLPROG_NOT_ERROR;
+  bool _isChangeError = false;
+  uint32_t _statusForExt = 1;
+};
+
+class AbstractI2CDevice : public AbstractFLProgClass
+{
+public:
+  virtual void pool();
+
+protected:
+  virtual void init() = 0;
+  virtual void workPool() = 0;
+  virtual uint8_t readRegister(uint8_t reg);
+  virtual void writeRegister(uint8_t reg, uint8_t value);
+  uint32_t _pauseStartTime;
+  RT_HW_STRUCT_I2C_DEV _device;
 };

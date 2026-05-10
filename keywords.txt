@@ -5,6 +5,7 @@
 # # Datatypes (KEYWORD1)
 #######################################
 AbstractFLProgClass	KEYWORD1
+AbstractI2CDevice	KEYWORD1
 FlprogAbstractPin	KEYWORD1
 FlprogAbstractUartExecutor	KEYWORD1
 FlprogAnalogInputPin	KEYWORD1
@@ -70,6 +71,7 @@ macAddresToString	KEYWORD2
 numberToIp	KEYWORD2
 parseMacAddressString	KEYWORD2
 pinNumber	KEYWORD2
+pool	KEYWORD2
 printConsole	KEYWORD2
 printUart	KEYWORD2
 readUart	KEYWORD2
