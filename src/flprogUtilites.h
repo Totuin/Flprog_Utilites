@@ -3,6 +3,7 @@
 #include <Arduino.h>
 #include "RT_HW_BASE.h"
 #include "IPAddress.h"
+#include "rt_hwTask\rt_hwTaskBase.h"
 
 #ifdef ARDUINO_ARCH_AVR
 #define FLPROG_SOFTWARE_SERIAL
@@ -253,32 +254,34 @@ namespace flprog
   // void printConsole(String title = "");
 };
 
+//=================================================================================================
+//						Абстактный класс для всех классов в проекте с контролем состояния, статуса и ошибок
+//=================================================================================================
 class AbstractFLProgClass
 {
 public:
-  uint8_t getStatus() { return _status; };
-  uint8_t getError() { return _errorCode; };
-  uint8_t getErrorCode() { return _errorCode; };
+  uint8_t getStatus() { return _status; };       // Получение текущего статуса
+  uint8_t getError() { return _errorCode; };     // Получение текущей ошибки
+  uint8_t getErrorCode() { return _errorCode; }; // Получение кода ошибки
 
   // Флаги изменения параметров
-  bool getIsChangeStatus() { return _isChangeStatus; };
-  bool getIsChangeStatusWithReset();
-  void setIsChangeStatus(bool value) { _isChangeStatus = value; };
-  void resetIsChangeStatus() { _isChangeStatus = false; };
+  bool getIsChangeStatus() { return _isChangeStatus; };            // Получение флага изменения статуса
+  bool getIsChangeStatusWithReset();                               // Получение флага изменения статуса с последующим сбросом флага
+  void setIsChangeStatus(bool value) { _isChangeStatus = value; }; //
+  void resetIsChangeStatus() { _isChangeStatus = false; };         // Сброс флага изменения статуса
 
-  bool getIsChangeError() { return _isChangeError; };
-  bool getIsChangeErrorWithReset();
-  void setIsChangeError(bool value) { _isChangeError = value; };
-  void resetIsChangeError() { _isChangeError = false; };
+  bool getIsChangeError() { return _isChangeError; };            // Получение флага изменения ошибки
+  bool getIsChangeErrorWithReset();                              // Получение флага изменения ошибки с последующим сбросом флага
+  void setIsChangeError(bool value) { _isChangeError = value; }; // Установка флага изменения ошибки
+  void resetIsChangeError() { _isChangeError = false; };         // Сброс флага изменения ошибки
 
-  uint32_t statusForExt() { return _statusForExt; };
+  uint32_t statusForExt() { return _statusForExt; };                            // Получение статуса для внешних функций. Статус для внешних функций - это 32-битное число, в котором каждый бит может быть использован для хранения флага изменения определенного параметра. Например, бит 0 может быть использован для хранения флага изменения статуса, бит 1 - для хранения флага изменения ошибки, бит 2 - для хранения флага изменения определенного параметра и т.д. Внешние функции могут использовать эти биты для определения того, какие параметры были изменены и какие действия необходимо предпринять в ответ на эти изменения.
+  bool statusForExtGetBit(uint8_t bit) { return bitRead(_statusForExt, bit); }; // Получение бита статуса для внешних функций. bit - это номер бита, который нужно получить. Например, если bit = 0, то будет получен бит 0 статуса для внешних функций, если bit = 1, то будет получен бит 1 статуса для внешних функций и т.д.
+  void statusForExtResetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 0); };  // Сброс бита статуса для внешних функций. bit - это номер бита, который нужно сбросить. Например, если bit = 0, то будет сброшен бит 0 статуса для внешних функций, если bit = 1, то будет сброшен бит 1 статуса для внешних функций и т.д.
+  bool statusForExtGetBitWithReset(uint8_t bit);                                // Получение бита статуса для внешних функций с последующим сбросом бита. bit - это номер бита, который нужно получить и сбросить. Например, если bit = 0, то будет получен и сброшен бит 0 статуса для внешних функций, если bit = 1, то будет получен и сброшен бит 1 статуса для внешних функций и т.д.
+  void statusForExtSetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 1); };    // Установка бита статуса для внешних функций. bit - это номер бита, который нужно установить. Например, если bit = 0, то будет установлен бит 0 статуса для внешних функций, если bit = 1, то будет установлен бит 1 статуса для внешних функций и т.д.
 
-  bool statusForExtGetBit(uint8_t bit) { return bitRead(_statusForExt, bit); };
-  void statusForExtResetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 0); };
-
-  bool statusForExtGetBitWithReset(uint8_t bit);
-  void statusForExtSetBit(uint8_t bit) { bitWrite(_statusForExt, bit, 1); };
-  virtual void setFlags();
+  virtual void setFlags(); // Виртуальная функция для установки флагов изменения статуса и ошибки. Должна быть переопределена в классе, который наследуется от AbstractFLProgClass. В функции setFlags() должны быть реализованы все действия по установке флагов изменения статуса и ошибки, которые должны выполняться при каждом изменении статуса и ошибки.
 
 protected:
   uint8_t _status = FLPROG_NOT_REDY_STATUS;
@@ -292,16 +295,38 @@ protected:
   uint32_t _statusForExt = 1;
 };
 
-class AbstractI2CDevice : public AbstractFLProgClass
+//=================================================================================================
+//						Абстактный класс для всех устройств реботающих  по таскам
+//=================================================================================================
+class AbstractTaskDevice : public AbstractFLProgClass
 {
 public:
-  virtual void pool();
+  void setTaskQntPass(uint8_t qntPass) { _taskQntPass = qntPass; }; // --Кол-во пропусков перед проверкой времени;
+  void setTaskPeriod(uint16_t period) { _taskPeriod = period; };    // --Период вызова;
+  void setTaskMode(uint8_t mode) { _taskMode = mode; };             // --Тип задачи. При изменении типа задачи создается новый объект задачи соответствующего типа. Ресурсы старого объекта задачи освобождаются.
+  void pool();                                                      // --Пул устройства. Внутри функции pool происходит проверка условий для запуска задачи и при выполнении условий вызывается функция devicePool(), которая должна быть реализована в классе устройства. В функции pool() также происходит инициализация задачи при первом вызове функции pool().
+  void setTaskEn(bool value) { _taskEn = value; };                  // --Разрешение проверки условий для запуска задачи. Для задач без контроля периода всегда 1, для задач с контролем периода 1 при проверке условий внешней функции и при проверке времени, иначе 0;
 
 protected:
-  virtual void init() = 0;
-  virtual void workPool() = 0;
-  virtual uint8_t readRegister(uint8_t reg);
-  virtual void writeRegister(uint8_t reg, uint8_t value);
+  virtual void devicePool() = 0;
+  FlprogRtHwTask _task;
+  uint8_t _taskMode = FLPROG_TASK_PERIODIK_EVENT_SKIP;
+  uint8_t _taskQntPass = 0;
+  uint16_t _taskPeriod = 100;
+  bool _taskEn = true;
+};
+
+//=================================================================================================
+//						Абстактный класс для всех устройств реботающих  по таскам на шине I2C
+//=================================================================================================
+class AbstractI2CDevice : public AbstractTaskDevice
+{
+protected:
+  virtual void devicePool();                              // --Пул устройства. Внутри функции pool происходит проверка условий для запуска задачи и при выполнении условий вызывается функция workPool(), которая должна быть реализована в классе устройства. В функции pool() также происходит инициализация задачи при первом вызове функции pool().
+  virtual void init() = 0;                                // --Инициализация устройства. Должна быть реализована в классе устройства. В функции init() должны быть реализованы все действия по инициализации устройства, которые должны выполняться при каждом вызове функции pool() при статусе FLPROG_WAIT_I2C_DEVICE_INIT.
+  virtual void workPool() = 0;                            // --Рабочий пул устройства. Должна быть реализована в классе устройства. В функции workPool() должны быть реализованы все действия по работе с устройством, которые должны выполняться при каждом вызове функции pool() при статусе FLPROG_READY_STATUS.
+  virtual uint8_t readRegister(uint8_t reg);              // --Чтение регистра устройства.
+  virtual void writeRegister(uint8_t reg, uint8_t value); // --Запись регистра устройства.
   uint32_t _pauseStartTime;
   RT_HW_STRUCT_I2C_DEV _device;
 };

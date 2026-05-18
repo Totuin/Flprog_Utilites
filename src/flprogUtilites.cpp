@@ -15,6 +15,21 @@ void AbstractFLProgClass::setFlags()
   }
 }
 
+void AbstractTaskDevice::pool()
+{
+  if (!_task.isInit())
+  {
+    _task.setType(_taskMode);
+    _task.setQntPass(_taskQntPass);
+    _task.setPeriod(_taskPeriod);
+  }
+  _task.direct(_taskEn);
+  if (_task.canWork())
+  {
+    devicePool();
+  }
+}
+
 bool AbstractFLProgClass::getIsChangeStatusWithReset()
 {
   bool temp = _isChangeStatus;
@@ -36,7 +51,7 @@ bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
   return temp;
 }
 
-void AbstractI2CDevice::pool()
+void AbstractI2CDevice::devicePool()
 {
   if (_status == FLPROG_NOT_REDY_STATUS)
   {
