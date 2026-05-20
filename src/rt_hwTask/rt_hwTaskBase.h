@@ -24,9 +24,10 @@ public:
   virtual void setQntPass(uint8_t qntPass) { (void)qntPass; }; //--Кол-во пропусков перед проверкой времени;
   virtual void setPeriod(uint16_t period) { (void)period; };   //--Период вызова;
   virtual uint8_t direct(uint8_t extEN) = 0;                   //--Проверка условий для запуска задачи. Возвращает 1 если условия для запуска выполнены, иначе 0. extEN - разрешение проверки условий внешней функции. Для задач без контроля периода всегда 1, для задач с контролем периода 1 при проверке условий внешней функции и при проверке времени, иначе 0;
-  virtual uint8_t *run() = 0;                                  // --Указатель на переменную запуска задачи. Внешняя функция может устанавливать эту переменную в значение 5 для разрешения запуска задачи при проверке условий внешней функции. Например при изменении параметров. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменении параметров.
-  bool canWork() { return *run() != 0; };                      //  --run	=0 нет запуска;   =1 безусловный запуск; 	=2 разрешение проверки условий внешней функции. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменения параметров.
-  void reset() { *run() = 5; };                                //  --Очистка разрешающего флага запуска задачи.
+  virtual uint8_t run() = 0;                                   // --Указатель на переменную запуска задачи. Внешняя функция может устанавливать эту переменную в значение 5 для разрешения запуска задачи при проверке условий внешней функции. Например при изменении параметров. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменении параметров.
+  virtual void run(uint8_t value) = 0;                         // --Установка значения переменной запуска задачи.
+  bool canWork() { return run() != 0; };                       //  --run	=0 нет запуска;   =1 безусловный запуск; 	=2 разрешение проверки условий внешней функции. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменения параметров.
+  virtual void reset() {};                                     //  --Очистка разрешающего флага запуска задачи.
 protected:
 };
 
@@ -42,11 +43,12 @@ public:
   void setQntPass(uint8_t qntPass);     //--Кол-во пропусков перед проверкой времени;
   void setPeriod(uint16_t period);      //--Период вызова;
   uint8_t direct(uint8_t extEN = 1);    //--Проверка условий для запуска задачи. Возвращает 1 если условия для запуска выполнены, иначе 0. extEN - разрешение проверки условий внешней функции. Для задач без контроля периода всегда 1, для задач с контролем периода 1 при проверке условий внешней функции и при проверке времени, иначе 0;
-  uint8_t *run();                       // --Указатель на переменную запуска задачи. Внешняя функция может устанавливать эту переменную в значение 5 для разрешения запуска задачи при проверке условий внешней функции. Например при изменении параметров. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменении параметров.
-  bool canWork();                       //  --run	=0 нет запуска;   =1 безусловный запуск; 	=2 разрешение проверки условий внешней функции. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменения параметров.
+  uint8_t run();                        // --Значение переменной запуска задачи. Внешняя функция может устанавливать эту переменную в значение 5 для разрешения запуска задачи при проверке условий внешней функции. Например при изменении параметров. После проверки и выполнения условий->run=5; может устанавливаться внешней функцией в значение =5. Например при изменении параметров.
+  void run(uint8_t value);              // --Установка значения переменной запуска задачи. Внешняя функция может устанавливать эту переменную в значение 5 для разрешения запуска задачи при проверке условий внешней функции. Например при изменении параметров. После проверки и выполнения условий->
   void reset();                         //  --Очистка разрешающего флага запуска задачи.
   void setType(uint8_t type);           //  --Установка типа задачи. При изменении типа задачи создается новый объект задачи соответствующего типа. Ресурсы старого объекта задачи освобождаются.
   bool isInit() { return _task != 0; }; //  --Проверка инициализации задачи.
+  bool canWork();                       //  --Проверка разрешающего флага запуска задачи. Возвращает true если run != 0, иначе false.
 
 private:
   FlprogAbstractRtHwTask *_task = 0;
@@ -66,7 +68,9 @@ class FlprogRtHwTaskC : public FlprogAbstractRtHwTask
 public:
   void setQntPass(uint8_t qntPass) { _task.qntPass = qntPass; };
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_C _task;
@@ -80,7 +84,9 @@ class FlprogRtHwTaskQ : public FlprogAbstractRtHwTask
 {
 public:
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_Q _task;
@@ -93,7 +99,9 @@ class FlprogRtHwTaskE : public FlprogAbstractRtHwTask
 {
 public:
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_E _task;
@@ -106,7 +114,9 @@ class FlprogRtHwTaskF : public FlprogAbstractRtHwTask
 {
 public:
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_F _task;
@@ -119,7 +129,9 @@ class FlprogRtHwTaskR : public FlprogAbstractRtHwTask
 {
 public:
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_R _task;
@@ -134,7 +146,9 @@ public:
   void setQntPass(uint8_t qntPass) { _task.qntPass = qntPass; };
   void setPeriod(uint16_t period) { _task.period = period; };
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_P _task;
@@ -149,7 +163,9 @@ public:
   void setQntPass(uint8_t qntPass) { _task.qntPass = qntPass; };
   void setPeriod(uint16_t period) { _task.period = period; };
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_PS _task;
@@ -164,7 +180,9 @@ public:
   void setQntPass(uint8_t qntPass) { _task.qntPass = qntPass; };
   void setPeriod(uint16_t period) { _task.period = period; };
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_T _task;
@@ -179,7 +197,9 @@ public:
   void setQntPass(uint8_t qntPass) { _task.qntPass = qntPass; };
   void setPeriod(uint16_t period) { _task.period = period; };
   uint8_t direct(uint8_t extEN) { return _task.direct(extEN); };
-  uint8_t *run() { return &_task.run; };
+  uint8_t run() { return _task.run; };
+  void run(uint8_t value) { _task.run = value; };
+  void reset() { _task.run = 5; };
 
 protected:
   RT_HW_DIRECT_TASK_A _task;

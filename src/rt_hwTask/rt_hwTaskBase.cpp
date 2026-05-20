@@ -71,7 +71,7 @@ uint8_t FlprogRtHwTask::direct(uint8_t extEN)
   return 0;
 }
 
-uint8_t *FlprogRtHwTask::run()
+uint8_t FlprogRtHwTask::run()
 {
   if (_task)
   {
@@ -94,5 +94,13 @@ void FlprogRtHwTask::reset()
   if (_task)
   {
     _task->reset();
+  }
+}
+
+void FlprogRtHwTask::run(uint8_t value)
+{
+  if (_task)
+  {
+    _task->run(value);
   }
 }
