@@ -24,10 +24,7 @@ void AbstractTaskDevice::pool()
     _task.setPeriod(_taskPeriod);
   }
   _task.direct(_taskEn);
-  if (_task.canWork())
-  {
-    devicePool();
-  }
+  devicePool();
 }
 
 bool AbstractFLProgClass::getIsChangeStatusWithReset()
@@ -52,6 +49,33 @@ bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
 }
 
 void AbstractI2CDevice::devicePool()
+{
+  if (_status != FLPROG_READY_STATUS)
+  {
+    init();
+  }
+  if (_task.canWork())
+  {
+    workPool();
+  }
+}
+
+uint8_t AbstractFLProgI2CDevice::readRegister(uint8_t reg)
+{
+  RT_HW_Base.i2cWrite(_device, reg);
+  RT_HW_Base.i2cRead(_device);
+  return _device.bf8;
+}
+
+void AbstractFLProgI2CDevice::writeRegister(uint8_t reg, uint8_t value)
+{
+  uint8_t data[2];
+  data[0] = reg;
+  data[1] = value;
+  RT_HW_Base.i2cWriteArr(_device, data, 2);
+}
+
+void AbstractFLProgI2CDevice::devicePool()
 {
   if (_status == FLPROG_NOT_REDY_STATUS)
   {
@@ -105,29 +129,16 @@ void AbstractI2CDevice::devicePool()
     init();
     return;
   }
-  workPool();
+  if (_task.canWork())
+  {
+    workPool();
+  }
   if (_device.codeErr)
   {
     _status = FLPROG_NOT_REDY_STATUS;
     return;
   }
 }
-
-uint8_t AbstractI2CDevice::readRegister(uint8_t reg)
-{
-  RT_HW_Base.i2cWrite(_device, reg);
-  RT_HW_Base.i2cRead(_device);
-  return _device.bf8;
-}
-
-void AbstractI2CDevice::writeRegister(uint8_t reg, uint8_t value)
-{
-  uint8_t data[2];
-  data[0] = reg;
-  data[1] = value;
-  RT_HW_Base.i2cWriteArr(_device, data, 2);
-}
-
 /*
 ---------------------------------------
             namespace flprog
