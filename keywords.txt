@@ -6,7 +6,7 @@
 #######################################
 AbstractFLProgClass	KEYWORD1
 AbstractFLProgI2CDevice	KEYWORD1
-AbstractI2CDevice	KEYWORD1
+AbstractSPIorSPNDevice	KEYWORD1
 AbstractTaskDevice	KEYWORD1
 FlprogAbstractPin	KEYWORD1
 FlprogAbstractRtHwTask	KEYWORD1

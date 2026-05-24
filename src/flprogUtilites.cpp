@@ -24,7 +24,12 @@ void AbstractTaskDevice::pool()
     _task.setPeriod(_taskPeriod);
   }
   _task.direct(_taskEn);
-  devicePool();
+  if (_status != FLPROG_READY_STATUS)
+  {
+    init();
+    return;
+  }
+  workPool();
 }
 
 bool AbstractFLProgClass::getIsChangeStatusWithReset()
@@ -46,18 +51,6 @@ bool AbstractFLProgClass::statusForExtGetBitWithReset(uint8_t bit)
   bool temp = bitRead(_statusForExt, bit);
   bitWrite(_statusForExt, bit, 0);
   return temp;
-}
-
-void AbstractI2CDevice::devicePool()
-{
-  if (_status != FLPROG_READY_STATUS)
-  {
-    init();
-  }
-  if (_task.canWork())
-  {
-    workPool();
-  }
 }
 
 uint8_t AbstractFLProgI2CDevice::readRegister(uint8_t reg)
