@@ -306,6 +306,7 @@ public:
   void setTaskMode(uint8_t mode) { _taskMode = mode; };             // --Тип задачи. При изменении типа задачи создается новый объект задачи соответствующего типа. Ресурсы старого объекта задачи освобождаются.
   void pool();                                                      // --Пул устройства. Внутри функции pool происходит проверка условий для запуска задачи и при выполнении условий вызывается функция devicePool(), которая должна быть реализована в классе устройства. В функции pool() также происходит инициализация задачи при первом вызове функции pool().
   void setTaskEn(bool value) { _taskEn = value; };                  // --Разрешение проверки условий для запуска задачи. Для задач без контроля периода всегда 1, для задач с контролем периода 1 при проверке условий внешней функции и при проверке времени, иначе 0;
+  bool taskCanWork() { return _task.canWork(); };                   // -- Разрешения от таска
 
 protected:
   virtual void init() = 0;     // --Инициализация устройства. Должна быть реализована в классе устройства. В функции init() должны быть реализованы все действия по инициализации устройства, которые должны выполняться при каждом вызове функции pool() при статусе FLPROG_WAIT_I2C_DEVICE_INIT.
@@ -320,6 +321,12 @@ protected:
 
 class AbstractSPIorSPNDevice : public AbstractTaskDevice
 {
+public:
+  void setSckPin(uint8_t pin) { _sckPin = pin; };
+  void setMisoPin(uint8_t pin) { _misoPin = pin; };
+  void setMosiPin(uint8_t pin) { _mosiPin = pin; };
+  void setCsPin(uint8_t pin) { _csPin = pin; };
+
 protected:
   uint8_t _sckPin = 255;  // --Номер пина SCK для программного SPI. 255-не используется
   uint8_t _misoPin = 255; // --Номер пина MISO для программного SPI. 255-не используется

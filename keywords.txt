@@ -99,10 +99,13 @@ serialCodeForParametrs	KEYWORD2
 setBluetoothIsMasterName	KEYWORD2
 setBluetoothName	KEYWORD2
 setBluetoothTargetName	KEYWORD2
+setCsPin	KEYWORD2
 setDataBitUart	KEYWORD2
 setFlags	KEYWORD2
 setIsChangeError	KEYWORD2
 setIsChangeStatus	KEYWORD2
+setMisoPin	KEYWORD2
+setMosiPin	KEYWORD2
 setParityUart	KEYWORD2
 setPeriod	KEYWORD2
 setPin	KEYWORD2
@@ -110,6 +113,7 @@ setPinRxUart	KEYWORD2
 setPinTxUart	KEYWORD2
 setPinsUart	KEYWORD2
 setQntPass	KEYWORD2
+setSckPin	KEYWORD2
 setSpeedUart	KEYWORD2
 setStopBitUart	KEYWORD2
 setTaskEn	KEYWORD2
@@ -128,6 +132,7 @@ statusForExtSetBit	KEYWORD2
 stringToBool	KEYWORD2
 stringToChar	KEYWORD2
 stringToIp	KEYWORD2
+taskCanWork	KEYWORD2
 timeBack	KEYWORD2
 vDev	KEYWORD2
 vPin	KEYWORD2
