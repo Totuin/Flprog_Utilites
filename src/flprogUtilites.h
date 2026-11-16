@@ -228,8 +228,8 @@ namespace flprog
   // Преобразование String в простые типы FLProg.
   // stringToBool: true для "true", "да" и положительного целого; иначе false.
   bool stringToBool(String value);
-  char stringToChar(String value);             // Первый символ либо '\0' у пустой строки.
-  int32_t hexStringToLong(String value);       // Со знаком; допускает ведущий минус.
+  char stringToChar(String value);       // Первый символ либо '\0' у пустой строки.
+  int32_t hexStringToLong(String value); // Со знаком; допускает ведущий минус.
   uint32_t hexStringToUnsignedLong(String value);
   int32_t binStringToLong(String value);
   uint32_t binStringToUnsignedLong(String value); // Переполнение обрабатывается по модулю 2^32.
@@ -244,7 +244,7 @@ namespace flprog
   // MAC-адрес занимает шесть байт. Выделение памяти для target/array —
   // обязанность вызывающего кода; указатели на массив меньшего размера недопустимы.
   bool applyMac(uint8_t m0, uint8_t m1, uint8_t m2, uint8_t m3, uint8_t m4, uint8_t m5, uint8_t *target);
-  bool checkMacAddres(uint8_t *target); // Историческое правило FLProg: FF и все нули запрещены.
+  bool checkMacAddres(uint8_t *target);                     // Историческое правило FLProg: FF и все нули запрещены.
   void parseMacAddressString(String value, uint8_t *array); // При ошибке array без изменений.
   String macAddresToString(uint8_t *array);
   bool checkMacAddresString(String value);
@@ -301,7 +301,7 @@ public:
   void setStatus(uint8_t value) { _status = value; };   // Установка статуса. При установке статуса должны быть установлены флаги изменения статуса и статуса для внешних функций.
   void setError(uint8_t value) { _errorCode = value; }; // Установка ошибки. При установке ошибки должны быть установлены флаги изменения ошибки и статуса для внешних функций.
 
-  protected:
+protected:
   uint8_t _status = FLPROG_NOT_REDY_STATUS;
   uint8_t _errorCode = FLPROG_NOT_ERROR;
 
@@ -320,12 +320,12 @@ public:
 class AbstractTaskDevice : public AbstractFLProgClass
 {
 public:
-  void setTaskQntPass(uint8_t qntPass) { _taskQntPass = qntPass; }; // --Кол-во пропусков перед проверкой времени;
-  void setTaskPeriod(uint16_t period) { _taskPeriod = period; };    // --Период вызова;
-  void setTaskMode(uint8_t mode) { _taskMode = mode; }; // Новый режим применяется при следующем pool().             // --Тип задачи. При изменении типа задачи создается новый объект задачи соответствующего типа. Ресурсы старого объекта задачи освобождаются.
-  virtual void pool();                                               // --Пул устройства. Внутри функции pool происходит проверка условий для запуска задачи и при выполнении условий вызывается функция devicePool(), которая должна быть реализована в классе устройства. В функции pool() также происходит инициализация задачи при первом вызове функции pool().
-  void setTaskEn(bool value) { _taskEn = value; };                  // --Разрешение проверки условий для запуска задачи. Для задач без контроля периода всегда 1, для задач с контролем периода 1 при проверке условий внешней функции и при проверке времени, иначе 0;
-  bool taskCanWork() { return _task.canWork(); };                   // -- Разрешения от таска
+  void setTaskQntPass(uint8_t qntPass) { _taskQntPass = qntPass; };      // --Кол-во пропусков перед проверкой времени;
+  virtual void setTaskPeriod(uint16_t period) { _taskPeriod = period; }; // --Период вызова;
+  void setTaskMode(uint8_t mode) { _taskMode = mode; };                  // Новый режим применяется при следующем pool().             // --Тип задачи. При изменении типа задачи создается новый объект задачи соответствующего типа. Ресурсы старого объекта задачи освобождаются.
+  virtual void pool();                                                   // --Пул устройства. Внутри функции pool происходит проверка условий для запуска задачи и при выполнении условий вызывается функция devicePool(), которая должна быть реализована в классе устройства. В функции pool() также происходит инициализация задачи при первом вызове функции pool().
+  void setTaskEn(bool value) { _taskEn = value; };                       // --Разрешение проверки условий для запуска задачи. Для задач без контроля периода всегда 1, для задач с контролем периода 1 при проверке условий внешней функции и при проверке времени, иначе 0;
+  bool taskCanWork() { return _task.canWork(); };                        // -- Разрешения от таска
 
 protected:
   virtual void init() = 0;     // --Инициализация устройства. Должна быть реализована в классе устройства. В функции init() должны быть реализованы все действия по инициализации устройства, которые должны выполняться при каждом вызове функции pool() при статусе FLPROG_WAIT_I2C_DEVICE_INIT.
